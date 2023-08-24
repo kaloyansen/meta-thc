@@ -1,8 +1,9 @@
 #!/bin/sh
 #
 # a simple script to initialize wifi
+#
 # Kaloyan Krastev
-# copyleft triplehelic-consulting.com
+# copyleft triplehelix-consulting.com
 
 winterface=wlan0
 wicon=PuzlCowOrKing
