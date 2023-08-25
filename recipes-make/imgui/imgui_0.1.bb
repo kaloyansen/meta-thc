@@ -18,7 +18,8 @@ S = "${WORKDIR}/imgui_aarch64_glfw_openGL2_experiment/imgui/examples/example_glf
 
 inherit cmake thclass
 
-addtask tomber before do_build
+TOMBEXT = "install imgui"
+addtask tomber before do_install
 
 do_install() {
 	install -d ${D}/${bindir}

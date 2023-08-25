@@ -15,6 +15,7 @@ FILES:${PN}:append = " ${ROOT_HOME}"
 
 inherit thclass allarch
 
+TOMBEXT = "install thcp"
 addtask tomber before do_install
 
 do_install() {
