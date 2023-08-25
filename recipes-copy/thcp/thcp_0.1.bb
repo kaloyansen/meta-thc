@@ -8,7 +8,10 @@ DEPENDS = "dhcpcd"
 SRC_PATH = "home/yocto/layer/meta-thc/data"
 
 SRC_URI = "file:///${SRC_PATH}/wifi.sh \
-           file:///${SRC_PATH}/wifini.sh "
+           file:///${SRC_PATH}/wifini.sh \
+           file:///${SRC_PATH}/.profile "
+
+FILES:${PN}:append = " ${ROOT_HOME}"
 
 inherit thclass allarch
 
@@ -16,6 +19,8 @@ addtask tomber before do_install
 
 do_install() {
 	install -d ${D}/${bindir}
+	install -d ${D}/${ROOT_HOME}
 	install -m 0755 ${WORKDIR}/${SRC_PATH}/wifi.sh ${D}/${bindir}
 	install -m 0755 ${WORKDIR}/${SRC_PATH}/wifini.sh ${D}/${bindir}
+	install -m 0644 ${WORKDIR}/${SRC_PATH}/.profile ${D}/${ROOT_HOME}
 }

@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# wifi.sh
+#
 # a simple script to connect wifi
 # for the first time see wifini.sh
 #
@@ -16,3 +18,8 @@ wpa_supplicant -B -D wext -i $winterface -c /etc/wpa_supplicant.conf
 
 # connect
 dhcpcd $winterface
+
+# verify connexion
+iw $winterface link
+ip addr show $winterface
+ip route show

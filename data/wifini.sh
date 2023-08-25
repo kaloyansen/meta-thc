@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# wifini.sh
+#
 # a simple script to initialize wifi
 #
 # Kaloyan Krastev
@@ -22,10 +24,6 @@ echo type the password for wifi
 wpa_passphrase $wicon >> /etc/wpa_supplicant.conf
 
 # connect
-wpa_supplicant -B -D wext -i $winterface -c /etc/wpa_supplicant.conf
-dhcpcd $winterface
+env wifi.sh
 
-# verify connexion
-iw $winterface link
-ip addr show $winterface
-ip route show
+
