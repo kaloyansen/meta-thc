@@ -3,8 +3,10 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file:///home/kalo/work/config/LICENSE;md5=c013f313bd63a3f147337df79bb29991"
 
 
-SRC_URI = "https://github.com/glfw/glfw/releases/download/${PV}/glfw-${PV}.tar.gz"
 SRC_URI = "file:///home/kalo/work/tarball/glfw-${PV}.tar.gz"
+SRC_URI = "https://github.com/glfw/glfw/releases/${PV}/${PV}.tar.gz"
+SRC_URI = "https://github.com/glfw/glfw/download/${PV}.tar.gz"
+SRC_URI[md5sum] = "55d99dc968f4cec01a412562a7cf851c"
 
 
 S = "${WORKDIR}/glfw-${PV}"
