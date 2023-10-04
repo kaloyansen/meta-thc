@@ -1,0 +1,991 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Embedded Operating System for Raspberry &#x03C0; - 4 - model B with Yocto</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html,htex4ht --> 
+<meta name="src" content="thcport.tex"> 
+<link rel="stylesheet" type="text/css" href="thcport.css"> 
+</head><body 
+>
+     <div class="maketitle">
+                                                                                                                    
+
+                                                                                                                    
+                                                                                                                    
+
+                                                                                                                    
+            
+<h2 class="titleHead">Embedded Operating System for Raspberry &#x03C0; -
+4 - model B with Yocto</h2>
+<div class="author" ><span 
+class="ecrm-1200">Kaloyan Krastev</span><span class="thank-mark"><a 
+href="#tk-1"><span 
+class="tcrm-1200">*</span></a></span></div><br />
+<div class="date" ><span 
+class="ecrm-1200">October 4, 2023</span></div>
+    <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="tcrm-1000">*</span></span>Triple Helix Consulting[<a 
+ id="x1-2"></a><a 
+href="#cite.0@thc">11</a>]</div></div>
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>table of contents</h3>
+               <div class="tableofcontents">
+               &#x00A0;<span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">introduction</a></span>
+            <br />     &#x00A0;<span class="sectionToc" >2 <a 
+href="#x1-30002" id="QQ2-1-3">sources</a></span>
+            <br />     &#x00A0;&#x00A0;<span class="subsectionToc" >2.1 <a 
+href="#x1-40002.1" id="QQ2-1-4">application</a></span>
+            <br />     &#x00A0;&#x00A0;<span class="subsectionToc" >2.2 <a 
+href="#x1-50002.2" id="QQ2-1-5">layers</a></span>
+            <br />     &#x00A0;<span class="sectionToc" >3 <a 
+href="#x1-60003" id="QQ2-1-6">build</a></span>
+            <br />     &#x00A0;&#x00A0;<span class="subsectionToc" >3.1 <a 
+href="#x1-70003.1" id="QQ2-1-7">configuration</a></span>
+            <br />     &#x00A0;&#x00A0;<span class="subsectionToc" >3.2 <a 
+href="#x1-80003.2" id="QQ2-1-8">image</a></span>
+            <br />     &#x00A0;<span class="sectionToc" >4 <a 
+href="#x1-90004" id="QQ2-1-10">connection</a></span>
+            <br />     &#x00A0;<span class="sectionToc" >5 <a 
+href="#x1-100005" id="QQ2-1-11">outlook</a></span>
+            <br />     &#x00A0;<span class="sectionToc" ><a 
+href="#x1-12000" id="QQ2-1-13">bibliography</a></span>
+               </div>
+            <!--l. 15--><p class="indent" >
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>introduction</h3>
+            <!--l. 18--><p class="noindent" >This article[<a 
+ id="x1-2001"></a><a 
+href="#cite.0@kalo2023">8</a>] reports the progress in the configuration and build of a Linux-based
+            operating system for <span 
+class="cmmi-10">Raspberry &#x03C0; </span>- <span 
+class="cmr-10">4 </span>- <span 
+class="cmmi-10">model B</span>[<a 
+ id="x1-2002"></a><a 
+href="#cite.0@raspberry">9</a>] with <span 
+class="ecti-1000">Yocto</span>[<a 
+ id="x1-2003"></a><a 
+href="#cite.0@yocto">3</a>]. The <a 
+ id="section*.1"></a><span 
+class="cmmi-10">central</span>
+            <span 
+class="cmmi-10">processing unit </span>(<a 
+href="#CPU">CPU</a>) is <span 
+class="cmmi-10">ARM Cortex</span>-<span 
+class="cmmi-10">A</span><span 
+class="cmr-10">72</span>. It is a high performance <a 
+href="#CPU">CPU</a> with low
+            power consumption. With dimensions of 9 x 7 x 2 <span 
+class="cmmi-10">cm</span>, the machine has 4 <span 
+class="cmmi-10">GB </span>of
+            RAM. As there are no fixed storage devices, <span 
+class="cmmi-10">images </span>are installed on <span 
+class="cmmi-10">SD</span>
+            cards.
+            <!--l. 26--><p class="indent" >     Embedded devices[<a 
+ id="x1-2004"></a><a 
+href="#cite.0@vasquez2021">1</a>] are compact systems with specific purpose. Embedded
+            operating systems provide a limited number of services defined by this purpose and
+            device <a 
+ id="section*.2"></a><span 
+class="cmmi-10">hardware </span>(<a 
+href="#HW">HW</a>). There are important reasons why Linux is a preferred
+            <a 
+ id="section*.3"></a><span 
+class="cmmi-10">operating system </span>(<a 
+href="#OS">OS</a>) kernel for embedded devices. Since such devices usually have
+            limited <a 
+href="#HW">HW</a> resources, they rely on optimized <a 
+ id="section*.4"></a><span 
+class="cmmi-10">software </span>(<a 
+href="#SW">SW</a>) implementations.
+            Smaller and faster than their original, such programs have limited, but usually
+            sufficient functionality. For example, <span 
+class="cmmi-10">BusyBox </span>combines tiny versions of many
+            common <span 
+class="cmmi-10">unix </span>utilities into a single executable[<a 
+ id="x1-2005"></a><a 
+href="#cite.0@busybox">2</a>]. Another example is <span 
+class="cmmi-10">Dropbear SSH</span>
+            - an optimized <a 
+ id="section*.5"></a><span 
+class="cmmi-10">secure shell </span>(<a 
+href="#SSH">SSH</a>) server implementation[<a 
+ id="x1-2006"></a><a 
+href="#cite.0@dropbear">7</a>]. <span 
+class="cmmi-10">Dropbear </span>is
+            significantly smaller in size compared to <span 
+class="cmmi-10">OpenSSH</span>. Unlike GNU/Linux
+            desktop distributions[<a 
+ id="x1-2007"></a><a 
+href="#cite.0@rusev2023">12</a>], embedded Linux has neither a <a 
+ id="section*.6"></a><span 
+class="cmmi-10">graphical user</span>
+            <span 
+class="cmmi-10">interface </span>(<a 
+href="#GUI">GUI</a>) for system configuration nor a centralized service manager like
+            <span 
+class="cmmi-10">systemd</span>.
+            <!--l. 42--><p class="indent" >     <span 
+class="ecti-1000">Yocto </span>Project[<a 
+href="#cite.0@yocto">3</a>] provides a popular framework for configuration and build of
+            Linux-based operating systems. First of all, <span 
+class="ecti-1000">Yocto </span>supports <a 
+href="#HW">HW</a> via a <a 
+href="#SW">SW</a> layer
+            called <a 
+ id="section*.7"></a><span 
+class="cmmi-10">board support layer </span>(<a 
+href="#BSP">BSP</a>). In addition, there are custom distribution
+            configuration and a tool called <span 
+class="cmmi-10">Bitbake </span>to create <a 
+href="#SW">SW</a> packages and to build <a 
+href="#OS">OS</a>
+            <span 
+class="cmmi-10">images</span>. These <span 
+class="cmmi-10">images </span>are configurable and operational. There is a bootloader,
+            a kernel release and the user-space part of the <a 
+href="#OS">OS</a>, including custom user
+            applications. This approach is indispensable when it comes to embedded devices.
+            <span 
+class="ecti-1000">Yocto </span>images are collections of <a 
+href="#SW">SW</a> packages. Packages are created via <a 
+href="#SW">SW</a>
+            recipes. Although a recipe may have all sorts of instructions, a typical one
+            contains the source code location and the <a 
+href="#SW">SW</a> build configuration. These are
+            architecture independent. However, binaries are cross-compiled in case of
+            different target machine processor architecture. This applies to the entire
+            <a 
+href="#OS">OS</a>.
+            <!--l. 59--><p class="indent" >
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>sources</h3>
+            <!--l. 62--><p class="noindent" >As they differ, it could be extremely useful to isolate the <a 
+href="#SW">SW</a> development from the
+            <a 
+href="#OS">OS</a> build. This way developers may work and test a <a 
+href="#SW">SW</a> application on their own. As
+            far as I could fetch the source code, in example, from a <span 
+class="cmmi-10">git </span>repository, in theory, it
+            should not be too complicated to build an <a 
+href="#OS">OS</a> able to run this application. What is
+            more, I can build it for a computing device of my choice. I just need the
+            corresponding <a 
+href="#BSP">BSP</a>.
+            <!--l. 70--><p class="indent" >     A complete list of <span 
+class="cmmi-10">github</span> <a 
+href="#SW">SW</a> repositories used in this project includes
+            <span 
+class="ecti-1000">Yocto</span>, the <a 
+href="#BSP">BSP</a>, a <a 
+href="#SW">SW</a> layer with custom recipes, the configuration and
+            the source code of the application and the dependencies. Note that for a
+            relatively simple application I must fetch six <a 
+href="#SW">SW</a> repositories. Follow links for
+            details.
+                   <ul class="itemize1">
+                   <li class="itemize">
+                   <!--l. 77--><p class="noindent" ><span 
+class="ecti-1000">Yocto </span>reference distribution <a 
+href="https://git.yoctoproject.org/poky" >yoctoproject.org/poky.git</a>
+                   </li>
+                   <li class="itemize">
+                   <!--l. 80--><p class="noindent" ><a 
+href="#BSP">BSP</a> layer for <span 
+class="cmmi-10">Raspberry &#x03C0; </span>boards <a 
+href="https://github.com/agherzan/meta-raspberrypi" >agherzan/meta-raspberrypi.git</a>
+                   </li>
+                   <li class="itemize">
+                   <!--l. 83--><p class="noindent" ><span 
+class="ecti-1000">Yocto                                                               </span>configuration
+                   <a 
+href="https://github.com/TripleHelixConsulting/yocto_x86_BasicConfig" >TripleHelixConsulting/yocto_x86_BasicConfig.git</a>
+                   </li>
+                   <li class="itemize">
+                   <!--l. 86--><p class="noindent" ><a 
+href="#SW">SW</a> layer <a 
+href="https://github.com/kaloyanski/meta-thc" >kaloyanski/meta-thc.git</a>
+                   </li>
+                   <li class="itemize">
+                   <!--l. 89--><p class="noindent" >Immediate                                mode                                <a 
+href="#GUI">GUI</a>
+                   <a 
+href="https://github.com/kaloyanski/imgui_aarch64_glfw_openGL2_experiment" >kaloyanski/imgui_aarch64_glfw_openGL2_experiment.git</a>
+                   </li>
+                   <li class="itemize">
+                   <!--l. 92--><p class="noindent" >OpenGL library <a 
+href="https://github.com/glfw/glfw" >glfw/glfw.git</a></li></ul>
+                                                                                                                    
+
+                                                                                                                    
+            <!--l. 99--><p class="noindent" >
+               <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-40002.1"></a>application</h4>
+            <!--l. 100--><p class="noindent" ><span 
+class="cmmi-10">Dear ImGui</span>[<a 
+ id="x1-4001"></a><a 
+href="#cite.0@imgui">4</a>] is a bloat-free <a 
+href="#GUI">GUI</a> library for C++. It outputs optimized vertex
+            buffers that you can render anytime in your 3D-pipeline-enabled application. It is
+            fast, portable, renderer agnostic, and self-contained (no external dependencies). <span 
+class="cmmi-10">Dear</span>
+            <span 
+class="cmmi-10">ImGui </span>is designed to enable fast iterations and to empower programmers to create
+            content creation tools and visualization/debug tools (as opposed to UI for the
+            average end-user). It favors simplicity and productivity toward this goal and
+            lacks certain features commonly found in more high-level libraries. <span 
+class="cmmi-10">Dear</span>
+            <span 
+class="cmmi-10">ImGui </span>is particularly suited to integration in game engines (for tooling),
+            real-time 3D applications, full-screen applications, embedded applications, or
+            any applications on console platforms where operating system features are
+            non-standard.
+            <!--l. 114--><p class="indent" >     <span 
+class="cmmi-10">Dear ImGui </span>depends on <span 
+class="cmmi-10">GLFW</span>[<a 
+ id="x1-4002"></a><a 
+href="#cite.0@glfw">5</a>], an open-source, multi-platform library for
+            <span 
+class="cmmi-10">OpenGL</span>, <span 
+class="cmmi-10">OpenGL ES </span>and <span 
+class="cmmi-10">V ulkan </span>development on the desktop. It provides a
+            simple API for creating windows, contexts and surfaces, receiving input and
+            events. <span 
+class="cmmi-10">GLFW </span>is written in <span 
+class="cmmi-10">C </span>and supports <span 
+class="cmmi-10">Windows</span>, <span 
+class="cmmi-10">macOS</span>, <span 
+class="cmmi-10">X</span><span 
+class="cmr-10">11 </span>and
+            <span 
+class="cmmi-10">Wayland</span>.
+            <!--l. 120--><p class="indent" >     <span 
+class="cmmi-10">Dear ImGui </span>is licensed under the <span 
+class="cmmi-10">MIT </span>License. <span 
+class="cmmi-10">GLFW </span>is licensed under the
+            <span 
+class="cmmi-10">zlib&#x2215;libpng </span>license.
+            <!--l. 123--><p class="noindent" >
+               <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-50002.2"></a>layers</h4>
+            <!--l. 124--><p class="noindent" >Here is a list of layers added to the standard <span 
+class="ecti-1000">Yocto </span>layers. The project reference
+            distribution is <span 
+class="cmmi-10">poky</span>.
+                   <ul class="itemize1">
+                   <li class="itemize">
+                   <!--l. 127--><p class="noindent" ><span 
+class="cmmi-10">meta </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">raspberrypi </span><br 
+class="newline" />This[<a 
+ id="x1-5001"></a><a 
+href="#cite.0@meta-rpi">6</a>] is the general <a 
+href="#HW">HW</a> specific <a 
+href="#BSP">BSP</a> overlay for the <span 
+class="cmmi-10">RaspberryPi</span>
+                   device. The core <a 
+href="#BSP">BSP</a> part of <span 
+class="cmmi-10">meta</span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">raspberrypi </span>works with different
+                   <span 
+class="cmmi-10">OpenEmbedded</span>/<span 
+class="ecti-1000">Yocto </span>distributions and layer stacks.
+                   </li>
+                   <li class="itemize">
+                   <!--l. 132--><p class="noindent" ><span 
+class="cmmi-10">meta </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">thc </span><br 
+class="newline" />I have introduced a new <span 
+class="ecti-1000">Yocto</span> <a 
+href="#SW">SW</a> layer to control the build of <span 
+class="cmmi-10">Dear</span>
+                   <span 
+class="cmmi-10">ImGui </span>and  <span 
+class="cmmi-10">GLFW</span>.  As  long  as  the  source  codes  have  a  standard
+                   build  configuration,  the  <span 
+class="cmmi-10">bitbake  </span>recipes  are  straightforward.  Both
+                   instructions inherit <span 
+class="cmmi-10">cmake</span>.</li></ul>
+            <!--l. 139--><p class="indent" >
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-60003"></a>build</h3>
+            <!--l. 141--><p class="noindent" >
+               <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-70003.1"></a>configuration</h4>
+            <!--l. 142--><p class="noindent" ><span 
+class="ecti-1000">Yocto </span>provides a list of image types. For obvious reasons, I have chosen
+            <span 
+class="cmmi-10">core </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">image </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><span 
+class="cmr-10">11</span>[<a 
+ id="x1-7001"></a><a 
+href="#cite.0@yocto">3</a>] - a very basic X11 image with a terminal. In the main build
+            configuration, apart from <span 
+class="cmmi-10">Dear ImGui </span>and <span 
+class="cmmi-10">GLFW</span>, I have added the following
+            packages;
+                   <ul class="itemize1">
+                   <li class="itemize">
+                   <!--l. 147--><p class="noindent" ><span 
+class="cmmi-10">os </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">release </span><br 
+class="newline" /><a 
+href="#OS">OS</a> identification
+                   </li>
+                   <li class="itemize">
+                   <!--l. 149--><p class="noindent" ><span 
+class="cmmi-10">Dropbear </span><br 
+class="newline" />Compact <a 
+href="#SSH">SSH</a> server[<a 
+ id="x1-7002"></a><a 
+href="#cite.0@dropbear">7</a>]
+                   </li>
+                   <li class="itemize">
+                   <!--l. 151--><p class="noindent" ><span 
+class="cmmi-10">dhcpcd </span><br 
+class="newline" /><a 
+ id="section*.8"></a><span 
+class="cmmi-10">dynamic host configuration protocol </span>(<a 
+href="#DHCP">DHCP</a>) client[<a 
+ id="x1-7003"></a><a 
+href="#cite.0@dhcpcd">10</a>]
+                   </li>
+                   <li class="itemize">
+                   <!--l. 153--><p class="noindent" ><span 
+class="cmmi-10">thcp </span><br 
+class="newline" /><a 
+href="#OS">OS</a> post-configuration scripts</li></ul>
+            <!--l. 157--><p class="noindent" >
+               <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-80003.2"></a>image</h4>
+            <!--l. 158--><p class="noindent" >The total size of the operating system is 250<span 
+class="cmmi-10">MB </span>or 80<span 
+class="cmmi-10">MB tar.bz </span>archive, including
+            kernel <span 
+class="cmmi-10">ARM</span>, 64 <span 
+class="cmmi-10">bit </span>boot executable <span 
+class="cmmi-10">image </span>of 23<span 
+class="cmmi-10">MB</span>, based on Linux 5.15. This is a
+            kernel release with a long-term support. The list of packages included in the <span 
+class="cmmi-10">image </span>in
+            Table <a 
+href="#x1-80011">1<!--tex4ht:ref: tab:package --></a> gives a good idea of the <a 
+href="#OS">OS</a> contents.
+               <div class="table">
+                                                                                                                    
+
+                                                                                                                    
+            <!--l. 165--><p class="indent" >     <a 
+ id="x1-80011"></a><hr class="float"><div class="float" 
+>
+                                                                                                                    
+
+                                                                                                                    
+            <div class="tabular"> <table id="TBL-2" class="tabular" 
+ 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11">package                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11">description                              </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11">packagegroup-core-boot      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11">boot                                       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11">packagegroup-base-extended</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td11">base                                       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11">run-postinsts                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11">post                                       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td11">opkg                               </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-2"  
+class="td11">package manager                      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td11">psplash-raspberrypi           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-2"  
+class="td11"><span 
+class="cmmi-10">Raspberry &#x03C0; </span>- <span 
+class="cmr-10">4 </span>- <span 
+class="cmmi-10">model B </span>splash</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td11">packagegroup-core-x11-base </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-2"  
+class="td11">the <span 
+class="cmmi-10">X </span>server                            </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td11">os-release                         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-2"  
+class="td11"><a 
+href="#OS">OS</a> identifier                            </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-1"  
+class="td11">dropbear </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-2"  
+class="td11"><a 
+href="#SSH">SSH</a> server</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-1"  
+class="td11">dhcpcd                            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-2"  
+class="td11"><a 
+href="#DHCP">DHCP</a> client                            </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-1"  
+class="td11">thcp                               </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-11-2"  
+class="td11"><a 
+href="#SW">SW</a> layer                                 </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-12-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-1"  
+class="td11">glfw                                </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-12-2"  
+class="td11"><span 
+class="cmmi-10">OpenGL                            </span></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-13-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-1"  
+class="td11">imgui                              </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-13-2"  
+class="td11"><span 
+class="cmmi-10">Dear ImGui                       </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-14-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-14-1"  
+class="td11">                        </td></tr></table>                                        </div>
+            <br /> <div class="caption" 
+><span class="id">Table&#x00A0;1: </span><span  
+class="content">A list of packages in <span 
+class="cmmi-10">core</span>-<span 
+class="cmmi-10">image</span>-<span 
+class="cmmi-10">x</span><span 
+class="cmr-10">11</span>-<span 
+class="cmmi-10">raspberrypi</span><span 
+class="cmr-10">4</span>-<span 
+class="cmr-10">64</span></span></div><!--tex4ht:label?: x1-80011 -->
+                                                                                                                   
+
+                                                                                                                   
+               </div><hr class="endfloat" />
+               </div>
+            <!--l. 188--><p class="indent" >    <span 
+class="ecti-1000">Yocto </span>provides multiple package and <span 
+class="cmmi-10">image </span>formats. Further, different ways exist
+            to install <span 
+class="cmmi-10">images</span>. Finally, formats do not matter, as long as the result is
+            a complete <a 
+href="#OS">OS</a> on an <span 
+class="cmmi-10">SD </span>card. I recommend the classic tool <span 
+class="cmmi-10">dd </span>to copy
+            data.
+            <!--l. 193--><p class="indent" >
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-90004"></a>connection</h3>
+            <!--l. 195--><p class="noindent" >Connected embedded systems can communicate to one another and to cloud-based
+            <a 
+ id="section*.9"></a><span 
+class="cmmi-10">platform</span>-<span 
+class="cmmi-10">as</span>-<span 
+class="cmmi-10">a</span>-<span 
+class="cmmi-10">service </span>(<a 
+href="#PaaS">PaaS</a>) solutions. In addition, a remote control may be
+            required. An <a 
+href="#SSH">SSH</a> server is a standard solution for both problems.
+            <!--l. 199--><p class="indent" >     Wireless connection is established via classic command-line tools like <span 
+class="cmmi-10">ip</span>, <span 
+class="cmmi-10">iw</span>,
+            <span 
+class="cmmi-10">dhcpcd</span>, and <span 
+class="cmmi-10">wpa</span>_<span 
+class="cmmi-10">supplicant</span>. Custom shell scripts are installed in <span 
+class="cmmi-10">&#x2215;usr&#x2215;bin</span>,
+            as well as a running <a 
+href="#GUI">GUI</a> example to demonstrate the usage of the <span 
+class="cmmi-10">Dear</span>
+            <span 
+class="cmmi-10">ImGui </span>library. Once an <a 
+ id="section*.10"></a><span 
+class="cmmi-10">internet protocol </span>(<a 
+href="#IP">IP</a>) address is assigned, the <a 
+href="#SSH">SSH</a>
+            server by <span 
+class="cmmi-10">Dropbear </span>allows for a secured remote login, remote control and file
+            transfer.
+            <!--l. 207--><p class="indent" >
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-100005"></a>outlook</h3>
+            <!--l. 209--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+href="#OS">OS</a> for
+            <span 
+class="cmmi-10">Raspberry &#x03C0; </span>- <span 
+class="cmr-10">4 </span>- <span 
+class="cmmi-10">model B</span>[<a 
+ id="x1-10001"></a><a 
+href="#cite.0@raspberry">9</a>]. This embedded <a 
+href="#OS">OS</a> is based on Linux kernel release
+            5.15. An example <a 
+href="#GUI">GUI</a> application using the <span 
+class="cmmi-10">Dear ImGui </span>library is built as a part of
+            the <a 
+href="#OS">OS</a> <span 
+class="cmmi-10">image</span>. In addition, an <a 
+href="#SSH">SSH</a> server provides remote connection, data transfer
+            and device control. As the <a 
+href="#OS">OS</a> is now functional, performance and real-time tests are
+            ongoing.
+            <!--l. 1--><p class="indent" >
+                                                                                                                    
+
+                                                                                                                    
+               <h3 class="likesectionHead"><a 
+ id="x1-11000"></a>acronyms</h3>
+            <!--l. 4--><p class="noindent" >
+                   <dl class="description"><dt class="description">
+                   <!--l. 4--><p class="noindent" >
+            <a 
+ id="BSP"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">BSP</span></a>  </dt><dd 
+class="description">
+                   <!--l. 4--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">board support layer</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 5--><p class="noindent" >
+            <a 
+ id="SSH"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">SSH</span></a>  </dt><dd 
+class="description">
+                   <!--l. 5--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">secure shell</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 6--><p class="noindent" >
+            <a 
+ id="GUI"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">GUI</span></a>  </dt><dd 
+class="description">
+                   <!--l. 6--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">graphical user interface</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 7--><p class="noindent" >
+            <a 
+ id="SW"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">SW</span></a>  </dt><dd 
+class="description">
+                   <!--l. 7--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">software</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 8--><p class="noindent" >
+            <a 
+ id="HW"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">HW</span></a>  </dt><dd 
+class="description">
+                   <!--l. 8--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">hardware</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 9--><p class="noindent" >
+            <a 
+ id="OS"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">OS</span></a>  </dt><dd 
+class="description">
+                   <!--l. 9--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">operating system</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 10--><p class="noindent" >
+            <a 
+ id="DHCP"></a><a 
+href="#x1-70003.1"><span 
+class="ecbx-1000">DHCP</span></a>  </dt><dd 
+class="description">
+                   <!--l. 10--><p class="noindent" ><a 
+href="#x1-70003.1"><span 
+class="cmmi-10">dynamic host configuration protocol</span></a><br 
+class="newline" />
+                                                                                                    
+
+                                                                                                    
+                   </dd><dt class="description">
+                   <!--l. 11--><p class="noindent" >
+            <a 
+ id="CPU"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">CPU</span></a>  </dt><dd 
+class="description">
+                   <!--l. 11--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">central processing unit</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 12--><p class="noindent" >
+            <a 
+ id="IP"></a><a 
+href="#x1-90004"><span 
+class="ecbx-1000">IP</span></a>  </dt><dd 
+class="description">
+                   <!--l. 12--><p class="noindent" ><a 
+href="#x1-90004"><span 
+class="cmmi-10">internet protocol</span></a><br 
+class="newline" />
+                   </dd><dt class="description">
+                   <!--l. 13--><p class="noindent" >
+            <a 
+ id="PaaS"></a><a 
+href="#x1-90004"><span 
+class="ecbx-1000">PaaS</span></a>  </dt><dd 
+class="description">
+                   <!--l. 13--><p class="noindent" ><a 
+href="#x1-90004"><span 
+class="cmmi-10">platform</span>-<span 
+class="cmmi-10">as</span>-<span 
+class="cmmi-10">a</span>-<span 
+class="cmmi-10">service</span></a><br 
+class="newline" /></dd></dl>
+            <!--l. 219--><p class="noindent" >
+                                                                                                    
+
+                                                                                                    
+               <h3 class="sectionHead"><a 
+ id="x1-12000"></a>bibliography</h3>
+            <!--l. 221--><p class="noindent" >
+                  <dl class="thebibliography"><dt id="X0-vasquez2021" class="thebibliography">
+              [1]   </dt><dd 
+id="bib-1" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@vasquez2021"></a>Frank Vasquez
+                  and
+                  Chris Simmonds.
+                  <span 
+class="ecti-1000">Mastering</span>
+                  <span 
+class="ecti-1000">Embedded</span>
+                  <span 
+class="ecti-1000">Linux</span>
+                  <span 
+class="ecti-1000">Programming</span>.
+                  Packt
+                  Publishing
+                  Limited,
+                  2021.
+                  </dd><dt id="X0-busybox" class="thebibliography">
+              [2]   </dt><dd 
+id="bib-2" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@busybox"></a>Erik Andersen.
+                  <span 
+class="ecti-1000">BusyBox</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://busybox.net" class="url" ><span 
+class="ectt-1000">https://busybox.net</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-yocto" class="thebibliography">
+              [3]   </dt><dd 
+id="bib-3" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@yocto"></a>Yocto Project community.
+                  <span 
+class="ecti-1000">Yocto</span>
+                  <span 
+class="ecti-1000">Project</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.yoctoproject.org" class="url" ><span 
+class="ectt-1000">https://www.yoctoproject.org</span></a>
+                  (visited
+                  on
+                  2023).
+                                                                                                                    
+
+                                                                                                                    
+                  </dd><dt id="X0-imgui" class="thebibliography">
+              [4]   </dt><dd 
+id="bib-4" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@imgui"></a>Omar Cornut.
+                  <span 
+class="ecti-1000">Dear</span>
+                  <span 
+class="ecti-1000">ImGui</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://github.com/ocornut/imgui" class="url" ><span 
+class="ectt-1000">https://github.com/ocornut/imgui</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-glfw" class="thebibliography">
+              [5]   </dt><dd 
+id="bib-5" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@glfw"></a>Marcus Geelnard
+                  and
+                  Camilla Löwy.
+                  <span 
+class="ecti-1000">OpenGL</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.glfw.org" class="url" ><span 
+class="ectt-1000">https://www.glfw.org</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-meta-rpi" class="thebibliography">
+              [6]   </dt><dd 
+id="bib-6" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@meta-rpi"></a>Andrei Gherzan.
+                  <span 
+class="ecti-1000">meta-raspberrypi</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://github.com/agherzan/meta-raspberrypi" class="url" ><span 
+class="ectt-1000">https://github.com/agherzan/meta-raspberrypi</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-dropbear" class="thebibliography">
+              [7]   </dt><dd 
+id="bib-7" class="thebibliography">
+                                                                                                                    
+
+                                                                                                                    
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@dropbear"></a>Matt Johnston.
+                  <span 
+class="ecti-1000">Dropbear</span>
+                  <span 
+class="ecti-1000">SSH</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://matt.ucc.asn.au/dropbear/dropbear.html" class="url" ><span 
+class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-kalo2023" class="thebibliography">
+              [8]   </dt><dd 
+id="bib-8" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@kalo2023"></a>Kaloyan Krastev.
+                  <span 
+class="ecti-1000">Embedded</span>
+                  <span 
+class="ecti-1000">Operating</span>
+                  <span 
+class="ecti-1000">System</span>
+                  <span 
+class="ecti-1000">for</span>
+                  <span 
+class="cmmi-10">Raspberry</span>
+                  <span 
+class="cmmi-10">&#x03C0;</span>
+                  <span 
+class="ecti-1000">-</span>
+                  <span 
+class="cmr-10">4</span>
+                  <span 
+class="ecti-1000">-</span>
+                  <span 
+class="cmmi-10">model</span>
+                  <span 
+class="cmmi-10">B</span>
+                  <span 
+class="ecti-1000">with</span>
+                  Yocto.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://kaloyanski.github.io/meta-thc" class="url" ><span 
+class="ectt-1000">https://kaloyanski.github.io/meta-thc</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-raspberry" class="thebibliography">
+              [9]   </dt><dd 
+id="bib-9" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@raspberry"></a>Raspberry <span 
+class="cmmi-10">&#x03C0; </span>Ltd.
+                  <span 
+class="ecti-1000">Raspberi</span>
+                  <span 
+class="cmmi-10">&#x03C0;</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.raspberrypi.com" class="url" ><span 
+class="ectt-1000">https://www.raspberrypi.com</span></a>
+                  (visited
+                                                                                                                    
+
+                                                                                                                    
+                  on
+                  2023).
+                  </dd><dt id="X0-dhcpcd" class="thebibliography">
+            [10]   </dt><dd 
+id="bib-10" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@dhcpcd"></a>Roy Marples.
+                  <span 
+class="ecti-1000">dhcpcd</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://roy.marples.name/projects/dhcpcd" class="url" ><span 
+class="ectt-1000">https://roy.marples.name/projects/dhcpcd</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-thc" class="thebibliography">
+            [11]   </dt><dd 
+id="bib-11" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@thc"></a>Atanas Rusev.
+                  <span 
+class="ecti-1000">Triple</span>
+                  <span 
+class="ecti-1000">Helix</span>
+                  <span 
+class="ecti-1000">Consulting</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://triplehelix-consulting.com" class="url" ><span 
+class="ectt-1000">https://triplehelix-consulting.com</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-rusev2023" class="thebibliography">
+            [12]   </dt><dd 
+id="bib-12" class="thebibliography">
+                  <!--l. 221--><p class="noindent" ><a 
+ id="cite.0@rusev2023"></a>Atanas Georgiev Rusev.
+                  <span 
+class="ecti-1000">Manjaro</span>
+                  <span 
+class="ecti-1000">Linux</span>
+                  <span 
+class="ecti-1000">User</span>
+                  <span 
+class="ecti-1000">Guide</span>.
+                  Packt
+                  Publishing
+                  Limited,
+                  2023.</dd></dl>
+            <!--l. 225--><p class="indent" >                                                                                            <span 
+class="ecrm-0700">powered by</span>
+            <a 
+href="https://www.latex-project.org" ><span 
+class="ecrm-0700">LaTeX</span></a>
+            <!--l. 225--><p class="indent" >      <a 
+href="file://thcport.pdf" ><span 
+class="ecrm-0700">this document in pdf format</span></a>
+                
+</body></html> 
+
+                                                                                                                                            
+
+
