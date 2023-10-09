@@ -17,7 +17,8 @@ ip link set $winterface up
 wpa_supplicant -B -D wext -i $winterface -c /etc/wpa_supplicant.conf
 
 # connect
-dhcpcd $winterface
+# dhcpcd $winterface # use udhcpc from busybox
+udhcpc -i $winterface
 
 # verify connexion
 iw $winterface link

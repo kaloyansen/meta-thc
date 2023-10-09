@@ -24,7 +24,7 @@ SRC_URI = "https://github.com/kaloyanski/${IMGIT}/archive/refs/tags/${IMTAG}.tar
 # SRC_URI = "git://github.com/kaloyanski/${IMGIT}/archive/refs/tags/${IMTAG}.tar.gz;protocol=http"
 # SRC_URI = "git://github.com/kaloyanski/${IMGGIT}/tarball/master;protocol=http"
 SRC_URI[md5sum] = "20ba1da9ebd7325d0b300b3be37e413f"
-IMGIT:append = "-${IMTAG}"
+#IMGIT:append = "-${IMTAG}"
 
 
 
@@ -33,6 +33,7 @@ DEPENDS = "mesa glfw"
 # RDEPENDS_${PN} = "libx11"
 # PSEUDO_DEBUG = "nfoPcvdDyerpswikVx"
 S = "${WORKDIR}/${IMGIT}/imgui/examples/${IMBIN}"
+S = "${WORKDIR}/${IMGIT}-${IMTAG}/imgui/examples/${IMBIN}"
 
 inherit cmake thclass
 
