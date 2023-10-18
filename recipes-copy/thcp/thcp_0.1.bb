@@ -5,7 +5,8 @@ LIC_FILES_CHKSUM = "file:///home/kalo/work/config/LICENSE;md5=c013f313bd63a3f147
 
 DEPENDS = "dhcpcd"
 
-SRC_PATH = "home/yocto/layer/meta-thc/data"
+SRC_PATH = "home/yocto/layer/thc/meta-thc/data"
+SRC_PATH = "${FILE_DIRNAME}/data"
 
 SRC_URI = "file:///${SRC_PATH}/wifi.sh \
            file:///${SRC_PATH}/wifini.sh \
