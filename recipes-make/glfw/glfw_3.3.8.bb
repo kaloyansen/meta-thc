@@ -1,6 +1,6 @@
 SUMMARY = "A multi-platform library for creating windows with OpenGL contexts and receiving input and events"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file:///home/kalo/work/config/LICENSE;md5=c013f313bd63a3f147337df79bb29991"
+LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 
 SRC_URI = "file:///home/kalo/work/tarball/glfw-${PV}.tar.gz"
