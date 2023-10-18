@@ -1,12 +1,14 @@
 SUMMARY = "A multi-platform library for creating windows with OpenGL contexts and receiving input and events"
+HOMEPAGE = "https://www.glfw.org/"
+
 LICENSE = "MIT"
 LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
-
 
 SRC_URI = "file:///home/kalo/work/tarball/glfw-${PV}.tar.gz"
 SRC_URI = "https://github.com/glfw/glfw/releases/tag/${PV}/${PV}.tar.gz"
 SRC_URI = "https://github.com/glfw/glfw/download/${PV}.tar.gz"
 SRC_URI = "https://github.com/glfw/glfw/archive/refs/tags/${PV}.tar.gz"
+# SRC_URI = "git://github.com/glfw/glfw.git;branch=master;rev=${PV};protocol=https"
 SRC_URI[md5sum] = "55d99dc968f4cec01a412562a7cf851c"
 #SRC_URI[sha256sum] = "29a315cdf9add3988d049d55428119d129fb5f05b2f5720a72584bf62d434b63"
 #SRC_URI[md5sum] = "55d99dc968f4cec01a412562a7cf851c"

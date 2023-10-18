@@ -20,11 +20,13 @@ SRC_URI = "file:///home/kalo/work/tarball/${IMGIT}.tar.gz"
 
 IMTAG = "bof"
 SRC_URI = "https://github.com/kaloyanski/${IMGIT}/archive/refs/tags/${IMTAG}.tar.gz"
+# SRC_URI = "git://github.com/kaloyanski/${IMGIT}.git;branch=master;protocol=https"
 # SRC_URI = "git://github.com/kaloyanski/${IMGIT}/archive/refs/tags/${IMTAG}.tar.gz;protocol=http"
 # SRC_URI = "git://github.com/kaloyanski/${IMGGIT}/tarball/master;protocol=http"
 SRC_URI[md5sum] = "20ba1da9ebd7325d0b300b3be37e413f"
 #IMGIT:append = "-${IMTAG}"
 
+# SRCREV = "dd8569f51eda8d344961a6542a05c618de3454e1"
 
 
 DEPENDS = "mesa glfw"
