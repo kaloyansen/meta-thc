@@ -82,40 +82,30 @@ href="#cite.0@kalo2023">6</a>].
             <!--l. 28--><p class="indent" >     The <a 
  id="section*.1"></a><span 
 class="cmmi-10">operating system </span>(<a 
-href="#OS">OS</a>) build is done in four steps and instructions are
-            organized in four corresponding sections as follows.
-                   <ul class="itemize1">
-                   <li class="itemize">
-                   <!--l. 31--><p class="noindent" >section <a 
-href="#x1-30002">2<!--tex4ht:ref: sec:download --></a> get <span 
-class="cmmi-10">metadata</span>
-                   </li>
-                   <li class="itemize">
-                   <!--l. 32--><p class="noindent" >section <a 
-href="#x1-40003">3<!--tex4ht:ref: sec:configuration --></a> configure <a 
-href="#OS">OS</a> build
-                   </li>
-                   <li class="itemize">
-                   <!--l. 33--><p class="noindent" >section <a 
-href="#x1-60004">4<!--tex4ht:ref: sec:build --></a> build <a 
-href="#OS">OS</a> <span 
-class="cmmi-10">image</span>
-                   </li>
-                   <li class="itemize">
-                   <!--l. 34--><p class="noindent" >section <a 
-href="#x1-70005">5<!--tex4ht:ref: sec:install --></a> copy <span 
+href="#OS">OS</a>) build is done in several steps organized in
+            corresponding sections as follows. Section <a 
+href="#x1-30002">2<!--tex4ht:ref: sec:download --></a> explains how to fetch <span 
+class="cmmi-10">metadata</span>. Section <a 
+href="#x1-40003">3<!--tex4ht:ref: sec:configuration --></a>
+            shows how to configure the <a 
+href="#OS">OS</a> build. Read section <a 
+href="#x1-60004">4<!--tex4ht:ref: sec:build --></a> to learn how to build the <a 
+href="#OS">OS</a>
+            <span 
+class="cmmi-10">image </span>and section <a 
+href="#x1-70005">5<!--tex4ht:ref: sec:install --></a> to see how to copy <span 
 class="cmmi-10">image </span>to <span 
-class="cmmi-10">SD </span>card</li></ul>
-            <!--l. 37--><p class="indent" >     Section <a 
-href="#x1-80006">6<!--tex4ht:ref: sec:run --></a> is dedicated to post-install issues like the configuration of the WiFi
-            interface from the command line.
-            <!--l. 41--><p class="indent" >
+class="cmmi-10">SD </span>card. Section <a 
+href="#x1-80006">6<!--tex4ht:ref: sec:run --></a> is dedicated to
+            post-install issues like the configuration of the WiFi interface from the command
+            line.
+            <!--l. 37--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
  id="x1-30002"></a>download</h3>
-            <!--l. 45--><p class="noindent" ><span 
+            <!--l. 41--><p class="noindent" ><span 
 class="cmmi-10">Metadata </span>is a set of instructions to build targets. It is organized in <span 
 class="cmmi-10">recipe </span>files with
             the <span 
@@ -135,12 +125,12 @@ class="cmmi-10">OpenEmbedded</span>[<a
 href="#cite.0@oe">1</a>] defines the following layer types.
                    <ul class="itemize1">
                    <li class="itemize">
-                   <!--l. 54--><p class="noindent" >base layer <br 
+                   <!--l. 50--><p class="noindent" >base layer <br 
 class="newline" />base <span 
 class="cmmi-10">metadata </span>for the build
                    </li>
                    <li class="itemize">
-                   <!--l. 55--><p class="noindent" >machine aka <a 
+                   <!--l. 51--><p class="noindent" >machine aka <a 
  id="section*.2"></a><span 
 class="cmmi-10">board support package </span>(<a 
 href="#BSP">BSP</a>) layer <br 
@@ -150,11 +140,11 @@ class="cmmi-10">hardware </span>(<a
 href="#HW">HW</a>) support
                    </li>
                    <li class="itemize">
-                   <!--l. 56--><p class="noindent" >distribution layer <br 
+                   <!--l. 52--><p class="noindent" >distribution layer <br 
 class="newline" />policy configuration
                    </li>
                    <li class="itemize">
-                   <!--l. 57--><p class="noindent" ><a 
+                   <!--l. 53--><p class="noindent" ><a 
  id="section*.4"></a><span 
 class="cmmi-10">software </span>(<a 
 href="#SW">SW</a>) layer <br 
@@ -162,9 +152,9 @@ class="newline" />additional <a
 href="#SW">SW</a>
                    </li>
                    <li class="itemize">
-                   <!--l. 58--><p class="noindent" >miscellaneous layer <br 
+                   <!--l. 54--><p class="noindent" >miscellaneous layer <br 
 class="newline" />for layers that do not fall in upper categories</li></ul>
-            <!--l. 61--><p class="indent" >     The complete list of <span 
+            <!--l. 57--><p class="indent" >     The complete list of <span 
 class="cmmi-10">github</span> <a 
 href="#SW">SW</a> <span 
 class="cmmi-10">metadata </span>repositories used in this project
@@ -179,13 +169,13 @@ href="#SW">SW</a> layer
  id="x1-3002"></a><a 
 href="#cite.0@kalo2023">6</a>] for
             details.
-            <!--l. 66--><p class="indent" >     It is up to users to decide where to download <span 
+            <!--l. 62--><p class="indent" >     It is up to users to decide where to download <span 
 class="cmmi-10">metadata</span>. It is a good idea to have
             all layer sub-directories in one location. In these instructions this is referred as
             &#x003C;layer-directory&#x003E;. Once you have it created execute next lines to get layer
             <span 
 class="cmmi-10">metadata</span>.
-               <!--l. 71-->
+               <!--l. 67-->
                <pre class="lstlisting" id="listing-1"><span class="label"><a 
  id="x1-3003r1"></a></span> 
 <span class="label"><a 
@@ -332,12 +322,12 @@ class="ectt-1000">thc</span></span></pre>
                                                                               
 
                                                                               
-            <!--l. 90--><p class="indent" >   The second directory to create is the &#x003C;build-directory&#x003E; and I suggest that this
+            <!--l. 86--><p class="indent" >   The second directory to create is the &#x003C;build-directory&#x003E; and I suggest that this
 one is not inside the &#x003C;layer-directory&#x003E; to not mix <span 
 class="cmmi-10">data </span>and <span 
 class="cmmi-10">metadata</span>. Further, to
 get the project build configuration use the command that follows.
-     <!--l. 95-->
+     <!--l. 91-->
      <pre class="lstlisting" id="listing-2"><span class="label"><a 
  id="x1-3020r1"></a></span> 
 <span class="label"><a 
@@ -367,20 +357,20 @@ class="ectt-1000">directory</span></span><span style="color:#000000"><span
 class="ectt-1000">&#x003E;/</span></span><span style="color:#000000"><span 
 class="ectt-1000">conf</span></span></pre>
    
-<!--l. 102--><p class="noindent" >
+<!--l. 98--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
  id="x1-40003"></a>configuration</h3>
-<!--l. 105--><p class="noindent" >After the last command from the previous section there should be two files in
+<!--l. 101--><p class="noindent" >After the last command from the previous section there should be two files in
 &#x003C;build-directory&#x003E;/conf, namely <span 
 class="cmmi-10">local.conf </span>and <span 
 class="cmmi-10">bblayers.conf</span>.
-<!--l. 108--><p class="indent" >     The path to <span 
+<!--l. 104--><p class="indent" >     The path to <span 
 class="ecti-1000">Yocto </span>layers is specified in <span 
 class="cmmi-10">bblayers.conf</span>. Layer locations are wrong
 because most probably your &#x003C;layer-directory&#x003E; is not <span 
 class="cmmi-10">&#x2215;home&#x2215;yocto&#x2215;layer</span>. Change
 this to correspond layers system path.
-<!--l. 112--><p class="indent" >     The build configuration is in <span 
+<!--l. 108--><p class="indent" >     The build configuration is in <span 
 class="cmmi-10">local.conf</span>. This should work as it is. Variables in
 this file control the build. No doubt, the most important is <span 
 class="cmmi-10">MACHINE</span>, set to
@@ -406,13 +396,13 @@ different directives. What is more, <span
 class="cmmi-10">bitbake </span>syntax is pretty complicated. In
 short, your life can easily become unbearable if the build configuration is too
 long.
-<!--l. 125--><p class="indent" >     In the main build configuration, apart from <span 
+<!--l. 121--><p class="indent" >     In the main build configuration, apart from <span 
 class="cmmi-10">Dear ImGui </span>and <span 
 class="cmmi-10">GLFW</span>, I have
 added the following packages;
             <ul class="itemize1">
             <li class="itemize">
-            <!--l. 128--><p class="noindent" ><span 
+            <!--l. 124--><p class="noindent" ><span 
 class="cmmi-10">os </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">release </span><br 
@@ -420,7 +410,7 @@ class="newline" /><a
 href="#OS">OS</a> identification
             </li>
             <li class="itemize">
-            <!--l. 130--><p class="noindent" ><span 
+            <!--l. 126--><p class="noindent" ><span 
 class="cmmi-10">Dropbear </span><br 
 class="newline" />Compact <a 
  id="section*.5"></a><span 
@@ -430,7 +420,7 @@ href="#SSH">SSH</a>) server[<a
 href="#cite.0@dropbear">4</a>]
             </li>
             <li class="itemize">
-            <!--l. 132--><p class="noindent" ><span 
+            <!--l. 128--><p class="noindent" ><span 
 class="cmmi-10">dhcpcd </span><br 
 class="newline" /><a 
  id="section*.6"></a><span 
@@ -443,24 +433,24 @@ href="#cite.0@dhcpcd">8</a>]
                                                                                                                     
                    </li>
                    <li class="itemize">
-                   <!--l. 134--><p class="noindent" ><span 
+                   <!--l. 130--><p class="noindent" ><span 
 class="cmmi-10">thcp </span><br 
 class="newline" /><a 
 href="#OS">OS</a> post-configuration scripts</li></ul>
-            <!--l. 140--><p class="noindent" >
+            <!--l. 136--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
  id="x1-50003.1"></a>layers</h4>
-            <!--l. 141--><p class="noindent" >Here is a list of <span 
+            <!--l. 137--><p class="noindent" >Here is a list of <span 
 class="ecti-1000">Yocto </span>layers. The project reference distribution is <span 
 class="cmmi-10">poky</span>.
                    <ul class="itemize1">
                    <li class="itemize">
-                   <!--l. 143--><p class="noindent" ><span 
+                   <!--l. 139--><p class="noindent" ><span 
 class="cmmi-10">meta </span><br 
 class="newline" />user-space data and standard licenses
                    </li>
                    <li class="itemize">
-                   <!--l. 145--><p class="noindent" ><span 
+                   <!--l. 141--><p class="noindent" ><span 
 class="cmmi-10">meta </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">poky </span><br 
@@ -468,7 +458,7 @@ class="newline" /><span
 class="ecti-1000">Yocto </span>reference distribution policy
                    </li>
                    <li class="itemize">
-                   <!--l. 147--><p class="noindent" ><span 
+                   <!--l. 143--><p class="noindent" ><span 
 class="cmmi-10">meta </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">raspberrypi </span><br 
@@ -499,7 +489,7 @@ class="cmr-10">4 </span>- <span
 class="cmmi-10">model B</span>.
                    </li>
                    <li class="itemize">
-                   <!--l. 156--><p class="noindent" ><span 
+                   <!--l. 152--><p class="noindent" ><span 
 class="cmmi-10">meta </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">thc </span><br 
@@ -514,13 +504,13 @@ class="cmmi-10">GLFW</span>.  As  long  as  the  source  codes  have  a  standar
 class="cmmi-10">bitbake  </span>recipes  are  straightforward.  Both
                    instructions inherit <span 
 class="cmmi-10">cmake</span>.</li></ul>
-            <!--l. 163--><p class="indent" >
+            <!--l. 159--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-60004"></a>build</h3>
-            <!--l. 167--><p class="noindent" ><span 
+            <!--l. 163--><p class="noindent" ><span 
 class="ecti-1000">Yocto </span>provides a list of image types. For obvious reasons, I have chosen
             <span 
 class="cmmi-10">core </span><span 
@@ -531,7 +521,7 @@ class="cmmi-10">x</span><span
 class="cmr-10">11</span>[<a 
  id="x1-6001"></a><a 
 href="#cite.0@yocto">2</a>] - a very basic X11 image with a terminal.
-            <!--l. 170--><p class="indent" >     The primary build tool of <span 
+            <!--l. 166--><p class="indent" >     The primary build tool of <span 
 class="cmmi-10">OpenEmbedded </span>based projects, such as the <span 
 class="ecti-1000">Yocto</span>
             project, <span 
@@ -540,7 +530,7 @@ class="cmmi-10">bitbake</span>, works in the &#x003C;build-directory&#x003E;. He
             to change their default names.
                    <ul class="itemize1">
                    <li class="itemize">
-                   <!--l. 177--><p class="noindent" >&#x003C;build-directory&#x003E;/conf - build (<span 
+                   <!--l. 173--><p class="noindent" >&#x003C;build-directory&#x003E;/conf - build (<span 
 class="cmmi-10">local</span>.<span 
 class="cmmi-10">conf</span>) and layer (<span 
 class="cmmi-10">bblayers</span>.<span 
@@ -548,27 +538,27 @@ class="cmmi-10">conf</span>)
                    configuration files
                    </li>
                    <li class="itemize">
-                   <!--l. 179--><p class="noindent" >&#x003C;build-directory&#x003E;/downloads  -  downloaded  source  code  archives,
+                   <!--l. 175--><p class="noindent" >&#x003C;build-directory&#x003E;/downloads  -  downloaded  source  code  archives,
                    usually fetched from github.com
                    </li>
                    <li class="itemize">
-                   <!--l. 181--><p class="noindent" >&#x003C;build-directory&#x003E;/tmp/work - working directory where source code is
+                   <!--l. 177--><p class="noindent" >&#x003C;build-directory&#x003E;/tmp/work - working directory where source code is
                    extracted, configured, compiled and installed
                    </li>
                    <li class="itemize">
-                   <!--l. 183--><p class="noindent" >&#x003C;build-directory&#x003E;/tmp/deploy/ipk - final <a 
+                   <!--l. 179--><p class="noindent" >&#x003C;build-directory&#x003E;/tmp/deploy/ipk - final <a 
 href="#SW">SW</a> packages in <span 
 class="cmmi-10">ipk </span>format
                    </li>
                    <li class="itemize">
-                   <!--l. 185--><p class="noindent" >&#x003C;build-directory&#x003E;/tmp/deploy/images/raspberrypi4-64  -  boot  files,
+                   <!--l. 181--><p class="noindent" >&#x003C;build-directory&#x003E;/tmp/deploy/images/raspberrypi4-64  -  boot  files,
                    compiled kernels and <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">images</span>.</li></ul>
-            <!--l. 189--><p class="indent" >     Keeping this in mind, type following commands to build the <a 
+            <!--l. 185--><p class="indent" >     Keeping this in mind, type following commands to build the <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">image</span>.
-               <!--l. 191-->
+               <!--l. 187-->
                <pre class="lstlisting" id="listing-3"><span class="label"><a 
  id="x1-6002r1"></a></span> 
 <span class="label"><a 
@@ -605,7 +595,7 @@ class="ectt-1000">image</span></span><span style="color:#000000"><span
 class="ectt-1000">-</span></span><span style="color:#000000"><span 
 class="ectt-1000">x11</span></span></pre>
                
-<!--l. 198--><p class="indent" >   The first command is needed to initialise the environment. The second one
+<!--l. 194--><p class="indent" >   The first command is needed to initialise the environment. The second one
 gonna do the actual build. Be patient because, unless your host machine is a
 supercomputer, this will take hours. Find a list of tasks performed by <span 
 class="cmmi-10">bitbake </span>for a
@@ -616,7 +606,7 @@ href="#x1-60071">1<!--tex4ht:ref: tab:task --></a>.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 204--><p class="indent" >     <a 
+            <!--l. 200--><p class="indent" >     <a 
  id="x1-60071"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -690,7 +680,7 @@ class="cmr-10">64</span></span></div><!--tex4ht:label?: x1-60071 -->
                </div>
                <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-70005"></a>install</h3>
-            <!--l. 226--><p class="noindent" >The <a 
+            <!--l. 222--><p class="noindent" >The <a 
 href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, 64 <span 
 class="cmmi-10">bit </span>boot executable <span 
@@ -709,7 +699,7 @@ class="cmmi-10">term</span>
             <span 
 class="cmmi-10">support </span>(<a 
 href="#LTS">LTS</a>).
-            <!--l. 230--><p class="indent" >     <span 
+            <!--l. 226--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
 class="cmmi-10">image </span>formats. Further, different ways exist
             to install <span 
@@ -735,7 +725,7 @@ class="cmmi-10">&#x2215;dev&#x2215;sda</span>, unmount it with <span
 class="cmmi-10">umount </span>if mounted, and do copy data with
             a simple command <br 
 class="newline" />
-            <!--l. 239--><p class="indent" >     <span 
+            <!--l. 235--><p class="indent" >     <span 
 class="cmmi-10">dd if</span>=<span 
 class="cmmi-10">core</span>-<span 
 class="cmmi-10">image</span>-<span 
@@ -749,25 +739,25 @@ class="cmmi-10">&#x2215;dev&#x2215;sda status</span>=<span
 class="cmmi-10">progress</span>
             <br 
 class="newline" />
-            <!--l. 241--><p class="indent" >    note 1: run this command in &#x003C;build-directory&#x003E;/tmp/deploy/images/raspberrypi4-64
+            <!--l. 237--><p class="indent" >    note 1: run this command in &#x003C;build-directory&#x003E;/tmp/deploy/images/raspberrypi4-64
             <br 
 class="newline" />note 2: run this command with <span 
 class="cmmi-10">root </span>privileges <br 
 class="newline" />note 3: be careful to not specify the device name of your hard drive (see note 2)
             <br 
 class="newline" />
-            <!--l. 245--><p class="indent" >     The transfer is going to take a while. Once it is over, put the card in you
+            <!--l. 241--><p class="indent" >     The transfer is going to take a while. Once it is over, put the card in you
             <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B </span>and turn it on. That&#8217;s it.
-            <!--l. 248--><p class="indent" >
+            <!--l. 244--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-80006"></a>run</h3>
-            <!--l. 251--><p class="noindent" >Connected embedded systems can communicate to one another and to cloud-based
+            <!--l. 247--><p class="noindent" >Connected embedded systems can communicate to one another and to cloud-based
             <a 
  id="section*.8"></a><span 
 class="cmmi-10">platform</span>-<span 
@@ -777,7 +767,7 @@ class="cmmi-10">service </span>(<a
 href="#PaaS">PaaS</a>) solutions. In addition, a remote control may be
             required. An <a 
 href="#SSH">SSH</a> server is a standard solution for both problems.
-            <!--l. 255--><p class="indent" >     Wireless connection is established via classic command-line tools like <span 
+            <!--l. 251--><p class="indent" >     Wireless connection is established via classic command-line tools like <span 
 class="cmmi-10">ip</span>, <span 
 class="cmmi-10">iw</span>,
             <span 
@@ -798,13 +788,13 @@ href="#SSH">SSH</a>
             server by <span 
 class="cmmi-10">Dropbear </span>allows for a secured remote login, remote control and file
             transfer.
-            <!--l. 263--><p class="indent" >
+            <!--l. 259--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-90007"></a>outlook</h3>
-            <!--l. 265--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+            <!--l. 261--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
 href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
@@ -948,17 +938,17 @@ class="cmmi-10">long </span><span
 class="cmsy-10">- </span><span 
 class="cmmi-10">term support</span></a><br 
 class="newline" /></dd></dl>
-            <!--l. 275--><p class="noindent" >
+            <!--l. 271--><p class="noindent" >
                                                                                                     
 
                                                                                                     
                <h3 class="sectionHead"><a 
  id="x1-11000"></a>bibliography</h3>
-            <!--l. 277--><p class="noindent" >
+            <!--l. 273--><p class="noindent" >
                  <dl class="thebibliography"><dt id="X0-oe" class="thebibliography">
             [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@oe"></a>Yocto Project community.
                  <span 
 class="ecti-1000">OpenEmbedded</span>.
@@ -978,7 +968,7 @@ class="ectt-1000">https://www.openembedded.org</span></a>
                  </dd><dt id="X0-yocto" class="thebibliography">
             [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -1000,7 +990,7 @@ class="ectt-1000">https://www.yoctoproject.org</span></a>
                  </dd><dt id="X0-meta-rpi" class="thebibliography">
             [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@meta-rpi"></a>Andrei Gherzan.
                  <span 
 class="ecti-1000">meta-raspberrypi</span>.
@@ -1023,7 +1013,7 @@ id="bib-4" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
                  <span 
 class="ecti-1000">Dropbear</span>
@@ -1045,7 +1035,7 @@ class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
             [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Building</span>
@@ -1096,7 +1086,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
                  </dd><dt id="X0-kalo2023" class="thebibliography">
             [6]   </dt><dd 
 id="bib-6" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@kalo2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Embedded</span>
@@ -1142,7 +1132,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thcport.html</span></a>
                  </dd><dt id="X0-raspberry" class="thebibliography">
             [7]   </dt><dd 
 id="bib-7" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@raspberry"></a>Raspberry <span 
 class="cmmi-10">&#x03C0; </span>Ltd.
                  <span 
@@ -1165,7 +1155,7 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                  </dd><dt id="X0-dhcpcd" class="thebibliography">
             [8]   </dt><dd 
 id="bib-8" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@dhcpcd"></a>Roy Marples.
                  <span 
 class="ecti-1000">dhcpcd</span>.
@@ -1188,7 +1178,7 @@ class="ectt-1000">https://roy.marples.name/projects/dhcpcd</span></a>
                  </dd><dt id="X0-thc" class="thebibliography">
             [9]   </dt><dd 
 id="bib-9" class="thebibliography">
-                 <!--l. 277--><p class="noindent" ><a 
+                 <!--l. 273--><p class="noindent" ><a 
  id="cite.0@thc"></a>Atanas Rusev.
                  <span 
 class="ecti-1000">Triple</span>
@@ -1209,12 +1199,12 @@ class="ectt-1000">https://triplehelix-consulting.com</span></a>
                  (visited
                  on
                  2023).</dd></dl>
-            <!--l. 282--><p class="indent" >                                                                                            <span 
+            <!--l. 278--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 282--><p class="indent" >      <a 
+            <!--l. 278--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in pdf format</span></a>
                 
