@@ -1,13 +1,11 @@
 #!/usr/bin/env sh
 # metafetch.sh
 # fetch rpi metadata
+
 error() { echo $1; exit 111; }
+
 if [ ! "$#" -eq 1 ]; then error "usage: $0 <directory>"; fi
-if [ ! -d $1 ]; then error "error: $1 not a directory"; fi
-
-echo fetching metadata in $1 ...
-
-exit 1
+[ -d $1 ] && echo "fetching metadata in $1 ..." || error "error: $1 is not a directory"
 
 git clone -b kirkstone \
     git@github.com:yoctoproject/poky.git \
