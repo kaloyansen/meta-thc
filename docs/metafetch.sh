@@ -2,7 +2,7 @@
 # metafetch.sh
 # fetch rpi metadata
 error() { echo $1; exit 111; }
-if [ ! $# -eq 1 ]; then error "usage: $0 <directory>"; fi
+if [ ! "$#" -eq 1 ]; then error "usage: $0 <directory>"; fi
 if [ ! -d $1 ]; then error "error: $1 not a directory"; fi
 
 echo fetching metadata in $1 ...
