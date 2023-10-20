@@ -4,7 +4,7 @@
 
 error() { echo $1; exit 111; }
 
-if [ ! "$#" -eq 1 ]; then error "usage: $0 <directory>"; fi
+if [ "$#" -eq 0 ]; then error "usage: $0 <directory>"; fi
 [ -d $1 ] && echo "fetching metadata in $1 ..." || error "error: $1 is not a directory"
 
 git clone -b kirkstone \
