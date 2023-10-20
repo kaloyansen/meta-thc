@@ -2,10 +2,17 @@
 # metafetch.sh
 # fetch rpi metadata
 
-error() { echo "error: $1"; exit 111; }
+nodir() {
+    echo "error: $1 is not a directory";
+    mkdir $1 && echo "info: directory $1 created" || exit 111;
+}
 
-if [ "$#" -eq 0 ]; then error "usage: $0 <directory>"; fi
-[ -d $1 ] && echo "fetching in $1" || error "$1 is not a directory"
+if [ ! "$#" -eq 2 ]; then echo "usage: $0 <layerdir> <buildir>"; exit 112; fi
+[ -d $1 ] && echo "fetching in $1" || nodir $1
+[ -d $2 ] && echo "fetching in $2" || nodir $2
+
+echo "fetching metadata in $1 ..."
+echo "fetching configuration in $2 ..."
 
 git clone -b kirkstone \
     git@github.com:yoctoproject/poky.git \
@@ -19,5 +26,8 @@ git clone -b kirkstone \
 git clone \
     git@github.com:kaloyanski/meta-thc.git \
     $1/thc/meta-thc
+git clone \
+    git@github.com:TripleHelixConsulting/rpiconf.git \
+    $2/conf
 
 exit 0
