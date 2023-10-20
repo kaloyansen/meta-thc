@@ -205,77 +205,43 @@ class="ecit-1000">fetch</span></span><span style="color:#000000"> </span><span s
 class="ecit-1000">rpi</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ecit-1000">metadata</span></span> 
 <span class="label"><a 
- id="x1-3007r4"></a></span> 
-<span class="label"><a 
- id="x1-3008r5"></a></span><span style="color:#000000"><span 
-class="ectt-1000">function</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">is_empty</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">{</span></span> 
-<span class="label"><a 
- id="x1-3009r6"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">local</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">dir</span></span><span style="color:#000000"><span 
-class="ectt-1000">=</span></span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
+ id="x1-3007r4"></a></span><span style="color:#000000"><span 
+class="ectt-1000">error</span></span><span style="color:#000000"><span 
+class="ectt-1000">()</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">{</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">error</span></span><span style="color:#000000"><span 
+class="ectt-1000">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">$1</span></span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span> 
-<span class="label"><a 
- id="x1-3010r7"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">shopt</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">-</span></span><span style="color:#000000"><span 
-class="ectt-1000">s</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">nullglob</span></span> 
-<span class="label"><a 
- id="x1-3011r8"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">local</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">files</span></span><span style="color:#000000"><span 
-class="ectt-1000">=(</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">$dir</span></span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">/*</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">$dir</span></span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">/.*</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">)</span></span> 
-<span class="label"><a 
- id="x1-3012r9"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">[[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">$</span></span><span style="color:#000000"><span 
-class="ectt-1000">{</span></span><span style="color:#000000"><span 
-class="ecit-1000">#</span></span><span style="color:#000000"><span 
-class="ecit-1000">files</span></span><span style="color:#000000"><span 
-class="ecit-1000">[</span></span><span style="color:#000000"><span 
-class="ecit-1000">@</span></span><span style="color:#000000"><span 
-class="ecit-1000">]}</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ecit-1000">-</span></span><span style="color:#000000"><span 
-class="ecit-1000">eq</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ecit-1000">2</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ecit-1000">]]</span></span> 
-<span class="label"><a 
- id="x1-3013r10"></a></span><span style="color:#000000"><span 
+class="ectt-1000">;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">exit</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">111;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">}</span></span> 
 <span class="label"><a 
- id="x1-3014r11"></a></span> 
+ id="x1-3008r5"></a></span> 
 <span class="label"><a 
- id="x1-3015r12"></a></span><span style="color:#000000"><span 
+ id="x1-3009r6"></a></span><span style="color:#000000"><span 
+class="ectt-1000">if</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">!</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">$</span></span><span style="color:#000000"><span 
+class="ecit-1000">#</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">-</span></span><span style="color:#000000"><span 
+class="ecit-1000">eq</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">1</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">];</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">then</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">error</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">"</span></span><span style="color:#000000"><span 
+class="ecit-1000">usage</span></span><span style="color:#000000"><span 
+class="ecit-1000">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">&#x003C;</span></span><span style="color:#000000"><span 
+class="ecit-1000">directory</span></span><span style="color:#000000"><span 
+class="ecit-1000">&#x003E;";</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ecit-1000">fi</span></span> 
+<span class="label"><a 
+ id="x1-3010r7"></a></span><span style="color:#000000"><span 
 class="ectt-1000">if</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">!</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -283,110 +249,36 @@ class="ectt-1000">-</span></span><span style="color:#000000"><span
 class="ectt-1000">d</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">$1</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">];</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">then</span></span> 
-<span class="label"><a 
- id="x1-3016r13"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">usage</span></span><span style="color:#000000"><span 
-class="ectt-1000">:</span></span> 
-<span class="label"><a 
- id="x1-3017r14"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">then</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">error</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">$0</span></span><span style="color:#000000"><span 
+class="ectt-1000">$1</span></span><span style="color:#000000"><span 
 class="ectt-1000">&#x2423;</span></span><span style="color:#000000"><span 
-class="ectt-1000">&#x003C;</span></span><span style="color:#000000"><span 
-class="ectt-1000">layer_directory</span></span><span style="color:#000000"><span 
-class="ectt-1000">&#x003E;</span></span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span> 
-<span class="label"><a 
- id="x1-3018r15"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">exit</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">111</span></span> 
-<span class="label"><a 
- id="x1-3019r16"></a></span><span style="color:#000000"><span 
-class="ectt-1000">fi</span></span> 
-<span class="label"><a 
- id="x1-3020r17"></a></span> 
-<span class="label"><a 
- id="x1-3021r18"></a></span><span style="color:#000000"><span 
-class="ectt-1000">layer_directory</span></span><span style="color:#000000"><span 
-class="ectt-1000">=</span></span><span style="color:#000000"><span 
-class="ectt-1000">$1</span></span> 
-<span class="label"><a 
- id="x1-3022r19"></a></span> 
-<span class="label"><a 
- id="x1-3023r20"></a></span><span style="color:#000000"><span 
-class="ectt-1000">if</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">!</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">is_empty</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"><span 
+class="ectt-1000">not</span></span><span style="color:#000000"><span 
+class="ectt-1000">&#x2423;</span></span><span style="color:#000000"><span 
+class="ectt-1000">a</span></span><span style="color:#000000"><span 
+class="ectt-1000">&#x2423;</span></span><span style="color:#000000"><span 
+class="ectt-1000">directory</span></span><span style="color:#000000"><span 
 class="ectt-1000">"</span></span><span style="color:#000000"><span 
 class="ectt-1000">;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">then</span></span> 
-<span class="label"><a 
- id="x1-3024r21"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">error</span></span><span style="color:#000000"><span 
-class="ectt-1000">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">is</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">not</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">empty</span></span> 
-<span class="label"><a 
- id="x1-3025r22"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">exit</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">112</span></span> 
-<span class="label"><a 
- id="x1-3026r23"></a></span><span style="color:#000000"><span 
 class="ectt-1000">fi</span></span> 
 <span class="label"><a 
- id="x1-3027r24"></a></span> 
+ id="x1-3011r8"></a></span> 
 <span class="label"><a 
- id="x1-3028r25"></a></span><span style="color:#000000"><span 
+ id="x1-3012r9"></a></span><span style="color:#000000"><span 
 class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">fetching</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">metadata</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">in</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-1000">$1</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">...</span></span> 
 <span class="label"><a 
- id="x1-3029r26"></a></span> 
-<span class="label"><a 
- id="x1-3030r27"></a></span><span style="color:#000000"><span 
+ id="x1-3013r10"></a></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">clone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">-</span></span><span style="color:#000000"><span 
 class="ectt-1000">b</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">kirkstone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3031r28"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
 class="ectt-1000">git@github</span></span><span style="color:#000000"><span 
 class="ectt-1000">.</span></span><span style="color:#000000"><span 
 class="ectt-1000">com</span></span><span style="color:#000000"><span 
@@ -396,32 +288,16 @@ class="ectt-1000">/</span></span><span style="color:#000000"><span
 class="ectt-1000">poky</span></span><span style="color:#000000"><span 
 class="ectt-1000">.</span></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3032r29"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"><span 
+class="ectt-1000">$1</span></span><span style="color:#000000"><span 
 class="ectt-1000">/</span></span><span style="color:#000000"><span 
 class="ectt-1000">poky</span></span> 
 <span class="label"><a 
- id="x1-3033r30"></a></span> 
-<span class="label"><a 
- id="x1-3034r31"></a></span><span style="color:#000000"><span 
+ id="x1-3014r11"></a></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">clone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">-</span></span><span style="color:#000000"><span 
 class="ectt-1000">b</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">kirkstone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3035r32"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
 class="ectt-1000">git@github</span></span><span style="color:#000000"><span 
 class="ectt-1000">.</span></span><span style="color:#000000"><span 
 class="ectt-1000">com</span></span><span style="color:#000000"><span 
@@ -433,32 +309,16 @@ class="ectt-1000">-</span></span><span style="color:#000000"><span
 class="ectt-1000">openembedded</span></span><span style="color:#000000"><span 
 class="ectt-1000">.</span></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3036r33"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"><span 
+class="ectt-1000">$1</span></span><span style="color:#000000"><span 
 class="ectt-1000">/</span></span><span style="color:#000000"><span 
 class="ectt-1000">oe</span></span> 
 <span class="label"><a 
- id="x1-3037r34"></a></span> 
-<span class="label"><a 
- id="x1-3038r35"></a></span><span style="color:#000000"><span 
+ id="x1-3015r12"></a></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">clone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">-</span></span><span style="color:#000000"><span 
 class="ectt-1000">b</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">kirkstone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3039r36"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
 class="ectt-1000">git@github</span></span><span style="color:#000000"><span 
 class="ectt-1000">.</span></span><span style="color:#000000"><span 
 class="ectt-1000">com</span></span><span style="color:#000000"><span 
@@ -468,20 +328,15 @@ class="ectt-1000">/</span></span><span style="color:#000000"><span
 class="ectt-1000">meta</span></span><span style="color:#000000"><span 
 class="ectt-1000">-</span></span><span style="color:#000000"><span 
 class="ectt-1000">raspberrypi</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3040r37"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"><span 
+class="ectt-1000">$1</span></span><span style="color:#000000"><span 
 class="ectt-1000">/</span></span><span style="color:#000000"><span 
-class="ectt-1000">rpi</span></span> 
+class="ectt-1000">rpi</span></span><span style="color:#000000"><span 
+class="ectt-1000">/</span></span><span style="color:#000000"><span 
+class="ectt-1000">meta</span></span><span style="color:#000000"><span 
+class="ectt-1000">-</span></span><span style="color:#000000"><span 
+class="ectt-1000">raspberrypi</span></span> 
 <span class="label"><a 
- id="x1-3041r38"></a></span> 
-<span class="label"><a 
- id="x1-3042r39"></a></span><span style="color:#000000"><span 
+ id="x1-3016r13"></a></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">clone</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">git@github</span></span><span style="color:#000000"><span 
@@ -495,14 +350,7 @@ class="ectt-1000">-</span></span><span style="color:#000000"><span
 class="ectt-1000">thc</span></span><span style="color:#000000"><span 
 class="ectt-1000">.</span></span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">\</span></span> 
-<span class="label"><a 
- id="x1-3043r40"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">$layer_directory</span></span><span style="color:#000000"><span 
+class="ectt-1000">$1</span></span><span style="color:#000000"><span 
 class="ectt-1000">/</span></span><span style="color:#000000"><span 
 class="ectt-1000">thc</span></span><span style="color:#000000"><span 
 class="ectt-1000">/</span></span><span style="color:#000000"><span 
@@ -510,67 +358,19 @@ class="ectt-1000">meta</span></span><span style="color:#000000"><span
 class="ectt-1000">-</span></span><span style="color:#000000"><span 
 class="ectt-1000">thc</span></span> 
 <span class="label"><a 
- id="x1-3044r41"></a></span> 
+ id="x1-3017r14"></a></span> 
 <span class="label"><a 
- id="x1-3045r42"></a></span><span style="color:#000000"><span 
+ id="x1-3018r15"></a></span><span style="color:#000000"><span 
 class="ectt-1000">exit</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">0</span></span> 
 <span class="label"><a 
- id="x1-3046r43"></a></span> 
+ id="x1-3019r16"></a></span> 
 <span class="label"><a 
- id="x1-3047r44"></a></span><a 
+ id="x1-3020r17"></a></span><a 
 href="metafetch.sh" ><span 
 class="ectt-1000">download</span>
 <span 
-class="ectt-1000">script</span></a> 
-<span class="label"><a 
- id="x1-3048r45"></a></span> 
-<span class="label"><a 
- id="x1-3049r46"></a></span> 
-<span class="label"><a 
- id="x1-3050r47"></a></span><span style="color:#000000"><span 
-class="ectt-1000">if</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">!</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">-</span></span><span style="color:#000000"><span 
-class="ectt-1000">d</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">$1</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">];</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">then</span></span> 
-<span class="label"><a 
- id="x1-3051r48"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">usage</span></span><span style="color:#000000"><span 
-class="ectt-1000">:</span></span> 
-<span class="label"><a 
- id="x1-3052r49"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span><span style="color:#000000"><span 
-class="ectt-1000">$0</span></span><span style="color:#000000"><span 
-class="ectt-1000">&#x2423;</span></span><span style="color:#000000"><span 
-class="ectt-1000">\&#x003C;</span></span><span style="color:#000000"><span 
-class="ectt-1000">layer_directory</span></span><span style="color:#000000"><span 
-class="ectt-1000">\&#x003E;</span></span><span style="color:#000000"><span 
-class="ectt-1000">"</span></span> 
-<span class="label"><a 
- id="x1-3053r50"></a></span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span 
-class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
-class="ectt-1000">exit</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-1000">111</span></span> 
-<span class="label"><a 
- id="x1-3054r51"></a></span><span style="color:#000000"><span 
-class="ectt-1000">fi</span></span>
+class="ectt-1000">script</span></a>
    </pre>
 <!--l. 70--><p class="noindent" ><a 
 href="metafetch.sh" >metafetch.sh</a>
@@ -581,7 +381,7 @@ class="cmmi-10">metadata</span>. Fetch the
 project build configuration with the command that follows.
      <!--l. 77-->
      <pre class="lstlisting" id="listing-2"><span class="label"><a 
- id="x1-3055r1"></a></span><span 
+ id="x1-3024r1"></a></span><span 
 class="ectt-1000">&#x00A0;</span><span 
 class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -597,7 +397,7 @@ class="ectt-1000">.</span></span><span style="color:#000000"><span
 class="ectt-1000">git</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-1000">\</span></span> 
 <span class="label"><a 
- id="x1-3056r2"></a></span><span 
+ id="x1-3025r2"></a></span><span 
 class="ectt-1000">&#x00A0;</span><span 
 class="ectt-1000">&#x00A0;</span><span style="color:#000000"><span 
 class="ectt-1000">&#x003C;</span></span><span style="color:#000000"><span 
