@@ -29,7 +29,7 @@ class="tcrm-1200">&lowast;</span></a></span></div><br />
 <div class="date" ><span 
 class="ecrm-1200">Saturday 21</span><sup class="textsuperscript"><span 
 class="ecrm-0900">st</span></sup><span 
-class="ecrm-1200">&#x00A0;October, 2023 14:02</span></div>
+class="ecrm-1200">&#x00A0;October, 2023 14:10</span></div>
     <div class="thanks" ><br /><a 
  id="tk-1"></a><span class="thank-mark"><span 
 class="tcrm-1000">&lowast;</span></span>Triple Helix Consulting[<a 
@@ -186,21 +186,23 @@ class="cmmi-10">metadata</span>. However, it is nice to have all layer sub-direc
 class="cmmi-10">data </span>and
             <span 
 class="cmmi-10">metadata</span>.
-            <!--l. 66--><p class="indent" >     It might be necessary to install <span 
+            <!--l. 66--><p class="indent" >     It is very likely that you will need to install <span 
 class="ecti-1000">Yocto </span>requirements[<a 
  id="x1-3003"></a><a 
-href="#cite.0@yoctoqb">3</a>] before running <span 
-class="cmmi-10">bitbake</span>.
-            Make sure to have the following command-line tools on your host machine: <span 
-class="cmmi-10">chrpath</span>,
-            <span 
+href="#cite.0@yoctoqb">3</a>] to be able to
+            run <span 
+class="cmmi-10">bitbake</span>. Make sure to have the following command-line tools on your host
+            machine: <span 
+class="cmmi-10">chrpath</span>, <span 
 class="cmmi-10">diffstat</span>, <span 
 class="cmmi-10">lz</span><span 
 class="cmr-10">4</span><span 
 class="cmmi-10">c</span>, <span 
-class="cmmi-10">rpcgen</span>; Also have a look at the free space on the storage device.
+class="cmmi-10">rpcgen</span>; Also have a look at your storage device.
             Fetched data requires 400 <span 
-class="cmmi-10">Mb</span>, but the build hmmm.
+class="cmmi-10">Mb</span>, but for the build prepare at least 10 <span 
+class="cmmi-10">Gb </span>of free
+            space.
                                                                                                                     
 
                                                                                                                     
@@ -211,9 +213,9 @@ class="cmmi-10">github </span>repositories. This
 href="#OS">OS</a> for <span 
 class="cmmi-10">Raspberry &pi; </span>- <span 
 class="cmr-10">4 </span>- <span 
-class="cmmi-10">model</span>
-            <span 
-class="cmmi-10">B</span>.
+class="cmmi-10">model B</span>.
+            Reading the script may help advanced users to follow the fetch, initialisation and a
+            check of installed layers.
                <!--l. 70--><pre class="lstinputlisting" id="listing-1"><span class="label"><a 
  id="x1-3006r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800">#</span></span><span style="color:#FF00FF"><span 
