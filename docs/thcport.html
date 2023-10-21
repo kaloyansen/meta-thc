@@ -27,11 +27,12 @@ class="tcrm-1200">&lowast;</span></a></span></div><br />
 <div class="date" ><span 
 class="ecrm-1200">Saturday 21</span><sup class="textsuperscript"><span 
 class="ecrm-0900">st</span></sup><span 
-class="ecrm-1200">&#x00A0;October, 2023 11:05</span></div>
+class="ecrm-1200">&#x00A0;October, 2023 11:09</span></div>
     <div class="thanks" ><br /><a 
  id="tk-1"></a><span class="thank-mark"><span 
-class="tcrm-1000">&lowast;</span></span>Triple Helix Consulting[<span 
-class="ecbx-1000">thc</span>]</div></div>
+class="tcrm-1000">&lowast;</span></span>Triple Helix Consulting[<a 
+ id="x1-2"></a><a 
+href="#cite.0@thc">11</a>]</div></div>
                                                                                                                     
 
                                                                                                                     
@@ -56,6 +57,8 @@ href="#x1-80003.2" id="QQ2-1-8">image</a></span>
 href="#x1-90004" id="QQ2-1-10">connection</a></span>
             <br />     &#x00A0;<span class="sectionToc" >5 <a 
 href="#x1-100005" id="QQ2-1-11">outlook</a></span>
+            <br />     &#x00A0;<span class="sectionToc" ><a 
+href="#x1-12000" id="QQ2-1-13">bibliography</a></span>
                </div>
             <!--l. 17--><p class="indent" >
                                                                                                                     
@@ -63,17 +66,21 @@ href="#x1-100005" id="QQ2-1-11">outlook</a></span>
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
  id="x1-20001"></a>introduction</h3>
-            <!--l. 20--><p class="noindent" >This article[<span 
-class="ecbx-1000">kalo2023</span>] reports the progress in the configuration and build of a
-            Linux-based operating system for <span 
+            <!--l. 20--><p class="noindent" >This article[<a 
+ id="x1-2001"></a><a 
+href="#cite.0@kalo2023">7</a>] reports the progress in the configuration and build of a Linux-based
+            operating system for <span 
 class="cmmi-10">Raspberry &pi; </span>- <span 
 class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span>[<span 
-class="ecbx-1000">raspberry</span>] with
-            <span 
-class="ecti-1000">Yocto</span>[<span 
-class="ecbx-1000">yocto</span>]. Please refer [<span 
-class="ecbx-1000">kalohowto2023</span>] for technical details.
+class="cmmi-10">model B</span>[<a 
+ id="x1-2002"></a><a 
+href="#cite.0@raspberry">9</a>] with <span 
+class="ecti-1000">Yocto</span>[<a 
+ id="x1-2003"></a><a 
+href="#cite.0@yocto">2</a>]. Please refer [<a 
+ id="x1-2004"></a><a 
+href="#cite.0@kalohowto2023">8</a>] for
+            technical details.
             <!--l. 25--><p class="indent" >     The <a 
  id="section*.1"></a><span 
 class="cmmi-10">central processing unit </span>(<a 
@@ -89,40 +96,43 @@ class="cmmi-10">GB </span>of RAM. As there are no fixed storage devices, <span
 class="cmmi-10">images </span>are
             installed on <span 
 class="cmmi-10">SD </span>cards.
-            <!--l. 31--><p class="indent" >     Embedded devices[<span 
-class="ecbx-1000">vasquez2021</span>] are compact systems with specific
-            purpose. Embedded operating systems provide a limited number of services
-            defined by this purpose and device <a 
+            <!--l. 31--><p class="indent" >     Embedded devices[<a 
+ id="x1-2005"></a><a 
+href="#cite.0@vasquez2021">13</a>] are compact systems with specific purpose. Embedded
+            operating systems provide a limited number of services defined by this purpose and
+            device <a 
  id="section*.2"></a><span 
 class="cmmi-10">hardware </span>(<a 
-href="#HW">HW</a>). There are important
-            reasons why Linux is a preferred <a 
+href="#HW">HW</a>). There are important reasons why Linux is a preferred
+            <a 
  id="section*.3"></a><span 
 class="cmmi-10">operating system </span>(<a 
-href="#OS">OS</a>) kernel for embedded
-            devices. Since such devices usually have limited <a 
-href="#HW">HW</a> resources, they rely on
-            optimized <a 
+href="#OS">OS</a>) kernel for embedded devices. Since such devices usually have
+            limited <a 
+href="#HW">HW</a> resources, they rely on optimized <a 
  id="section*.4"></a><span 
 class="cmmi-10">software </span>(<a 
-href="#SW">SW</a>) implementations. Smaller and faster than their
-            original, such programs have limited, but usually sufficient functionality. For
-            example, <span 
-class="cmmi-10">BusyBox </span>combines tiny versions of many common <span 
-class="cmmi-10">unix </span>utilities
-            into a single executable[<span 
-class="ecbx-1000">busybox</span>]. Another example is <span 
-class="cmmi-10">Dropbear SSH </span>- an
-            optimized <a 
+href="#SW">SW</a>) implementations.
+            Smaller and faster than their original, such programs have limited, but usually
+            sufficient functionality. For example, <span 
+class="cmmi-10">BusyBox </span>combines tiny versions of many
+            common <span 
+class="cmmi-10">unix </span>utilities into a single executable[<a 
+ id="x1-2006"></a><a 
+href="#cite.0@busybox">1</a>]. Another example is <span 
+class="cmmi-10">Dropbear SSH</span>
+            - an optimized <a 
  id="section*.5"></a><span 
 class="cmmi-10">secure shell </span>(<a 
-href="#SSH">SSH</a>) server implementation[<span 
-class="ecbx-1000">dropbear</span>]. <span 
+href="#SSH">SSH</a>) server implementation[<a 
+ id="x1-2007"></a><a 
+href="#cite.0@dropbear">6</a>]. <span 
 class="cmmi-10">Dropbear </span>is
             significantly smaller in size compared to <span 
-class="cmmi-10">OpenSSH</span>. Unlike GNU/Linux desktop
-            distributions[<span 
-class="ecbx-1000">rusev2023</span>], embedded Linux has neither a <a 
+class="cmmi-10">OpenSSH</span>. Unlike GNU/Linux
+            desktop distributions[<a 
+ id="x1-2008"></a><a 
+href="#cite.0@rusev2023">12</a>], embedded Linux has neither a <a 
  id="section*.6"></a><span 
 class="cmmi-10">graphical user</span>
             <span 
@@ -131,8 +141,8 @@ href="#GUI">GUI</a>) for system configuration nor a centralized service manager 
             <span 
 class="cmmi-10">systemd</span>.
             <!--l. 47--><p class="indent" >     <span 
-class="ecti-1000">Yocto </span>Project[<span 
-class="ecbx-1000">yocto</span>] provides a popular framework for configuration and build of
+class="ecti-1000">Yocto </span>Project[<a 
+href="#cite.0@yocto">2</a>] provides a popular framework for configuration and build of
             Linux-based operating systems. First of all, <span 
 class="ecti-1000">Yocto </span>supports <a 
 href="#HW">HW</a> via a <a 
@@ -230,14 +240,16 @@ href="https://github.com/glfw/glfw" >glfw/glfw.git</a></li></ul>
                <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
  id="x1-40002.1"></a>application</h4>
             <!--l. 105--><p class="noindent" ><span 
-class="cmmi-10">Dear ImGui</span>[<span 
-class="ecbx-1000">imgui</span>] is a bloat-free <a 
-href="#GUI">GUI</a> library for C++. It outputs optimized
-            vertex buffers that you can render anytime in your 3D-pipeline-enabled application.
-            It is fast, portable, renderer agnostic, and self-contained (no external dependencies).
+class="cmmi-10">Dear ImGui</span>[<a 
+ id="x1-4001"></a><a 
+href="#cite.0@imgui">3</a>] is a bloat-free <a 
+href="#GUI">GUI</a> library for C++. It outputs optimized vertex
+            buffers that you can render anytime in your 3D-pipeline-enabled application. It is
+            fast, portable, renderer agnostic, and self-contained (no external dependencies). <span 
+class="cmmi-10">Dear</span>
             <span 
-class="cmmi-10">Dear ImGui </span>is designed to enable fast iterations and to empower programmers to
-            create content creation tools and visualization/debug tools (as opposed to UI for the
+class="cmmi-10">ImGui </span>is designed to enable fast iterations and to empower programmers to create
+            content creation tools and visualization/debug tools (as opposed to UI for the
             average end-user). It favors simplicity and productivity toward this goal and
             lacks certain features commonly found in more high-level libraries. <span 
 class="cmmi-10">Dear</span>
@@ -248,9 +260,10 @@ class="cmmi-10">ImGui </span>is particularly suited to integration in game engin
             non-standard.
             <!--l. 119--><p class="indent" >     <span 
 class="cmmi-10">Dear ImGui </span>depends on <span 
-class="cmmi-10">GLFW</span>[<span 
-class="ecbx-1000">glfw</span>], an open-source, multi-platform library
-            for <span 
+class="cmmi-10">GLFW</span>[<a 
+ id="x1-4002"></a><a 
+href="#cite.0@glfw">4</a>], an open-source, multi-platform library for
+            <span 
 class="cmmi-10">OpenGL</span>, <span 
 class="cmmi-10">OpenGL ES </span>and <span 
 class="cmmi-10">V ulkan </span>development on the desktop. It provides a
@@ -295,21 +308,22 @@ class="ecti-1000">Yocto </span>reference distribution
 class="cmmi-10">meta </span><span 
 class="cmsy-10">&minus; </span><span 
 class="cmmi-10">raspberrypi </span><br 
-class="newline" />kernel-space This[<span 
-class="ecbx-1000">meta-rpi</span>] is the general <a 
+class="newline" />kernel-space This[<a 
+ id="x1-5001"></a><a 
+href="#cite.0@meta-rpi">5</a>] is the general <a 
 href="#HW">HW</a> specific <a 
-href="#BSP">BSP</a> overlay
-                   for the <span 
+href="#BSP">BSP</a> overlay for the
+                   <span 
 class="cmmi-10">RaspberryPi </span>device. The core <a 
 href="#BSP">BSP</a> part of <span 
-class="cmmi-10">meta</span><span 
-class="cmsy-10">&minus;</span><span 
-class="cmmi-10">raspberrypi</span>
-                   works  with  different  <span 
+class="cmmi-10">meta </span><span 
+class="cmsy-10">&minus; </span><span 
+class="cmmi-10">raspberrypi </span>works
+                   with different <span 
 class="cmmi-10">OpenEmbedded</span>/<span 
-class="ecti-1000">Yocto  </span>distributions  and  layer
-                   stacks. In short, the recipes to build the kernel and kernel modules are
-                   in this layer. For details see the package <span 
+class="ecti-1000">Yocto  </span>distributions and layer stacks.
+                   In short, the recipes to build the kernel and kernel modules are in
+                   this layer. For details see the package <span 
 class="cmmi-10">linux</span>-<span 
 class="cmmi-10">raspberrypi</span>. In addition,
                    here is the <a 
@@ -356,9 +370,10 @@ class="cmsy-10">&minus; </span><span
 class="cmmi-10">image </span><span 
 class="cmsy-10">&minus; </span><span 
 class="cmmi-10">x</span><span 
-class="cmr-10">11</span>[<span 
-class="ecbx-1000">yocto</span>] - a very basic X11 image with a terminal. In the main
-            build configuration, apart from <span 
+class="cmr-10">11</span>[<a 
+ id="x1-7001"></a><a 
+href="#cite.0@yocto">2</a>] - a very basic X11 image with a terminal. In the main build
+            configuration, apart from <span 
 class="cmmi-10">Dear ImGui </span>and <span 
 class="cmmi-10">GLFW</span>, I have added the following
             packages;
@@ -375,8 +390,9 @@ href="#OS">OS</a> identification
                    <!--l. 163--><p class="noindent" ><span 
 class="cmmi-10">Dropbear </span><br 
 class="newline" />Compact <a 
-href="#SSH">SSH</a> server[<span 
-class="ecbx-1000">dropbear</span>]
+href="#SSH">SSH</a> server[<a 
+ id="x1-7002"></a><a 
+href="#cite.0@dropbear">6</a>]
                    </li>
                    <li class="itemize">
                    <!--l. 165--><p class="noindent" ><span 
@@ -384,8 +400,9 @@ class="cmmi-10">dhcpcd </span><br
 class="newline" /><a 
  id="section*.8"></a><span 
 class="cmmi-10">dynamic host configuration protocol </span>(<a 
-href="#DHCP">DHCP</a>) client[<span 
-class="ecbx-1000">dhcpcd</span>]
+href="#DHCP">DHCP</a>) client[<a 
+ id="x1-7003"></a><a 
+href="#cite.0@dhcpcd">10</a>]
                    </li>
                    <li class="itemize">
                    <!--l. 167--><p class="noindent" ><span 
@@ -581,19 +598,20 @@ href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &pi; </span>- <span 
 class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span>[<span 
-class="ecbx-1000">raspberry</span>]. The kernel version of this embedded <a 
-href="#OS">OS</a> is
-            Linux release 5.15. An example <a 
+class="cmmi-10">model B</span>[<a 
+ id="x1-10001"></a><a 
+href="#cite.0@raspberry">9</a>]. The kernel version of this embedded <a 
+href="#OS">OS</a> is Linux
+            release 5.15. An example <a 
 href="#GUI">GUI</a> application using the <span 
-class="cmmi-10">Dear ImGui </span>library is
-            built as a part of the <a 
+class="cmmi-10">Dear ImGui </span>library is built as a
+            part of the <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">image</span>. In addition, an <a 
-href="#SSH">SSH</a> server provides remote
-            connection, data transfer and device control. As the <a 
-href="#OS">OS</a> is now functional,
-            performance and real-time tests are ongoing.
+href="#SSH">SSH</a> server provides remote connection, data
+            transfer and device control. As the <a 
+href="#OS">OS</a> is now functional, performance and real-time
+            tests are ongoing.
             <!--l. 1--><p class="indent" >
                                                                                                                     
 
@@ -734,7 +752,347 @@ class="newline" /></dd></dl>
                                                                                                     
 
                                                                                                     
-            <!--l. 242--><p class="indent" >                                                                              <span 
+               <h3 class="sectionHead"><a 
+ id="x1-12000"></a>bibliography</h3>
+            <!--l. 237--><p class="noindent" >
+                  <dl class="thebibliography"><dt id="X0-busybox" class="thebibliography">
+              [1]   </dt><dd 
+id="bib-1" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@busybox"></a>Erik Andersen.
+                  <span 
+class="ecti-1000">BusyBox</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://busybox.net" class="url" ><span 
+class="ectt-1000">https://busybox.net</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-yocto" class="thebibliography">
+              [2]   </dt><dd 
+id="bib-2" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@yocto"></a>Yocto Project community.
+                  <span 
+class="ecti-1000">Yocto</span>
+                  <span 
+class="ecti-1000">Project</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.yoctoproject.org" class="url" ><span 
+class="ectt-1000">https://www.yoctoproject.org</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-imgui" class="thebibliography">
+              [3]   </dt><dd 
+id="bib-3" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@imgui"></a>Omar Cornut.
+                  <span 
+class="ecti-1000">Dear</span>
+                  <span 
+class="ecti-1000">ImGui</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://github.com/ocornut/imgui" class="url" ><span 
+class="ectt-1000">https://github.com/ocornut/imgui</span></a>
+                  (visited
+                  on
+                  2023).
+                                                                                                                    
+
+                                                                                                                    
+                  </dd><dt id="X0-glfw" class="thebibliography">
+              [4]   </dt><dd 
+id="bib-4" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@glfw"></a>Marcus Geelnard
+                  and
+                  Camilla Löwy.
+                  <span 
+class="ecti-1000">OpenGL</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.glfw.org" class="url" ><span 
+class="ectt-1000">https://www.glfw.org</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-meta-rpi" class="thebibliography">
+              [5]   </dt><dd 
+id="bib-5" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@meta-rpi"></a>Andrei Gherzan.
+                  <span 
+class="ecti-1000">meta-raspberrypi</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://github.com/agherzan/meta-raspberrypi" class="url" ><span 
+class="ectt-1000">https://github.com/agherzan/meta-raspberrypi</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-dropbear" class="thebibliography">
+              [6]   </dt><dd 
+id="bib-6" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@dropbear"></a>Matt Johnston.
+                  <span 
+class="ecti-1000">Dropbear</span>
+                  <span 
+class="ecti-1000">SSH</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://matt.ucc.asn.au/dropbear/dropbear.html" class="url" ><span 
+class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-kalo2023" class="thebibliography">
+              [7]   </dt><dd 
+id="bib-7" class="thebibliography">
+                                                                                                                    
+
+                                                                                                                    
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@kalo2023"></a>Kaloyan Krastev.
+                  <span 
+class="ecti-1000">Embedded</span>
+                  <span 
+class="ecti-1000">Operating</span>
+                  <span 
+class="ecti-1000">System</span>
+                  <span 
+class="ecti-1000">for</span>
+                  <span 
+class="cmmi-10">Raspberry</span>
+                  <span 
+class="cmmi-10">&pi;</span>
+                  <span 
+class="ecti-1000">-</span>
+                  <span 
+class="cmr-10">4</span>
+                  <span 
+class="ecti-1000">-</span>
+                  <span 
+class="cmmi-10">model</span>
+                  <span 
+class="cmmi-10">B</span>
+                  <span 
+class="ecti-1000">with</span>
+                  Yocto.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://kaloyanski.github.io/meta-thc/thcport.html" class="url" ><span 
+class="ectt-1000">https://kaloyanski.github.io/meta-thc/thcport.html</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
+              [8]   </dt><dd 
+id="bib-8" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
+                  <span 
+class="ecti-1000">Building</span>
+                  <span 
+class="ecti-1000">Embedded</span>
+                  <span 
+class="ecti-1000">Operating</span>
+                  <span 
+class="ecti-1000">System</span>
+                  <span 
+class="ecti-1000">with</span>
+                  <span 
+class="ecti-1000">IMGUI</span>
+                  <span 
+class="ecti-1000">Demo</span>
+                  <span 
+class="ecti-1000">for</span>
+                  <span 
+class="cmmi-10">Raspberry</span>
+                  <span 
+class="cmmi-10">&pi;</span>
+                  <span 
+class="ecti-1000">-</span>
+                  <span 
+class="cmr-10">4</span>
+                  <span 
+class="ecti-1000">-</span>
+                  <span 
+class="cmmi-10">model</span>
+                  <span 
+class="cmmi-10">B</span>
+                  <span 
+class="ecti-1000">with</span>
+                  Yocto.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+
+
+
+<a 
+href="https://kaloyanski.github.io/meta-thc/thchowto.html" class="url" ><span 
+class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-raspberry" class="thebibliography">
+              [9]   </dt><dd 
+id="bib-9" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@raspberry"></a>Raspberry <span 
+class="cmmi-10">&pi; </span>Ltd.
+                  <span 
+class="ecti-1000">Raspberi</span>
+                  <span 
+class="cmmi-10">&pi;</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.raspberrypi.com" class="url" ><span 
+class="ectt-1000">https://www.raspberrypi.com</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-dhcpcd" class="thebibliography">
+            [10]   </dt><dd 
+id="bib-10" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@dhcpcd"></a>Roy Marples.
+                  <span 
+class="ecti-1000">dhcpcd</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://roy.marples.name/projects/dhcpcd" class="url" ><span 
+class="ectt-1000">https://roy.marples.name/projects/dhcpcd</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-thc" class="thebibliography">
+            [11]   </dt><dd 
+id="bib-11" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@thc"></a>Atanas Rusev.
+                  <span 
+class="ecti-1000">Triple</span>
+                  <span 
+class="ecti-1000">Helix</span>
+                  <span 
+class="ecti-1000">Consulting</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://triplehelix-consulting.com" class="url" ><span 
+class="ectt-1000">https://triplehelix-consulting.com</span></a>
+                  (visited
+                  on
+                  2023).
+                                                                                                                    
+
+                                                                                                                    
+                  </dd><dt id="X0-rusev2023" class="thebibliography">
+            [12]   </dt><dd 
+id="bib-12" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@rusev2023"></a>Atanas Georgiev Rusev.
+                  <span 
+class="ecti-1000">Manjaro</span>
+                  <span 
+class="ecti-1000">Linux</span>
+                  <span 
+class="ecti-1000">User</span>
+                  <span 
+class="ecti-1000">Guide</span>.
+                  Packt
+                  Publishing
+                  Limited,
+                  2023.
+                  </dd><dt id="X0-vasquez2021" class="thebibliography">
+            [13]   </dt><dd 
+id="bib-13" class="thebibliography">
+                  <!--l. 237--><p class="noindent" ><a 
+ id="cite.0@vasquez2021"></a>Frank Vasquez
+                  and
+                  Chris Simmonds.
+                  <span 
+class="ecti-1000">Mastering</span>
+                  <span 
+class="ecti-1000">Embedded</span>
+                  <span 
+class="ecti-1000">Linux</span>
+                  <span 
+class="ecti-1000">Programming</span>.
+                  Packt
+                  Publishing
+                  Limited,
+                  2021.</dd></dl>
+            <!--l. 242--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
