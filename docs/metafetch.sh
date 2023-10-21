@@ -4,12 +4,13 @@
 
 BRANCH=kirkstone
 
-while getopts ":l:b:h" option; do
+while getopts ":l:b:r:h" option; do
    case $option in
-      h) echo usage $0 -l layerdir -b buildir; exit 420;;
-     \?) echo usage $0 -l layerdir -b buildir; exit 420;;
+      h) echo usage: $0 -l layerdir -b buildir -r branch; exit 420;;
+     \?) echo minimal usage: $0 -l layerdir -b buildir; exit 420;;
       l) LAYER=$OPTARG;;
       b) BUILD=$OPTARG;;
+      r) BRANCH=$OPTARG;;
    esac
 done
 
