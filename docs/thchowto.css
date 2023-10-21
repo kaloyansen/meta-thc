@@ -37,16 +37,17 @@
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
-.ectt-0800{font-size:80%; font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
-.ectt-0800{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{font-size:69%; font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ectt-0800x-x-87{ font-family: monospace,monospace;}
+.ecrm-0700{font-size:70%;}
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
@@ -58,7 +59,6 @@
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
 .eccc1000-{font-variant: small-caps;}
-.ecrm-0700{font-size:70%;}
 .small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
