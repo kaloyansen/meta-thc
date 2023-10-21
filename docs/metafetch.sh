@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # metafetch.sh
-# fetch rpi metadata branch
+# fetch rpi metadata
 
 BRANCH=kirkstone
 
