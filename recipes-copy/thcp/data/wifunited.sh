@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/sh
 #
 # wifini.sh
 #
@@ -35,15 +35,18 @@ SSPASS=$(grep $SSID $WPACONF)
 [ -n "$SSPASS" ] || wpa_passphrase $SSID >> $WPACONF
 
 
-echo $WINTERFACE $SSID $SSIS $SSPASS
-
 # kill $$ || exit 1
 
-wpa_supplicant -B -D wext -i $WINTERFACE -c $WPACONF
+[ -S "$WPASOCKET" ] || wpa_supplicant -B -D wext -i $WINTERFACE -c $WPACONF
 
-# connect
-# env wifi.sh
+udhcpc -i $WINTERFACE || error $?
 
-exit 0
+echo interface: $WINTERFACE ssid: $SSID ssis: $SSIS
+echo ssapass: $SSPASS wpasocket: $WPASOCKET
+
+# verify connexion
+# iw $winterface link
+# ip addr show $winterface
+# ip route show
 
 
