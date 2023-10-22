@@ -1,13 +1,10 @@
 #!/bin/sh
-#
 # wifini.sh
-#
-# a simple script to initialize wifi
-#
-# Kaloyan Krastev
+# initialize wifi
+# contact kaloyansen at gmail dot com
 # copyleft triplehelix-consulting.com
+# # # # # # # # # # # # # # # # # # # # # # # #
 
-WINTERFACE=wlan0
 WINTERFACE=$(iw dev|grep Interface|awk '{print $2}')
 SSID=PuzlCowOrKing
 WPACONF=/etc/wpa_supplicant.conf
@@ -26,25 +23,23 @@ done
 
 ip link set $WINTERFACE up
 ip link show $WINTERFACE
-SSIS=$(iw $WINTERFACE scan|grep $SSID)
 
-[ -n "$SSIS" ] || error warning: cannot find $SSID;
+SSIS=$(iw $WINTERFACE scan|grep $SSID)
+[ -n "$SSIS" ] || error warning: cannot find network $SSID;
 
 SSPASS=$(grep $SSID $WPACONF)
-
 [ -n "$SSPASS" ] || wpa_passphrase $SSID >> $WPACONF
-
-
-# kill $$ || exit 1
 
 [ -S "$WPASOCKET" ] || wpa_supplicant -B -D wext -i $WINTERFACE -c $WPACONF
 
 udhcpc -i $WINTERFACE || error $?
 
-echo interface: $WINTERFACE ssid: $SSID ssis: $SSIS
-echo ssapass: $SSPASS wpasocket: $WPASOCKET
+echo interface: $WINTERFACE \
+     ssid: $SSID \
+     ssis: $SSIS \
+     ssapass: $SSPASS \
+     wpasocket: $WPASOCKET \
 
-# verify connexion
 # iw $winterface link
 # ip addr show $winterface
 # ip route show
