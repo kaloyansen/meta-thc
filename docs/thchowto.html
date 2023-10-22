@@ -29,12 +29,12 @@ class="tcrm-1200">&lowast;</span></a></span></div><br />
 <div class="date" ><span 
 class="ecrm-1200">Sunday 22</span><sup class="textsuperscript"><span 
 class="ecrm-0900">nd</span></sup><span 
-class="ecrm-1200">&#x00A0;October, 2023 07:58</span></div>
+class="ecrm-1200">&#x00A0;October, 2023 09:02</span></div>
     <div class="thanks" ><br /><a 
  id="tk-1"></a><span class="thank-mark"><span 
 class="tcrm-1000">&lowast;</span></span>Triple Helix Consulting[<a 
  id="x1-2"></a><a 
-href="#cite.0@thc">7</a>]</div></div>
+href="#cite.0@thc">8</a>]</div></div>
                                                                                                                     
 
                                                                                                                     
@@ -744,13 +744,15 @@ class="ectt-0800x-x-87">&#x003E;</span></span></pre>
 class="cmmi-10">local.conf </span>and <span 
 class="cmmi-10">bblayers.conf</span>. <span 
 class="ecti-1000">Yocto </span>layers are specified in <span 
-class="cmmi-10">bblayers.conf</span>. The
-            build configuration is in <span 
-class="cmmi-10">local.conf</span>. Variables in this file control the build.
-            Sometimes I call these <span 
-class="cmmi-10">directives </span>to avoid repetitions. Many directives are not
-            covered in these instructions. Please refer <span 
-class="cmmi-10">bitbake </span>documentation for details. It
+class="cmmi-10">bblayers.conf</span>. The build
+            configuration is in <span 
+class="cmmi-10">local.conf</span>. Variables in this file control the build. Sometimes I
+            call these <span 
+class="cmmi-10">directives </span>to avoid repetitions. Many directives are not covered
+            in these instructions. Please refer <span 
+class="cmmi-10">bitbake</span>[<a 
+ id="x1-4001"></a><a 
+href="#cite.0@bitbake">7</a>] documentation for details. It
             is not always easy to understand the meaning and the relations between
             different directives. What is more, <span 
 class="cmmi-10">bitbake </span>syntax is pretty complicated. In
@@ -811,8 +813,11 @@ href="#x1-90005">5<!--tex4ht:ref: sec:install --></a> for
                <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-80004"></a>build</h3>
             <!--l. 117--><p class="noindent" ><span 
-class="ecti-1000">Yocto </span>provides a list of image types. For obvious reasons, I have chosen
-            <span 
+class="ecti-1000">Yocto </span>provides a list of image types. As I want to have a compact <a 
+href="#OS">OS</a> and I need a <span 
+class="cmmi-10">X</span>
+            server to run a <a 
+href="#GUI">GUI</a>, I rely on <span 
 class="cmmi-10">core </span><span 
 class="cmsy-10">&minus; </span><span 
 class="cmmi-10">image </span><span 
@@ -820,8 +825,11 @@ class="cmsy-10">&minus; </span><span
 class="cmmi-10">x</span><span 
 class="cmr-10">11</span>[<a 
  id="x1-8001"></a><a 
-href="#cite.0@yocto">2</a>] - a very basic X11 image with a terminal.
-            <!--l. 120--><p class="indent" >     The primary build tool of <span 
+href="#cite.0@yocto">2</a>]. This is a very basic <span 
+class="cmmi-10">X</span><span 
+class="cmr-10">11</span>
+            image.
+            <!--l. 119--><p class="indent" >     The primary build tool of <span 
 class="cmmi-10">OpenEmbedded </span>based projects, such as the <span 
 class="ecti-1000">Yocto</span>
             project, <span 
@@ -830,7 +838,7 @@ class="cmmi-10">bitbake</span>, works in the &#x003C;build_directory&#x003E;. He
             no need to change their default names.
                    <ul class="itemize1">
                    <li class="itemize">
-                   <!--l. 127--><p class="noindent" >&#x003C;build_directory&#x003E;/conf - build (<span 
+                   <!--l. 126--><p class="noindent" >&#x003C;build_directory&#x003E;/conf - build (<span 
 class="cmmi-10">local</span>.<span 
 class="cmmi-10">conf</span>) and layer (<span 
 class="cmmi-10">bblayers</span>.<span 
@@ -838,23 +846,23 @@ class="cmmi-10">conf</span>)
                    configuration files
                    </li>
                    <li class="itemize">
-                   <!--l. 129--><p class="noindent" >&#x003C;build_directory&#x003E;/downloads - fetched source code archives
+                   <!--l. 128--><p class="noindent" >&#x003C;build_directory&#x003E;/downloads - fetched source code archives
                    </li>
                    <li class="itemize">
-                   <!--l. 130--><p class="noindent" >&#x003C;build_directory&#x003E;/tmp/work - working directory where source code
+                   <!--l. 129--><p class="noindent" >&#x003C;build_directory&#x003E;/tmp/work - working directory where source code
                    is extracted, configured, compiled and installed
                    </li>
                    <li class="itemize">
-                   <!--l. 132--><p class="noindent" >&#x003C;build_directory&#x003E;/tmp/deploy/ipk - final <a 
+                   <!--l. 131--><p class="noindent" >&#x003C;build_directory&#x003E;/tmp/deploy/ipk - final <a 
 href="#SW">SW</a> packages in <span 
 class="cmmi-10">ipk </span>format
                    </li>
                    <li class="itemize">
-                   <!--l. 134--><p class="noindent" >&#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64 - boot files,
+                   <!--l. 133--><p class="noindent" >&#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64 - boot files,
                    compiled kernels and <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">images</span>.</li></ul>
-            <!--l. 138--><p class="indent" >     First, you need to initialize build environment. <!--l. 139-->
+            <!--l. 137--><p class="indent" >     First, you need to initialize build environment. <!--l. 138-->
             <a 
  id="x1-8002r3"></a>
             <a 
@@ -877,8 +885,8 @@ class="ectt-0800x-x-87">env</span></span><span style="color:#000000"> </span><sp
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">build_directory</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 143--><p class="indent" >   This will change your system path to &#x003C;build_directory&#x003E;. You may run now next
-command to check the project layers. <!--l. 145-->
+<!--l. 142--><p class="indent" >   This will change your system path to &#x003C;build_directory&#x003E;. You may run now next
+command to check the project layers. <!--l. 144-->
 <a 
  id="x1-8005r4"></a>
 <a 
@@ -891,16 +899,16 @@ class="ectt-0800x-x-87">layers</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">show</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">layers</span></span></pre>
-<!--l. 149--><p class="indent" >   If this is fine, the following command is going to build the <a 
+                                                                                                         
+
+                                                                                                         
+            <!--l. 148--><p class="indent" >    If this is fine, the following command is going to build the <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">image</span>.
-<!--l. 150-->
-                                                                                                                    
-
-                                                                                                                    
-            <a 
+<!--l. 149-->
+<a 
  id="x1-8008r5"></a>
-            <a 
+<a 
  id="x1-8009"></a>
 <pre class="lstlisting" id="listing-5"><span class="label"><a 
  id="x1-8010r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -910,17 +918,17 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">image</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">x11</span></span></pre>
-<!--l. 154--><p class="indent" >   Be patient because, unless your host machine is a supercomputer, this will take
+<!--l. 153--><p class="indent" >    Be patient because, unless your host machine is a supercomputer, this will take
 hours. Find a list of tasks performed by <span 
 class="cmmi-10">bitbake </span>for a typical <a 
 href="#SW">SW</a> package in Table
 <a 
 href="#x1-80111">1<!--tex4ht:ref: tab:task --></a>.
-   <div class="table">
+     <div class="table">
                                                                                                                     
 
                                                                                                                     
-            <!--l. 159--><p class="indent" >     <a 
+            <!--l. 158--><p class="indent" >     <a 
  id="x1-80111"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -986,13 +994,13 @@ class="cmmi-10">bitbake </span>tasks</span></div><!--tex4ht:label?: x1-80111 -->
                                                                                                                     
                </div><hr class="endfloat" />
                </div>
-            <!--l. 179--><p class="indent" >
+            <!--l. 178--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-90005"></a>install</h3>
-            <!--l. 182--><p class="noindent" >The <a 
+            <!--l. 181--><p class="noindent" >The <a 
 href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, 64 <span 
 class="cmmi-10">bit </span>boot executable <span 
@@ -1011,7 +1019,7 @@ class="cmmi-10">term</span>
             <span 
 class="cmmi-10">support </span>(<a 
 href="#LTS">LTS</a>).
-            <!--l. 186--><p class="indent" >     <span 
+            <!--l. 185--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
 class="cmmi-10">image </span>formats. Further, different ways exist
             to install <span 
@@ -1037,7 +1045,7 @@ class="cmmi-10">&#x2215;dev&#x2215;sda</span>, unmount it with <span
 class="cmmi-10">umount </span>if mounted, and do copy data with
             a simple command <br 
 class="newline" />
-               <!--l. 195-->
+               <!--l. 194-->
             <a 
  id="x1-9001r6"></a>
             <a 
@@ -1064,51 +1072,54 @@ class="ectt-0800x-x-87">sda</span></span><span style="color:#000000"> </span><sp
 class="ectt-0800x-x-87">status</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">progress</span></span></pre>
-<!--l. 199--><p class="indent" >   note 1: run this command in &#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64
+<!--l. 198--><p class="indent" >   note 1: run this command in &#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64
 <br 
 class="newline" />note 2: run this command with <span 
 class="cmmi-10">root </span>privileges <br 
 class="newline" />note 3: be careful to not specify the device name of your hard drive (see note 2)
 <br 
 class="newline" />
-<!--l. 203--><p class="indent" >   The transfer is going to take a while. Once it is over, put the card in you
+<!--l. 202--><p class="indent" >   The transfer is going to take a while. Once it is over, put the card in you
 <span 
 class="cmmi-10">Raspberry &pi; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B </span>and turn it on. That&#8217;s it.
-<!--l. 206--><p class="indent" >
+<!--l. 205--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-100006"></a>run</h3>
-            <!--l. 209--><p class="noindent" >Connected embedded systems can communicate to one another and to cloud-based
-            <a 
+            <!--l. 209--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
+class="cmmi-10">ip </span>and <span 
+class="cmmi-10">iw</span>. I use
+            a <a 
  id="section*.7"></a><span 
+class="cmmi-10">dynamic host configuration protocol </span>(<a 
+href="#DHCP">DHCP</a>) client, <span 
+class="cmmi-10">udhcpc</span>, and <span 
+class="cmmi-10">wpa</span>_<span 
+class="cmmi-10">supplicant</span>
+            to store WiFi connection. Custom shell scripts are installed in <span 
+class="cmmi-10">&#x2215;usr&#x2215;bin</span>, as well
+            as a running <a 
+href="#GUI">GUI</a> example to demonstrate the usage of the <span 
+class="cmmi-10">Dear ImGui</span>
+            library.
+            <!--l. 214--><p class="indent" >     Connected embedded systems can communicate to one another and to
+            cloud-based <a 
+ id="section*.8"></a><span 
 class="cmmi-10">platform</span>-<span 
 class="cmmi-10">as</span>-<span 
 class="cmmi-10">a</span>-<span 
 class="cmmi-10">service </span>(<a 
-href="#PaaS">PaaS</a>) solutions. In addition, a remote control may
-            be required. An <a 
- id="section*.8"></a><span 
-class="cmmi-10">secure shell </span>(<a 
-href="#SSH">SSH</a>) server is a standard solution for both
-            problems.
-            <!--l. 213--><p class="indent" >     Wireless connection is established via classic command-line tools like <span 
-class="cmmi-10">ip</span>, <span 
-class="cmmi-10">iw</span>,
-            <span 
-class="cmmi-10">dhcpcd</span>, and <span 
-class="cmmi-10">wpa</span>_<span 
-class="cmmi-10">supplicant</span>. Custom shell scripts are installed in <span 
-class="cmmi-10">&#x2215;usr&#x2215;bin</span>,
-            as well as a running <a 
-href="#GUI">GUI</a> example to demonstrate the usage of the <span 
-class="cmmi-10">Dear</span>
-            <span 
-class="cmmi-10">ImGui </span>library. Once an <a 
+href="#PaaS">PaaS</a>) solutions. In addition, a remote
+            control may be required. <a 
  id="section*.9"></a><span 
+class="cmmi-10">secure shell </span>(<a 
+href="#SSH">SSH</a>) server is a standard solution for
+            both problems. Once an <a 
+ id="section*.10"></a><span 
 class="cmmi-10">internet protocol </span>(<a 
 href="#IP">IP</a>) address is assigned, the <a 
 href="#SSH">SSH</a>
@@ -1214,6 +1225,20 @@ href="#x1-20001"><span
 class="cmmi-10">operating system</span></a><br 
 class="newline" />
                    </dd><dt class="description">
+                   <!--l. 10--><p class="noindent" >
+            <a 
+ id="DHCP"></a><a 
+href="#x1-100006"><span 
+class="ecbx-1000">DHCP</span></a>  </dt><dd 
+class="description">
+                   <!--l. 10--><p class="noindent" ><a 
+href="#x1-100006"><span 
+class="cmmi-10">dynamic host configuration protocol</span></a><br 
+class="newline" />
+                                                                                                    
+
+                                                                                                    
+                   </dd><dt class="description">
                    <!--l. 12--><p class="noindent" >
             <a 
  id="IP"></a><a 
@@ -1224,9 +1249,6 @@ class="description">
 href="#x1-100006"><span 
 class="cmmi-10">internet protocol</span></a><br 
 class="newline" />
-                                                                                                    
-
-                                                                                                    
                    </dd><dt class="description">
                    <!--l. 13--><p class="noindent" >
             <a 
@@ -1452,9 +1474,36 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                  (visited
                  on
                  2023).
-                 </dd><dt id="X0-thc" class="thebibliography">
+                 </dd><dt id="X0-bitbake" class="thebibliography">
             [7]   </dt><dd 
 id="bib-7" class="thebibliography">
+                 <!--l. 235--><p class="noindent" ><a 
+ id="cite.0@bitbake"></a>Richard Purdie,
+                 Chris Larson,
+                 and
+                 Phil Blundell.
+                 <span 
+class="ecti-1000">BitBake</span>
+                 <span 
+class="ecti-1000">User</span>
+                 <span 
+class="ecti-1000">Manual</span>.
+                 2023.
+                 <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                 
+<a 
+href="https://docs.yoctoproject.org/bitbake" class="url" ><span 
+class="ectt-1000">https://docs.yoctoproject.org/bitbake</span></a>
+                 (visited
+                 on
+                 2023).
+                 </dd><dt id="X0-thc" class="thebibliography">
+            [8]   </dt><dd 
+id="bib-8" class="thebibliography">
                  <!--l. 235--><p class="noindent" ><a 
  id="cite.0@thc"></a>Atanas Rusev.
                  <span 
@@ -1463,6 +1512,9 @@ class="ecti-1000">Triple</span>
 class="ecti-1000">Helix</span>
                  <span 
 class="ecti-1000">Consulting</span>.
+                                                                                                                    
+
+                                                                                                                    
                  2023.
                  <span 
 class="eccc1000-"><span 
