@@ -1,6 +1,5 @@
 This README file contains information on the contents of the meta-thc layer.
-
-Please see the corresponding sections below for details.
+Please see https://kaloyanski.github.io/meta-thc for details.
 
 Dependencies
 ============
@@ -37,4 +36,4 @@ Run 'bitbake-layers add-layer meta-thc'
 II. Misc
 ========
 
-See https://kaloyanski.github.io/meta-thc for details
+see https://kaloyanski.github.io/meta-thc for details
