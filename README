@@ -37,4 +37,4 @@ Run 'bitbake-layers add-layer meta-thc'
 II. Misc
 ========
 
---- replace with specific information about the meta-thc layer ---
+See https://kaloyanski.github.io/meta-thc for details
