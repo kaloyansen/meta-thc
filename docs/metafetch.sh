@@ -5,21 +5,21 @@
 FETCHER=git@github.com
 BRANCH=kirkstone
 
-tchouss() { echo $*; exit 111; }
+erreur() { echo $*; exit 1; }
 
 while getopts ":l:b:r:h" option; do
 
     case $option in
-      h) tchouss usage: $0 -l layerdir -b buildir -r branch;;
-     \?) tchouss minimal usage: $0 -l layerdir -b buildir;;
-      l) LAYER=$OPTARG;;
-      b) BUILD=$OPTARG;;
-      r) BRANCH=$OPTARG;;
-   esac
+        h) erreur usage: $0 -l layerdir -b buildir -r branch;;
+        \?) erreur minimal usage: $0 -l layerdir -b buildir;;
+        l) LAYER=$OPTARG;;
+        b) BUILD=$OPTARG;;
+        r) BRANCH=$OPTARG;;
+    esac
 done
 
-[ -n "$LAYER" ] || tchouss specify layer directory
-[ -n "$BUILD" ] || tchouss specify build directory
+[ -n "$LAYER" ] || erreur specify layer directory
+[ -n "$BUILD" ] || erreur specify build directory
 
 LAYER=$(realpath $LAYER) && echo $FETCHER $BRANCH in $LAYER
 BUILD=$(realpath $BUILD) && echo $FETCHER configuration in $BUILD
@@ -39,7 +39,7 @@ git clone $FETCHER:TripleHelixConsulting/rpiconf.git $BUILD/conf
 sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf
 
 OEINIT=$LAYER/poky/oe-init-build-env
-[ -x $OEINIT ] && . $OEINIT $BUILD || tchouss cannot find $OEINIT
+[ -x $OEINIT ] && . $OEINIT $BUILD || erreur cannot find $OEINIT
 
 bitbake-layers show-layers
 # bitbake core-image-x11

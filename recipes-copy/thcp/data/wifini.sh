@@ -7,36 +7,37 @@
 # copyleft triplehelix-consulting.com
 # # # # # # # # # # # # # # # # # # # # # # # #
 
-WINTERFACE=$(iw dev|grep Interface|awk '{print $2}')
-SSID=PuzlCowOrKing
-WPACONF=/etc/wpa_supplicant.conf
-WPASOCKET=/run/wpa_supplicant/$WINTERFACE
-UDHCPID=/run/udhcpc.$WINTERFACE.pid
+echo i am wifini.sh
 
-error() { echo $*; exit 1; }
+WIFACE=$(/usr/sbin/iw dev|grep Interface|awk '{print $2}')
+WPACONF=/etc/wpa_supplicant.conf
+WPASOCKET=/run/wpa_supplicant/$WIFACE
+UDHCPID=/run/udhcpc.$WIFACE.pid
+
+erreur() { echo $*; exit 1; }
 
 while getopts ":i:s:h" option; do
-   case $option in
-      i) WINTERFACE=$OPTARG;;
-      s) SSID=$OPTARG;;
-      h) error usage: $0 -s SSID;;
-      *) error warning: option unknown;;
-   esac
+
+    case $option in
+        i) WIFACE=$OPTARG;;
+        s) SSID=$OPTARG;;
+        h) erreur usage: $0 -s SSID;;
+        *) erreur warning: option unknown;;
+    esac
 done
 
-
-ip link show $WINTERFACE | grep UP || ip link set $WINTERFACE up
-iw $WINTERFACE scan|grep $SSID || error warning: cannot find network $SSID;
+[ -n "$SSID" ] || erreur specify SSID
+/usr/sbin/iw dev|grep $SSID > /dev/null && erreur connected $SSID via $WIFACE || echo connecting
+/sbin/ip link show $WIFACE | grep UP || /sbin/ip link set $WIFACE up
+/usr/sbin/iw $WIFACE scan|grep $SSID || erreur warning: cannot find network $SSID;
 grep $SSID $WPACONF || wpa_passphrase $SSID >> $WPACONF
-[ -S "$WPASOCKET" ] || wpa_supplicant -B -D wext -i $WINTERFACE -c $WPACONF
+[ -S "$WPASOCKET" ] || wpa_supplicant -B -D wext -i $WIFACE -c $WPACONF
 # [ -f "$UDHCPID" ] ||
-udhcpc -i $WINTERFACE || error $?
+udhcpc -i $WIFACE || erreur $?
 
-
-
-# ip addr show $WINTERFACE
-echo interface $WINTERFACE SSID $SSID
-# iw $WINTERFACE link
+# ip addr show $WIFACE
+echo interface $WIFACE SSID $SSID
+# iw $WIFACE link
 # ip route show
 
 
