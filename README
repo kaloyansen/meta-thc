@@ -5,15 +5,14 @@ Please see the corresponding sections below for details.
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+  URI: git@github.com:yoctoproject/poky.git
+  branch: kirkstone
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: git@github.com:openembedded/meta-openembedded.git
+  branch: kirkstone
 
-  .
-  .
-  .
+  URI: git@github.com:agherzan/meta-raspberrypi
+  branch: kirkstone  
 
 Patches
 =======
@@ -21,7 +20,7 @@ Patches
 Please submit any patches against the meta-thc layer to the xxxx mailing list (xxxx@zzzz.org)
 and cc: the maintainer:
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+Maintainer: Kaloyan Krastev <kaloyansen at gmail dot com>
 
 Table of Contents
 =================
