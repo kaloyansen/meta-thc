@@ -25,7 +25,7 @@ Table of Contents
 =================
 
   I. Adding the meta-thc layer to your build
- II. Misc
+ II. Mistery
 
 
 I. Adding the meta-thc layer to your build
@@ -33,7 +33,7 @@ I. Adding the meta-thc layer to your build
 
 Run 'bitbake-layers add-layer meta-thc'.
 
-II. Misc
+II. Mistery
 ========
 
 Please see https://kaloyanski.github.io/meta-thc for details.
