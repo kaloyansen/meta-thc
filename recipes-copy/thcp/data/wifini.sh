@@ -1,9 +1,8 @@
 #!/bin/sh
 # wifini.sh
-# wifi connection
-# requirements:
+# wifi connection requirements:
 # wpa_passphrase wpa_supplicant, ip, iw, grep, awk 
-# contact kaloyansen at gmail dot com
+# designed by kaloyansen at gmail dot com
 # copyleft triplehelix-consulting.com
 # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -14,7 +13,7 @@ WPACONF=/etc/wpa_supplicant.conf
 WPASOCKET=/run/wpa_supplicant/$WIFACE
 UDHCPID=/run/udhcpc.$WIFACE.pid
 
-erreur() { echo $*; exit 1; }
+erreur() { echo $* && exit 1; }
 
 while getopts ":i:s:h" option; do
 

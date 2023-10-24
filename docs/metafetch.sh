@@ -1,20 +1,27 @@
-#!/bin/sh
+#!/bin/ash
 # metafetch.sh
 # fetch rpi metadata
 
 FETCHER=git@github.com
 BRANCH=kirkstone
 
-erreur() { echo $*; exit 1; }
+erreur() { echo $* && exit 1; }
+confirm() {
+
+    read -p "confirm (y/n) " choix
+    if [ "$choix" == 'y' ]; then return 0; fi
+    return 1
+}
 
 while getopts ":l:b:r:h" option; do
 
     case $option in
-        h) erreur usage: $0 -l layerdir -b buildir -r branch;;
-        \?) erreur minimal usage: $0 -l layerdir -b buildir;;
-        l) LAYER=$OPTARG;;
-        b) BUILD=$OPTARG;;
-        r) BRANCH=$OPTARG;;
+
+        h ) erreur usage: $0 -l layerdir -b buildir -r branch;;
+        l ) LAYER=$OPTARG;;
+        b ) BUILD=$OPTARG;;
+        r ) BRANCH=$OPTARG;;
+        * ) erreur minimal usage: $0 -l layerdir -b buildir;;
     esac
 done
 
@@ -24,13 +31,20 @@ done
 LAYER=$(realpath $LAYER) && echo $FETCHER $BRANCH in $LAYER
 BUILD=$(realpath $BUILD) && echo $FETCHER configuration in $BUILD
 
-read -p "confirm (y/n) " choice
-case "$choice" in
-    y ) echo $FETCHER;;
-    * ) echo refused; rmdir -v $LAYER $BUILD; exit 0;;
-esac
+confirm || erreur fetch cancelled
 
-git clone -b $BRANCH $FETCHER:yoctoproject/poky.git $LAYER/poky
+gitclone() {
+    case "$#" in:
+         0|1 ) return 1;;
+         2 ) gitcom="git clone $1 $2";;
+         3 ) gitcom="git clone -b $3 $1 $2";;
+         * ) return 1;;
+    esac
+    return $($gitcom)
+}
+
+gitclone $FETCHER:yoctoproject/poky.git $LAYER/poky $BRANCH
+# git clone -b $BRANCH $FETCHER:yoctoproject/poky.git $LAYER/poky
 git clone -b $BRANCH $FETCHER:openembedded/meta-openembedded.git $LAYER/oe
 git clone -b $BRANCH $FETCHER:agherzan/meta-raspberrypi $LAYER/rpi/meta-raspberrypi
 git clone $FETCHER:kaloyanski/meta-thc.git $LAYER/thc/meta-thc
