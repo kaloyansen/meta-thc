@@ -20,5 +20,4 @@ do_install() {
 	install -d ${D}/${ROOT_HOME}
 	install -m 0755 ${WORKDIR}/${SRC_PATH}/wifini.sh ${D}/${bindir}
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/.profile ${D}/${ROOT_HOME}
-	echo auto wlan0 >> ${D}/etc/network/interfaces
 }

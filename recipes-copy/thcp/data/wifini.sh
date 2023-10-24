@@ -32,6 +32,7 @@ grep $SSID $WPACONF || /usr/bin/wpa_passphrase $SSID >> $WPACONF
 # [ -f "$UDHCPID" ] ||
 /sbin/udhcpc -i $WIFACE || erreur $0 $?
 
+# echo auto wlan0 >> /etc/network/interfaces
 # ip addr show $WIFACE
 # echo interface $WIFACE SSID $SSID
 # iw $WIFACE link

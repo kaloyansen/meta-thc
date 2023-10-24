@@ -10,5 +10,3 @@ export KALO
 
 [ -n "$DISPLAY" ] && /usr/bin/example_glfw_opengl2_cmake
 
-
-
