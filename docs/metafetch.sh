@@ -9,8 +9,9 @@ erreur() { echo $* && exit 1; }
 confirm() {
 
     read -p "confirm (y/n) " choix
-    if [ "$choix" == 'y' ]; then return 0; fi
-    return 1
+    [ "$choix" == "y" ] && return 0 || return 1
+#    if [ "$choix" == 'y' ]; then return 0; fi
+#    return 1
 }
 
 while getopts ":l:b:r:h" option; do
@@ -31,26 +32,15 @@ done
 LAYER=$(realpath $LAYER) && echo $FETCHER $BRANCH in $LAYER
 BUILD=$(realpath $BUILD) && echo $FETCHER configuration in $BUILD
 
-confirm || erreur fetch cancelled
+confirm || erreur cancelled
 
-gitclone() {
-    case "$#" in:
-         0|1 ) return 1;;
-         2 ) gitcom="git clone $1 $2";;
-         3 ) gitcom="git clone -b $3 $1 $2";;
-         * ) return 1;;
-    esac
-    return $($gitcom)
-}
-
-gitclone $FETCHER:yoctoproject/poky.git $LAYER/poky $BRANCH
-# git clone -b $BRANCH $FETCHER:yoctoproject/poky.git $LAYER/poky
+git clone -b $BRANCH $FETCHER:yoctoproject/poky.git $LAYER/poky
 git clone -b $BRANCH $FETCHER:openembedded/meta-openembedded.git $LAYER/oe
 git clone -b $BRANCH $FETCHER:agherzan/meta-raspberrypi $LAYER/rpi/meta-raspberrypi
 git clone $FETCHER:kaloyanski/meta-thc.git $LAYER/thc/meta-thc
 git clone $FETCHER:TripleHelixConsulting/rpiconf.git $BUILD/conf
 
-sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf
+sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur cannot sed
 
 OEINIT=$LAYER/poky/oe-init-build-env
 [ -x $OEINIT ] && . $OEINIT $BUILD || erreur cannot find $OEINIT
