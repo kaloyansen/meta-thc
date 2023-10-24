@@ -24,13 +24,13 @@ while getopts ":i:s:h" option; do
 done
 
 [ -n "$SSID" ] || erreur specify SSID
-/usr/sbin/iw dev|grep $SSID > /dev/null && erreur $0: $WIFACE $SSID || echo connecting
+/usr/sbin/iw dev|grep $SSID > /dev/null && erreur $0: $WIFACE $SSID || echo $0 connecting
 /sbin/ip link show $WIFACE | grep UP || /sbin/ip link set $WIFACE up
-/usr/sbin/iw $WIFACE scan|grep $SSID || erreur warning: cannot find network $SSID;
+/usr/sbin/iw $WIFACE scan|grep $SSID || erreur warning: $0 cannot find network $SSID;
 grep $SSID $WPACONF || /usr/bin/wpa_passphrase $SSID >> $WPACONF
 [ -S "$WPASOCKET" ] || /usr/sbin/wpa_supplicant -B -D wext -i $WIFACE -c $WPACONF
 # [ -f "$UDHCPID" ] ||
-/sbin/udhcpc -i $WIFACE || erreur $?
+/sbin/udhcpc -i $WIFACE || erreur $0 $?
 
 # ip addr show $WIFACE
 # echo interface $WIFACE SSID $SSID
