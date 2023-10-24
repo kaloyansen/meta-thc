@@ -6,12 +6,31 @@
 FETCHER=https://github.com/
 GITFETCHER=git@github.com:
 BRANCH=kirkstone
+DEFLAYER=$HOME/yocto_$BRANCH/metadata
+DEFBUILD=$HOME/yocto_$BRANCH/rpi4
 
 erreur() { echo $* && exit 0 || kill $$; }
 
+usage() {
+
+    printf "
+usage:
+\t wget https://kaloyanski.github.io/meta-thc/metafetch.sh
+\t chmod +x metafetch.sh
+\t bash metafetch.sh <options>
+    option        \t purpose                 \t default
+    -h            \t print this              \t usage
+    -g            \t switch to git protocol  \t https protocol
+    -r <branch>   \t branch                  \t $BRANCH
+    -l <layerdir> \t metadata directory      \t $DEFLAYER
+    -b <buildir>  \t build directory         \t $DEFBUILD
+"
+    erreur
+}
+
 confirm() {
 
-    read -p "confirm (y/n) " choix
+    read -p "please confirm (y/n) " choix
     [ "$choix" == "y" ] && echo 1 || echo 0
 }
 
@@ -20,21 +39,22 @@ while getopts ":l:b:r:hg" option; do
 
     case $option in
 
-        h ) erreur $? usage: $0 -l layerdir -b buildir -r branch -g;;
         l ) LAYER=$OPTARG;;
         b ) BUILD=$OPTARG;;
         r ) BRANCH=$OPTARG;;
         g ) FETCHER=$GITFETCHER;;
-        * ) erreur $? minimal usage: $0 -l layerdir -b buildir;;
+        h ) usage $0;; # erreur $? usage: $0 -l layerdir -b buildir -r branch -g;;
+        * ) usage $0;; # erreur $? minimal usage: $0 -l layerdir -b buildir;;
     esac
 done
 
-[ -n "$LAYER" ] || LAYER=$HOME/yocto_$BRANCH/layer
-[ -n "$BUILD" ] || BUILD=$HOME/yocto_$BRANCH/build
+[ -n "$LAYER" ] || LAYER=$DEFLAYER
+[ -n "$BUILD" ] || BUILD=$DEFBUILD
 [ -d $LAYER ] || mkdir -p $LAYER || erreur $? cannot create $LAYER
 [ -d $BUILD ] || mkdir -p $BUILD || erreur $? cannot create $BUILD
-LAYER=$(realpath $LAYER) && echo fetcher $FETCHER branch $BRANCH in $LAYER || erreur $? cannot find $LAYER
-BUILD=$(realpath $BUILD) && echo fetcher $FETCHER configuration in $BUILD || erreur $? cannot find $BUILD
+LAYER=$(realpath $LAYER) && printf "\nmetadata:\t $LAYER\n" || erreur $? cannot find $LAYER
+BUILD=$(realpath $BUILD) && printf "build:\t\t $BUILD\n" || erreur $? cannot find $BUILD
+printf "branch:\t\t $BRANCH\nprotocol:\t $FETCHER\n\n"
 
 [ $(confirm) = 0 ] && erreur $? $0 interrupt || echo $0 continue
 
@@ -52,6 +72,9 @@ cd $LAYER/poky && pwd || erreur $? cannot find $LAYER/poky
 
 bitbake-layers show-layers
 
-echo to start a new build follow next commands 
-echo cd $LAYER/poky 
+printf "\n\t follow next commands to start a new build\n\n"
+echo cd $LAYER/poky
+echo source $OEINIT $BUILD
 echo bitbake core-image-x11
+echo
+
