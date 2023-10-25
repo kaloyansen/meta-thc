@@ -1,1 +1,0 @@
-../recipes-copy/thcp/data/wifini.sh
