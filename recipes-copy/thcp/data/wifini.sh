@@ -30,14 +30,14 @@ while getopts ":i:s:h" option; do
 done
 
 [ -n "$SSID" ] || erreur specify SSID
-$IW dev|grep $SSID > /dev/null && erreur $0: $WIFACE $SSID || echo $0 connecting
+grep "auto $WIFACE" $IFCONF > /dev/null || printf "auto $WIFACE\n" >> $IFCONF
+$IW dev|grep $SSID > /dev/null && erreur $0 info: $WIFACE $SSID || echo $0 info: connecting
 $IP link show $WIFACE | grep UP || $IP link set $WIFACE up
-$IW $WIFACE scan|grep $SSID || erreur warning: $0 cannot find network $SSID;
+$IW $WIFACE scan|grep $SSID || erreur $0 warning: cannot find network $SSID;
 grep $SSID $WPACONF || $WPAPASS $SSID >> $WPACONF
 [ -S "$WPASOCKET" ] || $WPASUPP -B -D wext -i $WIFACE -c $WPACONF
 # [ -f "$UDHCPID" ] ||
-/sbin/udhcpc -i $WIFACE || erreur $0 $?
-grep "auto $WIFACE" $IFCONF > /dev/null || printf "auto $WIFACE\n" >> $IFCONF
+/sbin/udhcpc -i $WIFACE || erreur $0 warning: $?
 
 # ip addr show $WIFACE
 # iw $WIFACE link
