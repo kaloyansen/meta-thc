@@ -10,8 +10,14 @@ WIFACE=$(/usr/sbin/iw dev|grep Interface|awk '{print $2}')
 WPACONF=/etc/wpa_supplicant.conf
 WPASOCKET=/run/wpa_supplicant/$WIFACE
 UDHCPID=/run/udhcpc.$WIFACE.pid
+IFCONF=/etc/network/interfaces
+IW=/usr/sbin/iw
+IP=/sbin/ip
+WPAPASS=/usr/bin/wpa_passphrase
+WPASUPP=/usr/sbin/wpa_supplicant
 
 erreur() { echo $* && exit 1; }
+
 
 while getopts ":i:s:h" option; do
 
@@ -24,18 +30,18 @@ while getopts ":i:s:h" option; do
 done
 
 [ -n "$SSID" ] || erreur specify SSID
-/usr/sbin/iw dev|grep $SSID > /dev/null && erreur $0: $WIFACE $SSID || echo $0 connecting
-/sbin/ip link show $WIFACE | grep UP || /sbin/ip link set $WIFACE up
-/usr/sbin/iw $WIFACE scan|grep $SSID || erreur warning: $0 cannot find network $SSID;
-grep $SSID $WPACONF || /usr/bin/wpa_passphrase $SSID >> $WPACONF
-[ -S "$WPASOCKET" ] || /usr/sbin/wpa_supplicant -B -D wext -i $WIFACE -c $WPACONF
+$IW dev|grep $SSID > /dev/null && erreur $0: $WIFACE $SSID || echo $0 connecting
+$IP link show $WIFACE | grep UP || $IP link set $WIFACE up
+$IW $WIFACE scan|grep $SSID || erreur warning: $0 cannot find network $SSID;
+grep $SSID $WPACONF || $WPAPASS $SSID >> $WPACONF
+[ -S "$WPASOCKET" ] || $WPASUPP -B -D wext -i $WIFACE -c $WPACONF
 # [ -f "$UDHCPID" ] ||
 /sbin/udhcpc -i $WIFACE || erreur $0 $?
+grep "auto $WIFACE" $IFCONF > /dev/null || printf "auto $WIFACE\n" >> $IFCONF
 
-# echo auto wlan0 >> /etc/network/interfaces
 # ip addr show $WIFACE
-# echo interface $WIFACE SSID $SSID
 # iw $WIFACE link
 # ip route show
+
 
 
