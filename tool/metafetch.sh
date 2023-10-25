@@ -15,8 +15,6 @@ usage() {
 
     printf "
 usage:
-\t wget https://kaloyanski.github.io/meta-thc/metafetch.sh
-\t chmod +x metafetch.sh
 \t bash metafetch.sh <options>
     option        \t purpose                 \t default
     -h            \t print this              \t usage
