@@ -1,4 +1,4 @@
-#!/bin/sh
+!/bin/sh
 # wifini.sh
 # wifi connection requirements:
 # wpa_passphrase, wpa_supplicant, ip, iw, grep, awk 
@@ -6,7 +6,6 @@
 # copyleft triplehelix-consulting.com
 # # # # # # # # # # # # # # # # # # # # # # # #
 
-WIFACE=$(/usr/sbin/iw dev|grep Interface|awk '{print $2}')
 WPACONF=/etc/wpa_supplicant.conf
 WPASOCKET=/run/wpa_supplicant/$WIFACE
 UDHCPID=/run/udhcpc.$WIFACE.pid
@@ -16,8 +15,9 @@ IP=/sbin/ip
 WPAPASS=/usr/bin/wpa_passphrase
 WPASUPP=/usr/sbin/wpa_supplicant
 
-erreur() { echo $* && exit 1; }
+WIFACE=$($IW dev|grep Interface|awk '{print $2}')
 
+erreur() { echo $* && exit 1; }
 
 while getopts ":i:s:h" option; do
 
@@ -29,16 +29,38 @@ while getopts ":i:s:h" option; do
     esac
 done
 
-[ -n "$SSID" ] || erreur specify SSID
-grep "auto $WIFACE" $IFCONF > /dev/null || printf "auto $WIFACE\n" >> $IFCONF
-$IW dev|grep $SSID > /dev/null && erreur $0 info: $WIFACE $SSID || echo $0 info: connecting
-$IP link show $WIFACE | grep UP || $IP link set $WIFACE up
-$IW $WIFACE scan|grep $SSID || erreur $0 warning: cannot find network $SSID;
-grep $SSID $WPACONF || $WPAPASS $SSID >> $WPACONF
-[ -S "$WPASOCKET" ] || $WPASUPP -B -D wext -i $WIFACE -c $WPACONF
-# [ -f "$UDHCPID" ] ||
-/sbin/udhcpc -i $WIFACE || erreur $0 warning: $?
+[ -n "$SSID" ] ||
+    erreur $0: specify SSID
 
+# enable interface connexion on boot
+grep "auto $WIFACE" $IFCONF > /dev/null ||
+    printf "auto $WIFACE\n" >> $IFCONF
+
+# verify connexion
+$IW dev|grep $SSID > /dev/null &&
+    erreur $0 info: $WIFACE $SSID ||
+        echo $0 connecting to $SSID
+
+# up interface
+$IP link show $WIFACE | grep UP ||
+    $IP link set $WIFACE up
+
+# search for wifi network
+$IW $WIFACE scan|grep $SSID ||
+    erreur $0 warning: cannot find network $SSID;
+
+# save network 
+grep $SSID $WPACONF ||
+    $WPAPASS $SSID >> $WPACONF
+
+# load network
+[ -S "$WPASOCKET" ] ||
+    $WPASUPP -B -D wext -i $WIFACE -c $WPACONF
+# get ip address dhcp
+/sbin/udhcpc -i $WIFACE ||
+    erreur $0 warning: $?
+
+# [ -f "$UDHCPID" ] ||
 # ip addr show $WIFACE
 # iw $WIFACE link
 # ip route show
