@@ -20,7 +20,7 @@ DHCP=/sbin/udhcpc
 IP=/sbin/ip
 
 # wifi interface
-#WIFACE=$($IW dev|grep Interface|awk '{print $2}')
+WIFACE=$($IW dev|grep Interface|awk '{print $2}')
 
 erreur() { echo $* && exit 1; }
 
