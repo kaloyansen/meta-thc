@@ -29,12 +29,10 @@ class="tcrm-1200">*</span></a></span></div><br />
 <div class="date" ><span 
 class="ecrm-1200">Friday 27</span><sup class="textsuperscript"><span 
 class="ecrm-0900">th</span></sup><span 
-class="ecrm-1200">&#x00A0;October, 2023 10:09</span></div>
+class="ecrm-1200">&#x00A0;October, 2023 21:24</span></div>
     <div class="thanks" ><br /><a 
  id="tk-1"></a><span class="thank-mark"><span 
-class="tcrm-1000">*</span></span>Triple Helix Consulting[<a 
- id="x1-2"></a><a 
-href="#cite.0@thc">9</a>]</div></div>subversion revision 2893
+class="tcrm-1000">*</span></span>Triple Helix Consulting</div></div>subversion revision 2893
                                                                                                                     
 
                                                                                                                     
@@ -1289,30 +1287,39 @@ class="cmmi-10">term</span>
 class="cmmi-10">support </span>(LTS).
             <!--l. 208--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
-class="cmmi-10">image </span>formats. Further, different ways exist
-            to install <span 
+class="cmmi-10">image </span>formats. Find <span 
+class="cmmi-10">image </span>files in
+            <br 
+class="newline" /><span 
+class="cmmi-10">&#x003C; build</span>_<span 
+class="cmmi-10">directory &#x003E; &#x2215;tmp&#x2215;deploy&#x2215;images&#x2215;raspberrypi</span><span 
+class="cmr-10">4 </span><span 
+class="cmsy-10">- </span><span 
+class="cmr-10">64 </span><br 
+class="newline" />Further, different ways exist to install <span 
 class="cmmi-10">images </span>on <span 
-class="cmmi-10">SD </span>card. The result is an OS with two partitions - <span 
-class="cmmi-10">&#x2215;root </span>and
-            <span 
+class="cmmi-10">SD </span>card. The final result is an OS
+            with two partitions - <span 
+class="cmmi-10">&#x2215;root </span>and <span 
 class="cmmi-10">&#x2215;boot</span>. There are not <span 
 class="cmmi-10">swap </span>and <span 
-class="cmmi-10">home </span>partitions. I recommend the classic
-            command-line tool <span 
-class="cmmi-10">dd </span>to copy data. It works fine with different <span 
-class="cmmi-10">image </span>formats like
-            <span 
-class="cmmi-10">rpi</span><span 
-class="cmsy-10">-</span><span 
+class="cmmi-10">home </span>partitions. I
+            recommend the classic command-line tool <span 
+class="cmmi-10">dd </span>to copy data. It works fine with
+            different <span 
+class="cmmi-10">image </span>formats like <span 
+class="cmmi-10">rpi </span><span 
+class="cmsy-10">- </span><span 
 class="cmmi-10">sdimg</span>, <span 
 class="cmmi-10">hddimg </span>and <span 
-class="cmmi-10">wic</span>. The last format is recommended. Find the card device
-            name, usually <span 
-class="cmmi-10">&#x2215;dev&#x2215;sda</span>, unmount it with <span 
-class="cmmi-10">umount </span>if mounted, and do copy data with
-            a simple command <br 
-class="newline" />
-               <!--l. 217-->
+class="cmmi-10">wic</span>. The last one is
+            recommended. Find the <span 
+class="cmmi-10">SD</span>card device name, in example <span 
+class="cmmi-10">&#x2215;dev&#x2215; &#x003C; xxx &#x003E;</span>, unmount it
+            with <span 
+class="cmmi-10">umount </span>if mounted, and do copy data from the command line with
+            <br 
+class="newline" /><!--l. 219-->
             <a 
  id="x1-9001r6"></a>
             <a 
@@ -1334,30 +1341,36 @@ class="ectt-0800x-x-87">wic</span></span><span style="color:#000000"> </span><sp
 class="ectt-0800x-x-87">of</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=/</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">dev</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">sda</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">/&#x003C;</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">xxx</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">status</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">progress</span></span></pre>
-<!--l. 221--><p class="indent" >   note 1: run this command in &#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64
-<br 
-class="newline" />note 2: run this command with <span 
-class="cmmi-10">root </span>privileges <br 
-class="newline" />note 3: be careful to not specify the device name of your hard drive (see note 2)
-<br 
-class="newline" />
-<!--l. 225--><p class="indent" >   The transfer is going to take a while. Once it is over, put the card in you
+        <ul class="itemize1">
+        <li class="itemize">
+        <!--l. 223--><p class="noindent" >note            1:            run            this            command            in
+        &#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64
+        </li>
+        <li class="itemize">
+        <!--l. 224--><p class="noindent" >note 2: run this command with <span 
+class="cmmi-10">root </span>privileges
+        </li>
+        <li class="itemize">
+        <!--l. 225--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
+        (see note 2)</li></ul>
+<!--l. 229--><p class="indent" >   The transfer is going to take a while. Once it is over, put the card in you
 <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B </span>and turn it on. That&#8217;s it.
-<!--l. 228--><p class="indent" >
+<!--l. 232--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-100006"></a>run</h3>
-            <!--l. 232--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
+            <!--l. 236--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
 class="cmmi-10">ip </span>and <span 
 class="cmmi-10">iw</span>. I use
             a <span 
@@ -1372,7 +1385,7 @@ class="cmmi-10">&#x2215;usr&#x2215;bin</span>, as well as a running GUI example 
 class="cmmi-10">Dear</span>
             <span 
 class="cmmi-10">ImGui </span>library.
-               <!--l. 239--><pre class="lstinputlisting" id="listing-7"><span class="label"><a 
+               <!--l. 243--><pre class="lstinputlisting" id="listing-7"><span class="label"><a 
  id="x1-10003r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">!/</span></span><span style="color:#FF00FF"><span 
@@ -1611,7 +1624,9 @@ class="ectt-0800x-x-87">}</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">&#8217;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span> 
 <span class="label"><a 
- id="x1-10030r1027"></a></span><span style="color:#000000"><span 
+ id="x1-10030r1027"></a></span> 
+<span class="label"><a 
+ id="x1-10031r1028"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">n</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
@@ -1621,23 +1636,52 @@ class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&amp;&amp;</span></span> 
 <span class="label"><a 
- id="x1-10031r1028"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-10032r1029"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$SSID</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10032r1029"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10033r1030"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">interface</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">specify</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">SSID</span></span> 
+class="ectt-0800x-x-87">network</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">s</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">&#8217;</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">SSID</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">&#x003E;</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">&#8217;</span></span> 
 <span class="label"><a 
- id="x1-10033r1030"></a></span> 
+ id="x1-10034r1031"></a></span> 
 <span class="label"><a 
- id="x1-10034r1031"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10035r1032"></a></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">$USER</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">==</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">root</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">||</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">run</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">as</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">root</span></span> 
+<span class="label"><a 
+ id="x1-10036r1033"></a></span> 
+<span class="label"><a 
+ id="x1-10037r1034"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">enable</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">interface</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
@@ -1645,62 +1689,16 @@ class="ectt-0800x-x-87">connexion</span></span><span style="color:#FF00FF"> </sp
 class="ectt-0800x-x-87">on</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">boot</span></span> 
 <span class="label"><a 
- id="x1-10035r1032"></a></span><span style="color:#000000"><span 
+ id="x1-10038r1035"></a></span><span style="color:#0000FF"><span 
+class="ectt-0800x-x-87">if</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">f</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$IFCONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&amp;&amp;</span></span> 
+class="ectt-0800x-x-87">];</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+class="ectt-0800x-x-87">then</span></span> 
 <span class="label"><a 
- id="x1-10036r1033"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">[[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">grep</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">auto</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">$IFCONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">dev</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">null</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&amp;&amp;</span></span> 
-<span class="label"><a 
- id="x1-10037r1034"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">printf</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">auto</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">n</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&#x003E;&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">$IFCONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">]]</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">||</span></span> 
-<span class="label"><a 
- id="x1-10038r1035"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">$IFCONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">not</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">found</span></span> 
-<span class="label"><a 
- id="x1-10039r1036"></a></span> 
-<span class="label"><a 
- id="x1-10040r1037"></a></span><span style="color:#0000FF"><span 
-class="ectt-0800x-x-87">exit</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">||</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
-class="ectt-0800x-x-87">kill</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">$$</span></span> 
-<span class="label"><a 
- id="x1-10041r1038"></a></span> 
-<span class="label"><a 
- id="x1-10042r1039"></a></span><span style="color:#000000"><span 
+ id="x1-10039r1036"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">grep</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">auto</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
@@ -1714,7 +1712,7 @@ class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">null</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10043r1040"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10040r1037"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">printf</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">auto</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
@@ -1725,14 +1723,58 @@ class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">&#x003E;&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$IFCONF</span></span> 
 <span class="label"><a 
+ id="x1-10041r1038"></a></span><span style="color:#0000FF"><span 
+class="ectt-0800x-x-87">else</span></span> 
+<span class="label"><a 
+ id="x1-10042r1039"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">:</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$IFCONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">not</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">found</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">;</span></span> 
+<span class="label"><a 
+ id="x1-10043r1040"></a></span><span style="color:#0000FF"><span 
+class="ectt-0800x-x-87">fi</span></span> 
+<span class="label"><a 
  id="x1-10044r1041"></a></span> 
 <span class="label"><a 
- id="x1-10045r1042"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10045r1042"></a></span> 
+<span class="label"><a 
+ id="x1-10046r1043"></a></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">grep</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">auto</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$IFCONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">dev</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">null</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">||</span></span> 
+<span class="label"><a 
+ id="x1-10047r1044"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">printf</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">auto</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">n</span></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">$IFCONF</span></span> 
+<span class="label"><a 
+ id="x1-10048r1045"></a></span> 
+<span class="label"><a 
+ id="x1-10049r1046"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">verify</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">connexion</span></span> 
 <span class="label"><a 
- id="x1-10046r1043"></a></span><span style="color:#000000"><span 
+ id="x1-10050r1047"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$IW</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">dev</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">|</span></span><span style="color:#000000"><span 
@@ -1745,7 +1787,7 @@ class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">null</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&amp;&amp;</span></span> 
 <span class="label"><a 
- id="x1-10047r1044"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10051r1048"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">info</span></span><span style="color:#000000"><span 
@@ -1754,21 +1796,21 @@ class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#000000"> </span
 class="ectt-0800x-x-87">$SSID</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10048r1045"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-10052r1049"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">connecting</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">to</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$SSID</span></span> 
 <span class="label"><a 
- id="x1-10049r1046"></a></span> 
+ id="x1-10053r1050"></a></span> 
 <span class="label"><a 
- id="x1-10050r1047"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10054r1051"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">up</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">interface</span></span> 
 <span class="label"><a 
- id="x1-10051r1048"></a></span><span style="color:#000000"><span 
+ id="x1-10055r1052"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$IP</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">link</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">show</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1778,21 +1820,21 @@ class="ectt-0800x-x-87">grep</span></span><span style="color:#000000"> </span><s
 class="ectt-0800x-x-87">UP</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10052r1049"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10056r1053"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$IP</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">link</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">set</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">up</span></span> 
 <span class="label"><a 
- id="x1-10053r1050"></a></span> 
+ id="x1-10057r1054"></a></span> 
 <span class="label"><a 
- id="x1-10054r1051"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10058r1055"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">search</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">network</span></span> 
 <span class="label"><a 
- id="x1-10055r1052"></a></span><span style="color:#000000"><span 
+ id="x1-10059r1056"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$IW</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">scan</span></span><span style="color:#000000"><span 
@@ -1801,7 +1843,7 @@ class="ectt-0800x-x-87">grep</span></span><span style="color:#000000"> </span><s
 class="ectt-0800x-x-87">$SSID</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10056r1053"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10060r1057"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">warning</span></span><span style="color:#000000"><span 
@@ -1812,33 +1854,33 @@ class="ectt-0800x-x-87">network</span></span><span style="color:#000000"> </span
 class="ectt-0800x-x-87">$SSID</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;</span></span> 
 <span class="label"><a 
- id="x1-10057r1054"></a></span> 
+ id="x1-10061r1058"></a></span> 
 <span class="label"><a 
- id="x1-10058r1055"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10062r1059"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">save</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">network</span></span> 
 <span class="label"><a 
- id="x1-10059r1056"></a></span><span style="color:#000000"><span 
+ id="x1-10063r1060"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">grep</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$SSID</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WPACONF</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10060r1057"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10064r1061"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WPAPASS</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$SSID</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WPACONF</span></span> 
 <span class="label"><a 
- id="x1-10061r1058"></a></span> 
+ id="x1-10065r1062"></a></span> 
 <span class="label"><a 
- id="x1-10062r1059"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10066r1063"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">load</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">network</span></span> 
 <span class="label"><a 
- id="x1-10063r1060"></a></span><span style="color:#000000"><span 
+ id="x1-10067r1064"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">S</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
@@ -1848,7 +1890,7 @@ class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10064r1061"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10068r1065"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WPASUPP</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">B</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1862,23 +1904,23 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">c</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WPACONF</span></span> 
 <span class="label"><a 
- id="x1-10065r1062"></a></span> 
+ id="x1-10069r1066"></a></span> 
 <span class="label"><a 
- id="x1-10066r1063"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10070r1067"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">start</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">a</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">dhcp</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">client</span></span> 
 <span class="label"><a 
- id="x1-10067r1064"></a></span><span style="color:#000000"><span 
+ id="x1-10071r1068"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$DHCP</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">i</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10068r1065"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-10072r1069"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">erreur</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">warning</span></span><span style="color:#000000"><span 
@@ -1886,9 +1928,9 @@ class="ectt-0800x-x-87">:</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">$</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">?</span></span> 
 <span class="label"><a 
- id="x1-10069r1066"></a></span> 
+ id="x1-10073r1070"></a></span> 
 <span class="label"><a 
- id="x1-10070r1067"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10074r1071"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF00FF"><span 
@@ -1899,44 +1941,43 @@ class="ectt-0800x-x-87">"</span></span><span style="color:#FF00FF"> </span><span
 class="ectt-0800x-x-87">]</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">||</span></span> 
 <span class="label"><a 
- id="x1-10071r1068"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10075r1072"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">ip</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">addr</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">show</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">$WIFACE</span></span> 
 <span class="label"><a 
- id="x1-10072r1069"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10076r1073"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">iw</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">$WIFACE</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">link</span></span> 
 <span class="label"><a 
- id="x1-10073r1070"></a></span><span style="color:#FF00FF"><span 
+ id="x1-10077r1074"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">ip</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">route</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">show</span></span>
    </pre>
-<!--l. 240--><p class="noindent" >The script is available for download <a 
+<!--l. 244--><p class="noindent" >The script is available for download <a 
 href="https://github.com/kaloyanski/meta-thc/blob/master/recipes-copy/thcp/data/wifini.sh" >here</a>. Specify network <span 
 class="cmmi-10">id </span>from the command line
 with a short command-line option <span 
-class="cmmi-10">s</span>. See next example usage. <!--l. 243-->
+class="cmmi-10">s</span>. See next example usage. <!--l. 247-->
 <a 
- id="x1-10078r8"></a>
+ id="x1-10082r8"></a>
 <a 
- id="x1-10079"></a>
+ id="x1-10083"></a>
 <pre class="lstlisting" id="listing-8"><span class="label"><a 
- id="x1-10080r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">./</span></span><span style="color:#000000"><span 
+ id="x1-10084r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">wifini</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">s</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SSID</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 247--><p class="indent" >   Once an <span 
+<!--l. 251--><p class="indent" >   Once an <span 
 class="cmmi-10">internet protocol </span>(IP) address is assigned to <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
@@ -1944,16 +1985,16 @@ class="cmmi-10">model B</span>,
 the <span 
 class="cmmi-10">secure shell </span>(SSH) server by <span 
 class="cmmi-10">Dropbear</span>[<a 
- id="x1-10081"></a><a 
+ id="x1-10085"></a><a 
 href="#cite.0@dropbear">4</a>] allows for secure remote login, control
 and file transfer.
-<!--l. 252--><p class="indent" >
+<!--l. 256--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-110007"></a>outlook</h3>
-            <!--l. 254--><p class="noindent" >This reports the progress in the development of a custom Linux-based OS for
+            <!--l. 258--><p class="noindent" >This reports the progress in the development of a custom Linux-based OS for
             <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
@@ -1992,7 +2033,7 @@ class="list">
 class="cmmi-10">secure</span>
                         <span 
 class="cmmi-10">shell </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-10080r6">15<!--tex4ht:ref: tab:task --></a><br />
+href="#x1-10084r6">15<!--tex4ht:ref: tab:task --></a><br />
                         </dd><dt class="list">
             <span 
 class="ecbx-1000">GUI         </span>  </dt><dd 
@@ -2051,7 +2092,7 @@ class="list">
 class="cmmi-10">internet</span>
                         <span 
 class="cmmi-10">protocol </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-10080r6">15<!--tex4ht:ref: tab:task --></a><br />
+href="#x1-10084r6">15<!--tex4ht:ref: tab:task --></a><br />
                         </dd><dt class="list">
             <span 
 class="ecbx-1000">LTS         </span>  </dt><dd 
@@ -2064,18 +2105,18 @@ class="cmmi-10">term</span>
 class="cmmi-10">support </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
 href="#x1-90005">14<!--tex4ht:ref: tab:task --></a><br />
                         </dd></dl>
-            <!--l. 264--><p class="noindent" >
+            <!--l. 268--><p class="noindent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><a 
  id="x1-13000"></a>bibliography</h3>
-            <!--l. 266--><p class="noindent" >
+            <!--l. 270--><p class="noindent" >
                  <dl class="thebibliography"><dt id="X0-oe" class="thebibliography">
             [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
- id="cite.0@oe"></a>Yocto Project community.
+                 <!--l. 270--><p class="noindent" ><a 
+ id="cite.0@oe"></a>community.
                  <span 
 class="ecti-1000">OpenEmbedded</span>.
                  2017.
@@ -2094,7 +2135,7 @@ class="ectt-1000">https://www.openembedded.org</span></a>
                  </dd><dt id="X0-yocto" class="thebibliography">
             [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -2116,7 +2157,7 @@ class="ectt-1000">https://www.yoctoproject.org</span></a>
                  </dd><dt id="X0-yoctoqb" class="thebibliography">
             [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@yoctoqb"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -2145,7 +2186,7 @@ class="ectt-1000">https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#
                  </dd><dt id="X0-dropbear" class="thebibliography">
             [4]   </dt><dd 
 id="bib-4" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
                  <span 
 class="ecti-1000">Dropbear</span>
@@ -2167,7 +2208,7 @@ class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
             [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Building</span>
@@ -2221,7 +2262,7 @@ id="bib-6" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@kalo2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Embedded</span>
@@ -2264,7 +2305,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thcport.html</span></a>
                  </dd><dt id="X0-raspberry" class="thebibliography">
             [7]   </dt><dd 
 id="bib-7" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@raspberry"></a>Raspberry <span 
 class="cmmi-10">&#x03C0; </span>Ltd.
                  <span 
@@ -2287,7 +2328,7 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                  </dd><dt id="X0-bitbake" class="thebibliography">
             [8]   </dt><dd 
 id="bib-8" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
+                 <!--l. 270--><p class="noindent" ><a 
  id="cite.0@bitbake"></a>Richard Purdie,
                  Chris Larson,
                  and
@@ -2313,37 +2354,13 @@ href="https://docs.yoctoproject.org/bitbake" class="url" ><span
 class="ectt-1000">https://docs.yoctoproject.org/bitbake</span></a>
                  (visited
                  on
-                 2023).
-                 </dd><dt id="X0-thc" class="thebibliography">
-            [9]   </dt><dd 
-id="bib-9" class="thebibliography">
-                 <!--l. 266--><p class="noindent" ><a 
- id="cite.0@thc"></a>Atanas Rusev.
-                 <span 
-class="ecti-1000">Triple</span>
-                 <span 
-class="ecti-1000">Helix</span>
-                 <span 
-class="ecti-1000">Consulting</span>.
-                 2023.
-                 <span 
-class="eccc1000-"><span 
-class="small-caps">u</span><span 
-class="small-caps">r</span><span 
-class="small-caps">l</span></span>:
-                 
-<a 
-href="https://triplehelix-consulting.com" class="url" ><span 
-class="ectt-1000">https://triplehelix-consulting.com</span></a>
-                 (visited
-                 on
                  2023).</dd></dl>
-            <!--l. 269--><p class="indent" >                                                                                            <span 
+            <!--l. 273--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 269--><p class="indent" >      <a 
+            <!--l. 273--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in pdf format</span></a>
                 
