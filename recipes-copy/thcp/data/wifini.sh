@@ -25,17 +25,21 @@ erreur() { echo $* && exit 1; }
 # get wifi interface and network id
 WIFACE=`$IW dev|grep Interface|awk '{print $2}'`
 SSID=$(getopt s: $* | awk '{print $2}')
+
 [ -n "$SSID" ] &&
-    echo $0: $SSID ||
-        erreur $0: specify SSID
+    echo $0: $WIFACE $SSID ||
+        erreur interface $WIFACE specify network: $0 -s '<SSID>'
+
+[ "$USER" == "root" ] || erreur run $0 as root
 
 # enable interface connexion on boot
-[ -f $IFCONF ] &&
-    [[ grep "auto $WIFACE" $IFCONF > /dev/null &&
-        printf "auto $WIFACE\n" >> $IFCONF ]] ||
-        erreur $0: $IFCONF not found
+if [ -f $IFCONF ]; then
+    grep "auto $WIFACE" $IFCONF > /dev/null ||
+        printf "auto $WIFACE\n" >> $IFCONF
+else
+    erreur $0: $IFCONF not found;
+fi
 
-exit 0 || kill $$
 
 grep "auto $WIFACE" $IFCONF > /dev/null ||
     printf "auto $WIFACE\n" >> $IFCONF
