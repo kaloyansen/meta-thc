@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/sh
 # wifini.sh
 # wifi connection requirements:
 
