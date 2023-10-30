@@ -15,7 +15,7 @@ usage() {
 
     printf "
 usage:
-\t bash metafetch.sh <options>
+\t $0 <options>
     option        \t purpose                 \t default
     -h            \t print this              \t usage
     -g            \t switch to git protocol  \t https protocol
