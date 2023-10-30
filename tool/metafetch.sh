@@ -60,7 +60,7 @@ git clone -b $BRANCH ${FETCHER}yoctoproject/poky.git $LAYER/poky
 git clone -b $BRANCH ${FETCHER}openembedded/meta-openembedded.git $LAYER/oe
 git clone -b $BRANCH ${FETCHER}agherzan/meta-raspberrypi $LAYER/rpi/meta-raspberrypi
 git clone -b $BRANCH ${FETCHER}kaloyanski/meta-thc.git $LAYER/thc/meta-thc
-git clone ${FETCHER}TripleHelixConsulting/rpiconf.git $BUILD/conf
+git clone -b $BRANCH ${FETCHER}TripleHelixConsulting/rpiconf.git $BUILD/conf
 
 sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur sed $?
 
