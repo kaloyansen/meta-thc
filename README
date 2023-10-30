@@ -14,9 +14,6 @@ Dependencies
   branch: kirkstone  
 
 
-Please submit any patches against the meta-thc layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
 Maintainer: Kaloyan Krastev <kaloyan at triplehelix-consulting dot com>
 
 Table of Contents
