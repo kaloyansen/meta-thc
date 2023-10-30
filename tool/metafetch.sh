@@ -71,6 +71,7 @@ cd $LAYER/poky && pwd || erreur $? cannot find $LAYER/poky
 bitbake-layers show-layers
 
 printf "\n\t how to start a new build\n\n"
+
 echo cd $LAYER/poky
 echo . ./$OEINIT $BUILD
 echo bitbake core-image-x11
