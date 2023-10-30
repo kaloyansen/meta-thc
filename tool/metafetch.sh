@@ -76,4 +76,3 @@ echo cd $LAYER/poky
 echo . ./$OEINIT $BUILD
 echo bitbake core-image-x11
 echo
-
