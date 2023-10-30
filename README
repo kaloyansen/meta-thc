@@ -13,8 +13,6 @@ Dependencies
   URI: git@github.com:agherzan/meta-raspberrypi
   branch: kirkstone  
 
-Patches
-=======
 
 Please submit any patches against the meta-thc layer to the xxxx mailing list (xxxx@zzzz.org)
 and cc: the maintainer:
