@@ -41,7 +41,7 @@ while getopts ":l:b:r:hgd" option; do    # parce command-line options
         b ) BUILD=$OPTARG;;
         r ) BRANCH=$OPTARG;;
         g ) FETCHER=$GITFETCHER;;
-        d ) DEBUG=yes;;
+        d ) DRYRUN=yes;;
         h ) usage $0;;
         * ) usage $0;;
     esac
@@ -69,12 +69,12 @@ REPO=(    # associative array of git repositories
 
 for repo in ${!REPO[@]}; do    # clone repositories
 
-    [ -n "$DEBUG" ] ||
+    [ -n "$DRYRUN" ] ||
         git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]} &&
             echo git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
 done
 
-[ -n "$DEBUG" ] && exit 0
+[ -n "$DRYRUN" ] && erreur $0 dry run stop
 
 # adjust bibtbake layer configuration
 sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur sed $?
