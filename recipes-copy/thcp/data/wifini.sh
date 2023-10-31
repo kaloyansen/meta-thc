@@ -35,14 +35,15 @@ SSID=$(getopt s: $* | awk '{print $2}')
 # enable interface connexion on boot
 if [ -f $IFCONF ]; then
     grep "auto $WIFACE" $IFCONF > /dev/null ||
-        printf "auto $WIFACE\n" >> $IFCONF
+        printf "auto $WIFACE
+        wpa-roam /etc/wpa_supplicant.conf\n" >> $IFCONF
 else
     erreur $0: $IFCONF not found;
 fi
 
 
-grep "auto $WIFACE" $IFCONF > /dev/null ||
-    printf "auto $WIFACE\n" >> $IFCONF
+#grep "auto $WIFACE" $IFCONF > /dev/null ||
+#    printf "auto $WIFACE\n" >> $IFCONF
 
 # verify connexion
 $IW dev|grep $SSID > /dev/null &&

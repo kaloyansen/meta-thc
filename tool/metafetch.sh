@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # metafetch.sh
 # fetch rpi metadata
 # release 3.3.2
@@ -11,7 +11,7 @@ DEFBUILD=$HOME/yocto_$BRANCH/rpi4
 
 erreur() { echo $* && exit 0 || kill $$; }
 
-usage() {
+usage() {    # print options and quit
 
     printf "
 usage:
@@ -26,14 +26,13 @@ usage:
     erreur
 }
 
-confirm() {
+confirm() {    # get confirmation or quit
 
     read -p "please confirm (y/n) " choix
     [ "$choix" == "y" ] && echo 1 || echo 0
 }
 
-
-while getopts ":l:b:r:hg" option; do
+while getopts ":l:b:r:hg" option; do    # parce command-line options
 
     case $option in
 
@@ -41,11 +40,12 @@ while getopts ":l:b:r:hg" option; do
         b ) BUILD=$OPTARG;;
         r ) BRANCH=$OPTARG;;
         g ) FETCHER=$GITFETCHER;;
-        h ) usage $0;; # erreur $? usage: $0 -l layerdir -b buildir -r branch -g;;
-        * ) usage $0;; # erreur $? minimal usage: $0 -l layerdir -b buildir;;
+        h ) usage $0;;
+        * ) usage $0;;
     esac
 done
 
+# check system path
 [ -n "$LAYER" ] || LAYER=$DEFLAYER
 [ -n "$BUILD" ] || BUILD=$DEFBUILD
 [ -d $LAYER ] || mkdir -p $LAYER || erreur $? cannot create $LAYER
@@ -54,16 +54,26 @@ LAYER=$(realpath $LAYER) && printf "\nmetadata:\t $LAYER\n" || erreur $? cannot 
 BUILD=$(realpath $BUILD) && printf "build:\t\t $BUILD\n" || erreur $? cannot find $BUILD
 printf "branch:\t\t $BRANCH\nprotocol:\t $FETCHER\n\n"
 
+declare -A REPO
+REPO=(    # associative array of git repositories
+    [yoctoproject/poky.git]=$LAYER/poky
+    [openembedded/meta-openembedded.git]=$LAYER/oe
+    [agherzan/meta-raspberrypi]=$LAYER/rpi/meta-raspberrypi
+    [kaloyanski/meta-thc.git]=$LAYER/thc/meta-thc
+    [TripleHelixConsulting/rpiconf.git]=$BUILD/conf
+)
+
 [ $(confirm) = 0 ] && erreur $? $0 interrupt || echo $0 continue
 
-git clone -b $BRANCH ${FETCHER}yoctoproject/poky.git $LAYER/poky
-git clone -b $BRANCH ${FETCHER}openembedded/meta-openembedded.git $LAYER/oe
-git clone -b $BRANCH ${FETCHER}agherzan/meta-raspberrypi $LAYER/rpi/meta-raspberrypi
-git clone -b $BRANCH ${FETCHER}kaloyanski/meta-thc.git $LAYER/thc/meta-thc
-git clone -b $BRANCH ${FETCHER}TripleHelixConsulting/rpiconf.git $BUILD/conf
+for repo in ${!REPO[@]}; do    # clone repositories
 
+    git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
+done
+
+# adjust bibtbake layer configuration
 sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur sed $?
 
+# bitbake environment
 OEINIT=oe-init-build-env
 cd $LAYER/poky && pwd || erreur $? cannot find $LAYER/poky
 [ -x $OEINIT ] && . ./$OEINIT $BUILD || erreur $? cannot find $OEINIT
