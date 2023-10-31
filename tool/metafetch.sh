@@ -18,6 +18,7 @@ usage:
 \t $0 <options>
     option        \t purpose                 \t default
     -h            \t print this              \t usage
+    -d            \t dry run                 \t wet run
     -g            \t switch to git protocol  \t https protocol
     -r <branch>   \t branch                  \t $BRANCH
     -l <layerdir> \t metadata directory      \t $DEFLAYER
@@ -32,7 +33,7 @@ confirm() {    # get confirmation or quit
     [ "$choix" == "y" ] && echo 1 || echo 0
 }
 
-while getopts ":l:b:r:hg" option; do    # parce command-line options
+while getopts ":l:b:r:hgd" option; do    # parce command-line options
 
     case $option in
 
@@ -40,6 +41,7 @@ while getopts ":l:b:r:hg" option; do    # parce command-line options
         b ) BUILD=$OPTARG;;
         r ) BRANCH=$OPTARG;;
         g ) FETCHER=$GITFETCHER;;
+        d ) DEBUG=yes;;
         h ) usage $0;;
         * ) usage $0;;
     esac
@@ -67,8 +69,12 @@ REPO=(    # associative array of git repositories
 
 for repo in ${!REPO[@]}; do    # clone repositories
 
-    git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
+    [ -n "$DEBUG" ] ||
+        git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]} &&
+            echo git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
 done
+
+[ -n "$DEBUG" ] && exit 0
 
 # adjust bibtbake layer configuration
 sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur sed $?
