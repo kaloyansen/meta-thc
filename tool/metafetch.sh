@@ -30,7 +30,9 @@ usage:
 confirm() {    # get confirmation or quit
 
     read -p "please confirm (y/n) " choix
-    [ "$choix" == "y" ] && echo 1 || echo 0
+    [ "$choix" == "y" ] &&
+        echo $1 confirm ||
+            erreur $1 interrupted
 }
 
 while getopts ":l:b:r:hgd" option; do    # parce command-line options
@@ -65,16 +67,15 @@ REPO=(    # associative array of git repositories
     [TripleHelixConsulting/rpiconf.git]=$BUILD/conf
 )
 
-[ $(confirm) = 0 ] && erreur $? $0 interrupt || echo $0 continue
-
+[ -n "$DRYRUN" ] || confirm $0 confirmation
 for repo in ${!REPO[@]}; do    # clone repositories
 
-    [ -n "$DRYRUN" ] ||
-        git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]} &&
-            echo git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
+    command="git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}"
+    [ -n "$DRYRUN" ] || $command && echo $command
+#        git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]} &&
+#            echo git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
 done
-
-[ -n "$DRYRUN" ] && erreur $0 dry run stop
+[ -n "$DRYRUN" ] && erreur $0 dry run exit
 
 # adjust bibtbake layer configuration
 sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur sed $?
