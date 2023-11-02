@@ -22,9 +22,19 @@ IP=/sbin/ip
 
 erreur() { echo $* && exit 1; }
 
-# get wifi interface and network id
+# get wifi interface and network ssid
 WIFACE=`$IW dev|grep Interface|awk '{print $2}'`
 SSID=$(getopt s: $* | awk '{print $2}')
+
+sorry() {
+    if [ "$1" = "" -o ! -e "$1" ]; then
+        echo "no $2 supplied" 1>&2
+        exit 1
+    fi
+}
+
+
+sorry $SSID network 
 
 [ -n "$SSID" ] &&
     echo $0: $WIFACE $SSID ||
@@ -35,8 +45,8 @@ SSID=$(getopt s: $* | awk '{print $2}')
 # enable interface connexion on boot
 if [ -f $IFCONF ]; then
     grep "auto $WIFACE" $IFCONF > /dev/null ||
-        printf "auto $WIFACE
-        wpa-roam /etc/wpa_supplicant.conf\n" >> $IFCONF
+        printf "auto $WIFACE\n" >> $IFCONF
+#        wpa-roam /etc/wpa_supplicant.conf\n" >> $IFCONF
 else
     erreur $0: $IFCONF not found;
 fi
@@ -58,7 +68,7 @@ $IP link show $WIFACE | grep UP ||
 $IW $WIFACE scan|grep $SSID ||
     erreur $0 warning: cannot find network $SSID;
 
-# save network 
+# save network
 grep $SSID $WPACONF ||
     $WPAPASS $SSID >> $WPACONF
 

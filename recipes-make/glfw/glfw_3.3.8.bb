@@ -1,29 +1,32 @@
 SUMMARY = "A multi-platform library for creating windows with OpenGL contexts and receiving input and events"
 HOMEPAGE = "https://www.glfw.org/"
+DESCRIPTION = "GLFW is an Open Source, multi-platform library for OpenGL, \
+OpenGL ES and Vulkan application development. It provides a simple, \
+platform-independent API for creating windows, contexts and surfaces, reading \
+input, handling events, etc."
+LICENSE  = "Zlib"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Zlib;md5=87f239f408daca8a157858e192597633"
 
-LICENSE = "MIT"
-LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+SECTION = "lib"
 
-SRC_URI = "file:///home/kalo/work/tarball/glfw-${PV}.tar.gz"
-SRC_URI = "https://github.com/glfw/glfw/releases/tag/${PV}/${PV}.tar.gz"
-SRC_URI = "https://github.com/glfw/glfw/download/${PV}.tar.gz"
-SRC_URI = "https://github.com/glfw/glfw/archive/refs/tags/${PV}.tar.gz"
-# SRC_URI = "git://github.com/glfw/glfw.git;branch=master;rev=${PV};protocol=https"
-SRC_URI[md5sum] = "55d99dc968f4cec01a412562a7cf851c"
-#SRC_URI[sha256sum] = "29a315cdf9add3988d049d55428119d129fb5f05b2f5720a72584bf62d434b63"
-#SRC_URI[md5sum] = "55d99dc968f4cec01a412562a7cf851c"
-#SRC_URI[md5sum] = "d12cb3015af3816e1104595803d5fcbe"
-#SRC_URI[sha256sum] = "cc70b239d64a93c240a8ba711381af5fa1d911700ce889654696c7617b3fcdff"
+inherit pkgconfig cmake features_check
 
+PV .= "+git${SRCPV}"
+SRCREV = "781fbbadb0bccc749058177b1385c82da9ace880"
+SRC_URI = "git://github.com/glfw/glfw.git;branch=master;protocol=https"
 
-S = "${WORKDIR}/glfw-${PV}"
-DEPENDS = "libx11 libxrandr libxi libxinerama libxcursor"
+S = "${WORKDIR}/git"
 
-inherit cmake
-
+EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_DOCS=OFF"
 EXTRA_OECMAKE = "-DCMAKE_INSTALL_PREFIX=${prefix} \
                  -DGLFW_BUILD_EXAMPLES=OFF \
                  -DGLFW_BUILD_TESTS=OFF \
                  -DGLFW_BUILD_DOCS=OFF"
 
+CFLAGS += "-fPIC"
 
+DEPENDS = "libx11"
+DEPENDS = "libpng libglu zlib libxrandr libxinerama libxi libxcursor"
+REQUIRED_DISTRO_FEATURES = "x11 opengl"
+
+COMPATIBLE_HOST:libc-musl = "null"

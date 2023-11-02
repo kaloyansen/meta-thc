@@ -83,7 +83,7 @@ sed -i s#/home/yocto/layer#$LAYER#g $BUILD/conf/bblayers.conf || erreur sed $?
 # bitbake environment
 OEINIT=oe-init-build-env
 cd $LAYER/poky && pwd || erreur $? cannot find $LAYER/poky
-[ -x $OEINIT ] && . ./$OEINIT $BUILD || erreur $? cannot find $OEINIT
+[ -f $OEINIT ] && . ./$OEINIT $BUILD || erreur $? cannot find $OEINIT
 
 bitbake-layers show-layers
 
