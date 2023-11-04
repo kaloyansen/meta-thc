@@ -185,6 +185,10 @@ pre.lstinputlisting{ font-family: monospace,monospace; white-space: pre-wrap; }
 dt.printshorthands{float:left; clear:left; margin-right:1em;}
 dd.thebibliography {margin-left: 2.5em;}
 dt.thebibliography {float:left; clear:left; margin-right:1em;}
+#TBL-2-1{border-left: 1px solid black;}
+#TBL-2-1{border-right:1px solid black;}
+#TBL-2-2{border-right:1px solid black;}
+#TBL-2-3{border-right:1px solid black;}
 #listing-1{background-color:#00FFFF;}
 #listing-1{border: 1px solid #000000;}
 #listing-2{background-color:#00FFFF;}
@@ -197,9 +201,9 @@ dt.thebibliography {float:left; clear:left; margin-right:1em;}
 #listing-5{border: 1px solid #000000;}
 #listing-6{background-color:#00FFFF;}
 #listing-6{border: 1px solid #000000;}
-#TBL-2-1{border-left: 1px solid black;}
-#TBL-2-1{border-right:1px solid black;}
-#TBL-2-2{border-right:1px solid black;}
+#TBL-3-1{border-left: 1px solid black;}
+#TBL-3-1{border-right:1px solid black;}
+#TBL-3-2{border-right:1px solid black;}
 #listing-7{background-color:#00FFFF;}
 #listing-7{border: 1px solid #000000;}
 #listing-8{background-color:#00FFFF;}
