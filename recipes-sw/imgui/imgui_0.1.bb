@@ -16,6 +16,7 @@ SRCREV = "29ae8998cff3a898c7d6736af19f16379a9909ef"
 SRC_URI = "git://github.com/kaloyanski/${IMGIT}.git;branch=master;protocol=https"
 
 DEPENDS = "mesa glfw"
+DEPENDS:remove = "mesa"
 S = "${WORKDIR}/git/imgui/examples/${IMDIR}"
 
 inherit cmake thclass
