@@ -269,34 +269,35 @@ class="ecti-1000">Yocto </span>requirements[<a
  id="x1-4001"></a><a 
 href="#cite.0@yoctoqb">3</a>] to be able to run
             <span 
-class="cmmi-10">bitbake</span>. <span 
-class="ecti-1000">Yocto </span>sanity checked distributions are <span 
+class="cmmi-10">bitbake</span>. The list of <span 
+class="ecti-1000">Yocto </span>sanity checked distributions currently includes
+            <span 
 class="cmmi-10">poky</span>-3.3, <span 
 class="cmmi-10">poky</span>-3.4, <span 
-class="cmmi-10">Ubuntu</span>-18.04,
-            <span 
+class="cmmi-10">Ubuntu</span>-18.04, <span 
 class="cmmi-10">Ubuntu</span>-20.04, <span 
 class="cmmi-10">Ubuntu</span>-22.04, <span 
-class="cmmi-10">Fedora</span>-37, <span 
+class="cmmi-10">Fedora</span>-37,
+            <span 
 class="cmmi-10">Debian </span><span 
 class="cmsy-10">- </span><span 
 class="cmr-10">11</span>, <span 
-class="cmmi-10">OpenSUSEleap</span>-15.3 and
+class="cmmi-10">OpenSUSEleap</span>-15.3 and <span 
+class="cmmi-10">AlmaLinux</span>-8.8. But I use <span 
+class="cmmi-10">bitbake </span>on
             <span 
-class="cmmi-10">AlmaLinux</span>-8.8. I use <span 
-class="cmmi-10">bitbake </span>on <span 
-class="cmmi-10">Manjaro </span>Linux, a distribution not officially
-            supported by <span 
-class="ecti-1000">Yocto</span>. It should not be complicated to satisfy requirements on a
-            GNU/Linux machine. Of course, binary files are not the same on different <a 
-href="#HW">HW</a>
-            architectures, but the <a 
-href="#OS">OS</a> has a Linux kernel with the proper <a 
-href="#HW">HW</a> configuration.
+class="cmmi-10">Manjaro </span>- a not officially supported <span 
+class="cmmi-10">GNU&#x2215;Linux </span>distribution. That is
+            why I guess that it should not be complicated to satisfy requirements on a
                                                                                                                     
 
                                                                                                                     
-            <!--l. 109--><p class="indent" >     Install the following packages;
+            GNU/Linux machine. Of course, binary files are not the same on different
+            <a 
+href="#HW">HW</a> architectures, but the <a 
+href="#OS">OS</a> has a Linux kernel an standard open-source
+            programs.
+            <!--l. 109--><p class="indent" >     To start, ensure that the following packages are installed.
                    <ul class="itemize1">
                    <li class="itemize">
                    <!--l. 111--><p class="noindent" ><span 
@@ -1239,29 +1240,26 @@ class="ectt-0800x-x-87">x11</span></span>
 <span class="label"><a 
  id="x1-5097r1094"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">echo</span></span>
-   </pre>
-                                                                                                         
-
-                                                                                                         
-            <!--l. 138--><p class="indent" >    Download <span 
+    </pre>
+<!--l. 138--><p class="indent" >    Download <span 
 class="cmmi-10">metafetch.sh </span><a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch.sh" >here</a>. It is designed in a way that after a succesful run
-            you may start a build with <span 
+you may start a build with <span 
 class="cmmi-10">bitbake</span>. The script takes &#x003C;layer_directory&#x003E; and
-            &#x003C;build_directory&#x003E; from the command-line. You may use next commands to run
-            <span 
+&#x003C;build_directory&#x003E; from the command-line. You may use next commands to run
+<span 
 class="cmmi-10">metafetch.sh</span>. The first one is a minimal example. You may specify directories like
-            the first example. Otherwise the script will use default values. The default <span 
+the first example. Otherwise the script will use default values. The default <span 
 class="ecti-1000">Yocto</span>
-            <span 
+<span 
 class="cmmi-10">branch </span>is <span 
 class="cmmi-10">kirkstone</span>. You may want to specify another <span 
 class="cmmi-10">branch </span>with the second
-            command.
-               <!--l. 147-->
-            <a 
+command.
+     <!--l. 147-->
+<a 
  id="x1-5098r2"></a>
-            <a 
+<a 
  id="x1-5099"></a>
 <pre class="lstlisting" id="listing-2"><span class="label"><a 
  id="x1-5100r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
