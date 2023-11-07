@@ -80,10 +80,12 @@ href="#x1-18000" id="QQ2-1-30">bibliography</a></span>
  id="x1-20001"></a>introduction</h3>
             <!--l. 25--><p class="noindent" >These instructions[<a 
  id="x1-2001"></a><a 
-href="#cite.0@kalohowto2023">5</a>] follow the configuration and build of a Linux-based <span 
+href="#cite.0@kalohowto2023">5</a>] follow the configuration and build of a Linux-based <a 
+ id="section*.1"></a><span 
 class="cmmi-10">operating</span>
             <span 
-class="cmmi-10">system </span>(OS) for <span 
+class="cmmi-10">system </span>(<a 
+href="#OS">OS</a>) for <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B</span>[<a 
@@ -95,13 +97,16 @@ href="#cite.0@yocto">2</a>]. Find project overview
             in [<a 
  id="x1-2004"></a><a 
 href="#cite.0@kalo2023">6</a>].
-            <!--l. 29--><p class="indent" >     The OS build is done in several steps organized in corresponding sections as
+            <!--l. 29--><p class="indent" >     The <a 
+href="#OS">OS</a> build is done in several steps organized in corresponding sections as
             follows. Read in Section <a 
 href="#x1-30002">2<!--tex4ht:ref: sec:metadata --></a> how to fetch <span 
 class="cmmi-10">metadata</span>. Section <a 
 href="#x1-60003">3<!--tex4ht:ref: sec:configuration --></a> shows how to
-            configure the OS build. In Section <a 
-href="#x1-120004">4<!--tex4ht:ref: sec:build --></a> learn how to build the OS <span 
+            configure the <a 
+href="#OS">OS</a> build. In Section <a 
+href="#x1-120004">4<!--tex4ht:ref: sec:build --></a> learn how to build the <a 
+href="#OS">OS</a> <span 
 class="cmmi-10">image </span>and
             see how to copy <span 
 class="cmmi-10">image </span>to <span 
@@ -160,14 +165,17 @@ class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr
 class="td11">recipe         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
 class="td11"><span 
 class="cmmi-10">bb        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-3"  
-class="td11"><span 
-class="cmmi-10">software </span>(SW) build instructions</td>
+class="td11"><a 
+ id="section*.2"></a><span 
+class="cmmi-10">software </span>(<a 
+href="#SW">SW</a>) build instructions</td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
 class="td11">recipe         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
 class="td11"><span 
 class="cmmi-10">bbappend</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-3"  
-class="td11">SW recipe modification              </td>
+class="td11"><a 
+href="#SW">SW</a> recipe modification              </td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
 class="td11">class           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
@@ -205,27 +213,36 @@ href="#cite.0@oe">1</a>] defines the following layer types.
 class="cmmi-10">metadata </span>for the build
                    </li>
                    <li class="itemize">
-                   <!--l. 75--><p class="noindent" >machine aka <span 
-class="cmmi-10">board support package </span>(BSP) layers include <span 
+                   <!--l. 75--><p class="noindent" >machine aka <a 
+ id="section*.3"></a><span 
+class="cmmi-10">board support package </span>(<a 
+href="#BSP">BSP</a>) layers include <a 
+ id="section*.4"></a><span 
 class="cmmi-10">hardware</span>
-                   (HW) support
+                   (<a 
+href="#HW">HW</a>) support
                    </li>
                    <li class="itemize">
                    <!--l. 76--><p class="noindent" >distribution layers hold the policy configuration
                    </li>
                    <li class="itemize">
-                   <!--l. 77--><p class="noindent" >SW layers are used for additional SW
+                   <!--l. 77--><p class="noindent" ><a 
+href="#SW">SW</a> layers are used for additional <a 
+href="#SW">SW</a>
                    </li>
                    <li class="itemize">
                    <!--l. 78--><p class="noindent" >miscellaneous layers do not fall in upper categories</li></ul>
             <!--l. 81--><p class="indent" >     The complete list of <span 
-class="cmmi-10">github</span> SW <span 
+class="cmmi-10">github</span> <a 
+href="#SW">SW</a> <span 
 class="cmmi-10">metadata </span>repositories used in this project
             includes <span 
 class="ecti-1000">Yocto </span>layers, the <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span> BSP layer, a SW layer
+class="cmmi-10">model B</span> <a 
+href="#BSP">BSP</a> layer, a <a 
+href="#SW">SW</a> layer
             with custom recipes, and the build configuration itself. Please refer [<a 
  id="x1-3003"></a><a 
 href="#cite.0@kalo2023">6</a>] for
@@ -234,7 +251,8 @@ href="#cite.0@kalo2023">6</a>] for
 class="cmmi-10">metadata </span>in contrast to the <span 
 class="cmmi-10">real data </span>fetched by <span 
 class="cmmi-10">bitbake</span>
-            during OS build. See Section <a 
+            during <a 
+href="#OS">OS</a> build. See Section <a 
 href="#x1-120004">4<!--tex4ht:ref: sec:build --></a> for details. It is an user decision where to put fetched
             <span 
 class="cmmi-10">metadata</span>. However, it is nice to have all layer sub-directories in one location. In these
@@ -274,8 +292,12 @@ class="ecti-1000">Yocto </span>on
                                                                                                                     
 
                                                                                                                     
-            different HW architectures, but the OS is a simplified open-source OS with a Linux
-            kernel with the proper HW configuration.
+            different <a 
+href="#HW">HW</a> architectures, but the <a 
+href="#OS">OS</a> is a simplified open-source <a 
+href="#OS">OS</a> with a Linux
+            kernel with the proper <a 
+href="#HW">HW</a> configuration.
             <!--l. 107--><p class="indent" >     Install the following packages;
                    <ul class="itemize1">
                    <li class="itemize">
@@ -343,7 +365,8 @@ href="#x1-60003">3<!--tex4ht:ref: sec:configuration --></a>.
             <!--l. 128--><p class="noindent" >I have a shell script to fetch <span 
 class="cmmi-10">metadata </span>from public <span 
 class="cmmi-10">github </span>repositories. This
-            modification may serve people to build their own OS for <span 
+            modification may serve people to build their own <a 
+href="#OS">OS</a> for <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B</span>.
@@ -1303,8 +1326,11 @@ class="cmmi-10">bitbake </span>syntax is pretty complicated. In short, your life
             <!--l. 167--><p class="noindent" >No doubt, this is the most important directive, set here to <span 
 class="cmmi-10">raspberrypi</span><span 
 class="cmr-10">4</span>-64. You
-            may want to change this value if you build an OS for a different HW. If
-            you want to examine OS built for <span 
+            may want to change this value if you build an <a 
+href="#OS">OS</a> for a different <a 
+href="#HW">HW</a>. If
+            you want to examine <a 
+href="#OS">OS</a> built for <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B </span>on your host
@@ -1313,16 +1339,20 @@ class="cmmi-10">qemu</span>, set <span
 class="cmmi-10">MACHINE </span>to <span 
 class="cmmi-10">qemuarm</span><span 
 class="cmr-10">64</span>. I confirm that this works
-            although I did not find this approach very useful to test a <span 
+            although I did not find this approach very useful to test a <a 
+ id="section*.5"></a><span 
 class="cmmi-10">graphical user</span>
             <span 
-class="cmmi-10">interface </span>(GUI).
+class="cmmi-10">interface </span>(<a 
+href="#GUI">GUI</a>).
             <!--l. 174--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
  id="x1-80003.2"></a>PACKAGE_INSTALL</h4>
-            <!--l. 175--><p class="noindent" >This is where to specify additional SW packages. This is useful for packages not
+            <!--l. 175--><p class="noindent" >This is where to specify additional <a 
+href="#SW">SW</a> packages. This is useful for packages not
             included in the <span 
-class="cmmi-10">image </span>by default. In my experience, the default OS has all necessary
+class="cmmi-10">image </span>by default. In my experience, the default <a 
+href="#OS">OS</a> has all necessary
             programs or compact alternatives. However this is the directive used to append
             <span 
 class="cmmi-10">imgui</span>.
@@ -1342,8 +1372,10 @@ href="#x1-140005">5<!--tex4ht:ref: sec:install --></a> for details.
             <!--l. 186--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
  id="x1-100003.4"></a>PACKAGE_CLASSES</h4>
-            <!--l. 187--><p class="noindent" >There are different package formats used in various Linux-based OS&#8217;s to distribute
-            and manage SW packages. Both <span 
+            <!--l. 187--><p class="noindent" >There are different package formats used in various Linux-based <a 
+href="#OS">OS</a>&#8217;s to distribute
+            and manage <a 
+href="#SW">SW</a> packages. Both <span 
 class="cmmi-10">Debian </span>package format - <span 
 class="cmmi-10">deb </span>and <span 
 class="cmmi-10">rpm </span>from
@@ -1359,7 +1391,8 @@ class="cmmi-10">ipk </span>so I disabled this package
  id="x1-110003.5"></a>rm_work</h4>
             <!--l. 193--><p class="noindent" >This <span 
 class="cmmi-10">bitbake </span>class is in &#x003C;layer_directory&#x003E;/poky/meta/classes/rm_work.bbclass. It
-            defines a specific task for each SW package to remove intermediate files generated
+            defines a specific task for each <a 
+href="#SW">SW</a> package to remove intermediate files generated
             during the build. This decreases storage space about two times. Those who want to
             keep the working data and have enough disk space on their storage device may want
             to comment next line in <span 
@@ -1386,9 +1419,11 @@ class="ectt-0800x-x-87">"</span></span></pre>
                <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-120004"></a>build</h3>
             <!--l. 210--><p class="noindent" ><span 
-class="ecti-1000">Yocto </span>provides a list of image types. As I want to have a compact OS and I need a <span 
+class="ecti-1000">Yocto </span>provides a list of image types. As I want to have a compact <a 
+href="#OS">OS</a> and I need a <span 
 class="cmmi-10">X</span>
-            server to run a GUI, I rely on <span 
+            server to run a <a 
+href="#GUI">GUI</a>, I rely on <span 
 class="cmmi-10">core </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">image </span><span 
@@ -1441,7 +1476,8 @@ class="ectt-0800x-x-87">layers</span></span></pre>
 <!--l. 225--><p class="indent" >   The primary build tool of <span 
 class="cmmi-10">OpenEmbedded </span>based projects, such as the <span 
 class="ecti-1000">Yocto</span>
-project. The next command is going to build the OS <span 
+project. The next command is going to build the <a 
+href="#OS">OS</a> <span 
 class="cmmi-10">image</span>. <!--l. 227-->
 <a 
  id="x1-12008r6"></a>
@@ -1457,7 +1493,8 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">x11</span></span></pre>
 <!--l. 231--><p class="indent" >   Unless your host machine is a supercomputer, this will take hours. Find a list of
 tasks performed by <span 
-class="cmmi-10">bitbake </span>for a typical SW package in Table <a 
+class="cmmi-10">bitbake </span>for a typical <a 
+href="#SW">SW</a> package in Table <a 
 href="#x1-120112">2<!--tex4ht:ref: tab:task --></a>.
    <div class="table">
                                                                                                                     
@@ -1565,7 +1602,8 @@ class="td11">build configuration files             </td>
  style="vertical-align:baseline;" id="TBL-4-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-3-1"  
 class="td11">download     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-4-3-2"  
 class="td11">downloads                                  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-4-3-3"  
-class="td11">fetched SW source code archives </td>
+class="td11">fetched <a 
+href="#SW">SW</a> source code archives </td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-4-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-4-1"  
 class="td11">work           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-4-4-2"  
@@ -1575,7 +1613,8 @@ class="td11">working directory                    </td>
  style="vertical-align:baseline;" id="TBL-4-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-5-1"  
 class="td11">package       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-4-5-2"  
 class="td11">tmp/deploy/rpm                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-4-5-3"  
-class="td11">final SW packages in <span 
+class="td11">final <a 
+href="#SW">SW</a> packages in <span 
 class="cmmi-10">rpm </span>format</td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-4-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-6-1"  
@@ -1599,10 +1638,12 @@ class="cmmi-10">bitbake </span>workflow</span></div><!--tex4ht:label?: x1-130013
             <!--l. 278--><p class="indent" >     Source archives are saved in the <span 
 class="cmmi-10">download </span>directory. They are extracted,
             configured, compiled and installed in the <span 
-class="cmmi-10">work </span>directory. SW packages are
+class="cmmi-10">work </span>directory. <a 
+href="#SW">SW</a> packages are
             created and stored in the <span 
 class="cmmi-10">package </span>directory. Finally, following the build
-            configuration packages are unpacked to create the OS <span 
+            configuration packages are unpacked to create the <a 
+href="#OS">OS</a> <span 
 class="cmmi-10">image </span>found in the <span 
 class="cmmi-10">image</span>
             directory.
@@ -1612,7 +1653,8 @@ class="cmmi-10">image</span>
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-140005"></a>install</h3>
-            <!--l. 287--><p class="noindent" >The OS includes a kernel <span 
+            <!--l. 287--><p class="noindent" >The <a 
+href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, 64 <span 
 class="cmmi-10">bit </span>boot executable <span 
 class="cmmi-10">image </span>of 23<span 
@@ -1622,32 +1664,27 @@ class="cmmi-10">Raspberry &#x03C0; </span>- <span
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B </span>configuration of Linux 5.15. The total size
             of kernel modules is 21<span 
-class="cmmi-10">MB</span>. Happily this kernel release has a <span 
+class="cmmi-10">MB</span>. Happily this kernel release has a <a 
+ id="section*.6"></a><span 
 class="cmmi-10">long </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">term</span>
             <span 
-class="cmmi-10">support </span>(LTS).
+class="cmmi-10">support </span>(<a 
+href="#LTS">LTS</a>).
             <!--l. 291--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
-class="cmmi-10">image </span>formats. Find <span 
-class="cmmi-10">image </span>files in
-            <br 
-class="newline" /><span 
-class="cmmi-10">&#x003C; build</span>_<span 
-class="cmmi-10">directory &#x003E; &#x2215;tmp&#x2215;deploy&#x2215;images&#x2215;raspberrypi</span><span 
-class="cmr-10">4 </span><span 
-class="cmsy-10">- </span><span 
-class="cmr-10">64 </span><br 
-class="newline" />Further, different ways exist to install <span 
+class="cmmi-10">image </span>formats. Different ways exist to
+            install <span 
 class="cmmi-10">images </span>on <span 
-class="cmmi-10">SD </span>card. The final result is an OS
-            with two partitions - <span 
+class="cmmi-10">SD </span>card. The <a 
+href="#OS">OS</a> has two partitions - <span 
 class="cmmi-10">&#x2215;root </span>and <span 
-class="cmmi-10">&#x2215;boot</span>. There are not <span 
+class="cmmi-10">&#x2215;boot</span>. There are
+            no <span 
 class="cmmi-10">swap </span>and <span 
-class="cmmi-10">home </span>partitions. I
-            recommend the classic command-line tool <span 
+class="cmmi-10">home </span>partitions.
+            <!--l. 295--><p class="indent" >     I recommend the classic command-line tool <span 
 class="cmmi-10">dd </span>to copy data. It works fine with
             different <span 
 class="cmmi-10">image </span>formats like <span 
@@ -1657,12 +1694,11 @@ class="cmmi-10">sdimg</span>, <span
 class="cmmi-10">hddimg </span>and <span 
 class="cmmi-10">wic</span>. The last one is
             recommended. Find the <span 
-class="cmmi-10">SD</span>card device name, in example <span 
-class="cmmi-10">&#x2215;dev&#x2215; &#x003C; xxx &#x003E;</span>, unmount it
-            with <span 
-class="cmmi-10">umount </span>if mounted, and do copy data from the command line with
-            <br 
-class="newline" /><!--l. 302-->
+class="cmmi-10">SD </span>card device name, in example <span 
+class="cmmi-10">&#x2215;dev&#x2215; &#x003C; xxx &#x003E;</span>,
+            unmount it with <span 
+class="cmmi-10">umount </span>if mounted, and do copy data with the next command.
+            <!--l. 300-->
             <a 
  id="x1-14001r7"></a>
             <a 
@@ -1692,43 +1728,46 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">progress</span></span></pre>
         <ul class="itemize1">
         <li class="itemize">
-        <!--l. 306--><p class="noindent" >note            1:            run            this            command            in
+        <!--l. 304--><p class="noindent" >note            1:            run            this            command            in
         &#x003C;build_directory&#x003E;/tmp/deploy/images/raspberrypi4-64
         </li>
         <li class="itemize">
-        <!--l. 307--><p class="noindent" >note 2: run this command with <span 
+        <!--l. 305--><p class="noindent" >note 2: run this command with <span 
 class="cmmi-10">root </span>privileges
         </li>
         <li class="itemize">
-        <!--l. 308--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
+        <!--l. 306--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
         (see note 2)</li></ul>
-<!--l. 312--><p class="indent" >   The transfer is going to take a while. Once it is over, put the card in you
+<!--l. 309--><p class="indent" >   The transfer does not take a lot of time. When it is over, replace the card to
 <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B </span>and turn it on. That&#8217;s it.
-<!--l. 315--><p class="indent" >
+<!--l. 312--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-150006"></a>run</h3>
-            <!--l. 319--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
+            <!--l. 316--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
 class="cmmi-10">ip </span>and <span 
 class="cmmi-10">iw</span>. I use
-            a <span 
-class="cmmi-10">dynamic host configuration protocol </span>(DHCP) client, <span 
+            a <a 
+ id="section*.7"></a><span 
+class="cmmi-10">dynamic host configuration protocol </span>(<a 
+href="#DHCP">DHCP</a>) client, <span 
 class="cmmi-10">udhcpc</span>, and <span 
 class="cmmi-10">wpa</span>_<span 
 class="cmmi-10">supplicant</span>
             to store WiFi connection. The shell scripts <span 
 class="cmmi-10">wifini.sh </span>is designed by me and installed
             in <span 
-class="cmmi-10">&#x2215;usr&#x2215;bin</span>, as well as a running GUI example to demonstrate the usage of the <span 
+class="cmmi-10">&#x2215;usr&#x2215;bin</span>, as well as a running <a 
+href="#GUI">GUI</a> example to demonstrate the usage of the <span 
 class="cmmi-10">Dear</span>
             <span 
 class="cmmi-10">ImGui </span>library.
-               <!--l. 326--><pre class="lstinputlisting" id="listing-8"><span class="label"><a 
+               <!--l. 323--><pre class="lstinputlisting" id="listing-8"><span class="label"><a 
  id="x1-15003r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">!/</span></span><span style="color:#FF00FF"><span 
@@ -2377,11 +2416,11 @@ class="ectt-0800x-x-87">ip</span></span><span style="color:#FF00FF"> </span><spa
 class="ectt-0800x-x-87">route</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">show</span></span>
    </pre>
-<!--l. 327--><p class="noindent" >The script is available for download <a 
+<!--l. 324--><p class="noindent" >The script is available for download <a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/recipes-core/thcp/thcp/wifini.sh" >here</a>. Specify network <span 
 class="cmmi-10">id </span>from the command line
 with a short command-line option <span 
-class="cmmi-10">s</span>. See next example usage. <!--l. 331-->
+class="cmmi-10">s</span>. See next example usage. <!--l. 328-->
 <a 
  id="x1-15093r9"></a>
 <a 
@@ -2394,35 +2433,45 @@ class="ectt-0800x-x-87">s</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SSID</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 335--><p class="indent" >   Once an <span 
-class="cmmi-10">internet protocol </span>(IP) address is assigned to <span 
+<!--l. 332--><p class="indent" >   Once an <a 
+ id="section*.8"></a><span 
+class="cmmi-10">internet protocol </span>(<a 
+href="#IP">IP</a>) address is assigned to <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B</span>,
-the <span 
-class="cmmi-10">secure shell </span>(SSH) server by <span 
+the <a 
+ id="section*.9"></a><span 
+class="cmmi-10">secure shell </span>(<a 
+href="#SSH">SSH</a>) server by <span 
 class="cmmi-10">Dropbear</span>[<a 
  id="x1-15096"></a><a 
 href="#cite.0@dropbear">4</a>] allows for secure remote login, control
 and file transfer.
-<!--l. 340--><p class="indent" >
+<!--l. 337--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-160007"></a>outlook</h3>
-            <!--l. 342--><p class="noindent" >This reports the progress in the development of a custom Linux-based OS for
+            <!--l. 339--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &#x03C0; </span>- <span 
 class="cmr-10">4 </span>- <span 
 class="cmmi-10">model B</span>[<a 
  id="x1-16001"></a><a 
-href="#cite.0@raspberry">7</a>]. The kernel version of this embedded OS is Linux
-            release 5.15. An example GUI application using the <span 
+href="#cite.0@raspberry">7</a>]. The kernel version of this embedded <a 
+href="#OS">OS</a> is Linux
+            release 5.15. An example <a 
+href="#GUI">GUI</a> application using the <span 
 class="cmmi-10">Dear ImGui </span>library is built as a
-            part of the OS <span 
-class="cmmi-10">image</span>. In addition, an SSH server provides remote connection, data
-            transfer and device control. As the OS is now functional, performance and real-time
+            part of the <a 
+href="#OS">OS</a> <span 
+class="cmmi-10">image</span>. In addition, an <a 
+href="#SSH">SSH</a> server provides remote connection, data
+            transfer and device control. As the <a 
+href="#OS">OS</a> is now functional, performance and real-time
             tests are ongoing.
             <!--l. 1--><p class="indent" >
                                                                                                                     
@@ -2432,107 +2481,125 @@ class="cmmi-10">image</span>. In addition, an SSH server provides remote connect
  id="x1-17000"></a>acronyms</h3>
             <!--l. 3--><p class="noindent" >
                         <dl class="list1"><dt class="list">
-            <span 
-class="ecbx-1000">BSP         </span>  </dt><dd 
+            <a 
+ id="BSP"></a><a 
+href="#x1-30002"><span 
+class="ecbx-1000">BSP         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 4--><p class="noindent" ><span 
+                        <!--l. 4--><p class="noindent" ><a 
+href="#x1-30002"><span 
 class="cmmi-10">board</span>
                         <span 
 class="cmmi-10">support</span>
                         <span 
-class="cmmi-10">package </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    <a 
-href="#x1-30002">9<!--tex4ht:ref: tab:flow --></a><br />
+class="cmmi-10">package</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">SSH         </span>  </dt><dd 
+            <a 
+ id="SSH"></a><a 
+href="#x1-15095r6"><span 
+class="ecbx-1000">SSH         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 5--><p class="noindent" ><span 
+                        <!--l. 5--><p class="noindent" ><a 
+href="#x1-15095r6"><span 
 class="cmmi-10">secure</span>
                         <span 
-class="cmmi-10">shell </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-15095r6">22<!--tex4ht:ref: tab:flow --></a><br />
+class="cmmi-10">shell</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">GUI         </span>  </dt><dd 
+            <a 
+ id="GUI"></a><a 
+href="#x1-70003.1"><span 
+class="ecbx-1000">GUI         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 6--><p class="noindent" ><span 
+                        <!--l. 6--><p class="noindent" ><a 
+href="#x1-70003.1"><span 
 class="cmmi-10">graphical</span>
                         <span 
 class="cmmi-10">user</span>
                         <span 
-class="cmmi-10">interface </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-70003.1">12<!--tex4ht:ref: tab:flow --></a><br />
+class="cmmi-10">interface</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">SW          </span>  </dt><dd 
+            <a 
+ id="SW"></a><a 
+href="#x1-30002"><span 
+class="ecbx-1000">SW          </span></a>  </dt><dd 
 class="list">
-                        <!--l. 7--><p class="noindent" ><span 
-class="cmmi-10">software </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    <a 
-href="#x1-30002">8<!--tex4ht:ref: tab:flow --></a><br />
+                        <!--l. 7--><p class="noindent" ><a 
+href="#x1-30002"><span 
+class="cmmi-10">software</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">HW         </span>  </dt><dd 
+            <a 
+ id="HW"></a><a 
+href="#x1-30002"><span 
+class="ecbx-1000">HW         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 8--><p class="noindent" ><span 
-class="cmmi-10">hardware </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    <a 
-href="#x1-30002">9<!--tex4ht:ref: tab:flow --></a><br />
+                        <!--l. 8--><p class="noindent" ><a 
+href="#x1-30002"><span 
+class="cmmi-10">hardware</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">OS           </span>  </dt><dd 
+            <a 
+ id="OS"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">OS           </span></a>  </dt><dd 
 class="list">
-                        <!--l. 9--><p class="noindent" ><span 
+                        <!--l. 9--><p class="noindent" ><a 
+href="#x1-20001"><span 
 class="cmmi-10">operating</span>
                         <span 
-class="cmmi-10">system  </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .    <a 
-href="#x1-20001">5<!--tex4ht:ref: tab:flow --></a><br />
+class="cmmi-10">system</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">DHCP      </span>  </dt><dd 
+            <a 
+ id="DHCP"></a><a 
+href="#x1-150006"><span 
+class="ecbx-1000">DHCP      </span></a>  </dt><dd 
 class="list">
-                        <!--l. 10--><p class="noindent" ><span 
+                        <!--l. 10--><p class="noindent" ><a 
+href="#x1-150006"><span 
 class="cmmi-10">dynamic</span>
                         <span 
 class="cmmi-10">host</span>
                         <span 
 class="cmmi-10">configuration</span>
                         <span 
-class="cmmi-10">protocol </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-150006">22<!--tex4ht:ref: tab:flow --></a><br />
-                                                                                                                    
+class="cmmi-10">protocol</span></a><br />
+                                                                                                    
 
-                                                                                                                    
+                                                                                                    
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">IP           </span>  </dt><dd 
+            <a 
+ id="IP"></a><a 
+href="#x1-15095r6"><span 
+class="ecbx-1000">IP           </span></a>  </dt><dd 
 class="list">
-                        <!--l. 12--><p class="noindent" ><span 
+                        <!--l. 12--><p class="noindent" ><a 
+href="#x1-15095r6"><span 
 class="cmmi-10">internet</span>
                         <span 
-class="cmmi-10">protocol </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-15095r6">22<!--tex4ht:ref: tab:flow --></a><br />
+class="cmmi-10">protocol</span></a><br />
                         </dd><dt class="list">
-            <span 
-class="ecbx-1000">LTS         </span>  </dt><dd 
+            <a 
+ id="LTS"></a><a 
+href="#x1-140005"><span 
+class="ecbx-1000">LTS         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 14--><p class="noindent" ><span 
+                        <!--l. 14--><p class="noindent" ><a 
+href="#x1-140005"><span 
 class="cmmi-10">long </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">term</span>
                         <span 
-class="cmmi-10">support </span> .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   <a 
-href="#x1-140005">21<!--tex4ht:ref: tab:flow --></a><br />
+class="cmmi-10">support</span></a><br />
                         </dd></dl>
-            <!--l. 352--><p class="noindent" >
-                                                                                                                    
+            <!--l. 349--><p class="noindent" >
+                                                                                                    
 
-                                                                                                                    
+                                                                                                    
                <h3 class="sectionHead"><a 
  id="x1-18000"></a>bibliography</h3>
-            <!--l. 354--><p class="noindent" >
+            <!--l. 351--><p class="noindent" >
                  <dl class="thebibliography"><dt id="X0-oe" class="thebibliography">
             [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@oe"></a>community.
                  <span 
 class="ecti-1000">OpenEmbedded</span>.
@@ -2552,7 +2619,7 @@ class="ectt-1000">https://www.openembedded.org</span></a>
                  </dd><dt id="X0-yocto" class="thebibliography">
             [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -2574,7 +2641,7 @@ class="ectt-1000">https://www.yoctoproject.org</span></a>
                  </dd><dt id="X0-yoctoqb" class="thebibliography">
             [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@yoctoqb"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -2603,7 +2670,7 @@ class="ectt-1000">https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#
                  </dd><dt id="X0-dropbear" class="thebibliography">
             [4]   </dt><dd 
 id="bib-4" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
                  <span 
 class="ecti-1000">Dropbear</span>
@@ -2625,7 +2692,7 @@ class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
             [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Building</span>
@@ -2679,7 +2746,7 @@ id="bib-6" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@kalo2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Embedded</span>
@@ -2722,7 +2789,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thcport.html</span></a>
                  </dd><dt id="X0-raspberry" class="thebibliography">
             [7]   </dt><dd 
 id="bib-7" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@raspberry"></a>Raspberry <span 
 class="cmmi-10">&#x03C0; </span>Ltd.
                  <span 
@@ -2745,7 +2812,7 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                  </dd><dt id="X0-bitbake" class="thebibliography">
             [8]   </dt><dd 
 id="bib-8" class="thebibliography">
-                 <!--l. 354--><p class="noindent" ><a 
+                 <!--l. 351--><p class="noindent" ><a 
  id="cite.0@bitbake"></a>Richard Purdie,
                  Chris Larson,
                  and
@@ -2772,12 +2839,12 @@ class="ectt-1000">https://docs.yoctoproject.org/bitbake</span></a>
                  (visited
                  on
                  2023).</dd></dl>
-            <!--l. 357--><p class="indent" >                                                                                            <span 
+            <!--l. 354--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 357--><p class="indent" >      <a 
+            <!--l. 354--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in pdf format</span></a>
                 
