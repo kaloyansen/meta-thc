@@ -262,9 +262,9 @@ href="#OS">OS</a> build. See Section <a
 href="#x1-130004">4<!--tex4ht:ref: sec:build --></a> for details. It is an user decision where to put fetched
             <span 
 class="cmmi-10">metadata</span>. However, it is nice to have all layer sub-directories in one location. In these
-            instructions this location is referred as &#x003C;META/DIR&#x003E;. The second directory to
-            create is the &#x003C;BUILD/DIR&#x003E;. This is where the build and build configuration live. I
-            suggest that this one is not inside the &#x003C;META/DIR&#x003E; to not mix <span 
+            instructions this location is referred as &#x003C;META-DIR&#x003E;. The second directory to
+            create is the &#x003C;BUILD-DIR&#x003E;. This is where the build and build configuration live. I
+            suggest that this one is not inside the &#x003C;META-DIR&#x003E; to not mix <span 
 class="cmmi-10">data </span>and
             <span 
 class="cmmi-10">metadata</span>.
@@ -796,10 +796,9 @@ class="ectt-0800x-x-87">REPO</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">=(</span></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">associative</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
-class="ectt-0800x-x-87">array</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
-class="ectt-0800x-x-87">of</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">git</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
-class="ectt-0800x-x-87">repositories</span></span> 
+class="ectt-0800x-x-87">repository</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
+class="ectt-0800x-x-87">array</span></span> 
 <span class="label"><a 
  id="x1-4063r1060"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"><span 
@@ -1115,8 +1114,8 @@ class="ectt-0800x-x-87">echo</span></span>
 class="cmmi-10">metafetch.sh </span><a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch.sh" >here</a>. It is designed in a way that after a successful run
 one may start a build with <span 
-class="cmmi-10">bitbake</span>. The script takes &#x003C;META/DIR&#x003E;and
-&#x003C;BUILD/DIR&#x003E;from the command-line. You may use next examples to run
+class="cmmi-10">bitbake</span>. The script takes &#x003C;META-DIR&#x003E;and
+&#x003C;BUILD-DIR&#x003E;from the command-line. You may use next examples to run
 <span 
 class="cmmi-10">metafetch.sh</span>. The first one is a minimal example. You may specify directories like
 the second example. Otherwise the script will use default values. The default
@@ -1149,14 +1148,14 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">m</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">META</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">b</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">BUILD</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span> 
 <span class="label"><a 
@@ -1177,7 +1176,7 @@ class="ectt-0800x-x-87">h</span></span></pre>
                                                                                                          
                <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
  id="x1-50003"></a>configuration</h3>
-            <!--l. 125--><p class="noindent" >Build configuration is in &#x003C;BUILD/DIR&#x003E;/conf, check files <span 
+            <!--l. 125--><p class="noindent" >Build configuration is in &#x003C;BUILD-DIR&#x003E;/conf, check files <span 
 class="cmmi-10">local.conf </span>and
             <span 
 class="cmmi-10">bblayers.conf</span>. <span 
@@ -1272,7 +1271,7 @@ class="cmmi-10">ipk </span>so I disabled
                <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
  id="x1-120003.2.1"></a>rm_work</h5>
             <!--l. 167--><p class="noindent" >This <span 
-class="cmmi-10">bitbake </span>class is in &#x003C;META/DIR&#x003E;/poky/meta/classes/rm_work.bbclass. It
+class="cmmi-10">bitbake </span>class is in &#x003C;META-DIR&#x003E;/poky/meta/classes/rm_work.bbclass. It
             defines a specific task for each <a 
 href="#SW">SW</a> package to remove intermediate files generated
             during the build. This decreases storage space about two times. Those who want to
@@ -1398,7 +1397,7 @@ href="#x1-50003">3<!--tex4ht:ref: sec:configuration --></a>.
             <!--l. 220--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">4.2   </span> <a 
  id="x1-150004.2"></a>environment</h4>
-            <!--l. 223--><p class="noindent" >To initialise build environment navigate to &#x003C;META/DIR&#x003E;/poky and execute the
+            <!--l. 223--><p class="noindent" >To initialise build environment navigate to &#x003C;META-DIR&#x003E;/poky and execute the
             initialization script with the next command. <!--l. 225-->
             <a 
  id="x1-15001r4"></a>
@@ -1416,10 +1415,10 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">env</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">BUILD</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 229--><p class="indent" >   This will change your system path to &#x003C;BUILD/DIR&#x003E;. You may run now next
+<!--l. 229--><p class="indent" >   This will change your system path to &#x003C;BUILD-DIR&#x003E;. You may run now next
 command to check the project layers. <!--l. 231-->
 <a 
  id="x1-15004r5"></a>
@@ -1546,7 +1545,7 @@ class="cmmi-10">bitbake </span>tasks</span></div><!--tex4ht:label?: x1-150112 --
                </div>
                <h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
  id="x1-160004.3"></a>flow</h4>
-            <!--l. 272--><p class="noindent" >The build happens in &#x003C;BUILD/DIR&#x003E;. There is a list of important sub-directories in
+            <!--l. 272--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. There is a list of important sub-directories in
             Table <a 
 href="#x1-160013">3<!--tex4ht:ref: tab:flow --></a>.
                <div class="table">
@@ -1707,7 +1706,7 @@ class="ectt-0800x-x-87">progress</span></span></pre>
         <ul class="itemize1">
         <li class="itemize">
         <!--l. 317--><p class="noindent" >note            1:            run            this            command            in
-        &#x003C;BUILD/DIR&#x003E;/tmp/deploy/images/raspberrypi4-64
+        &#x003C;BUILD-DIR&#x003E;/tmp/deploy/images/raspberrypi4-64
         </li>
         <li class="itemize">
         <!--l. 318--><p class="noindent" >note 2: run this command with <span 
