@@ -57,7 +57,7 @@ BUILDIR=$(realpath $BUILDIR) && printf "build:\t\t $BUILDIR\n" || erreur $? cann
 printf "branch:\t\t $BRANCH\nprotocol:\t $FETCHER\n\n"
 
 declare -A REPO
-REPO=(    # associative array of git repositories
+REPO=(    # associative git repository array
     [yoctoproject/poky.git]=$METADIR/poky
     [openembedded/meta-openembedded.git]=$METADIR/oe
     [agherzan/meta-raspberrypi]=$METADIR/rpi/meta-raspberrypi
