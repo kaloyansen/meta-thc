@@ -1,7 +1,6 @@
 #!/bin/bash
 # metafetch.sh
 # fetch rpi metadata
-# release 3.3.2
 
 FETCHER=https://github.com/
 GITFETCHER=git@github.com:
@@ -10,7 +9,6 @@ DEFMETADIR=$HOME/yocto_$BRANCH/metadata
 DEFBUILDIR=$HOME/yocto_$BRANCH/rpi4
 
 erreur() { echo $* && exit 0 || kill $$; }
-
 usage() {    # print options and quit
 
     printf "
@@ -72,8 +70,6 @@ for repo in ${!REPO[@]}; do    # clone repositories
 
     command="git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}"
     [ -n "$DRYRUN" ] || $command && echo $command
-#        git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]} &&
-#            echo git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}
 done
 [ -n "$DRYRUN" ] && erreur $0 dry run exit
 
