@@ -1213,24 +1213,23 @@ class="ectt-0800x-x-87">g</span></span></pre>
                <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
  id="x1-50003"></a>configuration</h3>
             <!--l. 135--><p class="noindent" >Build configuration is in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
-class="ectt-1000">/conf</span></span>, check files <span 
-class="cmmi-10">local.conf </span>and
+class="ectt-1000">/conf</span></span>, check files <span class="path"><span 
+class="ectt-1000">local.conf</span></span> and <span class="path"><span 
+class="ectt-1000">bblayers.conf</span></span>. <span 
+class="ecti-1000">Yocto </span>layers are specified in <span class="path"><span 
+class="ectt-1000">bblayers.conf</span></span>. The build directives
+            are in <span class="path"><span 
+class="ectt-1000">local.conf</span></span>. Variables in this file control the build. Sometimes I call these
             <span 
-class="cmmi-10">bblayers.conf</span>. <span 
-class="ecti-1000">Yocto </span>layers are specified in <span 
-class="cmmi-10">bblayers.conf</span>. The build directives are in
-            <span 
-class="cmmi-10">local.conf</span>. Variables in this file control the build. Sometimes I call these <span 
-class="cmmi-10">directives</span>
-            to avoid repetitions. Many directives are not covered in these instructions. Please
-            refer <span 
+class="cmmi-10">directives </span>to avoid repetitions. Many directives are not covered in these instructions.
+            Please refer <span 
 class="cmmi-10">bitbake</span>[<a 
  id="x1-5001"></a><a 
-href="#cite.0@bitbake">8</a>] documentation for details. It is not always easy to understand the
-            meaning and the relations between different directives. What is more, <span 
-class="cmmi-10">bitbake </span>syntax
-            is pretty complicated. In short, your life can easily become unbearable if the build
-            configuration is too long. See next a list of important build configuration
+href="#cite.0@bitbake">8</a>] documentation for details. It is not always easy to understand
+            the meaning and the relations between different directives. What is more, <span 
+class="cmmi-10">bitbake</span>
+            syntax is pretty complicated. In short, your life can easily become unbearable if the
+            build configuration is too long. See next a list of important build configuration
             directives.
             <!--l. 147--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
@@ -1320,9 +1319,8 @@ class="ectt-1000">/poky/meta/classes/rm\_work.bbclass</span></span>.
 href="#SW">SW</a> package to remove intermediate files generated
             during the build. This decreases storage space about twice. Those who want to keep
             the working data and have enough storage space may want to comment the next line
-            in <span 
-class="cmmi-10">local</span>.<span 
-class="cmmi-10">conf</span>.
+            in <span class="path"><span 
+class="ectt-1000">local.conf</span></span>.
                <!--l. 190-->
             <a 
  id="x1-13001r3"></a>
