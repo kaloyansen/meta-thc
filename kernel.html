@@ -74,7 +74,7 @@ href="#x1-210004.3" id="QQ2-1-22">activate kernel images</a></span>
             <br />     &#x00A0;<span class="sectionToc" >5 <a 
 href="#x1-220005" id="QQ2-1-23">outlook</a></span>
             <br />     &#x00A0;<span class="sectionToc" ><a 
-href="#x1-23000" id="QQ2-1-24">bibliography</a></span>
+href="#x1-24000" id="QQ2-1-25">bibliography</a></span>
                </div>
             <!--l. 12--><p class="indent" >
                                                                                                                     
@@ -93,11 +93,11 @@ href="#x1-70003">3<!--tex4ht:ref: sec:linux --></a>. In this paper,
             Linux always designates the kernel while the corresponding operating system is
             referred as <a 
  id="section*.1"></a><span 
-class="ecbx-1000">GNU! </span>(<span 
-class="ecbx-1000">GNU!</span>)/Linux. That is why Linux should not be compared to
-            operating systems but their kernels like the original Unix kernel, the BSD kernel,
-            NT, and XNU, the last two designed by Microsoft Corporation and Apple
-            Inc.
+class="cmmi-10">GNU is not UNIX </span>(<a 
+href="#GNU">GNU</a>)/Linux. That is why Linux should not be
+            compared to operating systems but their kernels like the original Unix kernel, the
+            BSD kernel, NT, and XNU, the last two designed by Microsoft Corporation and
+            Apple Inc.
             <!--l. 30--><p class="indent" >     Finally, limited technical details about Linux images and kernel releases are
             available in Section <a 
 href="#x1-180004">4<!--tex4ht:ref: sec:exercices --></a>.
@@ -109,36 +109,36 @@ href="#x1-180004">4<!--tex4ht:ref: sec:exercices --></a>.
  id="x1-30002"></a>definitions</h3>
             <!--l. 37--><p class="noindent" >An <a 
  id="section*.2"></a><span 
-class="ecbx-1000">OS! </span>(<span 
-class="ecbx-1000">OS!</span>) is a <a 
+class="cmmi-10">operating system </span>(<a 
+href="#OS">OS</a>) is a <a 
  id="section*.3"></a><span 
-class="ecbx-1000">SW! </span>(<span 
-class="ecbx-1000">SW!</span>) environment for running applications on computing
-            devices. In other words, the <span 
-class="ecbx-1000">OS!</span> provides user applications with a standard interface
-            to system <a 
+class="cmmi-10">software </span>(<a 
+href="#SW">SW</a>) environment for running applications
+            on computing devices. In other words, the <a 
+href="#OS">OS</a> provides user applications with a
+            standard interface to system <a 
  id="section*.4"></a><span 
-class="ecbx-1000">HW! </span>(<span 
-class="ecbx-1000">HW!</span>) and <span 
-class="ecbx-1000">SW!</span> resources. The main components required for the
-            functioning of <span 
-class="ecbx-1000">OS!</span>s follow. Strictly speaking, the last two items are not
-            considered as integral parts of the <span 
-class="ecbx-1000">OS!</span>. These are commonly defined as <span 
-class="ecbx-1000">OS!</span>
-            users.
+class="cmmi-10">hardware </span>(<a 
+href="#HW">HW</a>) and <a 
+href="#SW">SW</a> resources. The main
+            components required for the functioning of <a 
+href="#OS">OS</a>s follow. Strictly speaking, the last two
+            items are not considered as integral parts of the <a 
+href="#OS">OS</a>. These are commonly defined as
+            <a 
+href="#OS">OS</a> users.
                    <ul class="itemize1">
                    <li class="itemize">
                    <!--l. 45--><p class="noindent" >bootloader =&#x003E; take care of the boot sequence
                    </li>
                    <li class="itemize">
-                   <!--l. 46--><p class="noindent" >kernel =&#x003E; manage <span 
-class="ecbx-1000">HW!</span> and <span 
-class="ecbx-1000">SW!</span> resources
+                   <!--l. 46--><p class="noindent" >kernel =&#x003E; manage <a 
+href="#HW">HW</a> and <a 
+href="#SW">SW</a> resources
                    </li>
                    <li class="itemize">
-                   <!--l. 47--><p class="noindent" >shell =&#x003E; command-line interface to interact with the <span 
-class="ecbx-1000">OS!</span>
+                   <!--l. 47--><p class="noindent" >shell =&#x003E; command-line interface to interact with the <a 
+href="#OS">OS</a>
                    </li>
                    <li class="itemize">
                    <!--l. 48--><p class="noindent" >services =&#x003E; provide functionalities to applications
@@ -153,10 +153,10 @@ class="ecbx-1000">OS!</span>
  id="x1-40002.1"></a>kernel</h4>
             <!--l. 55--><p class="noindent" >The kernel[<a 
  id="x1-4001"></a><a 
-href="#cite.0@love2010">2</a>] is a critical component of an <span 
-class="ecbx-1000">OS!</span> responsible for low-level resource
-            management and communication with <span 
-class="ecbx-1000">HW!</span>. Famous examples are NT (New
+href="#cite.0@love2010">2</a>] is a critical component of an <a 
+href="#OS">OS</a> responsible for low-level resource
+            management and communication with <a 
+href="#HW">HW</a>. Famous examples are NT (New
             Technology) kernel designed by Microsoft Corporation and XNU (X is Not Unix).
             The last one is an Unix-like kernel from Apple Inc.
                                                                                                                     
@@ -168,19 +168,19 @@ class="ecbx-1000">HW!</span>. Famous examples are NT (New
             <!--l. 62--><p class="noindent" >Multitasking is about running processes. It is important to understand that a single
             processor may run only one process at a time. Even on multiprocessor platforms, the
             number of processes exceeds the number of processors by at least two to three orders
-            of magnitude. Fortunately, most <span 
-class="ecbx-1000">OS!</span>es are able to interleave execution of multiple
+            of magnitude. Fortunately, most <a 
+href="#OS">OS</a>es are able to interleave execution of multiple
             processes.
             <!--l. 69--><p class="indent" >     In <span 
 class="cmmi-10">cooperative multitasking</span>, a process does not stop running before it has
             decided itself, in example, when the task is completed. I wonder why it is called like
             that because there is nothing <span 
 class="cmmi-10">cooperative </span>here. In this approach, a single process
-            could monopolize the machine processor time and potentially bring the entire <span 
-class="ecbx-1000">OS!</span>
+            could monopolize the machine processor time and potentially bring the entire <a 
+href="#OS">OS</a>
             down.
-            <!--l. 76--><p class="indent" >     Fortunately, modern <span 
-class="ecbx-1000">OS!</span>es employ another solution. In this approach, called
+            <!--l. 76--><p class="indent" >     Fortunately, modern <a 
+href="#OS">OS</a>es employ another solution. In this approach, called
             <span 
 class="cmmi-10">preemptive multitasking</span>, the kernel grants processes tiny pieces of processor time
             called <span 
@@ -194,29 +194,29 @@ class="cmmi-10">preemption</span>, saving the entire working context in order to
 class="cmmi-10">milliseconds</span>, the preemption gives human beings the attractive illusion
             of many processes running simultaneously. Unfortunately this is not the
             case.
-            <!--l. 87--><p class="indent" >     Symmetrical multiprocessor (SMP) support is a common <span 
-class="ecbx-1000">HW!</span> feature supported
-            by the modern <span 
-class="ecbx-1000">OS!</span>es. It allows for more efficient management and usage of multiple
+            <!--l. 87--><p class="indent" >     Symmetrical multiprocessor (SMP) support is a common <a 
+href="#HW">HW</a> feature supported
+            by the modern <a 
+href="#OS">OS</a>es. It allows for more efficient management and usage of multiple
             processors. This is achieved by considering all processors identical. In addition, they
-            may share <span 
-class="ecbx-1000">HW!</span> resources like memory and various devices between them. The
+            may share <a 
+href="#HW">HW</a> resources like memory and various devices between them. The
             purpose of SMP support is to ensure that multiple processors work together in
             harmony to deliver improved performance.
             <!--l. 95--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
  id="x1-60002.3"></a>kernel modules</h4>
             <!--l. 96--><p class="noindent" >Linux supports dynamic insertion and removal of code at runtime. This code is
-            grouped in loadable binary objects called modules. Module support allows <span 
-class="ecbx-1000">OS!</span>es to
+            grouped in loadable binary objects called modules. Module support allows <a 
+href="#OS">OS</a>es to
             have a compact base kernel image without missing optional features and drivers
             supplied via modules.
             <!--l. 102--><p class="indent" >     A device driver, in example, could be compiled as a part of the kernel or
             separately - as a kernel module. This depends on the kernel build configuration. As a
             part of the kernel, the driver is loaded on boot and unloaded on shut down. As a
             module it could be loaded or unloaded anytime the system may need so. The last
-            solution decreases kernel size and Linux boot time but may potentially decrease <span 
-class="ecbx-1000">OS!</span>
+            solution decreases kernel size and Linux boot time but may potentially decrease <a 
+href="#OS">OS</a>
             performance.
             <!--l. 109--><p class="indent" >
                                                                                                                     
@@ -226,23 +226,23 @@ class="ecbx-1000">OS!</span>
  id="x1-70003"></a>linux</h3>
             <!--l. 113--><p class="noindent" >The initial version of Unix was created in Bell Labs in 1969. The design principles
             like hierarchical file system, command-line interface and multi-user support
-            have been followed in many modern <span 
-class="ecbx-1000">OS!</span>es. However, it was a commercial
+            have been followed in many modern <a 
+href="#OS">OS</a>es. However, it was a commercial
             product with a proprietary development model and practically no development
             community.
-            <!--l. 120--><p class="indent" >     Linux is an <span 
-class="ecbx-1000">OS!</span> kernel that was originally developed by Linus Torvalds twenty
+            <!--l. 120--><p class="indent" >     Linux is an <a 
+href="#OS">OS</a> kernel that was originally developed by Linus Torvalds twenty
             years later in 1991. In short, it is an Unix-like kernel, but it has a source code freely
-            available to the public. Linux is used as a kernel in multiple <span 
-class="ecbx-1000">OS!</span>es, commonly
-            referred to as <span 
-class="ecbx-1000">GNU!</span>/Linux distributions.
-            <!--l. 126--><p class="indent" >     There are two families of <span 
-class="ecbx-1000">OS!</span> kernels - monolithic and micro-kernels.
-            Micro-kernels run as multiple processes usually called servers. As a monolithic kernel,
-            Linux is designed to run as a single piece of <span 
-class="ecbx-1000">SW!</span> in a special part of the memory
-            called kernel-space.
+            available to the public. Linux is used as a kernel in multiple <a 
+href="#OS">OS</a>es, commonly referred
+            to as <a 
+href="#GNU">GNU</a>/Linux distributions.
+            <!--l. 126--><p class="indent" >     There are two families of <a 
+href="#OS">OS</a> kernels - monolithic and micro-kernels. Micro-kernels
+            run as multiple processes usually called servers. As a monolithic kernel, Linux is
+            designed to run as a single piece of <a 
+href="#SW">SW</a> in a special part of the memory called
+            kernel-space.
             <!--l. 131--><p class="indent" >     In contrast, applications run a virtual environment, provided by Linux, called
             user-space. The kernel makes each application feel like it has all available resources
             while, in fact, it shares with the other applications and it has exactly as memory and
@@ -302,17 +302,17 @@ class="cmmi-10">modprobe </span>command-line
             <!--l. 177--><p class="noindent" >To be precise, the multitasking algorithm depends on the kernel build configuration.
             Linux could have a voluntary preemption or no preemption at all. In addition, it
             could be compiled as a preemptible as well as a fully preemptible kernel. The last
-            option is useful in real-time environments. Commercial Unix <span 
-class="ecbx-1000">OS!</span>es like Solaris and
+            option is useful in real-time environments. Commercial Unix <a 
+href="#OS">OS</a>es like Solaris and
             IRIX also have preemptive kernels.
             <!--l. 184--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
  id="x1-130003.2"></a>functionality</h4>
-            <!--l. 185--><p class="noindent" >Linux manages <span 
-class="ecbx-1000">HW!</span> resources, provides essential services and enables communication
-            between <span 
-class="ecbx-1000">SW!</span> applications and the <span 
-class="ecbx-1000">HW!</span>. The following key functions define the
+            <!--l. 185--><p class="noindent" >Linux manages <a 
+href="#HW">HW</a> resources, provides essential services and enables communication
+            between <a 
+href="#SW">SW</a> applications and the <a 
+href="#HW">HW</a>. The following key functions define the
             purpose of the kernel.
             <!--l. 190--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
@@ -334,15 +334,15 @@ class="ecbx-1000">HW!</span>. The following key functions define the
             <!--l. 202--><p class="noindent" >The memory granted to user-space processes by the kernel has a virtual allocation.
             This way applications work like they have all available memory. In fact, they share
             RAM with many other processes and have a restricted access. The MMU (memory
-            management unit) is the <span 
-class="ecbx-1000">HW!</span> that manages memory and performs virtual to
-            physical address translation.
+            management unit) is the <a 
+href="#HW">HW</a> that manages memory and performs virtual to physical
+            address translation.
                <h5 class="subsubsectionHead"><span class="titlemark">3.2.3   </span> <a 
  id="x1-160003.2.3"></a>system calls</h5>
-            <!--l. 209--><p class="noindent" >Provide an abstracted <span 
-class="ecbx-1000">HW!</span> interface for user-space processes. System calls enable
-            interaction with the kernel. This way applications may request <span 
-class="ecbx-1000">OS!</span> resources
+            <!--l. 209--><p class="noindent" >Provide an abstracted <a 
+href="#HW">HW</a> interface for user-space processes. System calls enable
+            interaction with the kernel. This way applications may request <a 
+href="#OS">OS</a> resources
             and services. These are granted by the kernel in a defined and controlled
             manner. Usually programs wait for the result of a system call to continue
             execution. Figure <a 
@@ -392,14 +392,14 @@ href="#cite.0@love2010">2</a>]</span></div><!--tex4ht:label?: x1-160011 -->
             <!--l. 226--><p class="indent" >     </div><hr class="endfigure">
                <h5 class="subsubsectionHead"><span class="titlemark">3.2.4   </span> <a 
  id="x1-170003.2.4"></a>interrupts</h5>
-            <!--l. 229--><p class="noindent" >Allow <span 
-class="ecbx-1000">HW!</span> devices and <span 
-class="ecbx-1000">SW!</span> processes to temporarily suspend the current processor
+            <!--l. 229--><p class="noindent" >Allow <a 
+href="#HW">HW</a> devices and <a 
+href="#SW">SW</a> processes to temporarily suspend the current processor
             execution and transfer control to a specific routine called <span 
 class="cmmi-10">interrupt</span><span 
 class="cmmi-10">&#x00A0;handler</span>.
-            Interrupts are asynchronous and may occur any time. They handle <span 
-class="ecbx-1000">HW!</span> events that
+            Interrupts are asynchronous and may occur any time. They handle <a 
+href="#HW">HW</a> events that
             require immediate attention like keyboards, mice, network and storage devices.
             When an interrupt is requested, the processor saves the interrupted process
             context in order to resume it after the interrupt handler has completed its
@@ -413,12 +413,12 @@ class="ecbx-1000">HW!</span> events that
             <!--l. 242--><p class="noindent" >When compiled, Linux is a single binary file, very often called <span 
 class="cmmi-10">image</span>. It is loaded on
             boot into a supervisor mode called kernel-space. This space provides unrestricted
-            access to the <span 
-class="ecbx-1000">HW!</span>. The image has a size of around 13 MB. In comparison, the source
-            code, written in <span 
-class="cmmi-10">c</span>, takes around 1.5 GB on a storage device. These are mainly
-            <span 
-class="ecbx-1000">HW!</span> drivers for different devices and source code for various processor
+            access to the <a 
+href="#HW">HW</a>. The image has a size of around 13 MB. In comparison, the
+            source code, written in <span 
+class="cmmi-10">c</span>, takes around 1.5 GB on a storage device. These are
+            mainly <a 
+href="#HW">HW</a> drivers for different devices and source code for various processor
             architectures.
             <!--l. 250--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
@@ -429,8 +429,8 @@ class="ecbx-1000">HW!</span> drivers for different devices and source code for v
             There is not any specific interval between two releases. Various considerations
             may cause releases of new versions, but I do not want to discuss this topic
             here.
-            <!--l. 258--><p class="indent" >     Some <span 
-class="ecbx-1000">GNU!</span>/Linux distributions suggest automatically kernel updates, some not.
+            <!--l. 258--><p class="indent" >     Some <a 
+href="#GNU">GNU</a>/Linux distributions suggest automatically kernel updates, some not.
             In example, openSUSE do that after each stable release. In contrast, on Manjaro
             Linux[<a 
  id="x1-19001"></a><a 
@@ -444,12 +444,12 @@ href="#cite.0@rusev2023">3</a>]. Look for the <span
 class="cmmi-10">Kernel </span>section
             of <span 
 class="cmmi-10">systemsettings</span>. Here one may install/uninstall kernel releases of her/his choice, if
-            (s)he has root privileges. Usually, in addition to the active Linux kernel, one or two
-            older versions are kept on the boot partition, where the bootloader has access
-            during the boot sequence. This allows to switch back to an older version, if
-            the new kernel fails to load. To be honest, after more than twenty years
-            work on various <span 
-class="ecbx-1000">GNU!</span>/Linux distributions, this has never happened to
+            (s)he has root privileges. Usually, in addition to the active Linux kernel, one or
+            two older versions are kept on the boot partition, where the bootloader has
+            access during the boot sequence. This allows to switch back to an older
+            version, if the new kernel fails to load. To be honest, after more than twenty
+            years work on various <a 
+href="#GNU">GNU</a>/Linux distributions, this has never happened to
             me. You may think that I am just lucky but, in fact, before being released,
             a new kernel is tested and verified with multiple build configurations by
             many different users on various process architectures. Find available kernel
@@ -465,15 +465,17 @@ class="ectt-1000">arch</span></span> is the processor
  id="x1-210004.3"></a>activate kernel images</h4>
             <!--l. 281--><p class="noindent" >Linux releases with <a 
  id="section*.5"></a><span 
-class="ecbx-1000">LTS! </span>(<span 
-class="ecbx-1000">LTS!</span>) are recommended. Avoid kernels that are not
-            supported by the system. By default, the location of the last kernel image loaded on
-            boot is saved and next time it is loaded automatically. Learn next how to modify this
+class="cmmi-10">long </span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">term support </span>(<a 
+href="#LTS">LTS</a>) are recommended. Avoid kernels that
+            are not supported by the system. By default, the location of the last kernel image
+            loaded on boot is saved and next time it is loaded automatically. Learn next how to
                                                                                                                     
 
                                                                                                                     
-            behaviour in the bootloader configuration, in this case - GRUB (GRand Unified
-            Bootloader).
+            modify this behaviour in the bootloader configuration, in this case - GRUB (GRand
+            Unified Bootloader).
             <!--l. 288--><p class="indent" >     This is how to activate a different kernel release. This should load a specific kernel
             image during next boot. Logically, one may chose one of the images already installed
             on the <span 
@@ -513,17 +515,82 @@ class="cmmi-10">reboot </span>followed by the number in question</li></ul>
             <!--l. 330--><p class="noindent" >The article covers important Linux features and functions as well as definitions
             needed to understand them. In addition, readers may learn how to install new kernel
             releases and how to activate a particular kernel image.
-            <!--l. 336--><p class="indent" >
+            <!--l. 1--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
-               <h3 class="sectionHead"><a 
- id="x1-23000"></a>bibliography</h3>
+               <h3 class="likesectionHead"><a 
+ id="x1-23000"></a>acronyms</h3>
+            <!--l. 3--><p class="noindent" >
+                        <dl class="list1"><dt class="list">
+            <a 
+ id="GNU"></a><a 
+href="#x1-20001"><span 
+class="ecbx-1000">GNU        </span></a>  </dt><dd 
+class="list">
+                        <!--l. 10--><p class="noindent" ><a 
+href="#x1-20001"><span 
+class="cmmi-10">GNU</span>
+                        <span 
+class="cmmi-10">is</span>
+                        <span 
+class="cmmi-10">not</span>
+                        <span 
+class="cmmi-10">UNIX</span></a><br />
+                        </dd><dt class="list">
+            <a 
+ id="HW"></a><a 
+href="#x1-30002"><span 
+class="ecbx-1000">HW         </span></a>  </dt><dd 
+class="list">
+                        <!--l. 12--><p class="noindent" ><a 
+href="#x1-30002"><span 
+class="cmmi-10">hardware</span></a><br />
+                        </dd><dt class="list">
+            <a 
+ id="LTS"></a><a 
+href="#x1-210004.3"><span 
+class="ecbx-1000">LTS         </span></a>  </dt><dd 
+class="list">
+                        <!--l. 14--><p class="noindent" ><a 
+href="#x1-210004.3"><span 
+class="cmmi-10">long </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">term</span>
+                        <span 
+class="cmmi-10">support</span></a><br />
+                        </dd><dt class="list">
+            <a 
+ id="OS"></a><a 
+href="#x1-30002"><span 
+class="ecbx-1000">OS           </span></a>  </dt><dd 
+class="list">
+                        <!--l. 15--><p class="noindent" ><a 
+href="#x1-30002"><span 
+class="cmmi-10">operating</span>
+                        <span 
+class="cmmi-10">system</span></a><br />
+                        </dd><dt class="list">
+            <a 
+ id="SW"></a><a 
+href="#x1-30002"><span 
+class="ecbx-1000">SW          </span></a>  </dt><dd 
+class="list">
+                        <!--l. 18--><p class="noindent" ><a 
+href="#x1-30002"><span 
+class="cmmi-10">software</span></a><br />
+                        </dd></dl>
             <!--l. 337--><p class="noindent" >
+                                                                                                    
+
+                                                                                                    
+               <h3 class="sectionHead"><a 
+ id="x1-24000"></a>bibliography</h3>
+            <!--l. 338--><p class="noindent" >
                  <dl class="thebibliography"><dt id="X0-manjaro" class="thebibliography">
             [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 337--><p class="noindent" ><a 
+                 <!--l. 338--><p class="noindent" ><a 
  id="cite.0@manjaro"></a>Vitor Lopes.
                  <span 
 class="ecti-1000">Manjaro</span>.
@@ -543,7 +610,7 @@ class="ectt-1000">https://manjaro.org</span></a>
                  </dd><dt id="X0-love2010" class="thebibliography">
             [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 337--><p class="noindent" ><a 
+                 <!--l. 338--><p class="noindent" ><a 
  id="cite.0@love2010"></a>Robert Love.
                  <span 
 class="ecti-1000">Linux</span>
@@ -556,7 +623,7 @@ class="ecti-1000">Development</span>.
                  </dd><dt id="X0-rusev2023" class="thebibliography">
             [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 337--><p class="noindent" ><a 
+                 <!--l. 338--><p class="noindent" ><a 
  id="cite.0@rusev2023"></a>Atanas Georgiev Rusev.
                  <span 
 class="ecti-1000">Manjaro</span>
@@ -576,7 +643,7 @@ id="bib-4" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 <!--l. 337--><p class="noindent" ><a 
+                 <!--l. 338--><p class="noindent" ><a 
  id="cite.0@vasquez2021"></a>Frank Vasquez
                  and
                  Chris Simmonds.
@@ -592,12 +659,12 @@ class="ecti-1000">Programming</span>.
                  Publishing
                  Limited,
                  2021.</dd></dl>
-            <!--l. 339--><p class="indent" >                                                                                            <span 
+            <!--l. 340--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 339--><p class="indent" >      <a 
+            <!--l. 340--><p class="indent" >      <a 
 href="kernel.pdf" ><span 
 class="ecrm-0700">this document in </span><span 
 class="cmmi-7">pdf </span><span 
