@@ -1,4 +1,5 @@
-SUMMARY = "A multi-platform library for creating windows with OpenGL contexts and receiving input and events"
+SUMMARY = "A multi-platform library for creating windows with OpenGL contexts \
+and receiving input and events"
 HOMEPAGE = "https://www.glfw.org/"
 DESCRIPTION = "GLFW is an Open Source, multi-platform library for OpenGL, \
 OpenGL ES and Vulkan application development. It provides a simple, \
@@ -21,6 +22,7 @@ EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_DOCS=OFF"
 EXTRA_OECMAKE = "-DCMAKE_INSTALL_PREFIX=${prefix} \
                  -DGLFW_BUILD_EXAMPLES=OFF \
                  -DGLFW_BUILD_TESTS=OFF \
+#                 -DGLFW_USE_WAYLAND=1 \
                  -DGLFW_BUILD_DOCS=OFF"
 
 CFLAGS += "-fPIC"
