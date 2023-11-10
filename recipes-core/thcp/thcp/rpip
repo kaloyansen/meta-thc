@@ -1,0 +1,14 @@
+#!/bin/sh
+# rpip
+# # # # # # # # # # # # # # # # # # # # # # # #
+TARGET='kalo@192.168.84.180:/home/kalo/rphi'
+DOT=$HOME/.rpip
+IP=/sbin/ip
+RPIP=`$IP a | grep global | awk '{print $2}'| sed 's|/\([0-9]*\)$||'`
+
+erreur() { echo $* && exit 1; }
+echo $RPIP > $DOT || erreur $0 cannot write in $DOT
+scp $DOT $TARGET
+rm $DOT || erreur $0 cannot delete $DOT
+
+

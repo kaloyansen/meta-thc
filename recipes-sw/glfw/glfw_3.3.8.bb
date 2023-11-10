@@ -18,17 +18,23 @@ SRC_URI = "git://github.com/glfw/glfw.git;branch=master;protocol=https"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_DOCS=OFF"
+
 EXTRA_OECMAKE = "-DCMAKE_INSTALL_PREFIX=${prefix} \
                  -DGLFW_BUILD_EXAMPLES=OFF \
                  -DGLFW_BUILD_TESTS=OFF \
-#                 -DGLFW_USE_WAYLAND=1 \
                  -DGLFW_BUILD_DOCS=OFF"
 
-CFLAGS += "-fPIC"
+CFLAGS += " -fPIC"
 
-DEPENDS = "libx11"
 DEPENDS = "libpng libglu zlib libxrandr libxinerama libxi libxcursor"
 REQUIRED_DISTRO_FEATURES = "x11 opengl"
+
+
+
+#EXTRA_OECMAKE:append = " -DGLFW_USE_WAYLAND=ON"
+#EXTRA_OECMAKE:append = " -DBUILD_SHARED_LIBS=ON"
+#DEPENDS = "libxkbcommon glib-2.0 virtual/libgles2 virtual/egl weston wayland wayland-native wayland-protocols"
+#REQUIRED_DISTRO_FEATURES:append = " wayland"
+
 
 COMPATIBLE_HOST:libc-musl = "null"
