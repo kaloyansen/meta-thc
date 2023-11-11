@@ -21,7 +21,7 @@ S = "${WORKDIR}/git/imgui/examples/${IMDIR}"
 
 inherit cmake thclass
 
-TOMBEXT = "install imgui"
+TOMBEXT = "${BPN}/${PV}"
 addtask tomber before do_install
 
 do_install() {
