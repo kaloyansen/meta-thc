@@ -17,11 +17,11 @@ SRC_URI = "git://github.com/kaloyanski/${IMGIT}.git;branch=master;protocol=https
 
 DEPENDS = "mesa glfw"
 DEPENDS:remove = "mesa"
+
 S = "${WORKDIR}/git/imgui/examples/${IMDIR}"
 
 inherit cmake thclass
 
-TOMBEXT = "${BPN}/${PV}"
 addtask tomber before do_install
 
 do_install() {
@@ -29,4 +29,3 @@ do_install() {
 	install -m 0755 ${B}/${IMBIN} ${D}/${bindir}
 }
 
-# FILES_${PN} = "${bindir}/example_glfw_opengl2_cmakee"

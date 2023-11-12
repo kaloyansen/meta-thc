@@ -1,9 +1,6 @@
-# triplehelix-consulting.com
+# thclass.bbclass
 
 python do_tomber() {
-    bb.plain()
-    bb.plain("=== kkk ===> executing %s" % d.getVar('TOMBEXT'))
-    bb.plain()
-    d.delVar("TOMBEXT")
+    bb.plain("= %s =" % d.getVar('BP'))
 }
 
