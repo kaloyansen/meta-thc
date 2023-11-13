@@ -10,7 +10,8 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Zlib;md5=87f239f408daca8a157858
 
 SECTION = "lib"
 
-inherit pkgconfig cmake features_check
+inherit pkgconfig cmake features_check thclass
+addtask tomber before do_package
 
 PV .= "+git${SRCPV}"
 SRCREV = "781fbbadb0bccc749058177b1385c82da9ace880"
