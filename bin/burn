@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 # name: burn
 # purpose: copy a wic image to sd-card
 

@@ -1,6 +1,6 @@
-#!/bin/bash
-# metafetch.sh
-# fetch rpi metadata
+#!/bin/env bash
+# name: metafetch
+# purpose: clone rpi metadata
 
 FETCHER=https://github.com/
 GITFETCHER=git@github.com:
