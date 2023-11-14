@@ -1,0 +1,47 @@
+#!/usr/bin/env echo source $0
+# name: yoctoinit
+# purpose: set bitbake environment
+
+BUILDIR=/home/yocto/kalo
+# METADIR=/home/yocto/layer
+
+POKY=$METADIR/poky
+OEINIT=oe-init-build-env
+
+echo $0 $POKY $BUILDIR
+
+srcme() {
+    src=$HOME/Myxa/mode/zsh/yoctoinit
+    source $src
+    echo $src reloaded
+}
+
+# bitbake functions
+bbrecipe() {
+    echo looking for recipes with $1
+    bitbake-layers show-recipes|grep -C 1 $1
+}
+
+bbvalue() {
+    echo $2 value in $1
+    bitbake-getvar -r $1 --value $2
+}
+
+bbpackage() {
+    echo looking for packages in $1
+    bitbake -g $1 && cat pn-buildlist | grep -ve "native" | sort | uniq
+}
+
+bbimage() {
+    echo looking for images
+    bitbake-layers show-recipes "*-image-*"
+}
+
+bbgui() {
+    bitbake virtual/kernel -c menuconfig
+}
+
+cd $POKY
+source $OEINIT $BUILDIR
+bitbake-layers show-layers
+
