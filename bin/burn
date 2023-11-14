@@ -1,5 +1,5 @@
 #!/bin/bash
-# deploy wic image
+# copy a wic image to sd-card
 
 DEFTARGET=sda
 DEFIMAGE=core-image-x11
@@ -33,7 +33,7 @@ while getopts ":t:i:d:m:bh" option; do    # parce command line
         m ) MACHINE=$OPTARG;;
         b ) BURN=yes;;
         h ) usage $0;;
-        * ) erreur unexpected option
+        * ) erreur unexpected command-line option
     esac
 done
 
