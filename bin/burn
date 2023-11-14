@@ -1,0 +1,55 @@
+#!/bin/bash
+# deploy wic image
+
+DEFTARGET=sda
+DEFIMAGE=core-image-x11
+DEFBUILD=/home/yocto/kalo
+DEFMACHINE=raspberrypi4-64
+
+erreur() { echo $* && exit 1; }
+usage() {    # print options and quit
+
+    printf "
+usage:
+\t $0 <options>
+    option        \t purpose                 \t default
+    -h            \t print this              \t usage
+    -b            \t burn                    \t just kidding
+    -t <target>   \t target                  \t $DEFTARGET
+    -i <image>    \t image                   \t $DEFIMAGE
+    -d <dir>      \t build directory         \t $DEFBUILD
+    -m <machine>  \t machine                 \t $DEFMACHINE
+"
+    erreur
+}
+
+while getopts ":t:i:d:m:bh" option; do    # parce command line
+
+    case $option in
+
+        t ) TARGET=$OPTARG;;
+        i ) IMAGE=$OPTARG;;
+        d ) BUILD=$OPTARG;;
+        m ) MACHINE=$OPTARG;;
+        b ) BURN=yes;;
+        h ) usage $0;;
+        * ) erreur unexpected option
+    esac
+done
+
+[ "$TARGET" = "" ] && TARGET=$DEFTARGET
+[ "$IMAGE" = "" ] && IMAGE=$DEFIMAGE
+[ "$BUILD" = "" ] && BUILD=$DEFBUILD
+[ "$MACHINE" = "" ] && MACHINE=$DEFMACHINE
+
+DEPLOY=$BUILD/tmp/deploy/images/$MACHINE
+SOURCE=${IMAGE}-$MACHINE.wic
+[ -e "$DEPLOY/$SOURCE" ] || erreur cannot find $DEPLOY/$SOURCE
+
+COMMAND="sudo dd if=$SOURCE of=/dev/$TARGET status=progress"
+
+cd $DEPLOY
+
+[ -n "$BURN" ] && $COMMAND || echo $COMMAND
+
+

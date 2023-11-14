@@ -14,10 +14,17 @@ inherit thclass allarch
 addtask tomber before do_install
 
 do_install() {
+	# directory
 	install -d ${D}/${bindir}
 	install -d ${D}/${ROOT_HOME}
+	install -d ${D}/${ROOT_HOME}/.config/procps
+
+	# executable
 	install -m 0755 ${WORKDIR}/${SRC_PATH}/wifini.sh ${D}/${bindir}
 	install -m 0755 ${WORKDIR}/${SRC_PATH}/rpip ${D}/${bindir}
+
+	# configuration
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/.profile ${D}/${ROOT_HOME}
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
+	install -m 0644 ${WORKDIR}/${SRC_PATH}/toprc ${D}/${ROOT_HOME}/.config/procps
 }
