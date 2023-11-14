@@ -1,5 +1,6 @@
 #!/bin/bash
-# copy a wic image to sd-card
+# name: burn
+# purpose: copy a wic image to sd-card
 
 DEFTARGET=sda
 DEFIMAGE=core-image-x11
