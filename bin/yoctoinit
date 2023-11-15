@@ -2,8 +2,9 @@
 # name: yoctoinit
 # purpose: set bitbake environment
 
-# export METADIR=/METADATA/DIRECTORY
-# export BUILDIR=/BUILD/DIRECTORY
+# export custom directory names
+# export METADIR=
+# export BUILDIR=
 
 POKY=$METADIR/poky
 OEINIT=oe-init-build-env
