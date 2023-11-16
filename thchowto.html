@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/html4/loose.dtd">  
 <html > 
 <head><title>Building Embedded Operating System with IMGUI Demo
-for Raspberry &#x03C0; - 4 - model B with Yocto</title> 
+for Raspberry &#x03C0; with Yocto</title> 
 <link rel="shortcut icon" href="favicon.ico" /> 
 </head><body 
 >
@@ -16,7 +16,7 @@ for Raspberry &#x03C0; - 4 - model B with Yocto</title>
             
 <h2 class="titleHead">Building Embedded Operating System with
 IMGUI Demo<br />
-for Raspberry &#x03C0; - 4 - model B with Yocto</h2>
+for Raspberry &#x03C0; with Yocto</h2>
  <div class="author" ><span 
 class="ecrm-1200">Kaloyan Krastev</span><span class="thank-mark"><a 
 href="#tk-1"><span 
@@ -89,15 +89,13 @@ class="cmmi-10">operating</span>
             <span 
 class="cmmi-10">system </span>(<a 
 href="#OS">OS</a>) for <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span>[<a 
+class="cmmi-10">Raspberry &#x03C0;</span>[<a 
  id="x1-2002"></a><a 
 href="#cite.0@raspberry">7</a>] with <span 
 class="ecti-1000">Yocto</span>[<a 
  id="x1-2003"></a><a 
-href="#cite.0@yocto">2</a>]. Find project overview
-            in [<a 
+href="#cite.0@yocto">2</a>]. Find project overview in
+            [<a 
  id="x1-2004"></a><a 
 href="#cite.0@kalo2023">6</a>].
             <!--l. 31--><p class="indent" >     The <a 
@@ -282,15 +280,12 @@ href="#SW">SW</a> <span
 class="cmmi-10">metadata </span>repositories used in this project
             includes <span 
 class="ecti-1000">Yocto </span>layers, the <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span> <a 
+class="cmmi-10">Raspberry &#x03C0;</span> <a 
 href="#BSP">BSP</a> layer, a <a 
-href="#SW">SW</a> layer
-            with custom recipes, and the build configuration itself. Please refer [<a 
+href="#SW">SW</a> layer with custom recipes,
+            and the build configuration itself. Please refer [<a 
  id="x1-3005"></a><a 
-href="#cite.0@kalo2023">6</a>] for
-            details.
+href="#cite.0@kalo2023">6</a>] for details.
             <!--l. 93--><p class="indent" >     In short, users fetch <span 
 class="cmmi-10">metadata </span>in contrast to the <span 
 class="cmmi-10">real data </span>fetched later during
@@ -313,12 +308,10 @@ class="cmmi-10">github </span>repositories. After some
             major modifications hopefully it may serve other people to build their own <a 
 href="#OS">OS</a> for
             <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span>. The script performs <span 
+class="cmmi-10">Raspberry &#x03C0;</span>. The script performs <span 
 class="cmmi-10">metadata </span>fetch, the <span 
-class="cmmi-10">bitbake</span>
-            initialisation and a simple layer verification.
+class="cmmi-10">bitbake </span>initialisation and a
+            simple layer verification.
                <!--l. 114--><pre class="lstinputlisting" id="listing-1"><span class="label"><a 
  id="x1-4003r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
@@ -1236,25 +1229,21 @@ class="cmmi-10">bitbake </span>syntax is pretty complicated. In short,
  id="x1-70003.1.1"></a>MACHINE</h5>
             <!--l. 154--><p class="noindent" >No doubt, this is the most important directive, set here to <span 
 class="cmmi-10">raspberrypi</span><span 
-class="cmr-10">4</span>-64. You
-            may want to change this value if you build an <a 
+class="cmr-10">4</span>-64. You may
+            want to change this value if you build an <a 
 href="#OS">OS</a> for a different <a 
-href="#HW">HW</a>. If
-            you want to examine <a 
+href="#HW">HW</a>. If you want to
+            examine <a 
 href="#OS">OS</a> built for <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B </span>on your host
-            machine with <span 
-class="cmmi-10">qemu</span>, set <span 
+class="cmmi-10">Raspberry &#x03C0; </span>on your host machine with <span 
+class="cmmi-10">qemu</span>, set
+            <span 
 class="cmmi-10">MACHINE </span>to <span 
 class="cmmi-10">qemuarm</span><span 
-class="cmr-10">64</span>. I confirm that this works
-            although I did not find this approach very useful to test a <a 
+class="cmr-10">64</span>. I confirm that this works although I did not find this
+            approach very useful to test a <a 
  id="section*.5"></a><span 
-class="cmmi-10">graphical user</span>
-            <span 
-class="cmmi-10">interface </span>(<a 
+class="cmmi-10">graphical user interface </span>(<a 
 href="#GUI">GUI</a>).
             <!--l. 161--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.2   </span> <a 
@@ -1709,15 +1698,13 @@ class="cmr-10">23</span><span
 class="cmr-10">MB</span>, a <span 
 class="cmmi-10">Raspberry</span>
             <span 
-class="cmmi-10">&#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B </span>configuration of Linux 5.15. This is a <a 
+class="cmmi-10">&#x03C0; </span>configuration of Linux 5.15. This is a <a 
  id="section*.7"></a><span 
 class="cmmi-10">long </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">term support </span>(<a 
-href="#LTS">LTS</a>)
-            kernel release. The total size of kernel modules is <span 
+href="#LTS">LTS</a>) kernel release.
+            The total size of kernel modules is <span 
 class="cmr-10">21</span><span 
 class="cmr-10">MB</span>.
             <!--l. 332--><p class="indent" >     <span 
@@ -1793,10 +1780,8 @@ class="ectt-1000">/thc/meta-thc/bin/burn</span></span>.
 Use the command-line option <span class="path"><span 
 class="ectt-1000">-h</span></span> for details. The transfer does not take a lot of
 time. When it is over, replace the card to <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B </span>and turn it on.
-That&#8217;s it.
+class="cmmi-10">Raspberry &#x03C0; </span>and turn it on. That&#8217;s
+it.
 <!--l. 355--><p class="indent" >
                                                                                                                     
 
@@ -2490,17 +2475,16 @@ class="ectt-0800x-x-87">&#x003E;</span></span></pre>
  id="section*.9"></a><span 
 class="cmmi-10">internet protocol </span>(<a 
 href="#IP">IP</a>) address is assigned to <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span>,
-the <a 
+class="cmmi-10">Raspberry &#x03C0;</span>, the <a 
  id="section*.10"></a><span 
-class="cmmi-10">secure shell </span>(<a 
+class="cmmi-10">secure</span>
+<span 
+class="cmmi-10">shell </span>(<a 
 href="#SSH">SSH</a>) server by <span 
 class="cmmi-10">Dropbear</span>[<a 
  id="x1-19096"></a><a 
-href="#cite.0@dropbear">4</a>] allows for secure remote login, control
-and file transfer.
+href="#cite.0@dropbear">4</a>] allows for secure remote login, control and file
+transfer.
 <!--l. 380--><p class="indent" >
                                                                                                                     
 
@@ -2510,22 +2494,20 @@ and file transfer.
             <!--l. 382--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
 href="#OS">OS</a> for
             <span 
-class="cmmi-10">Raspberry &#x03C0; </span>- <span 
-class="cmr-10">4 </span>- <span 
-class="cmmi-10">model B</span>[<a 
+class="cmmi-10">Raspberry &#x03C0;</span>[<a 
  id="x1-20001"></a><a 
 href="#cite.0@raspberry">7</a>]. The kernel version of this embedded <a 
-href="#OS">OS</a> is Linux
-            release 5.15. An example <a 
+href="#OS">OS</a> is Linux release 5.15. An
+            example <a 
 href="#GUI">GUI</a> application using the <span 
-class="cmmi-10">Dear ImGui </span>library is built as a
-            part of the <a 
-href="#OS">OS</a> <span 
+class="cmmi-10">Dear ImGui </span>library is built as a part of the <a 
+href="#OS">OS</a>
+            <span 
 class="cmmi-10">image</span>. In addition, an <a 
-href="#SSH">SSH</a> server provides remote connection, data
-            transfer and device control. As the <a 
-href="#OS">OS</a> is now functional, performance and real-time
-            tests are ongoing.
+href="#SSH">SSH</a> server provides remote connection, data transfer and
+            device control. As the <a 
+href="#OS">OS</a> is now functional, performance and real-time tests are
+            ongoing.
             <!--l. 1--><p class="indent" >
                                                                                                                     
 
@@ -2783,16 +2765,6 @@ class="cmmi-10">Raspberry</span>
                  <span 
 class="cmmi-10">&#x03C0;</span>
                  <span 
-class="ecti-1000">-</span>
-                 <span 
-class="cmr-10">4</span>
-                 <span 
-class="ecti-1000">-</span>
-                 <span 
-class="cmmi-10">model</span>
-                 <span 
-class="cmmi-10">B</span>
-                 <span 
 class="ecti-1000">with</span>
                  Yocto.
                  2023.
@@ -2811,9 +2783,6 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
                  </dd><dt id="X0-kalo2023" class="thebibliography">
             [6]   </dt><dd 
 id="bib-6" class="thebibliography">
-                                                                                                                    
-
-                                                                                                                    
                  <!--l. 394--><p class="noindent" ><a 
  id="cite.0@kalo2023"></a>Kaloyan Krastev.
                  <span 
@@ -2826,18 +2795,11 @@ class="ecti-1000">System</span>
 class="ecti-1000">for</span>
                  <span 
 class="cmmi-10">Raspberry</span>
+                                                                                                    
+
+                                                                                                    
                  <span 
 class="cmmi-10">&#x03C0;</span>
-                 <span 
-class="ecti-1000">-</span>
-                 <span 
-class="cmr-10">4</span>
-                 <span 
-class="ecti-1000">-</span>
-                 <span 
-class="cmmi-10">model</span>
-                 <span 
-class="cmmi-10">B</span>
                  <span 
 class="ecti-1000">with</span>
                  Yocto.
@@ -2892,9 +2854,6 @@ class="ecti-1000">User</span>
                  <span 
 class="ecti-1000">Manual</span>.
                  2023.
-                                                                                                                    
-
-                                                                                                                    
                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
