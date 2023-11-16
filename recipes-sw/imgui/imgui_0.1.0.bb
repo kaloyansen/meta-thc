@@ -21,9 +21,6 @@ S = "${WORKDIR}/git/imgui/examples/${IMDIR}"
 
 inherit cmake thclass
 
-TOMBEXT = "${BPN}/${PV}"
-addtask tomber before do_install
-
 do_install() {
 	install -d ${D}/${bindir}
 	install -m 0755 ${B}/${IMBIN} ${D}/${bindir}

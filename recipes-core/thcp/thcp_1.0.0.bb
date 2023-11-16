@@ -11,8 +11,6 @@ FILES:${PN}:append = " ${ROOT_HOME}"
 
 inherit thclass allarch
 
-addtask tomber before do_install
-
 do_install() {
 	# directory
 	install -d ${D}/${bindir}
