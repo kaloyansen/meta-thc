@@ -26,8 +26,7 @@ EXTRA_OECMAKE = "-DCMAKE_INSTALL_PREFIX=${prefix} \
 
 # EXTRA_OECMAKE:append = " -DGLFW_USE_WAYLAND=ON"
 # EXTRA_OECMAKE:append = " -DBUILD_SHARED_LIBS=ON"
-
-CFLAGS += " -fPIC"
+# CFLAGS += " -fPIC"
 
 DEPENDS = "libpng libglu zlib libxrandr libxinerama libxi libxcursor"
 DEPENDS ?= "libxkbcommon glib-2.0 virtual/libgles2 virtual/egl weston wayland wayland-native wayland-protocols"
