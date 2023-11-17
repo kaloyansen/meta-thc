@@ -220,8 +220,10 @@ dt.thebibliography {float:left; clear:left; margin-right:1em;}
 #listing-2{border: 1px solid #000000;}
 #TBL-4-1{border-left: 1px solid black;}
 #TBL-4-1{border-right:1px solid black;}
+#TBL-4-1{border-right:1px solid black;}
 #TBL-4-2{border-right:1px solid black;}
 #TBL-4-3{border-right:1px solid black;}
+#TBL-4-4{border-right:1px solid black;}
 #listing-3{background-color:#00FFFF;}
 #listing-3{border: 1px solid #000000;}
 #listing-4{background-color:#00FFFF;}
