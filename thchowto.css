@@ -218,6 +218,10 @@ dt.thebibliography {float:left; clear:left; margin-right:1em;}
 #listing-1{border: 1px solid #000000;}
 #listing-2{background-color:#00FFFF;}
 #listing-2{border: 1px solid #000000;}
+#TBL-4-1{border-left: 1px solid black;}
+#TBL-4-1{border-right:1px solid black;}
+#TBL-4-2{border-right:1px solid black;}
+#TBL-4-3{border-right:1px solid black;}
 #listing-3{background-color:#00FFFF;}
 #listing-3{border: 1px solid #000000;}
 #listing-4{background-color:#00FFFF;}
@@ -226,13 +230,13 @@ dt.thebibliography {float:left; clear:left; margin-right:1em;}
 #listing-5{border: 1px solid #000000;}
 #listing-6{background-color:#00FFFF;}
 #listing-6{border: 1px solid #000000;}
-#TBL-4-1{border-left: 1px solid black;}
-#TBL-4-1{border-right:1px solid black;}
-#TBL-4-2{border-right:1px solid black;}
 #TBL-5-1{border-left: 1px solid black;}
 #TBL-5-1{border-right:1px solid black;}
 #TBL-5-2{border-right:1px solid black;}
-#TBL-5-3{border-right:1px solid black;}
+#TBL-6-1{border-left: 1px solid black;}
+#TBL-6-1{border-right:1px solid black;}
+#TBL-6-2{border-right:1px solid black;}
+#TBL-6-3{border-right:1px solid black;}
 #listing-7{background-color:#00FFFF;}
 #listing-7{border: 1px solid #000000;}
 #listing-8{background-color:#00FFFF;}
