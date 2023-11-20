@@ -2,14 +2,16 @@
 # name: yoctoinit
 # purpose: set bitbake environment
 
-# export custom directory names
-# export METADIR=
-# export BUILDIR=
+## set yocto directory names
+# export METAPATH=
+# export BBPATH=
 
-POKY=$METADIR/poky
-OEINIT=oe-init-build-env
+## entrer bitbake envirennement
+cd $METAPATH/poky
+source oe-init-build-env $BBPATH
+bitbake-layers show-layers
 
-echo $0 $POKY $BUILDIR
+
 
 srcme() {
     src=$1
@@ -18,7 +20,7 @@ srcme() {
 }
 
 
-# bitbake functions ##############################################
+## bitbake functions ##############################################
 
 bbrecipe() {
     echo get recipes in $1
@@ -44,7 +46,4 @@ bbkernel() {
     bitbake virtual/kernel -c menuconfig
 }
 
-cd $POKY
-source $OEINIT $BUILDIR
-bitbake-layers show-layers
 
