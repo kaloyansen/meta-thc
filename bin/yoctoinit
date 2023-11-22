@@ -11,15 +11,6 @@ cd $METAPATH/poky
 source oe-init-build-env $BBPATH
 bitbake-layers show-layers
 
-
-
-srcme() {
-    src=$1
-    source $src
-    echo $src reloaded
-}
-
-
 ## bitbake functions ##############################################
 
 bbrecipe() {
