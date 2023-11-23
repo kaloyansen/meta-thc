@@ -48,8 +48,8 @@ while getopts ":m:b:r:hgd" option; do    # parce command-line options
 done
 
 # check system path
-[ -n "$METADIR" ] || METADIR=$DEFMETADIR
-[ -n "$BUILDIR" ] || BUILDIR=$DEFBUILDIR
+[ "$METADIR" ] || METADIR=$DEFMETADIR
+[ "$BUILDIR" ] || BUILDIR=$DEFBUILDIR
 [ -d $METADIR ] || mkdir -p $METADIR || erreur $? cannot create $METADIR
 [ -d $BUILDIR ] || mkdir -p $BUILDIR || erreur $? cannot create $BUILDIR
 METADIR=$(realpath $METADIR) && printf "\nmetadata:\t $METADIR\n" || erreur $? cannot find $METADIR

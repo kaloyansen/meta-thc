@@ -38,19 +38,20 @@ while getopts ":t:i:d:m:bh" option; do    # parce command line
     esac
 done
 
-[ "$TARGET" = "" ] && TARGET=$DEFTARGET
-[ "$IMAGE" = "" ] && IMAGE=$DEFIMAGE
-[ "$BUILD" = "" ] && BUILD=$DEFBUILD
-[ "$MACHINE" = "" ] && MACHINE=$DEFMACHINE
+[ "$TARGET" ] || TARGET=$DEFTARGET
+[ "$IMAGE" ] || IMAGE=$DEFIMAGE
+[ "$BUILD" ] || BUILD=$DEFBUILD
+[ "$MACHINE" ] || MACHINE=$DEFMACHINE
 
 DEPLOY=$BUILD/tmp/deploy/images/$MACHINE
 SOURCE=${IMAGE}-$MACHINE.wic
+
 [ -e "$DEPLOY/$SOURCE" ] || erreur cannot find $DEPLOY/$SOURCE
 
 COMMAND="sudo dd if=$SOURCE of=/dev/$TARGET status=progress"
 
 cd $DEPLOY
 
-[ -n "$BURN" ] && $COMMAND || echo $COMMAND
+[ "$BURN" ] && $COMMAND || echo $COMMAND
 
 
