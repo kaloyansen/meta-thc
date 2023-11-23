@@ -7,8 +7,9 @@ GITFETCHER=git@github.com:
 BRANCH=kirkstone
 DEFMETADIR=$HOME/yocto_$BRANCH/metadata
 DEFBUILDIR=$HOME/yocto_$BRANCH/rpi4
+ERREUR=111
 
-erreur() { echo $* && exit 0 || kill $$; }
+erreur() { echo $* && exit $ERREUR || kill $$; }
 usage() {    # print options and quit
 
     printf "

@@ -6,8 +6,9 @@ DEFTARGET=sda
 DEFIMAGE=core-image-x11
 DEFBUILD=/home/yocto/kalo
 DEFMACHINE=raspberrypi4-64
+ERREUR=111
 
-erreur() { echo $* && exit 1; }
+erreur() { echo $* && exit $ERREUR || kill $$; }
 usage() {    # print options and quit
 
     printf "
@@ -34,7 +35,7 @@ while getopts ":t:i:d:m:bh" option; do    # parce command line
         m ) MACHINE=$OPTARG;;
         b ) BURN=yes;;
         h ) usage $0;;
-        * ) erreur unexpected command-line option
+        * ) erreur unexpected command-line option;;
     esac
 done
 
