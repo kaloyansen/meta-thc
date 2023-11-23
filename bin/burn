@@ -1,6 +1,7 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # name: burn
 # purpose: copy a wic image to sd-card
+# maintainer: kaloyan@triplehelix-consulting.com
 
 DEFTARGET=sda
 DEFIMAGE=core-image-x11
