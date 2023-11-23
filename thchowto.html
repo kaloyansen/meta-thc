@@ -49,33 +49,33 @@ href="#x1-50003" id="QQ2-1-9">configuration</a></span>
             <br />     &#x00A0;&#x00A0;<span class="subsectionToc" >3.1 <a 
 href="#x1-60003.1" id="QQ2-1-10">directives</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.1 <a 
-href="#x1-70003.1.1" id="QQ2-1-11">MACHINE</a></span>
+href="#x1-70003.1.1" id="QQ2-1-11">BB_DISKMON_DIRS</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.2 <a 
-href="#x1-80003.1.2" id="QQ2-1-12">INIT_MANAGER</a></span>
+href="#x1-80003.1.2" id="QQ2-1-13">DISTRO</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.3 <a 
-href="#x1-90003.1.3" id="QQ2-1-13">TCLIBC</a></span>
+href="#x1-90003.1.3" id="QQ2-1-14">DISTRO_FEATURES</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.4 <a 
-href="#x1-100003.1.4" id="QQ2-1-14">DISTRO</a></span>
+href="#x1-100003.1.4" id="QQ2-1-15">IMAGE_FEATURES</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.5 <a 
-href="#x1-110003.1.5" id="QQ2-1-15">MACHINE_FEATURES</a></span>
+href="#x1-110003.1.5" id="QQ2-1-16">IMAGE_FSTYPES</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.6 <a 
-href="#x1-120003.1.6" id="QQ2-1-16">DISTRO_FEATURES</a></span>
+href="#x1-120003.1.6" id="QQ2-1-17">IMAGE_OVERHEAD_FACTOR</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.7 <a 
-href="#x1-130003.1.7" id="QQ2-1-17">IMAGE_FEATURES</a></span>
+href="#x1-130003.1.7" id="QQ2-1-18">INHERIT</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.8 <a 
-href="#x1-140003.1.8" id="QQ2-1-18">PACKAGE_INSTALL</a></span>
+href="#x1-140003.1.8" id="QQ2-1-19">INIT_MANAGER</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.9 <a 
-href="#x1-150003.1.9" id="QQ2-1-19">PACKAGE_CLASSES</a></span>
+href="#x1-150003.1.9" id="QQ2-1-20">MACHINE</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.10 <a 
-href="#x1-160003.1.10" id="QQ2-1-20">IMAGE_FSTYPES</a></span>
+href="#x1-160003.1.10" id="QQ2-1-21">MACHINE_FEATURES</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.11 <a 
-href="#x1-170003.1.11" id="QQ2-1-21">IMAGE_OVERHEAD_FACTOR</a></span>
+href="#x1-170003.1.11" id="QQ2-1-22">PACKAGE_CLASSES</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.12 <a 
-href="#x1-180003.1.12" id="QQ2-1-22">SANITY_TESTED_DISTROS</a></span>
+href="#x1-180003.1.12" id="QQ2-1-23">PACKAGE_INSTALL</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.13 <a 
-href="#x1-190003.1.13" id="QQ2-1-24">BB_DISKMON_DIRS</a></span>
+href="#x1-190003.1.13" id="QQ2-1-24">SANITY_TESTED_DISTROS</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.14 <a 
-href="#x1-200003.1.14" id="QQ2-1-26">INHERIT</a></span>
+href="#x1-200003.1.14" id="QQ2-1-26">TCLIBC</a></span>
             <br />     &#x00A0;&#x00A0;<span class="subsectionToc" >3.2 <a 
 href="#x1-210003.2" id="QQ2-1-27">classes</a></span>
             <br />     &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" >3.2.1 <a 
@@ -1255,74 +1255,60 @@ class="cmmi-10">bitbake </span>syntax is pretty complicated. In short, your life
             configuration directives.
             <!--l. 153--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.1   </span> <a 
- id="x1-70003.1.1"></a>MACHINE</h5>
-            <!--l. 154--><p class="noindent" >No doubt, this is the most important directive, set here to <span 
-class="cmmi-10">raspberrypi</span><span 
-class="cmr-10">4</span>-64. You may
-            want to change this value if you build an <a 
-href="#OS">OS</a> for a different <a 
-href="#HW">HW</a>. If you want to
-            emulate <span 
-class="cmmi-10">Raspberry &#x03C0; </span>on your host machine with <span 
-class="cmmi-10">qemu</span>, set <span 
-class="cmmi-10">MACHINE </span>to
+ id="x1-70003.1.1"></a>BB_DISKMON_DIRS</h5>
+            <!--l. 154--><p class="noindent" >This <span 
+class="cmmi-10">bitbake </span>variable enables free storage space verification. Users may add rules to
+            monitor as many directories as they wish. Of course, it makes sense to add only
+            directories on different storage partitions. The directive contains rules to
+            trigger actions in case of low storage space during builds. Possible actions are
             <span 
-class="cmmi-10">qemuarm</span><span 
-class="cmr-10">64</span>. I confirm that this works although I did not find this approach very
-            useful to test a <a 
- id="section*.5"></a><span 
-class="cmmi-10">graphical user interface </span>(<a 
-href="#GUI">GUI</a>).
-            <!--l. 161--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.2   </span> <a 
- id="x1-80003.1.2"></a>INIT_MANAGER</h5>
-            <!--l. 162--><p class="noindent" >The <a 
-href="#OS">OS</a> <span 
-class="cmmi-10">init </span>process could be <span class="path"><span 
-class="ectt-1000">sysvinit</span></span>, <span class="path"><span 
-class="ectt-1000">systemd</span></span> or <span class="path"><span 
-class="ectt-1000">mdev-busybox</span></span>.
-            <!--l. 166--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.3   </span> <a 
- id="x1-90003.1.3"></a>TCLIBC</h5>
-            <!--l. 167--><p class="noindent" >The <a 
- id="section*.6"></a><span 
-class="cmmi-10">GNU is not UNIX </span>(<a 
-href="#GNU">GNU</a>) standard C library variant to use during the build.
-            Available options are <span class="path"><span 
-class="ectt-1000">glibc</span></span>, <span class="path"><span 
-class="ectt-1000">musl</span></span>, <span class="path"><span 
-class="ectt-1000">newlib</span></span> and <span class="path"><span 
-class="ectt-1000">baremetal</span></span>.
-            <!--l. 172--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.4   </span> <a 
- id="x1-100003.1.4"></a>DISTRO</h5>
-            <!--l. 173--><p class="noindent" >This is the short name of the <a 
+class="cmmi-10">WARN</span>, <span 
+class="cmmi-10">STOPTASKS </span>and <span 
+class="cmmi-10">HALT</span>. Rules are defined in the following
+            format.
+               <!--l. 161-->
+            <a 
+ id="x1-7001r3"></a>
+            <a 
+ id="x1-7002"></a>
+<pre class="lstlisting" id="listing-3"><span class="label"><a 
+ id="x1-7003r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">"&#x003C;</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">action</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">directory</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">path</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">space</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">left</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">inodes</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">left</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">&#x003E;"</span></span></pre>
+<!--l. 165--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.1.2   </span> <a 
+ id="x1-80003.1.2"></a>DISTRO</h5>
+<!--l. 166--><p class="noindent" >This is the short name of the <a 
 href="#OS">OS</a> distribution. <span 
 class="ecti-1000">Yocto </span>provides four variants
-            of their reference distribution called <span 
+of their reference distribution called <span 
 class="cmmi-10">Poky</span>. See details in &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/poky/meta-poky/conf/distro/poky*.conf</span></span>. Some distribution dependent directive
-            values are presented in Table <a 
+values are presented in Table <a 
 href="#x1-220043">3<!--tex4ht:ref: tab:distro --></a>.
+<!--l. 172--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.1.3   </span> <a 
+ id="x1-90003.1.3"></a>DISTRO_FEATURES</h5>
                                                                                                                     
 
                                                                                                                     
-            <!--l. 179--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.5   </span> <a 
- id="x1-110003.1.5"></a>MACHINE_FEATURES</h5>
-            <!--l. 180--><p class="noindent" >This directive controls machine features. It is set in the machine configuration file
-            and specifies the hardware features for a given machine.
-            <!--l. 184--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.6   </span> <a 
- id="x1-120003.1.6"></a>DISTRO_FEATURES</h5>
-            <!--l. 185--><p class="noindent" >Distributions can select which features they want to support through the
+            <!--l. 173--><p class="noindent" >Distributions can select which features they want to support through the
             DISTRO_FEATURES variable, which is set in the distribution configuration
             file.
-            <!--l. 189--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.7   </span> <a 
- id="x1-130003.1.7"></a>IMAGE_FEATURES</h5>
-            <!--l. 190--><p class="noindent" >This directive controls the contents of the <a 
+            <!--l. 177--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.4   </span> <a 
+ id="x1-100003.1.4"></a>IMAGE_FEATURES</h5>
+            <!--l. 178--><p class="noindent" >This directive controls the contents of the <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">image</span>. Different predefined
             packages could be added, removed or modified via this variable. Useful examples
@@ -1359,34 +1345,10 @@ class="cmsy-10">- </span><span
 class="cmmi-10">server </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">dropbear</span>.
-            <!--l. 197--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.8   </span> <a 
- id="x1-140003.1.8"></a>PACKAGE_INSTALL</h5>
-            <!--l. 198--><p class="noindent" >This is where to specify additional <a 
-href="#SW">SW</a> packages. This is useful for packages not
-            included in the <span 
-class="cmmi-10">image </span>by default. In my experience, the default <a 
-href="#OS">OS</a> has all necessary
-            programs or compact alternatives. However this is the directive used to append
-            <span 
-class="cmmi-10">imgui</span>.
-            <!--l. 203--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.9   </span> <a 
- id="x1-150003.1.9"></a>PACKAGE_CLASSES</h5>
-            <!--l. 204--><p class="noindent" >There are different package formats used in various Linux-based <a 
-href="#OS">OS</a>&#8217;s to
-            distribute and manage programs. Both <span 
-class="cmmi-10">Debian </span>package format - <span 
-class="cmmi-10">deb </span>and
-            <span 
-class="cmmi-10">rpm </span>from <span 
-class="cmmi-10">RedHat </span>do well, but recently I had issues with <span 
-class="cmmi-10">ipk </span>so I disabled
-            it.
-            <!--l. 209--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.10   </span> <a 
- id="x1-160003.1.10"></a>IMAGE_FSTYPES</h5>
-            <!--l. 210--><p class="noindent" >This is another important directive. Here I have removed archived <span 
+            <!--l. 185--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.5   </span> <a 
+ id="x1-110003.1.5"></a>IMAGE_FSTYPES</h5>
+            <!--l. 186--><p class="noindent" >This is another important directive. Here I have removed archived <span 
 class="cmmi-10">images </span>to
             decrease the built time and added the <span 
 class="cmmi-10">wic </span>format. One may want to use the <span 
@@ -1397,13 +1359,10 @@ class="cmmi-10">wic </span>to an
             <span 
 class="cmmi-10">SD </span>card in Section <a 
 href="#x1-270005">5<!--tex4ht:ref: sec:install --></a>.
-                                                                                                                    
-
-                                                                                                                    
-            <!--l. 216--><p class="noindent" >
-               <h5 class="subsubsectionHead"><span class="titlemark">3.1.11   </span> <a 
- id="x1-170003.1.11"></a>IMAGE_OVERHEAD_FACTOR</h5>
-            <!--l. 217--><p class="noindent" >This defines the free storage space on the <span class="path"><span 
+            <!--l. 192--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.6   </span> <a 
+ id="x1-120003.1.6"></a>IMAGE_OVERHEAD_FACTOR</h5>
+            <!--l. 193--><p class="noindent" >This defines the free storage space on the <span class="path"><span 
 class="ectt-1000">root</span></span> partition. Overhead factor of <span 
 class="cmr-10">2</span>
             means that the free space will be equal to the space already used by the <a 
@@ -1415,22 +1374,91 @@ class="cmr-10">3 </span>increases <span
 class="cmmi-10">image </span>size with
             <span 
 class="cmr-10">30%</span>.
-            <!--l. 223--><p class="noindent" >
+            <!--l. 199--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.7   </span> <a 
+ id="x1-130003.1.7"></a>INHERIT</h5>
+            <!--l. 200--><p class="noindent" >This is a list of included <span 
+class="cmmi-10">bitbake </span>classes. See Section <a 
+href="#x1-210003.2">3.2<!--tex4ht:ref: sec:class --></a>.
+            <!--l. 203--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.8   </span> <a 
+ id="x1-140003.1.8"></a>INIT_MANAGER</h5>
+            <!--l. 204--><p class="noindent" >The <a 
+href="#OS">OS</a> <span 
+class="cmmi-10">init </span>process could be <span class="path"><span 
+class="ectt-1000">sysvinit</span></span>, <span class="path"><span 
+class="ectt-1000">systemd</span></span> or <span class="path"><span 
+class="ectt-1000">mdev-busybox</span></span>.
+            <!--l. 207--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.9   </span> <a 
+ id="x1-150003.1.9"></a>MACHINE</h5>
+                                                                                                                    
+
+                                                                                                                    
+            <!--l. 208--><p class="noindent" >No doubt, this is the most important directive, set here to <span 
+class="cmmi-10">raspberrypi</span><span 
+class="cmr-10">4</span>-64. You may
+            want to change this value if you build an <a 
+href="#OS">OS</a> for a different <a 
+href="#HW">HW</a>. If you want to
+            emulate <span 
+class="cmmi-10">Raspberry &#x03C0; </span>on your host machine with <span 
+class="cmmi-10">qemu</span>, set <span 
+class="cmmi-10">MACHINE </span>to
+            <span 
+class="cmmi-10">qemuarm</span><span 
+class="cmr-10">64</span>. I confirm that this works although I did not find this approach very
+            useful to test a <a 
+ id="section*.5"></a><span 
+class="cmmi-10">graphical user interface </span>(<a 
+href="#GUI">GUI</a>).
+            <!--l. 215--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.10   </span> <a 
+ id="x1-160003.1.10"></a>MACHINE_FEATURES</h5>
+            <!--l. 216--><p class="noindent" >This directive controls machine features. It is set in the machine configuration file
+            and specifies the hardware features for a given machine.
+            <!--l. 220--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.11   </span> <a 
+ id="x1-170003.1.11"></a>PACKAGE_CLASSES</h5>
+            <!--l. 221--><p class="noindent" >There are different package formats used in various Linux-based <a 
+href="#OS">OS</a>&#8217;s to
+            distribute and manage programs. Both <span 
+class="cmmi-10">Debian </span>package format - <span 
+class="cmmi-10">deb </span>and
+            <span 
+class="cmmi-10">rpm </span>from <span 
+class="cmmi-10">RedHat </span>do well, but recently I had issues with <span 
+class="cmmi-10">ipk </span>so I disabled
+            it.
+            <!--l. 226--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.12   </span> <a 
- id="x1-180003.1.12"></a>SANITY_TESTED_DISTROS</h5>
-            <!--l. 224--><p class="noindent" >This is a list of tested <a 
-href="#GNU">GNU</a>/Linux distributions. Using another distribution is not
-            prohibited, but a warning messages is generated each time <span 
-class="cmmi-10">bitbake </span>is run. One may
-            want to append the host machine Linux distribution to get rid of this warning. See
-            next examples.
-               <!--l. 229-->
+ id="x1-180003.1.12"></a>PACKAGE_INSTALL</h5>
+            <!--l. 227--><p class="noindent" >This is where to specify additional <a 
+href="#SW">SW</a> packages. This is useful for packages not
+            included in the <span 
+class="cmmi-10">image </span>by default. In my experience, the default <a 
+href="#OS">OS</a> has all necessary
+            programs or compact alternatives. However this is the directive used to append
+            <span 
+class="cmmi-10">imgui</span>.
+            <!--l. 232--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.13   </span> <a 
+ id="x1-190003.1.13"></a>SANITY_TESTED_DISTROS</h5>
+            <!--l. 233--><p class="noindent" >This is a list of tested <a 
+ id="section*.6"></a><span 
+class="cmmi-10">GNU is not UNIX </span>(<a 
+href="#GNU">GNU</a>)/Linux distributions. Using
+            another distribution is not prohibited, but a warning messages is generated each time
+            <span 
+class="cmmi-10">bitbake </span>is run. One may want to append the host machine Linux distribution to get
+            rid of this warning. See next examples.
+               <!--l. 238-->
             <a 
- id="x1-18001r3"></a>
+ id="x1-19001r4"></a>
             <a 
- id="x1-18002"></a>
-<pre class="lstlisting" id="listing-3"><span class="label"><a 
- id="x1-18003r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-19002"></a>
+<pre class="lstlisting" id="listing-4"><span class="label"><a 
+ id="x1-19003r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SANITY_TESTED_DISTROS</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">:</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">append</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1439,7 +1467,7 @@ class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">manjaro</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-18004r1001"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-19004r1001"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SANITY_TESTED_DISTROS</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">:</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">append</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1447,54 +1475,25 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">tumbleweed</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-*"</span></span></pre>
-<!--l. 234--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">3.1.13   </span> <a 
- id="x1-190003.1.13"></a>BB_DISKMON_DIRS</h5>
-<!--l. 235--><p class="noindent" >This <span 
-class="cmmi-10">bitbake </span>variable enables free storage space verification. Users may add rules to
-monitor as many directories as they wish. Of course, it makes sense to add only
-directories on different storage partitions. The directive contains rules to
-trigger actions in case of low storage space during builds. Possible actions are
-<span 
-class="cmmi-10">WARN</span>, <span 
-class="cmmi-10">STOPTASKS </span>and <span 
-class="cmmi-10">HALT</span>. Rules are defined in the following
-format.
-   <!--l. 242-->
-<a 
- id="x1-19001r4"></a>
-<a 
- id="x1-19002"></a>
-<pre class="lstlisting" id="listing-4"><span class="label"><a 
- id="x1-19003r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">"&#x003C;</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">action</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">directory</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">path</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">space</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">left</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">inodes</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">left</span></span><span style="color:#000000"><span 
-class="ectt-0800x-x-87">&#x003E;"</span></span></pre>
-<!--l. 247--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">3.1.14   </span> <a 
- id="x1-200003.1.14"></a>INHERIT</h5>
-<!--l. 248--><p class="noindent" >This is a list of included <span 
-class="cmmi-10">bitbake </span>classes. See Section <a 
-href="#x1-210003.2">3.2<!--tex4ht:ref: sec:class --></a>.
-<!--l. 251--><p class="noindent" >
-   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
- id="x1-210003.2"></a>classes</h4>
-                                                                                                                    
+                                                                                                         
 
-                                                                                                                    
-            <!--l. 253--><p class="noindent" >
+                                                                                                         
+            <!--l. 243--><p class="noindent" >
+               <h5 class="subsubsectionHead"><span class="titlemark">3.1.14   </span> <a 
+ id="x1-200003.1.14"></a>TCLIBC</h5>
+            <!--l. 244--><p class="noindent" >The <a 
+href="#GNU">GNU</a> standard C library variant to use during the build. Available options are <span class="path"><span 
+class="ectt-1000">glibc</span></span>, <span class="path"><span 
+class="ectt-1000">musl</span></span>, <span class="path"><span 
+class="ectt-1000">newlib</span></span> and <span class="path"><span 
+class="ectt-1000">baremetal</span></span>.
+            <!--l. 248--><p class="noindent" >
+               <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-210003.2"></a>classes</h4>
+            <!--l. 250--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
  id="x1-220003.2.1"></a>rm_work</h5>
-            <!--l. 254--><p class="noindent" >Find <span 
+            <!--l. 251--><p class="noindent" >Find <span 
 class="cmmi-10">bitbake </span>classes in &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/poky/meta/classes</span></span>. For example <span class="path"><span 
 class="ectt-1000">rm_work.bbclass</span></span> defines a specific task for packages to remove intermediate files
@@ -1502,7 +1501,7 @@ class="ectt-1000">rm_work.bbclass</span></span> defines a specific task for pack
             want to keep the working data and have enough storage space may comment the next
             line in <span class="path"><span 
 class="ectt-1000">local.conf</span></span>.
-               <!--l. 261-->
+               <!--l. 258-->
             <a 
  id="x1-22001r5"></a>
             <a 
@@ -1520,7 +1519,7 @@ class="ectt-0800x-x-87">"</span></span></pre>
                                                                                                          
 
                                                                                                          
-            <!--l. 267--><p class="indent" >    <a 
+            <!--l. 264--><p class="indent" >    <a 
  id="x1-220043"></a><hr class="float"><div class="float" 
 >
                                                                                                          
@@ -1588,13 +1587,13 @@ class="content">reference distribution configurations</span></div><!--tex4ht:lab
                                                                                                                     
                </div><hr class="endfloat" />
                </div>
-            <!--l. 282--><p class="indent" >
+            <!--l. 279--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-230004"></a>build</h3>
-            <!--l. 286--><p class="noindent" >It is very likely that you will need to install <span 
+            <!--l. 283--><p class="noindent" >It is very likely that you will need to install <span 
 class="ecti-1000">Yocto </span>requirements[<a 
  id="x1-23001"></a><a 
 href="#cite.0@yoctoqb">3</a>] to be able to run
@@ -1625,32 +1624,32 @@ href="#GNU">GNU</a>/Linux machine. Of course, binary files are not the same on d
 href="#HW">HW</a> architectures, but the <a 
 href="#OS">OS</a> has a Linux kernel and standard open-source
             programs.
-            <!--l. 298--><p class="noindent" >
+            <!--l. 295--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
  id="x1-240004.1"></a>requirements</h4>
-            <!--l. 301--><p class="noindent" >Ensure that the following packages are installed.
+            <!--l. 298--><p class="noindent" >Ensure that the following packages are installed.
                    <ul class="itemize1">
                    <li class="itemize">
-                   <!--l. 304--><p class="noindent" ><span 
+                   <!--l. 301--><p class="noindent" ><span 
 class="cmmi-10">git</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 305--><p class="noindent" ><span 
+                   <!--l. 302--><p class="noindent" ><span 
 class="cmmi-10">tar</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 306--><p class="noindent" ><span 
+                   <!--l. 303--><p class="noindent" ><span 
 class="cmmi-10">python</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 307--><p class="noindent" ><span 
+                   <!--l. 304--><p class="noindent" ><span 
 class="cmmi-10">gcc</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 308--><p class="noindent" ><a 
+                   <!--l. 305--><p class="noindent" ><a 
 href="#GNU">GNU</a> <span 
 class="cmmi-10">make</span></li></ul>
-            <!--l. 311--><p class="indent" >    Find more details in <span 
+            <!--l. 308--><p class="indent" >    Find more details in <span 
 class="ecti-1000">Yocto </span>documentation at [<a 
 href="#cite.0@yoctoqb">3</a>]. You may need to install in
             addition <span 
@@ -1689,7 +1688,7 @@ class="cmmi-10">grep</span>, <span
 class="cmmi-10">patch</span>,
             <span 
 class="cmmi-10">sed</span>.
-            <!--l. 319--><p class="indent" >     Fetched <span 
+            <!--l. 316--><p class="indent" >     Fetched <span 
 class="cmmi-10">metadata </span>requires only <span 
 class="cmr-10">412</span><span 
 class="cmr-10">MB</span> of free space but the build may need up
@@ -1706,12 +1705,12 @@ href="#x1-50003">3<!--tex4ht:ref: sec:configuration --></a>.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 325--><p class="noindent" >
+            <!--l. 322--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">4.2   </span> <a 
  id="x1-250004.2"></a>environment</h4>
-            <!--l. 328--><p class="noindent" >To initialise build environment navigate to &#x003C;META-DIR&#x003E;<span class="path"><span 
+            <!--l. 325--><p class="noindent" >To initialise build environment navigate to &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/poky</span></span> and source the
-            initialization script like the next command. <!--l. 330-->
+            initialization script like the next command. <!--l. 327-->
             <a 
  id="x1-25001r6"></a>
             <a 
@@ -1731,11 +1730,11 @@ class="ectt-0800x-x-87">BUILD</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 334--><p class="indent" >   Alternatively verify and source a dedicated shell script &#x003C;META-DIR&#x003E;<span class="path"><span 
+<!--l. 331--><p class="indent" >   Alternatively verify and source a dedicated shell script &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin/yoctoinit</span></span>. The initialization script will change the system
 path to &#x003C;BUILD-DIR&#x003E;. Now you may want run next command to check project
 layers.
-   <!--l. 339-->
+   <!--l. 336-->
 <a 
  id="x1-25004r7"></a>
 <a 
@@ -1748,7 +1747,7 @@ class="ectt-0800x-x-87">layers</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">show</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">layers</span></span></pre>
-<!--l. 343--><p class="indent" >   <span 
+<!--l. 340--><p class="indent" >   <span 
 class="ecti-1000">Yocto </span>provides a list of image types. As I want to have a compact <a 
 href="#OS">OS</a> and I need
 a <span 
@@ -1770,7 +1769,7 @@ such as the <span
 class="ecti-1000">Yocto </span>project is <span 
 class="cmmi-10">bitbake</span>. Run next command to build the <a 
 href="#OS">OS</a>.
-<!--l. 348-->
+<!--l. 345-->
 <a 
  id="x1-25008r8"></a>
 <a 
@@ -1783,19 +1782,19 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">image</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">x11</span></span></pre>
-<!--l. 352--><p class="indent" >   Unless your host machine is a supercomputer, this will take at least two hours.
+<!--l. 349--><p class="indent" >   Unless your host machine is a supercomputer, this will take at least two hours.
 Find a list of tasks performed by <span 
 class="cmmi-10">bitbake </span>for a typical <a 
 href="#SW">SW</a> package in Table
 <a 
 href="#x1-260014">4<!--tex4ht:ref: tab:task --></a>.
-<!--l. 356--><p class="noindent" >
+<!--l. 353--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
  id="x1-260004.3"></a>flow</h4>
-<!--l. 359--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. Table <a 
+<!--l. 356--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. Table <a 
 href="#x1-260025">5<!--tex4ht:ref: tab:flow --></a> presents a list of important
 &#x003C;BUILD-DIR&#x003E; sub-directories.
-<!--l. 363--><p class="indent" >   Source archives are saved in the <span 
+<!--l. 360--><p class="indent" >   Source archives are saved in the <span 
 class="cmmi-10">download </span>directory. They are extracted,
 configured, compiled and installed in the <span 
 class="cmmi-10">work </span>directory. <a 
@@ -1811,7 +1810,7 @@ directory.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 370--><p class="indent" >     <a 
+            <!--l. 367--><p class="indent" >     <a 
  id="x1-260014"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -1890,7 +1889,7 @@ class="cmmi-10">bitbake </span>tasks</span></div><!--tex4ht:label?: x1-260014 --
                                                                                                                     
 
                                                                                                                     
-            <!--l. 392--><p class="indent" >     <a 
+            <!--l. 389--><p class="indent" >     <a 
  id="x1-260025"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -1954,13 +1953,13 @@ class="cmmi-10">bitbake </span>workflow</span></div><!--tex4ht:label?: x1-260025
                                                                                                                     
                </div><hr class="endfloat" />
                </div>
-            <!--l. 408--><p class="indent" >
+            <!--l. 405--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-270005"></a>install</h3>
-            <!--l. 411--><p class="noindent" >The <a 
+            <!--l. 408--><p class="noindent" >The <a 
 href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, <span 
 class="cmr-10">64</span><span 
@@ -1979,7 +1978,7 @@ href="#LTS">LTS</a>) kernel release.
             The total size of kernel modules is <span 
 class="cmr-10">21</span><span 
 class="cmr-10">MB</span>.
-            <!--l. 415--><p class="indent" >     <span 
+            <!--l. 412--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
 class="cmmi-10">image </span>formats. Different ways exist to
             install <span 
@@ -1991,7 +1990,7 @@ class="ectt-1000">/boot</span></span>.
             There are no <span 
 class="cmmi-10">swap </span>and <span 
 class="cmmi-10">home </span>partitions.
-            <!--l. 419--><p class="indent" >     I recommend the classic command-line tool <span 
+            <!--l. 416--><p class="indent" >     I recommend the classic command-line tool <span 
 class="cmmi-10">dd </span>to copy data. It works fine with
             different <span 
 class="cmmi-10">image </span>formats like <span 
@@ -2005,7 +2004,7 @@ class="cmmi-10">SD </span>card device name, in example <span class="path"><span
 class="ectt-1000">/dev/&#x003C;xxx&#x003E;</span></span>,
             unmount it with <span 
 class="cmmi-10">umount </span>if mounted, and do copy data with the next command.
-            <!--l. 424-->
+            <!--l. 421-->
             <a 
  id="x1-27001r9"></a>
             <a 
@@ -2035,32 +2034,32 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">progress</span></span></pre>
         <ul class="itemize1">
         <li class="itemize">
-        <!--l. 428--><p class="noindent" >note 1: run this command in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+        <!--l. 425--><p class="noindent" >note 1: run this command in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/tmp/deploy/images/</span>
         <span 
 class="ectt-1000">raspberrypi4-64</span></span>
         </li>
         <li class="itemize">
-        <!--l. 429--><p class="noindent" >note 2: run this command with <span 
+        <!--l. 426--><p class="noindent" >note 2: run this command with <span 
 class="cmmi-10">root </span>privileges
         </li>
         <li class="itemize">
-        <!--l. 430--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
+        <!--l. 427--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
         (see note 2)</li></ul>
-<!--l. 433--><p class="indent" >   Alternatively, there is a dedicated script - &#x003C;META-DIR&#x003E;<span class="path"><span 
+<!--l. 430--><p class="indent" >   Alternatively, there is a dedicated script - &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin/burn</span></span>.
 Use the command-line option <span class="path"><span 
 class="ectt-1000">-h</span></span> for details. The transfer does not take a lot of
 time. When it is over, replace the card to <span 
 class="cmmi-10">Raspberry &#x03C0; </span>and turn it on. That&#8217;s
 it.
-<!--l. 438--><p class="indent" >
+<!--l. 435--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-280006"></a>run</h3>
-            <!--l. 442--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
+            <!--l. 439--><p class="noindent" >Wireless connection is established via classic command-line tools like <span 
 class="cmmi-10">ip </span>and <span 
 class="cmmi-10">iw</span>. I use
             a <a 
@@ -2077,7 +2076,7 @@ class="ectt-1000">/usr/bin</span></span>, as well as a running <a
 href="#GUI">GUI</a> example to demonstrate the usage of the
             <span 
 class="cmmi-10">Dear ImGui </span>library.
-               <!--l. 449--><pre class="lstinputlisting" id="listing-10"><span class="label"><a 
+               <!--l. 446--><pre class="lstinputlisting" id="listing-10"><span class="label"><a 
  id="x1-28003r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">!/</span></span><span style="color:#FF00FF"><span 
@@ -2726,11 +2725,11 @@ class="ectt-0800x-x-87">ip</span></span><span style="color:#FF00FF"> </span><spa
 class="ectt-0800x-x-87">route</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">show</span></span>
    </pre>
-<!--l. 450--><p class="noindent" >The script is available for download <a 
+<!--l. 447--><p class="noindent" >The script is available for download <a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/recipes-core/thcp/thcp/wifini.sh" >here</a>. Specify network <span 
 class="cmmi-10">id </span>from the command line
 with a short command-line option <span 
-class="cmmi-10">s</span>. See next example usage. <!--l. 454-->
+class="cmmi-10">s</span>. See next example usage. <!--l. 451-->
 <a 
  id="x1-28093r11"></a>
 <a 
@@ -2743,7 +2742,7 @@ class="ectt-0800x-x-87">s</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SSID</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 458--><p class="indent" >   Once an <a 
+<!--l. 455--><p class="indent" >   Once an <a 
  id="section*.9"></a><span 
 class="cmmi-10">internet protocol </span>(<a 
 href="#IP">IP</a>) address is assigned to <span 
@@ -2757,13 +2756,13 @@ class="cmmi-10">Dropbear</span>[<a
  id="x1-28096"></a><a 
 href="#cite.0@dropbear">4</a>] allows for secure remote login, control and file
 transfer.
-<!--l. 463--><p class="indent" >
+<!--l. 460--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-290007"></a>outlook</h3>
-            <!--l. 465--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+            <!--l. 462--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
 href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &#x03C0;</span>[<a 
@@ -2818,11 +2817,11 @@ class="cmmi-10">protocol</span></a><br />
                         </dd><dt class="list">
             <a 
  id="GNU"></a><a 
-href="#x1-90003.1.3"><span 
+href="#x1-190003.1.13"><span 
 class="ecbx-1000">GNU        </span></a>  </dt><dd 
 class="list">
                         <!--l. 10--><p class="noindent" ><a 
-href="#x1-90003.1.3"><span 
+href="#x1-190003.1.13"><span 
 class="cmmi-10">GNU</span>
                         <span 
 class="cmmi-10">is</span>
@@ -2833,11 +2832,11 @@ class="cmmi-10">UNIX</span></a><br />
                         </dd><dt class="list">
             <a 
  id="GUI"></a><a 
-href="#x1-70003.1.1"><span 
+href="#x1-150003.1.9"><span 
 class="ecbx-1000">GUI         </span></a>  </dt><dd 
 class="list">
                         <!--l. 11--><p class="noindent" ><a 
-href="#x1-70003.1.1"><span 
+href="#x1-150003.1.9"><span 
 class="cmmi-10">graphical</span>
                         <span 
 class="cmmi-10">user</span>
@@ -2911,17 +2910,17 @@ class="list">
 href="#x1-30002"><span 
 class="cmmi-10">software</span></a><br />
                         </dd></dl>
-            <!--l. 475--><p class="noindent" >
+            <!--l. 472--><p class="noindent" >
                                                                                                     
 
                                                                                                     
                <h3 class="sectionHead"><a 
  id="x1-31000"></a>bibliography</h3>
-            <!--l. 477--><p class="noindent" >
+            <!--l. 474--><p class="noindent" >
                  <dl class="thebibliography"><dt id="X0-oe" class="thebibliography">
             [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@oe"></a>community.
                  <span 
 class="ecti-1000">OpenEmbedded</span>.
@@ -2941,7 +2940,7 @@ class="ectt-1000">https://www.openembedded.org</span></a>
                  </dd><dt id="X0-yocto" class="thebibliography">
             [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -2963,7 +2962,7 @@ class="ectt-1000">https://www.yoctoproject.org</span></a>
                  </dd><dt id="X0-yoctoqb" class="thebibliography">
             [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@yoctoqb"></a>Yocto Project community.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -2992,7 +2991,7 @@ class="ectt-1000">https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#
                  </dd><dt id="X0-dropbear" class="thebibliography">
             [4]   </dt><dd 
 id="bib-4" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
                  <span 
 class="ecti-1000">Dropbear</span>
@@ -3014,7 +3013,7 @@ class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
             [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Building</span>
@@ -3055,7 +3054,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
                  </dd><dt id="X0-kalo2023" class="thebibliography">
             [6]   </dt><dd 
 id="bib-6" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@kalo2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Embedded</span>
@@ -3091,7 +3090,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thcport.html</span></a>
                  </dd><dt id="X0-raspberry" class="thebibliography">
             [7]   </dt><dd 
 id="bib-7" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@raspberry"></a>Raspberry <span 
 class="cmmi-10">&#x03C0; </span>Ltd.
                  <span 
@@ -3114,7 +3113,7 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                  </dd><dt id="X0-bitbake" class="thebibliography">
             [8]   </dt><dd 
 id="bib-8" class="thebibliography">
-                 <!--l. 477--><p class="noindent" ><a 
+                 <!--l. 474--><p class="noindent" ><a 
  id="cite.0@bitbake"></a>Richard Purdie,
                  Chris Larson,
                  and
@@ -3138,12 +3137,12 @@ class="ectt-1000">https://docs.yoctoproject.org/bitbake</span></a>
                  (visited
                  on
                  2023).</dd></dl>
-            <!--l. 480--><p class="indent" >                                                                                            <span 
+            <!--l. 477--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 480--><p class="indent" >      <a 
+            <!--l. 477--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in </span><span 
 class="cmmi-7">pdf </span><span 
