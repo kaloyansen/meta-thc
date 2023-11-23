@@ -1,13 +1,13 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # name: burn
 # purpose: copy a wic image to sd-card
 # maintainer: kaloyan@triplehelix-consulting.com
 
-DEFTARGET=sda
+DEFDEVICE=sda
 DEFIMAGE=core-image-x11
 DEFBUILD=/home/yocto/kalo
 DEFMACHINE=raspberrypi4-64
-ERREUR=111
+ERREUR=0
 
 erreur() { echo $* && exit $ERREUR || kill $$; }
 usage() {    # print options and quit
@@ -16,31 +16,31 @@ usage() {    # print options and quit
 usage:
 \t $0 <options>
     option        \t purpose                 \t default
-    -h            \t print this              \t usage
-    -b            \t burn                    \t just kidding
-    -t <target>   \t target                  \t $DEFTARGET
+    -d <device>   \t device                  \t $DEFDEVICE
     -i <image>    \t image                   \t $DEFIMAGE
-    -d <dir>      \t build directory         \t $DEFBUILD
+    -b <buildir>  \t build directory         \t $DEFBUILD
     -m <machine>  \t machine                 \t $DEFMACHINE
+    -c            \t copy                    \t dry run
+    -h            \t print this              \t usage
 "
     erreur
 }
 
-while getopts ":t:i:d:m:bh" option; do    # parce command line
+while getopts ":d:i:b:m:ch" option; do    # parce command line
 
     case $option in
 
-        t ) TARGET=$OPTARG;;
+        d ) DEVICE=$OPTARG;;
         i ) IMAGE=$OPTARG;;
-        d ) BUILD=$OPTARG;;
+        b ) BUILD=$OPTARG;;
         m ) MACHINE=$OPTARG;;
-        b ) BURN=yes;;
+        c ) COPY=yes;;
         h ) usage $0;;
         * ) erreur unexpected command-line option;;
     esac
 done
 
-[ "$TARGET" ] || TARGET=$DEFTARGET
+[ "$DEVICE" ] || DEVICE=$DEFDEVICE
 [ "$IMAGE" ] || IMAGE=$DEFIMAGE
 [ "$BUILD" ] || BUILD=$DEFBUILD
 [ "$MACHINE" ] || MACHINE=$DEFMACHINE
@@ -50,10 +50,13 @@ SOURCE=${IMAGE}-$MACHINE.wic
 
 [ -e "$DEPLOY/$SOURCE" ] || erreur cannot find $DEPLOY/$SOURCE
 
-COMMAND="sudo dd if=$SOURCE of=/dev/$TARGET status=progress"
+COMMAND="sudo dd if=$SOURCE of=/dev/$DEVICE status=progress"
 
 cd $DEPLOY
 
-[ "$BURN" ] && $COMMAND || echo $COMMAND
+[ "$COPY" ] && $COMMAND || printf "
+$DEPLOY
+$COMMAND
 
+"
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # name: metafetch
 # purpose: clone rpi metadata
 # maintainer: kaloyan@triplehelix-consulting.com
@@ -6,9 +6,9 @@
 FETCHER=https://github.com/
 GITFETCHER=git@github.com:
 BRANCH=kirkstone
-DEFMETADIR=$HOME/yocto_$BRANCH/metadata
-DEFBUILDIR=$HOME/yocto_$BRANCH/rpi4
-ERREUR=111
+DEFMETADIR=$HOME/yocto/$BRANCH/metadata
+DEFBUILDIR=$HOME/yocto/$BRANCH/rpi4
+ERREUR=0
 
 erreur() { echo $* && exit $ERREUR || kill $$; }
 usage() {    # print options and quit
