@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # name: burn
 # purpose: copy a wic image to sd-card
 # maintainer: kaloyan@triplehelix-consulting.com
@@ -7,6 +7,7 @@ DEFDEVICE=sda
 DEFIMAGE=core-image-x11
 DEFBUILD=/home/yocto/kalo
 DEFMACHINE=raspberrypi4-64
+XNAME=`basename $0`
 ERREUR=0
 
 erreur() { echo $* && exit $ERREUR || kill $$; }
@@ -14,19 +15,19 @@ usage() {    # print options and quit
 
     printf "
 usage:
-\t $0 <options>
+\t $XNAME <command-line options>
     option        \t purpose                 \t default
     -d <device>   \t device                  \t $DEFDEVICE
     -i <image>    \t image                   \t $DEFIMAGE
     -b <buildir>  \t build directory         \t $DEFBUILD
     -m <machine>  \t machine                 \t $DEFMACHINE
-    -c            \t copy                    \t dry run
+    -x            \t execute                 \t dry run
     -h            \t print this              \t usage
 "
     erreur
 }
 
-while getopts ":d:i:b:m:ch" option; do    # parce command line
+while getopts ":d:i:b:m:xh" option; do    # parce command line
 
     case $option in
 
@@ -34,8 +35,8 @@ while getopts ":d:i:b:m:ch" option; do    # parce command line
         i ) IMAGE=$OPTARG;;
         b ) BUILD=$OPTARG;;
         m ) MACHINE=$OPTARG;;
-        c ) COPY=yes;;
-        h ) usage $0;;
+        x ) COPY=yes;;
+        h ) usage;;
         * ) erreur unexpected command-line option;;
     esac
 done
@@ -55,8 +56,11 @@ COMMAND="sudo dd if=$SOURCE of=/dev/$DEVICE status=progress"
 cd $DEPLOY
 
 [ "$COPY" ] && $COMMAND || printf "
-$DEPLOY
+cd $DEPLOY
 $COMMAND
+
+# execution
+$XNAME $* -x
 
 "
 
