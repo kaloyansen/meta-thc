@@ -64,3 +64,4 @@ $XNAME $* -x
 
 "
 
+exit 0
