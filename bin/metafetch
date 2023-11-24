@@ -6,16 +6,23 @@
 FETCHER=https://github.com/
 GITFETCHER=git@github.com:
 BRANCH=kirkstone
-DEFMETADIR=$HOME/yocto/$BRANCH/metadata
-DEFBUILDIR=$HOME/yocto/$BRANCH/rpi4
-ERREUR=0
 
-erreur() { echo $* && exit $ERREUR || kill $$; }
-usage() {    # print options and quit
+LONGSFX=$(head -c 1000 /dev/random | tr -dc 'a-z')
+SFX=$(expr " $LONGSFX" : ".*\(.\{3\}\)")
+unset LONGSFX
+
+DEFMETADIR=$HOME/yocto/$SFX/metadata
+DEFBUILDIR=$HOME/yocto/$SFX/rpi4
+
+XNAME=$(basename $0)
+
+say() { printf ":: $XNAME :: $*\n"; }
+die() { say $* && exit 0 || kill $$; }
+use() {    # print options and quit
 
     printf "
 usage:
-\t $0 <options>
+\t $XNAME <options>
     option        \t purpose                 \t default
     -h            \t print this              \t usage
     -d            \t dry run                 \t wet run
@@ -23,17 +30,18 @@ usage:
     -r <branch>   \t branch                  \t $BRANCH
     -m <metadir>  \t metadata directory      \t $DEFMETADIR
     -b <buildir>  \t build directory         \t $DEFBUILDIR
+
 "
-    erreur
+    die
 }
 
 confirm() {    # get confirmation or quit
 
     read -p "please confirm (y/n) " choix
-    [ "$choix" == "y" ] &&
-        echo $1 confirm ||
-            erreur $1 interrupted
+    [ "$choix" == "y" ] && say confirmed || die
 }
+
+[ "$SFX" ] || die try again
 
 while getopts ":m:b:r:hgd" option; do    # parce command-line options
 
@@ -44,19 +52,20 @@ while getopts ":m:b:r:hgd" option; do    # parce command-line options
         r ) BRANCH=$OPTARG;;
         g ) FETCHER=$GITFETCHER;;
         d ) DRYRUN=yes;;
-        h ) usage $0;;
-        * ) usage $0;;
+        h ) use;;
+        * ) use;;
     esac
 done
 
 # check system path
 [ "$METADIR" ] || METADIR=$DEFMETADIR
 [ "$BUILDIR" ] || BUILDIR=$DEFBUILDIR
-[ -d $METADIR ] || mkdir -p $METADIR || erreur $? cannot create $METADIR
-[ -d $BUILDIR ] || mkdir -p $BUILDIR || erreur $? cannot create $BUILDIR
-METADIR=$(realpath $METADIR) && printf "\nmetadata:\t $METADIR\n" || erreur $? cannot find $METADIR
-BUILDIR=$(realpath $BUILDIR) && printf "build:\t\t $BUILDIR\n" || erreur $? cannot find $BUILDIR
-printf "branch:\t\t $BRANCH\nprotocol:\t $FETCHER\n\n"
+[ -d $METADIR ] || mkdir -p $METADIR || die $? cannot create $METADIR
+[ -d $BUILDIR ] || mkdir -p $BUILDIR || die $? cannot create $BUILDIR
+METADIR=$(realpath $METADIR) && say "metadata:\t $METADIR" || die $? cannot find $METADIR
+BUILDIR=$(realpath $BUILDIR) && say "build:\t $BUILDIR" || die $? cannot find $BUILDIR
+say "branch:\t $BRANCH"
+say "protocol:\t $FETCHER"
 
 declare -A REPO
 REPO=(    # associative git repository array
@@ -67,27 +76,31 @@ REPO=(    # associative git repository array
     [TripleHelixConsulting/rpiconf.git]=$BUILDIR/conf
 )
 
-[ -n "$DRYRUN" ] || confirm $0 confirmation
+[ "$DRYRUN" ] || confirm
+
 for repo in ${!REPO[@]}; do    # clone repositories
 
     command="git clone -b $BRANCH $FETCHER$repo ${REPO[$repo]}"
-    [ -n "$DRYRUN" ] || $command && echo $command
+    say $command
+    [ "$DRYRUN" ] || $command
 done
-[ -n "$DRYRUN" ] && erreur $0 dry run exit
+
+[ "$DRYRUN" ] && die
 
 # adjust bibtbake layer configuration
-sed -i s#/home/yocto/layer#$METADIR#g $BUILDIR/conf/bblayers.conf || erreur sed $?
+sed -i s#/home/yocto/layer#$METADIR#g $BUILDIR/conf/bblayers.conf || die sed $?
 
 # bitbake environment
 OEINIT=oe-init-build-env
-cd $METADIR/poky && pwd || erreur $? cannot find $METADIR/poky
-[ -f $OEINIT ] && . ./$OEINIT $BUILDIR || erreur $? cannot find $OEINIT
+cd $METADIR/poky && pwd || die $? cannot find $METADIR/poky
+[ -f $OEINIT ] && . ./$OEINIT $BUILDIR || die $? cannot find $OEINIT
 
 bitbake-layers show-layers
 
-printf "\n\t === how to start a new build === \n\n"
+echo && say "how to start a new build"
+printf "
+cd $METADIR/poky
+. ./$OEINIT $BUILDIR
+bitbake core-image-x11
 
-echo cd $METADIR/poky
-echo . ./$OEINIT $BUILDIR
-echo bitbake core-image-x11
-echo
+"
