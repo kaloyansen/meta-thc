@@ -8,10 +8,9 @@ DEFIMAGE=core-image-x11
 DEFBUILD=/home/yocto/kalo
 DEFMACHINE=raspberrypi4-64
 XNAME=`basename $0`
-ERREUR=0
 
-erreur() { echo $* && exit $ERREUR || kill $$; }
-usage() {    # print options and quit
+die() { echo $* && exit 0 || kill $$; }
+use() {    # print options and quit
 
     printf "
 usage:
@@ -24,7 +23,7 @@ usage:
     -x            \t execute                 \t dry run
     -h            \t print this              \t usage
 "
-    erreur
+    die
 }
 
 while getopts ":d:i:b:m:xh" option; do    # parce command line
@@ -36,8 +35,8 @@ while getopts ":d:i:b:m:xh" option; do    # parce command line
         b ) BUILD=$OPTARG;;
         m ) MACHINE=$OPTARG;;
         x ) COPY=yes;;
-        h ) usage;;
-        * ) erreur unexpected command-line option;;
+        h ) use;;
+        * ) die unexpected command-line option;;
     esac
 done
 
@@ -49,7 +48,7 @@ done
 DEPLOY=$BUILD/tmp/deploy/images/$MACHINE
 SOURCE=${IMAGE}-$MACHINE.wic
 
-[ -e "$DEPLOY/$SOURCE" ] || erreur cannot find $DEPLOY/$SOURCE
+[ -e "$DEPLOY/$SOURCE" ] || die cannot find $DEPLOY/$SOURCE
 
 COMMAND="sudo dd if=$SOURCE of=/dev/$DEVICE status=progress"
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # name: metafetch
 # purpose: clone rpi metadata
 # maintainer: kaloyan@triplehelix-consulting.com
