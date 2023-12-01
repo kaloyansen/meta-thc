@@ -37,4 +37,7 @@ bbkernel() {
     bitbake virtual/kernel -c menuconfig
 }
 
+## aliases ################################################################################################
+
+alias emu=runqemu\ slirp\ nographic\ serial
 
