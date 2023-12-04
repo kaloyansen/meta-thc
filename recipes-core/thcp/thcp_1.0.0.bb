@@ -27,4 +27,5 @@ do_install() {
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/.profile ${D}/${ROOT_HOME}
 #	install -m 0644 ${WORKDIR}/${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/toprc ${D}/${ROOT_HOME}/.config/procps
+        ln -s /home/root /root
 }
