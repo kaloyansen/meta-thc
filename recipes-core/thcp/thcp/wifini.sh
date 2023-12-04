@@ -1,10 +1,8 @@
 #!/bin/sh
-# wifini.sh
-# wifi connection requirements:
-
-# wpa_passphrase, wpa_supplicant, ip, iw, grep, awk 
-# designed by kaloyansen at gmail dot com
-# copyleft triplehelix-consulting.com
+# name: wifini.sh
+# purpose: wifi connection
+# code: kaloyansen at gmail dot com
+# requirements: wpa_passphrase, wpa_supplicant, ip, iw, grep, awk 
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 # files
@@ -20,27 +18,20 @@ WPASUPP=/usr/sbin/wpa_supplicant
 DHCP=/sbin/udhcpc
 IP=/sbin/ip
 
-erreur() { echo $* && exit 1; }
+ME=`basename $0`
+
+die() { echo $ME $* && exit 0; }
+say() { echo $ME $*; }
 
 # get wifi interface and network ssid
-WIFACE=`$IW dev|grep Interface|awk '{print $2}'`
+WIFACE=`$IW dev | grep Interface | awk '{print $2}'`
+WIFACE=`$IW dev | awk '/Interface/ {interf=$2} END {print interf}'`
 SSID=$(getopt s: $* | awk '{print $2}')
 
-sorry() {
-    if [ "$1" = "" -o ! -e "$1" ]; then
-        echo "no $2 supplied" 1>&2
-        exit 1
-    fi
-}
+[ "$USER" == "root" ] || die run $0 as root
 
-
-sorry $SSID network 
-
-[ -n "$SSID" ] &&
-    echo $0: $WIFACE $SSID ||
-        erreur interface $WIFACE specify network: $0 -s '<SSID>'
-
-[ "$USER" == "root" ] || erreur run $0 as root
+[ $SSID ] && say network: $SSID || die specify network: $0 -s SSID
+[ $WIFACE ] && say interface: $WIFACE || die wireless interface not found
 
 # enable interface connexion on boot
 if [ -f $IFCONF ]; then
@@ -48,7 +39,7 @@ if [ -f $IFCONF ]; then
         printf "auto $WIFACE\n" >> $IFCONF
 #        wpa-roam /etc/wpa_supplicant.conf\n" >> $IFCONF
 else
-    erreur $0: $IFCONF not found;
+    die $IFCONF not found;
 fi
 
 
@@ -57,16 +48,15 @@ fi
 
 # verify connexion
 $IW dev|grep $SSID > /dev/null &&
-    erreur $0 info: $WIFACE $SSID ||
-        echo $0 connecting to $SSID
+    die $WIFACE $SSID ||
+        say connecting to $SSID
 
 # up interface
 $IP link show $WIFACE | grep UP ||
     $IP link set $WIFACE up
 
 # search network
-$IW $WIFACE scan|grep $SSID ||
-    erreur $0 warning: cannot find network $SSID;
+$IW $WIFACE scan|grep $SSID || die warning: cannot find network $SSID;
 
 # save network
 grep $SSID $WPACONF ||
@@ -77,8 +67,7 @@ grep $SSID $WPACONF ||
     $WPASUPP -B -D wext -i $WIFACE -c $WPACONF
 
 # start a dhcp client
-$DHCP -i $WIFACE ||
-    erreur $0 warning: $?
+$DHCP -i $WIFACE || die $?
 
 # [ -f "$UDHCPID" ] ||
 # ip addr show $WIFACE
