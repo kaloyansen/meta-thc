@@ -1,12 +1,12 @@
 #!/bin/sh
-# name: wifini.sh
+# name:    wifini.sh
 # purpose: wifi connection
-# code: kaloyansen at gmail dot com
-# requirements: wpa_passphrase, wpa_supplicant, ip, iw, grep, awk 
+# code:    kaloyansen at gmail dot com
+# require: wpa_passphrase, wpa_supplicant, ip, iw, grep, awk 
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 # files
-ME=`basename $0`
+MYNAME=`basename $0`
 WPACONF=/etc/wpa_supplicant.conf
 IFCONF=/etc/network/interfaces
 
@@ -17,50 +17,60 @@ WPASUPP=/usr/sbin/wpa_supplicant
 DHCP=/sbin/udhcpc
 IP=/sbin/ip
 
-die() { echo $ME $* && exit 0; }
-say() { echo $ME $*; }
+die() { echo $MYNAME $* && exit 0; }
+say() { echo $MYNAME $*; }
 auto() {
     patch=auto\ $WIFACE
     say $patch
-    grep "$patch" $IFCONF > /dev/null || printf "
+    grep "$patch" $1 > /dev/null || printf "
 $patch
 # wpa-roam $WPACONF
 " >> $IFCONF;
 }
 
-[ "$USER" == "root" ] || die run $ME with root privileges
+[ "$USER" == "root" ] || die run with root privileges
 
 # get wifi interface and network ssid
-WIFACE=`$IW dev | grep Interface | awk '{print $2}'`
-SSID=$(getopt s: $* | awk '{print $2}')
+IWD=`$IW dev`
+WIFACE=`echo $IWD | grep Interface | awk '{print $3}'`
+SSID=`getopt s: $* | awk '{print $2}'`
 
-say $0
+say whoami: $0
 
 [ $SSID ] && say network: $SSID || die specify network: $0 -s SSID
 [ $WIFACE ] && say interface: $WIFACE || die wireless interface not found
 
 # control files
 WPASOCKET=/run/wpa_supplicant/$WIFACE
-WPAPID=/run/wpa_supplicant.$WIFACE.pid
-DHCPID=/run/udhcpc.$WIFACE.pid
 
-[ -f $IFCONF ] && auto || say $IFCONF not found
+# process id files
+# WPAPID=/run/wpa_supplicant.$WIFACE.pid
+# DHCPID=/run/udhcpc.$WIFACE.pid
 
 # verify connexion
-IWDEV=`$IW dev`
-echo $IWDEV | grep $SSID > /dev/null && die $WIFACE $SSID || say connecting $SSID
+echo $IWD | grep $SSID > /dev/null && die $SSID connected || say connecting $SSID
 
 # up interface
-$IP link show $WIFACE | grep UP || $IP link set $WIFACE up
+$IP link show $WIFACE | grep UP > /dev/null || $IP link set $WIFACE up
 
 # search network
-$IW $WIFACE scan | grep $SSID || die cannot find $SSID
+$IW $WIFACE scan | grep $SSID > /dev/null || die cannot find $SSID
 
-# save network in wpa_supplicant.conf
 FINE=`grep $SSID $WPACONF`
+
+# die debug $FINE
+
+# 1. save network in $WPACONF
 [ $FINE ] && say $SSID already configured || $WPAPASS $SSID >> $WPACONF
 
-die reboot to connect to $SSID
+# 2. configure wifi to start on boot in $IFCONF
+[ -f $IFCONF ] && auto $IFCONF || die $IFCONF not found
+
+# 3. reboot
+say reboot in five seconds
+sleep 5
+reboot
+die hell || kill $$
 
 # recreate wpa socket
 rm $WPASOCKET
@@ -72,3 +82,4 @@ $DHCP -i $WIFACE || die $?
 $IP addr show $WIFACE
 $IW $WIFACE link
 $IP route show
+

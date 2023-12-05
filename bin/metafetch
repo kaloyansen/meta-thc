@@ -1,7 +1,7 @@
 #!/bin/sh
-# name: metafetch
+# name:    metafetch
 # purpose: clone rpi metadata
-# maintainer: kaloyan@triplehelix-consulting.com
+# code:    kaloyan@triplehelix-consulting.com
 
 FETCHER=https://github.com/
 GITFETCHER=git@github.com:
