@@ -3,8 +3,8 @@ DESCRIPTION = "copy scripts to the target"
 RECIPE_MAINTAINER = "Kaloyan Krastev <kaloyan@triplehelix-consulting.com>"
 HOMEPAGE = "https://triplehelix-consulting.com"
 
-LICENSE = "MIT"
-LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+LICENSE = "GPL-2.0-only"
+LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
 
 SRC_PATH = "${FILE_DIRNAME}/${BPN}"
 SRC_URI = "file:///${SRC_PATH}"
@@ -27,5 +27,5 @@ do_install() {
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/.profile ${D}/${ROOT_HOME}
 #	install -m 0644 ${WORKDIR}/${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/toprc ${D}/${ROOT_HOME}/.config/procps
-        ln -s /home/root /root
+#        ln -s /home/root ${D}/root
 }
