@@ -25,7 +25,7 @@ auto() {
     grep "$patch" $1 > /dev/null || printf "
 $patch
 # wpa-roam $WPACONF
-" >> $IFCONF;
+" >> $1;
 }
 
 [ "$USER" == "root" ] || die run with root privileges
