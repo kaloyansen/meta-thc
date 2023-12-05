@@ -101,6 +101,6 @@ echo && say "how to start a new build"
 printf "
 cd $METADIR/poky
 . ./$OEINIT $BUILDIR
-bitbake core-image-x11
+bitbake core-image-thc
 
 "
