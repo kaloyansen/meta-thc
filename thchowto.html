@@ -1305,20 +1305,21 @@ class="ectt-1000">bblayers.conf</span></span>. <span
 class="ecti-1000">Yocto </span>layers are specified in <span class="path"><span 
 class="ectt-1000">bblayers.conf</span></span>. The build directives
             are in <span class="path"><span 
-class="ectt-1000">local.conf</span></span>. Variables in this file control the build. Sometimes I
-            call these <span 
-class="cmmi-10">directives </span>to avoid repetitions. To not mix them, I have isolated
-            <a 
-href="#HW">HW</a> specific directives in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
-class="ectt-1000">/conf/raspberrypi4-64.inc</span></span>
-            and &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+class="ectt-1000">local.conf</span></span>. Variables in this file control the build. Sometimes I call
+            these <span 
+class="cmmi-10">directives </span>to avoid repetitions. To not mix them, I have isolated <a 
+href="#HW">HW</a>
+            specific directives in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+class="ectt-1000">/conf/raspberrypi4-64.inc</span></span> and
+            &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/conf/qemuarm64.inc</span></span>. The <span 
-class="cmmi-10">host </span>configuration is
-            optional. See the bottom lines in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
-class="ectt-1000">/conf/local.conf</span></span> for
-            details. Note the difference between the optional <span class="path"><span 
+class="cmmi-10">host </span>configuration is optional. See the
+            bottom lines in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+class="ectt-1000">/conf/local.conf</span></span> for details. Note the
+            difference between the optional <span class="path"><span 
 class="ectt-1000">include</span></span> and not optional <span class="path"><span 
-class="ectt-1000">require</span></span>. The latter will interrupt the build if the corresponding file does not
+class="ectt-1000">require</span></span>. The
+            latter will interrupt the build configuration if the corresponding file does not
             exist.
             <!--l. 149--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
