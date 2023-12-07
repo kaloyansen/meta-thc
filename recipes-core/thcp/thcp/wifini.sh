@@ -19,12 +19,13 @@ IP=/sbin/ip
 
 die() { echo $MYNAME $* && exit 0; }
 say() { echo $MYNAME $*; }
-auto() {
+auto() { # enable wifi connection on boot
     patch=auto\ $WIFACE
     say $patch
     grep "$patch" $1 > /dev/null || printf "
 $patch
 # wpa-roam $WPACONF
+
 " >> $1;
 }
 
@@ -37,7 +38,7 @@ SSID=`getopt s: $* | awk '{print $2}'`
 
 say whoami: $0
 
-[ $SSID ] && say network: $SSID || die specify network: $0 -s SSID
+[ $SSID ] && say network: $SSID || die specify network: $MYNAME -s SSID
 [ $WIFACE ] && say interface: $WIFACE || die wireless interface not found
 
 # control files
@@ -48,7 +49,7 @@ WPASOCKET=/run/wpa_supplicant/$WIFACE
 # DHCPID=/run/udhcpc.$WIFACE.pid
 
 # verify connexion
-echo $IWD | grep $SSID > /dev/null && die $SSID connected || say connecting $SSID
+#echo $IWD | grep $SSID > /dev/null && die $SSID connected || say connecting $SSID
 
 # up interface
 $IP link show $WIFACE | grep UP > /dev/null || $IP link set $WIFACE up
@@ -61,16 +62,16 @@ FINE=`grep $SSID $WPACONF`
 # die debug $FINE
 
 # 1. save network in $WPACONF
-[ $FINE ] && say $SSID already configured || $WPAPASS $SSID >> $WPACONF
+#[ $FINE ] && say $SSID already configured || $WPAPASS $SSID >> $WPACONF
 
 # 2. configure wifi to start on boot in $IFCONF
 [ -f $IFCONF ] && auto $IFCONF || die $IFCONF not found
 
 # 3. reboot
-say reboot in five seconds
-sleep 5
-reboot
-die hell || kill $$
+say reboot in three seconds && sleep 1
+say reboot in two seconds && sleep 1
+say reboot in one second && sleep 1
+reboot & die see you soon || kill $$
 
 # recreate wpa socket
 rm $WPASOCKET
