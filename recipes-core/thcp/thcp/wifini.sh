@@ -61,9 +61,10 @@ FINE=`grep $SSID $WPACONF`
 [ -f $IFCONF ] && auto $IFCONF || die $IFCONF not found
 
 # 3. reboot
-say reboot in three seconds && sleep 1
-say reboot in two seconds && sleep 1
-say reboot in one second && sleep 1
+say reboot in six seconds   && sleep 3
+say reboot in three seconds && sleep 2
+say reboot in one second    && sleep 1
+# yeah no kidding
 reboot & die see you later || kill $$
 
 # control files
