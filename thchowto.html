@@ -19,7 +19,7 @@ class="ecrm-1200">Kaloyan Krastev</span><span class="thank-mark"><a
 href="#tk-1"><span 
 class="tcrm-1200">*</span></a></span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">Friday 8</span><sup class="textsuperscript"><span 
+class="ecrm-1200">Friday 15</span><sup class="textsuperscript"><span 
 class="ecrm-0900">th</span></sup><span 
 class="ecrm-1200">&#x00A0;December, 2023 </span><span class="thank-mark"><a 
 href="#tk-2"><span 
@@ -143,22 +143,24 @@ href="#x1-290006">6<!--tex4ht:ref: sec:run --></a> is dedicated to
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
  id="x1-30002"></a>metadata</h3>
-            <!--l. 41--><p class="noindent" ><span 
-class="cmmi-10">Metadata </span>is a set of instructions to build targets. It is organized in <span 
-class="cmmi-10">recipe </span>files with
-            the <span class="path"><span 
+            <!--l. 41--><p class="noindent" >In current context, <span 
+class="cmmi-10">metadata </span>is a set of <span 
+class="cmmi-10">instructions </span>to build <span 
+class="cmmi-10">targets</span>. It is organized
+            in <span 
+class="cmmi-10">recipe </span>- files with the <span class="path"><span 
 class="ectt-1000">bb</span></span> extension. There are files with <span class="path"><span 
-class="ectt-1000">bbappend</span></span> extension to modify <span 
-class="cmmi-10">recipes</span>
-            and <span 
+class="ectt-1000">bbappend</span></span> extension
+            to modify <span 
+class="cmmi-10">recipes </span>and <span 
 class="cmmi-10">class </span>files with a suffix <span class="path"><span 
-class="ectt-1000">bbclass</span></span> for instructions shared between <span 
-class="cmmi-10">recipes</span>. The
-            configuration files have the extension <span class="path"><span 
-class="ectt-1000">conf</span></span>. These define configuration
-            variables to control the build process. See a list of <span 
-class="cmmi-10">metadata </span>file types in Table
-            <a 
+class="ectt-1000">bbclass</span></span> for instructions shared
+            between <span 
+class="cmmi-10">recipes</span>. The configuration files have the extension <span class="path"><span 
+class="ectt-1000">conf</span></span>. These define
+            configuration variables to control the build process. See a full list of <span 
+class="cmmi-10">metadata </span>file
+            types in Table <a 
 href="#x1-30052">2<!--tex4ht:ref: tab:bbfiles --></a>.
             <!--l. 49--><p class="indent" >     <span 
 class="cmmi-10">Metadata </span>is organized in <span 
@@ -282,7 +284,7 @@ class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr
  style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
 class="td11"> file type  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-2"  
 class="td11"> extension      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-3"  
-class="td11"> purpose                         </td>
+class="td11"> purpose                      </td>
 </tr><tr 
 class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
  style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
@@ -290,31 +292,31 @@ class="td11"> recipe      </td><td  style="white-space:nowrap; text-align:left;"
 class="td11"> <span class="path"><span 
 class="ectt-1000">bb</span></span>       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-3"  
 class="td11"> <a 
-href="#SW">SW</a> build instructions      </td>
+href="#SW">SW</a> build instructions    </td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
 class="td11"> recipe      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-2"  
 class="td11"> <span class="path"><span 
 class="ectt-1000">bbappend</span></span> </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-3"  
 class="td11"> <a 
-href="#SW">SW</a> recipe modification    </td>
+href="#SW">SW</a> recipe modification  </td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
 class="td11"> class       </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-2"  
 class="td11"> <span class="path"><span 
 class="ectt-1000">bbclass</span></span>  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-3"  
-class="td11"> shared instructions          </td></tr><tr  
+class="td11"> shared instructions        </td></tr><tr  
  style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
 class="td11"> config </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-2"  
 class="td11"> <span class="path"><span 
 class="ectt-1000">conf</span></span> </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-3"  
-class="td11"> build definitions</td>
+class="td11"> build directives</td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-1"  
 class="td11"> config      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-2"  
 class="td11"> <span class="path"><span 
 class="ectt-1000">inc</span></span>      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-3"  
-class="td11"> included build definitions  </td>
+class="td11"> shared build directives   </td>
 </tr><tr 
 class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
  style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-1"  
