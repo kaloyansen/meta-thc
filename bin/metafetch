@@ -92,7 +92,7 @@ done
 # adjust bibtbake layer configuration
 sed -i s#/home/yocto/layer#$METADIR#g $BUILDIR/conf/bblayers.conf || die sed $?
 
-# bitbake environment
+# bitbake environment initialisation
 OEINIT=oe-init-build-env
 cd $METADIR/poky && pwd || die $? cannot find $METADIR/poky
 [ -f $OEINIT ] && . ./$OEINIT $BUILDIR || die $? cannot find $OEINIT
