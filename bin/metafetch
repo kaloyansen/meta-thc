@@ -14,6 +14,8 @@ unset LONGSFX
 DEFMETADIR=$HOME/yocto/$SFX/metadata
 DEFBUILDIR=$HOME/yocto/$SFX/rpi4
 
+TARGET=core-image-thc
+
 XNAME=$(basename $0)
 
 say() { printf ":: $XNAME :: $*\n"; }
@@ -101,6 +103,6 @@ echo && say "how to start a new build"
 printf "
 cd $METADIR/poky
 . ./$OEINIT $BUILDIR
-bitbake core-image-thc
+bitbake $TARGET
 
 "

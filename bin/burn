@@ -4,7 +4,7 @@
 # code:    kaloyan@triplehelix-consulting.com
 
 DEFDEVICE=sda
-DEFIMAGE=core-image-x11
+DEFIMAGE=core-image-thc
 DEFBUILD=/home/yocto/kalo
 DEFMACHINE=raspberrypi4-64
 XNAME=`basename $0`
