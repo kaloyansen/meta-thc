@@ -19,7 +19,7 @@ class="ecrm-1200">Kaloyan Krastev</span><span class="thank-mark"><a
 href="#tk-1"><span 
 class="tcrm-1200">*</span></a></span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">Saturday 16</span><sup class="textsuperscript"><span 
+class="ecrm-1200">Monday 18</span><sup class="textsuperscript"><span 
 class="ecrm-0900">th</span></sup><span 
 class="ecrm-1200">&#x00A0;December, 2023 </span><span class="thank-mark"><a 
 href="#tk-2"><span 
@@ -108,13 +108,12 @@ href="#x1-35000" id="QQ2-1-52">bibliography</a></span>
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
  id="x1-20001"></a>introduction</h3>
-            <!--l. 25--><p class="noindent" >These instructions[<a 
+            <!--l. 25--><p class="noindent" >These interactive instructions[<a 
  id="x1-2001"></a><a 
-href="#cite.0@kalohowto2023">7</a>] follow the configuration and build of a Linux-based <a 
+href="#cite.0@kalohowto2023">7</a>] follow the configuration and build of a Linux-based
+            <a 
  id="section*.1"></a><span 
-class="cmmi-10">operating</span>
-            <span 
-class="cmmi-10">system </span>(<a 
+class="cmmi-10">operating system </span>(<a 
 href="#OS">OS</a>) for <span 
 class="cmmi-10">Raspberry &#x03C0;</span>[<a 
  id="x1-2002"></a><a 
@@ -365,8 +364,8 @@ href="#SW">SW</a> recipes. On the other hand, it is a distribution layer
 class="cmmi-10">poky</span>. See &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/conf/distro/thc.conf</span></span>. In addition, there is an <span 
 class="cmmi-10">image </span>recipe to build a
-            target called &#x003C;META-DIR&#x003E;<span class="path"><span 
-class="ectt-1000">/thc/meta-thc/recipes-core/images/core-image-thc</span></span>.
+            target in &#x003C;META-DIR&#x003E;<span class="path"><span 
+class="ectt-1000">/thc/meta-thc/recipes-core/images/core-image-thc.bb</span></span>.
             <!--l. 122--><p class="indent" >     This allows for an effective isolation of machine, distribution and image features
             of the <a 
 href="#OS">OS</a>. The layer includes also shell scripts to clone <span 
@@ -703,6 +702,17 @@ class="ectt-0800x-x-87">rpi4</span></span>
  id="x1-8018r1015"></a></span> 
 <span class="label"><a 
  id="x1-8019r1016"></a></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">TARGET</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">core</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">image</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">thc</span></span> 
+<span class="label"><a 
+ id="x1-8020r1017"></a></span> 
+<span class="label"><a 
+ id="x1-8021r1018"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">XNAME</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$</span></span><span style="color:#000000"><span 
@@ -711,9 +721,9 @@ class="ectt-0800x-x-87">basename</span></span><span style="color:#000000"> </spa
 class="ectt-0800x-x-87">$0</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span> 
 <span class="label"><a 
- id="x1-8020r1017"></a></span> 
+ id="x1-8022r1019"></a></span> 
 <span class="label"><a 
- id="x1-8021r1018"></a></span><span style="color:#000000"><span 
+ id="x1-8023r1020"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">say</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">()</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">{</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
@@ -729,7 +739,7 @@ class="ectt-0800x-x-87">"</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">}</span></span> 
 <span class="label"><a 
- id="x1-8022r1019"></a></span><span style="color:#000000"><span 
+ id="x1-8024r1021"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">die</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">()</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">{</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -745,7 +755,7 @@ class="ectt-0800x-x-87">$$</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">}</span></span> 
 <span class="label"><a 
- id="x1-8023r1020"></a></span><span style="color:#000000"><span 
+ id="x1-8025r1022"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">use</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">()</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">{</span></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#FF00FF"><span 
@@ -755,17 +765,17 @@ class="ectt-0800x-x-87">options</span></span><span style="color:#FF00FF"> </span
 class="ectt-0800x-x-87">and</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">quit</span></span> 
 <span class="label"><a 
- id="x1-8024r1021"></a></span> 
+ id="x1-8026r1023"></a></span> 
 <span class="label"><a 
- id="x1-8025r1022"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-8027r1024"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">printf</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8026r1023"></a></span><span style="color:#FF0000"><span 
+ id="x1-8028r1025"></a></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">usage</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">:</span></span> 
 <span class="label"><a 
- id="x1-8027r1024"></a></span><span style="color:#FF0000"><span 
+ id="x1-8029r1026"></a></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$XNAME</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
@@ -773,7 +783,7 @@ class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">options</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span> 
 <span class="label"><a 
- id="x1-8028r1025"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8030r1027"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">option</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
@@ -782,7 +792,7 @@ class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">default</span></span> 
 <span class="label"><a 
- id="x1-8029r1026"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8031r1028"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">h</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
@@ -793,7 +803,7 @@ class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">usage</span></span> 
 <span class="label"><a 
- id="x1-8030r1027"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8032r1029"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">d</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
@@ -805,7 +815,7 @@ class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span
 class="ectt-0800x-x-87">wet</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">run</span></span> 
 <span class="label"><a 
- id="x1-8031r1028"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8033r1030"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">g</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span 
@@ -819,7 +829,7 @@ class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span
 class="ectt-0800x-x-87">https</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">protocol</span></span> 
 <span class="label"><a 
- id="x1-8032r1029"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8034r1031"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">r</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#FF0000"><span 
@@ -832,7 +842,7 @@ class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$BRANCH</span></span> 
 <span class="label"><a 
- id="x1-8033r1030"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8035r1032"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">m</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#FF0000"><span 
@@ -846,7 +856,7 @@ class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$DEFMETADIR</span></span> 
 <span class="label"><a 
- id="x1-8034r1031"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+ id="x1-8036r1033"></a></span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">b</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#FF0000"><span 
@@ -860,20 +870,20 @@ class="ectt-0800x-x-87">\</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$DEFBUILDIR</span></span> 
 <span class="label"><a 
- id="x1-8035r1032"></a></span> 
+ id="x1-8037r1034"></a></span> 
 <span class="label"><a 
- id="x1-8036r1033"></a></span><span style="color:#FF0000"><span 
+ id="x1-8038r1035"></a></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8037r1034"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8039r1036"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">die</span></span> 
 <span class="label"><a 
- id="x1-8038r1035"></a></span><span style="color:#000000"><span 
+ id="x1-8040r1037"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">}</span></span> 
 <span class="label"><a 
- id="x1-8039r1036"></a></span> 
+ id="x1-8041r1038"></a></span> 
 <span class="label"><a 
- id="x1-8040r1037"></a></span><span style="color:#000000"><span 
+ id="x1-8042r1039"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">confirm</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">()</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">{</span></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#FF00FF"><span 
@@ -883,9 +893,9 @@ class="ectt-0800x-x-87">confirmation</span></span><span style="color:#FF00FF"> <
 class="ectt-0800x-x-87">or</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">quit</span></span> 
 <span class="label"><a 
- id="x1-8041r1038"></a></span> 
+ id="x1-8043r1040"></a></span> 
 <span class="label"><a 
- id="x1-8042r1039"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-8044r1041"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">read</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">p</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
@@ -900,7 +910,7 @@ class="ectt-0800x-x-87">)</span></span><span style="color:#FF0000"> </span><span
 class="ectt-0800x-x-87">"</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">choix</span></span> 
 <span class="label"><a 
- id="x1-8043r1040"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8045r1042"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$choix</span></span><span style="color:#FF0000"><span 
@@ -916,12 +926,12 @@ class="ectt-0800x-x-87">confirmed</span></span><span style="color:#000000"> </sp
 class="ectt-0800x-x-87">||</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">die</span></span> 
 <span class="label"><a 
- id="x1-8044r1041"></a></span><span style="color:#000000"><span 
+ id="x1-8046r1043"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">}</span></span> 
 <span class="label"><a 
- id="x1-8045r1042"></a></span> 
+ id="x1-8047r1044"></a></span> 
 <span class="label"><a 
- id="x1-8046r1043"></a></span><span style="color:#000000"><span 
+ id="x1-8048r1045"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$SFX</span></span><span style="color:#FF0000"><span 
@@ -932,9 +942,9 @@ class="ectt-0800x-x-87">die</span></span><span style="color:#000000"> </span><sp
 class="ectt-0800x-x-87">try</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">again</span></span> 
 <span class="label"><a 
- id="x1-8047r1044"></a></span> 
+ id="x1-8049r1046"></a></span> 
 <span class="label"><a 
- id="x1-8048r1045"></a></span><span style="color:#0000FF"><span 
+ id="x1-8050r1047"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">while</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">getopts</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
@@ -957,16 +967,16 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#FF00FF"><span
 class="ectt-0800x-x-87">line</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">options</span></span> 
 <span class="label"><a 
- id="x1-8049r1046"></a></span> 
+ id="x1-8051r1048"></a></span> 
 <span class="label"><a 
- id="x1-8050r1047"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-8052r1049"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">case</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$option</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">in</span></span> 
 <span class="label"><a 
- id="x1-8051r1048"></a></span> 
+ id="x1-8053r1050"></a></span> 
 <span class="label"><a 
- id="x1-8052r1049"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8054r1051"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">m</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">METADIR</span></span><span style="color:#000000"><span 
@@ -974,7 +984,7 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">$OPTARG</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8053r1050"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8055r1052"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">b</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">BUILDIR</span></span><span style="color:#000000"><span 
@@ -982,7 +992,7 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">$OPTARG</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8054r1051"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8056r1053"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">r</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">BRANCH</span></span><span style="color:#000000"><span 
@@ -990,7 +1000,7 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">$OPTARG</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8055r1052"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8057r1054"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">g</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">FETCHER</span></span><span style="color:#000000"><span 
@@ -998,7 +1008,7 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">$GITFETCHER</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8056r1053"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8058r1055"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">d</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">DRYRUN</span></span><span style="color:#000000"><span 
@@ -1006,33 +1016,33 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">yes</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8057r1054"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8059r1056"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">h</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">use</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8058r1055"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8060r1057"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">*</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">use</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">;;</span></span> 
 <span class="label"><a 
- id="x1-8059r1056"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-8061r1058"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">esac</span></span> 
 <span class="label"><a 
- id="x1-8060r1057"></a></span><span style="color:#0000FF"><span 
+ id="x1-8062r1059"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">done</span></span> 
 <span class="label"><a 
- id="x1-8061r1058"></a></span> 
+ id="x1-8063r1060"></a></span> 
 <span class="label"><a 
- id="x1-8062r1059"></a></span><span style="color:#FF00FF"><span 
+ id="x1-8064r1061"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">check</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">system</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">path</span></span> 
 <span class="label"><a 
- id="x1-8063r1060"></a></span><span style="color:#000000"><span 
+ id="x1-8065r1062"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$METADIR</span></span><span style="color:#FF0000"><span 
@@ -1043,7 +1053,7 @@ class="ectt-0800x-x-87">METADIR</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$DEFMETADIR</span></span> 
 <span class="label"><a 
- id="x1-8064r1061"></a></span><span style="color:#000000"><span 
+ id="x1-8066r1063"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$BUILDIR</span></span><span style="color:#FF0000"><span 
@@ -1054,7 +1064,7 @@ class="ectt-0800x-x-87">BUILDIR</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$DEFBUILDIR</span></span> 
 <span class="label"><a 
- id="x1-8065r1062"></a></span><span style="color:#000000"><span 
+ id="x1-8067r1064"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">d</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1073,7 +1083,7 @@ class="ectt-0800x-x-87">cannot</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">create</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$METADIR</span></span> 
 <span class="label"><a 
- id="x1-8066r1063"></a></span><span style="color:#000000"><span 
+ id="x1-8068r1065"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">d</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1092,7 +1102,7 @@ class="ectt-0800x-x-87">cannot</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">create</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$BUILDIR</span></span> 
 <span class="label"><a 
- id="x1-8067r1064"></a></span><span style="color:#000000"><span 
+ id="x1-8069r1066"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">METADIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$</span></span><span style="color:#000000"><span 
@@ -1116,7 +1126,7 @@ class="ectt-0800x-x-87">cannot</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">find</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$METADIR</span></span> 
 <span class="label"><a 
- id="x1-8068r1065"></a></span><span style="color:#000000"><span 
+ id="x1-8070r1067"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">BUILDIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$</span></span><span style="color:#000000"><span 
@@ -1140,7 +1150,7 @@ class="ectt-0800x-x-87">cannot</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">find</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$BUILDIR</span></span> 
 <span class="label"><a 
- id="x1-8069r1066"></a></span><span style="color:#000000"><span 
+ id="x1-8071r1068"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">say</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">branch</span></span><span style="color:#FF0000"><span 
@@ -1149,7 +1159,7 @@ class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span
 class="ectt-0800x-x-87">$BRANCH</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8070r1067"></a></span><span style="color:#000000"><span 
+ id="x1-8072r1069"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">say</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">protocol</span></span><span style="color:#FF0000"><span 
@@ -1158,15 +1168,15 @@ class="ectt-0800x-x-87">t</span></span><span style="color:#FF0000"> </span><span
 class="ectt-0800x-x-87">$FETCHER</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8071r1068"></a></span> 
+ id="x1-8073r1070"></a></span> 
 <span class="label"><a 
- id="x1-8072r1069"></a></span><span style="color:#0000FF"><span 
+ id="x1-8074r1071"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">declare</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">A</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">REPO</span></span> 
 <span class="label"><a 
- id="x1-8073r1070"></a></span><span style="color:#000000"><span 
+ id="x1-8075r1072"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">REPO</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=(</span></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
@@ -1175,7 +1185,7 @@ class="ectt-0800x-x-87">git</span></span><span style="color:#FF00FF"> </span><sp
 class="ectt-0800x-x-87">repository</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">array</span></span> 
 <span class="label"><a 
- id="x1-8074r1071"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8076r1073"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">yoctoproject</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
@@ -1187,7 +1197,7 @@ class="ectt-0800x-x-87">$METADIR</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">poky</span></span> 
 <span class="label"><a 
- id="x1-8075r1072"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8077r1074"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">openembedded</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
@@ -1201,7 +1211,7 @@ class="ectt-0800x-x-87">$METADIR</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">oe</span></span> 
 <span class="label"><a 
- id="x1-8076r1073"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8078r1075"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">agherzan</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
@@ -1217,7 +1227,7 @@ class="ectt-0800x-x-87">meta</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">raspberrypi</span></span> 
 <span class="label"><a 
- id="x1-8077r1074"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8079r1076"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">kaloyanski</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
@@ -1235,7 +1245,7 @@ class="ectt-0800x-x-87">meta</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">thc</span></span> 
 <span class="label"><a 
- id="x1-8078r1075"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8080r1077"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">TripleHelixConsulting</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
@@ -1247,12 +1257,12 @@ class="ectt-0800x-x-87">$BUILDIR</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">conf</span></span> 
 <span class="label"><a 
- id="x1-8079r1076"></a></span><span style="color:#000000"><span 
+ id="x1-8081r1078"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">)</span></span> 
 <span class="label"><a 
- id="x1-8080r1077"></a></span> 
+ id="x1-8082r1079"></a></span> 
 <span class="label"><a 
- id="x1-8081r1078"></a></span><span style="color:#000000"><span 
+ id="x1-8083r1080"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$DRYRUN</span></span><span style="color:#FF0000"><span 
@@ -1261,9 +1271,9 @@ class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">||</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">confirm</span></span> 
 <span class="label"><a 
- id="x1-8082r1079"></a></span> 
+ id="x1-8084r1081"></a></span> 
 <span class="label"><a 
- id="x1-8083r1080"></a></span><span style="color:#0000FF"><span 
+ id="x1-8085r1082"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">for</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">repo</span></span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">in</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1278,9 +1288,9 @@ class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span
 class="ectt-0800x-x-87">clone</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">repositories</span></span> 
 <span class="label"><a 
- id="x1-8084r1081"></a></span> 
+ id="x1-8086r1083"></a></span> 
 <span class="label"><a 
- id="x1-8085r1082"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
+ id="x1-8087r1084"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">command</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
@@ -1298,11 +1308,11 @@ class="ectt-0800x-x-87">$repo</span></span><span style="color:#FF0000"><span
 class="ectt-0800x-x-87">]}</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8086r1083"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8088r1085"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">say</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$command</span></span> 
 <span class="label"><a 
- id="x1-8087r1084"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8089r1086"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$DRYRUN</span></span><span style="color:#FF0000"><span 
@@ -1311,12 +1321,12 @@ class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">||</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$command</span></span> 
 <span class="label"><a 
- id="x1-8088r1085"></a></span><span style="color:#0000FF"><span 
+ id="x1-8090r1087"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">done</span></span> 
 <span class="label"><a 
- id="x1-8089r1086"></a></span> 
+ id="x1-8091r1088"></a></span> 
 <span class="label"><a 
- id="x1-8090r1087"></a></span><span style="color:#000000"><span 
+ id="x1-8092r1089"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$DRYRUN</span></span><span style="color:#FF0000"><span 
@@ -1325,16 +1335,16 @@ class="ectt-0800x-x-87">]</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">&amp;&amp;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">die</span></span> 
 <span class="label"><a 
- id="x1-8091r1088"></a></span> 
+ id="x1-8093r1090"></a></span> 
 <span class="label"><a 
- id="x1-8092r1089"></a></span><span style="color:#FF00FF"><span 
+ id="x1-8094r1091"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">adjust</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">bibtbake</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">layer</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">configuration</span></span> 
 <span class="label"><a 
- id="x1-8093r1090"></a></span><span style="color:#0000FF"><span 
+ id="x1-8095r1092"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">sed</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">i</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1363,14 +1373,15 @@ class="ectt-0800x-x-87">sed</span></span><span style="color:#FF00FF"> </span><sp
 class="ectt-0800x-x-87">$</span></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">?</span></span> 
 <span class="label"><a 
- id="x1-8094r1091"></a></span> 
+ id="x1-8096r1093"></a></span> 
 <span class="label"><a 
- id="x1-8095r1092"></a></span><span style="color:#FF00FF"><span 
+ id="x1-8097r1094"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">bitbake</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
-class="ectt-0800x-x-87">environment</span></span> 
+class="ectt-0800x-x-87">environment</span></span><span style="color:#FF00FF"> </span><span style="color:#FF00FF"><span 
+class="ectt-0800x-x-87">initialisation</span></span> 
 <span class="label"><a 
- id="x1-8096r1093"></a></span><span style="color:#000000"><span 
+ id="x1-8098r1095"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">OEINIT</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">oe</span></span><span style="color:#000000"><span 
@@ -1381,7 +1392,7 @@ class="ectt-0800x-x-87">build</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">-</span></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">env</span></span> 
 <span class="label"><a 
- id="x1-8097r1094"></a></span><span style="color:#0000FF"><span 
+ id="x1-8099r1096"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">cd</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$METADIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
@@ -1398,7 +1409,7 @@ class="ectt-0800x-x-87">$METADIR</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">/</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">poky</span></span> 
 <span class="label"><a 
- id="x1-8098r1095"></a></span><span style="color:#000000"><span 
+ id="x1-8100r1097"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">[</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">f</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1417,9 +1428,9 @@ class="ectt-0800x-x-87">cannot</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">find</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">$OEINIT</span></span> 
 <span class="label"><a 
- id="x1-8099r1096"></a></span> 
+ id="x1-8101r1098"></a></span> 
 <span class="label"><a 
- id="x1-8100r1097"></a></span><span style="color:#000000"><span 
+ id="x1-8102r1099"></a></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">bitbake</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">layers</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
@@ -1427,9 +1438,9 @@ class="ectt-0800x-x-87">show</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">layers</span></span> 
 <span class="label"><a 
- id="x1-8101r1098"></a></span> 
+ id="x1-8103r1100"></a></span> 
 <span class="label"><a 
- id="x1-8102r1099"></a></span><span style="color:#0000FF"><span 
+ id="x1-8104r1101"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">echo</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&amp;&amp;</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">say</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
@@ -1442,71 +1453,73 @@ class="ectt-0800x-x-87">new</span></span><span style="color:#FF0000"> </span><sp
 class="ectt-0800x-x-87">build</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8103r1100"></a></span><span style="color:#0000FF"><span 
+ id="x1-8105r1102"></a></span><span style="color:#0000FF"><span 
 class="ectt-0800x-x-87">printf</span></span><span style="color:#000000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span> 
 <span class="label"><a 
- id="x1-8104r1101"></a></span><span style="color:#FF0000"><span 
+ id="x1-8106r1103"></a></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">cd</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$METADIR</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">/</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">poky</span></span> 
 <span class="label"><a 
- id="x1-8105r1102"></a></span><span style="color:#FF0000"><span 
+ id="x1-8107r1104"></a></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">.</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">./</span></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$OEINIT</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">$BUILDIR</span></span> 
 <span class="label"><a 
- id="x1-8106r1103"></a></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">bitbake</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">core</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">image</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">-</span></span><span style="color:#FF0000"><span 
-class="ectt-0800x-x-87">thc</span></span> 
-<span class="label"><a 
- id="x1-8107r1104"></a></span> 
-<span class="label"><a 
  id="x1-8108r1105"></a></span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">bitbake</span></span><span style="color:#FF0000"> </span><span style="color:#FF0000"><span 
+class="ectt-0800x-x-87">$TARGET</span></span> 
+<span class="label"><a 
+ id="x1-8109r1106"></a></span> 
+<span class="label"><a 
+ id="x1-8110r1107"></a></span><span style="color:#FF0000"><span 
 class="ectt-0800x-x-87">"</span></span>
    </pre>
 <!--l. 141--><p class="indent" >   Download <span class="path"><span 
 class="ectt-1000">metafetch</span></span> <a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch" >here</a>. Note the associative array of repository remote and
-local locations. The script is designed in a way that after a successful run one may
+local system path. The script is designed in a way that after a successful run one may
 start a build with <span 
-class="cmmi-10">bitbake</span>. The script takes &#x003C;META-DIR&#x003E; and &#x003C;BUILD-DIR&#x003E;
-from the command-line. You may use next examples to run <span class="path"><span 
-class="ectt-1000">metafetch</span></span>.
-The first one is a minimal example. You may specify directories like the
-second example. Otherwise the script will use default values. The default
-fetch protocol is <span 
+class="cmmi-10">bitbake</span>. The script takes &#x003C;META-DIR&#x003E; and &#x003C;BUILD-DIR&#x003E; from
+the command-line. You may use next examples to run <span class="path"><span 
+class="ectt-1000">metafetch</span></span>. Running the
+script without command-line options like the first example results in some default
+configuration. You may want to specify custom directories like the second
+example. Otherwise the script will use default values. The default <span 
+class="cmmi-10">github</span>
+protocol is <span 
 class="cmmi-10">https </span>but I recommend using <span 
-class="cmmi-10">git </span>if you can because it is
-an order of magnitude faster. Use the command-line option <span 
+class="cmmi-10">git </span>because it is an order of magnitude
+faster. You may need to configure your <a 
+ id="section*.5"></a><span 
+class="cmmi-10">secure shell </span>(<a 
+href="#SSH">SSH</a>) connection on
+<span class="path"><span 
+class="ectt-1000">github.com</span></span>. Use the command-line option <span 
 class="cmsy-10">-</span><span 
-class="cmmi-10">g </span>to switch.
-The default <span 
-class="cmmi-10">git </span>branch is <span 
-class="cmmi-10">kirkstone</span>. See all command-line options with
-<span 
-class="cmsy-10">-</span><span 
-class="cmmi-10">h</span>.
-   <!--l. 153-->
+class="cmmi-10">g </span>to switch protocol. The
                                                                                                                     
 
                                                                                                                     
+            default <span 
+class="cmmi-10">git </span>branch is <span 
+class="cmmi-10">kirkstone</span>. Try <span class="path"><span 
+class="ectt-1000">metafetch-h</span></span> to see all command-line
+            options.
+               <!--l. 155-->
             <a 
- id="x1-8109r3"></a>
+ id="x1-8111r3"></a>
             <a 
- id="x1-8110"></a>
+ id="x1-8112"></a>
 <pre class="lstlisting" id="listing-3"><span class="label"><a 
- id="x1-8111r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8113r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">./</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">metafetch</span></span> 
 <span class="label"><a 
- id="x1-8112r1001"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8114r1001"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">./</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">metafetch</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
@@ -1524,18 +1537,18 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span> 
 <span class="label"><a 
- id="x1-8113r1002"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+ id="x1-8115r1002"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">./</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">metafetch</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">g</span></span></pre>
-<!--l. 160--><p class="indent" >
+<!--l. 162--><p class="indent" >
                                                                                                          
 
                                                                                                          
                <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
  id="x1-90003"></a>configuration</h3>
-            <!--l. 164--><p class="noindent" >Build configuration is in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+            <!--l. 166--><p class="noindent" >Build configuration is in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/conf</span></span>, check files <span class="path"><span 
 class="ectt-1000">local.conf</span></span> and <span class="path"><span 
 class="ectt-1000">bblayers.conf</span></span>. <span 
@@ -1556,10 +1569,10 @@ class="ectt-1000">include</span></span>
             and not optional <span class="path"><span 
 class="ectt-1000">require</span></span>. The latter will interrupt the build configuration if the
             corresponding file does not exist.
-            <!--l. 177--><p class="noindent" >
+            <!--l. 179--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
  id="x1-100003.1"></a>directives</h4>
-            <!--l. 178--><p class="noindent" >Many variables are not covered here. Please refer <span 
+            <!--l. 180--><p class="noindent" >Many variables are not covered here. Please refer <span 
 class="cmmi-10">bitbake</span>[<a 
  id="x1-10001"></a><a 
 href="#cite.0@bitbake">11</a>] documentation for
@@ -1568,10 +1581,10 @@ href="#cite.0@bitbake">11</a>] documentation for
 class="cmmi-10">bitbake </span>syntax is pretty complicated. In short, your life can easily become
             unbearable if the build configuration is too long. See next a list of important build
             configuration directives.
-            <!--l. 185--><p class="noindent" >
+            <!--l. 187--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.1   </span> <a 
  id="x1-110003.1.1"></a>BB_DISKMON_DIRS</h5>
-            <!--l. 186--><p class="noindent" >This <span 
+            <!--l. 188--><p class="noindent" >This <span 
 class="cmmi-10">bitbake </span>variable enables free storage space verification. Users may add rules to
             monitor as many directories as they wish. Of course, it makes sense to add only
             directories on different storage partitions. The directive contains rules to
@@ -1581,7 +1594,7 @@ class="cmmi-10">WARN</span>, <span
 class="cmmi-10">STOPTASKS </span>and <span 
 class="cmmi-10">HALT</span>. Rules are defined in the following
             format.
-               <!--l. 193-->
+               <!--l. 195-->
             <a 
  id="x1-11001r4"></a>
             <a 
@@ -1600,10 +1613,10 @@ class="ectt-0800x-x-87">&#x003E;,&#x003C;</span></span><span style="color:#00000
 class="ectt-0800x-x-87">inodes</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">left</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;"</span></span></pre>
-<!--l. 197--><p class="noindent" >
+<!--l. 199--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">3.1.2   </span> <a 
  id="x1-120003.1.2"></a>DISTRO</h5>
-<!--l. 198--><p class="noindent" >This is the short name of the <a 
+<!--l. 200--><p class="noindent" >This is the short name of the <a 
 href="#OS">OS</a> distribution. <span 
 class="ecti-1000">Yocto </span>provides four variants
 of their reference distribution called <span 
@@ -1614,16 +1627,16 @@ href="#x1-260043">3<!--tex4ht:ref: tab:distro --></a>.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 204--><p class="noindent" >
+            <!--l. 206--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.3   </span> <a 
  id="x1-130003.1.3"></a>DISTRO_FEATURES</h5>
-            <!--l. 205--><p class="noindent" >Distributions can select which features they want to support through the
+            <!--l. 207--><p class="noindent" >Distributions can select which features they want to support through the
             DISTRO_FEATURES variable, which is set in the distribution configuration
             file.
-            <!--l. 209--><p class="noindent" >
+            <!--l. 211--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.4   </span> <a 
  id="x1-140003.1.4"></a>IMAGE_FEATURES</h5>
-            <!--l. 210--><p class="noindent" >This directive controls the contents of the <a 
+            <!--l. 212--><p class="noindent" >This directive controls the contents of the <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">image</span>. Different predefined
             packages could be added, removed or modified via this variable. Useful examples
@@ -1660,10 +1673,10 @@ class="cmsy-10">- </span><span
 class="cmmi-10">server </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">dropbear</span>.
-            <!--l. 217--><p class="noindent" >
+            <!--l. 219--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.5   </span> <a 
  id="x1-150003.1.5"></a>IMAGE_FSTYPES</h5>
-            <!--l. 218--><p class="noindent" >This is another important directive. Here I have removed archived <span 
+            <!--l. 220--><p class="noindent" >This is another important directive. Here I have removed archived <span 
 class="cmmi-10">images </span>to
             decrease the built time and added the <span 
 class="cmmi-10">wic </span>format. One may want to use the <span 
@@ -1674,10 +1687,10 @@ class="cmmi-10">wic </span>to an
             <span 
 class="cmmi-10">SD </span>card in Section <a 
 href="#x1-310005">5<!--tex4ht:ref: sec:install --></a>.
-            <!--l. 224--><p class="noindent" >
+            <!--l. 226--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.6   </span> <a 
  id="x1-160003.1.6"></a>IMAGE_OVERHEAD_FACTOR</h5>
-            <!--l. 225--><p class="noindent" >This defines the free storage space on the <span class="path"><span 
+            <!--l. 227--><p class="noindent" >This defines the free storage space on the <span class="path"><span 
 class="ectt-1000">root</span></span> partition. Overhead factor of <span 
 class="cmr-10">2</span>
             means that the free space will be equal to the space already used by the <a 
@@ -1689,16 +1702,16 @@ class="cmr-10">3 </span>increases <span
 class="cmmi-10">image </span>size with
             <span 
 class="cmr-10">30%</span>.
-            <!--l. 231--><p class="noindent" >
+            <!--l. 233--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.7   </span> <a 
  id="x1-170003.1.7"></a>INHERIT</h5>
-            <!--l. 232--><p class="noindent" >This is a list of included <span 
+            <!--l. 234--><p class="noindent" >This is a list of included <span 
 class="cmmi-10">bitbake </span>classes. See Section <a 
 href="#x1-250003.2">3.2<!--tex4ht:ref: sec:class --></a>.
-            <!--l. 235--><p class="noindent" >
+            <!--l. 237--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.8   </span> <a 
  id="x1-180003.1.8"></a>INIT_MANAGER</h5>
-            <!--l. 236--><p class="noindent" >The <a 
+            <!--l. 238--><p class="noindent" >The <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">init </span>process could be <span class="path"><span 
 class="ectt-1000">sysvinit</span></span>, <span class="path"><span 
@@ -1707,10 +1720,10 @@ class="ectt-1000">mdev-busybox</span></span>.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 239--><p class="noindent" >
+            <!--l. 241--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.9   </span> <a 
  id="x1-190003.1.9"></a>MACHINE</h5>
-            <!--l. 240--><p class="noindent" >No doubt, this is the most important directive, set here to <span 
+            <!--l. 242--><p class="noindent" >No doubt, this is the most important directive, set here to <span 
 class="cmmi-10">raspberrypi</span><span 
 class="cmr-10">4</span>-64. You may
             want to change this value if you build an <a 
@@ -1724,18 +1737,18 @@ class="cmmi-10">MACHINE </span>to
 class="cmmi-10">qemuarm</span><span 
 class="cmr-10">64</span>. I confirm that this works although I did not find this approach very
             useful to test a <a 
- id="section*.5"></a><span 
+ id="section*.6"></a><span 
 class="cmmi-10">graphical user interface </span>(<a 
 href="#GUI">GUI</a>).
-            <!--l. 247--><p class="noindent" >
+            <!--l. 249--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.10   </span> <a 
  id="x1-200003.1.10"></a>MACHINE_FEATURES</h5>
-            <!--l. 248--><p class="noindent" >This directive controls machine features. It is set in the machine configuration file
+            <!--l. 250--><p class="noindent" >This directive controls machine features. It is set in the machine configuration file
             and specifies the hardware features for a given machine.
-            <!--l. 252--><p class="noindent" >
+            <!--l. 254--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.11   </span> <a 
  id="x1-210003.1.11"></a>PACKAGE_CLASSES</h5>
-            <!--l. 253--><p class="noindent" >There are different package formats used in various Linux-based <a 
+            <!--l. 255--><p class="noindent" >There are different package formats used in various Linux-based <a 
 href="#OS">OS</a>&#8217;s to
             distribute and manage programs. Both <span 
 class="cmmi-10">Debian </span>package format - <span 
@@ -1745,10 +1758,10 @@ class="cmmi-10">rpm </span>from <span
 class="cmmi-10">RedHat </span>do well, but recently I had issues with <span 
 class="cmmi-10">ipk </span>so I disabled
             it.
-            <!--l. 258--><p class="noindent" >
+            <!--l. 260--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.12   </span> <a 
  id="x1-220003.1.12"></a>PACKAGE_INSTALL</h5>
-            <!--l. 259--><p class="noindent" >This is where to specify additional <a 
+            <!--l. 261--><p class="noindent" >This is where to specify additional <a 
 href="#SW">SW</a> packages. This is useful for packages not
             included in the <span 
 class="cmmi-10">image </span>by default. In my experience, the default <a 
@@ -1756,11 +1769,11 @@ href="#OS">OS</a> has all necessary
             programs or compact alternatives. However this is the directive used to append
             <span 
 class="cmmi-10">imgui</span>.
-            <!--l. 264--><p class="noindent" >
+            <!--l. 266--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.13   </span> <a 
  id="x1-230003.1.13"></a>SANITY_TESTED_DISTROS</h5>
-            <!--l. 265--><p class="noindent" >This is a list of tested <a 
- id="section*.6"></a><span 
+            <!--l. 267--><p class="noindent" >This is a list of tested <a 
+ id="section*.7"></a><span 
 class="cmmi-10">GNU is not UNIX </span>(<a 
 href="#GNU">GNU</a>)/Linux distributions. Using
             another distribution is not prohibited, but a warning messages is generated each time
@@ -1770,7 +1783,7 @@ class="cmmi-10">bitbake </span>is run. One may want to append the host machine L
 class="cmmi-10">Manjaro </span>and
             <span 
 class="cmmi-10">OpenSuse</span>.
-               <!--l. 271-->
+               <!--l. 273-->
             <a 
  id="x1-23001r5"></a>
             <a 
@@ -1796,22 +1809,22 @@ class="ectt-0800x-x-87">-*"</span></span></pre>
                                                                                                          
 
                                                                                                          
-            <!--l. 276--><p class="noindent" >
+            <!--l. 278--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.14   </span> <a 
  id="x1-240003.1.14"></a>TCLIBC</h5>
-            <!--l. 277--><p class="noindent" >The <a 
+            <!--l. 279--><p class="noindent" >The <a 
 href="#GNU">GNU</a> standard C library variant to use during the build. Available options are <span class="path"><span 
 class="ectt-1000">glibc</span></span>, <span class="path"><span 
 class="ectt-1000">musl</span></span>, <span class="path"><span 
 class="ectt-1000">newlib</span></span> and <span class="path"><span 
 class="ectt-1000">baremetal</span></span>.
-            <!--l. 281--><p class="noindent" >
+            <!--l. 283--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
  id="x1-250003.2"></a>classes</h4>
-            <!--l. 283--><p class="noindent" >
+            <!--l. 285--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
  id="x1-260003.2.1"></a>rm_work</h5>
-            <!--l. 284--><p class="noindent" >Find <span 
+            <!--l. 286--><p class="noindent" >Find <span 
 class="cmmi-10">bitbake </span>classes in &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/poky/meta/classes</span></span>. For example <span class="path"><span 
 class="ectt-1000">rm_work.bbclass</span></span> defines a specific task for packages to remove intermediate files
@@ -1819,7 +1832,7 @@ class="ectt-1000">rm_work.bbclass</span></span> defines a specific task for pack
             want to keep the working data and have enough storage space may comment the next
             line in <span class="path"><span 
 class="ectt-1000">local.conf</span></span>.
-               <!--l. 291-->
+               <!--l. 293-->
             <a 
  id="x1-26001r6"></a>
             <a 
@@ -1837,7 +1850,7 @@ class="ectt-0800x-x-87">"</span></span></pre>
                                                                                                          
 
                                                                                                          
-            <!--l. 297--><p class="indent" >    <a 
+            <!--l. 299--><p class="indent" >    <a 
  id="x1-260043"></a><hr class="float"><div class="float" 
 >
                                                                                                          
@@ -1905,13 +1918,13 @@ class="content">reference distribution configurations</span></div><!--tex4ht:lab
                                                                                                                     
                </div><hr class="endfloat" />
                </div>
-            <!--l. 312--><p class="indent" >
+            <!--l. 314--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-270004"></a>build</h3>
-            <!--l. 316--><p class="noindent" >It is very likely that you will need to install <span 
+            <!--l. 318--><p class="noindent" >It is very likely that you will need to install <span 
 class="ecti-1000">Yocto </span>requirements[<a 
  id="x1-27001"></a><a 
 href="#cite.0@yoctoqb">4</a>] to be able to run
@@ -1942,32 +1955,32 @@ href="#GNU">GNU</a>/Linux machine. Of course, binary files are not the same on d
 href="#HW">HW</a> architectures, but the <a 
 href="#OS">OS</a> has a Linux kernel and standard open-source
             programs.
-            <!--l. 328--><p class="noindent" >
+            <!--l. 330--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
  id="x1-280004.1"></a>requirements</h4>
-            <!--l. 331--><p class="noindent" >Ensure that the following packages are installed.
+            <!--l. 333--><p class="noindent" >Ensure that the following packages are installed.
                    <ul class="itemize1">
                    <li class="itemize">
-                   <!--l. 334--><p class="noindent" ><span 
+                   <!--l. 336--><p class="noindent" ><span 
 class="cmmi-10">git</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 335--><p class="noindent" ><span 
+                   <!--l. 337--><p class="noindent" ><span 
 class="cmmi-10">tar</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 336--><p class="noindent" ><span 
+                   <!--l. 338--><p class="noindent" ><span 
 class="cmmi-10">python</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 337--><p class="noindent" ><span 
+                   <!--l. 339--><p class="noindent" ><span 
 class="cmmi-10">gcc</span>
                    </li>
                    <li class="itemize">
-                   <!--l. 338--><p class="noindent" ><a 
+                   <!--l. 340--><p class="noindent" ><a 
 href="#GNU">GNU</a> <span 
 class="cmmi-10">make</span></li></ul>
-            <!--l. 341--><p class="indent" >    Find more details in <span 
+            <!--l. 343--><p class="indent" >    Find more details in <span 
 class="ecti-1000">Yocto </span>documentation at [<a 
 href="#cite.0@yoctoqb">4</a>]. You may need to install in
             addition <span class="path"><span 
@@ -2003,7 +2016,7 @@ class="ectt-1000">mdir</span></span>.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 352--><p class="indent" >     Fetched <span 
+            <!--l. 354--><p class="indent" >     Fetched <span 
 class="cmmi-10">metadata </span>requires only <span 
 class="cmr-10">412</span><span 
 class="cmr-10">MB</span> of free space. In contrast the <a 
@@ -2018,12 +2031,12 @@ class="cmmi-10">bitbake </span>class <span
 class="cmmi-10">rm</span>_<span 
 class="cmmi-10">work </span>in Section <a 
 href="#x1-90003">3<!--tex4ht:ref: sec:configuration --></a>.
-            <!--l. 359--><p class="noindent" >
+            <!--l. 361--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">4.2   </span> <a 
  id="x1-290004.2"></a>environment</h4>
-            <!--l. 362--><p class="noindent" >To initialise build environment navigate to &#x003C;META-DIR&#x003E;<span class="path"><span 
+            <!--l. 364--><p class="noindent" >To initialise build environment navigate to &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/poky</span></span> and source the
-            initialization script like the next command. <!--l. 364-->
+            initialization script like the next command. <!--l. 366-->
             <a 
  id="x1-29001r7"></a>
             <a 
@@ -2043,8 +2056,8 @@ class="ectt-0800x-x-87">BUILD</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 368--><p class="indent" >   Alternatively verify and source the dedicated <a 
- id="section*.7"></a><span 
+<!--l. 370--><p class="indent" >   Alternatively verify and source the dedicated <a 
+ id="section*.8"></a><span 
 class="cmmi-10">portable operating system</span>
 <span 
 class="cmmi-10">interface </span>(<a 
@@ -2052,7 +2065,7 @@ href="#POSIX">POSIX</a>) script &#x003C;META-DIR&#x003E;<span class="path"><span
 class="ectt-1000">/thc/meta-thc/bin/yoctoinit</span></span>. The
 initialization script will change the system path to &#x003C;BUILD-DIR&#x003E;. Now you may
 want run next command to check project layers.
-   <!--l. 373-->
+   <!--l. 375-->
 <a 
  id="x1-29004r8"></a>
 <a 
@@ -2065,7 +2078,7 @@ class="ectt-0800x-x-87">layers</span></span><span style="color:#000000"> </span>
 class="ectt-0800x-x-87">show</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">layers</span></span></pre>
-<!--l. 377--><p class="indent" >   <span 
+<!--l. 379--><p class="indent" >   <span 
 class="cmmi-10">core </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">image </span><span 
@@ -2082,7 +2095,7 @@ such as the <span
 class="ecti-1000">Yocto </span>project is <span 
 class="cmmi-10">bitbake</span>. Run next command to build the <a 
 href="#OS">OS</a>.
-<!--l. 381-->
+<!--l. 383-->
 <a 
  id="x1-29008r9"></a>
 <a 
@@ -2095,7 +2108,7 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">image</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">thc</span></span></pre>
-<!--l. 385--><p class="indent" >   Unless your host machine is a supercomputer, this will take at least two hours.
+<!--l. 387--><p class="indent" >   Unless your host machine is a supercomputer, this will take at least two hours.
 Find a list of tasks performed by <span 
 class="cmmi-10">bitbake </span>for a typical <a 
 href="#SW">SW</a> package in Table <a 
@@ -2103,13 +2116,13 @@ href="#x1-300014">4<!--tex4ht:ref: tab:task --></a>. If a
 build is interrupted during the fetch task, this could be the connection with a server.
 A simple rerun of <span 
 class="cmmi-10">bitbake </span>may solve this issue.
-<!--l. 391--><p class="noindent" >
+<!--l. 393--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
  id="x1-300004.3"></a>flow</h4>
-<!--l. 394--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. Table <a 
+<!--l. 396--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. Table <a 
 href="#x1-300025">5<!--tex4ht:ref: tab:flow --></a> presents a list of important
 &#x003C;BUILD-DIR&#x003E; sub-directories.
-<!--l. 398--><p class="indent" >   Source archives are saved in the <span 
+<!--l. 400--><p class="indent" >   Source archives are saved in the <span 
 class="cmmi-10">download </span>directory. They are extracted,
 configured, compiled and installed in the <span 
 class="cmmi-10">work </span>directory. Built packages are stored in
@@ -2128,7 +2141,7 @@ href="#x1-300025">5<!--tex4ht:ref: tab:flow --></a>.
                                                                                                                     
 
                                                                                                                     
-            <!--l. 405--><p class="indent" >     <a 
+            <!--l. 407--><p class="indent" >     <a 
  id="x1-300014"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -2207,7 +2220,7 @@ class="cmmi-10">bitbake </span>tasks</span></div><!--tex4ht:label?: x1-300014 --
                                                                                                                     
 
                                                                                                                     
-            <!--l. 427--><p class="indent" >     <a 
+            <!--l. 429--><p class="indent" >     <a 
  id="x1-300025"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -2271,13 +2284,13 @@ class="cmmi-10">bitbake </span>workflow</span></div><!--tex4ht:label?: x1-300025
                                                                                                                     
                </div><hr class="endfloat" />
                </div>
-            <!--l. 443--><p class="indent" >
+            <!--l. 445--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-310005"></a>install</h3>
-            <!--l. 446--><p class="noindent" >The <a 
+            <!--l. 448--><p class="noindent" >The <a 
 href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, <span 
 class="cmr-10">64</span><span 
@@ -2288,7 +2301,7 @@ class="cmr-10">MB</span>, a <span
 class="cmmi-10">Raspberry</span>
             <span 
 class="cmmi-10">&#x03C0; </span>configuration of Linux 5.15. This is a <a 
- id="section*.8"></a><span 
+ id="section*.9"></a><span 
 class="cmmi-10">long </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">term support </span>(<a 
@@ -2296,7 +2309,7 @@ href="#LTS">LTS</a>) kernel release.
             The total size of kernel modules is <span 
 class="cmr-10">21</span><span 
 class="cmr-10">MB</span>.
-            <!--l. 450--><p class="indent" >     <span 
+            <!--l. 452--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
 class="cmmi-10">image </span>formats. Different ways exist to
             install <span 
@@ -2308,7 +2321,7 @@ class="ectt-1000">/boot</span></span>.
             There are no <span 
 class="cmmi-10">swap </span>and <span 
 class="cmmi-10">home </span>partitions.
-            <!--l. 454--><p class="indent" >     I recommend the classic command-line tool <span 
+            <!--l. 456--><p class="indent" >     I recommend the classic command-line tool <span 
 class="cmmi-10">dd </span>to copy data. It works fine with
             different <span 
 class="cmmi-10">image </span>formats like <span 
@@ -2322,7 +2335,7 @@ class="cmmi-10">SD </span>card device name, in example <span class="path"><span
 class="ectt-1000">/dev/&#x003C;xxx&#x003E;</span></span>,
             unmount it with <span 
 class="cmmi-10">umount </span>if mounted, and do copy data with the next command.
-            <!--l. 459-->
+            <!--l. 461-->
             <a 
  id="x1-31001r10"></a>
             <a 
@@ -2352,37 +2365,37 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">progress</span></span></pre>
         <ul class="itemize1">
         <li class="itemize">
-        <!--l. 463--><p class="noindent" >note 1: run this command in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+        <!--l. 465--><p class="noindent" >note 1: run this command in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/tmp/deploy/images/</span>
         <span 
 class="ectt-1000">raspberrypi4-64</span></span>
         </li>
         <li class="itemize">
-        <!--l. 465--><p class="noindent" >note 2: run this command with <span 
+        <!--l. 467--><p class="noindent" >note 2: run this command with <span 
 class="cmmi-10">root </span>privileges
         </li>
         <li class="itemize">
-        <!--l. 466--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
+        <!--l. 468--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
         (see note 2)</li></ul>
-<!--l. 470--><p class="indent" >   Alternatively, there is a dedicated <a 
+<!--l. 472--><p class="indent" >   Alternatively, there is a dedicated <a 
 href="#POSIX">POSIX</a> shell script - &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin/burn</span></span>. Use the command-line option <span class="path"><span 
 class="ectt-1000">-h</span></span> for details. The
 transfer does not take a lot of time. When it is over, replace the card to <span 
 class="cmmi-10">Raspberry &#x03C0;</span>
 and turn it on. That&#8217;s it.
-<!--l. 475--><p class="indent" >
+<!--l. 477--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-320006"></a>run</h3>
-            <!--l. 479--><p class="noindent" >Wireless connection is established via classic command-line tools like <span class="path"><span 
+            <!--l. 481--><p class="noindent" >Wireless connection is established via classic command-line tools like <span class="path"><span 
 class="ectt-1000">ip</span></span>[<a 
  id="x1-32001"></a><a 
 href="#cite.0@busybox">1</a>] and <span class="path"><span 
 class="ectt-1000">iw</span></span>. The <a 
- id="section*.9"></a><span 
+ id="section*.10"></a><span 
 class="cmmi-10">dynamic host configuration protocol </span>(<a 
 href="#DHCP">DHCP</a>) client is <span class="path"><span 
 class="ectt-1000">udhcpc</span></span>[<a 
@@ -2400,7 +2413,7 @@ class="cmmi-10">Dear ImGui</span>[<a
 href="#cite.0@imgui">5</a>] library. The last one is configured to
             start automatically on boot in <span class="path"><span 
 class="ectt-1000">/home/root/.profile</span></span>.
-               <!--l. 488--><pre class="lstinputlisting" id="listing-11"><span class="label"><a 
+               <!--l. 490--><pre class="lstinputlisting" id="listing-11"><span class="label"><a 
  id="x1-32006r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">!/</span></span><span style="color:#FF00FF"><span 
@@ -3076,13 +3089,13 @@ class="ectt-0800x-x-87">$IP</span></span><span style="color:#000000"> </span><sp
 class="ectt-0800x-x-87">route</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">show</span></span>
    </pre>
-<!--l. 489--><p class="noindent" >The scrip may be downloaded <a 
+<!--l. 491--><p class="noindent" >The scrip may be downloaded <a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/recipes-core/thcp/thcp/wifini.sh" >here</a> but it is already installed on the target <a 
 href="#OS">OS</a>. Specify
 network <span 
 class="cmmi-10">id </span>from the command line with a short command-line option <span 
 class="cmmi-10">s</span>. See next
-example usage. <!--l. 493-->
+example usage. <!--l. 495-->
 <a 
  id="x1-32094r12"></a>
 <a 
@@ -3095,27 +3108,24 @@ class="ectt-0800x-x-87">s</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SSID</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 497--><p class="indent" >   Once an <a 
- id="section*.10"></a><span 
+<!--l. 499--><p class="indent" >   Once an <a 
+ id="section*.11"></a><span 
 class="cmmi-10">internet protocol </span>(<a 
 href="#IP">IP</a>) address is assigned to <span 
-class="cmmi-10">Raspberry &#x03C0;</span>, the <a 
- id="section*.11"></a><span 
-class="cmmi-10">secure</span>
-<span 
-class="cmmi-10">shell </span>(<a 
-href="#SSH">SSH</a>) server by <span 
+class="cmmi-10">Raspberry &#x03C0;</span>, the
+<a 
+href="#SSH">SSH</a> server by <span 
 class="cmmi-10">Dropbear</span>[<a 
  id="x1-32097"></a><a 
 href="#cite.0@dropbear">6</a>] allows for secure remote login, control and file
 transfer.
-<!--l. 502--><p class="indent" >
+<!--l. 504--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-330007"></a>outlook</h3>
-            <!--l. 504--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+            <!--l. 506--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
 href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &#x03C0;</span>[<a 
@@ -3138,14 +3148,14 @@ href="#OS">OS</a> is now functional, performance and real-time tests are
                                                                                                                     
                <h3 class="likesectionHead"><a 
  id="x1-34000"></a>acronyms</h3>
-            <!--l. 3--><p class="noindent" >
+            <!--l. 4--><p class="noindent" >
                         <dl class="list1"><dt class="list">
             <a 
  id="BSP"></a><a 
 href="#x1-60002.3"><span 
 class="ecbx-1000">BSP         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 6--><p class="noindent" ><a 
+                        <!--l. 7--><p class="noindent" ><a 
 href="#x1-60002.3"><span 
 class="cmmi-10">board</span>
                         <span 
@@ -3158,7 +3168,7 @@ class="cmmi-10">package</span></a><br />
 href="#x1-320006"><span 
 class="ecbx-1000">DHCP      </span></a>  </dt><dd 
 class="list">
-                        <!--l. 9--><p class="noindent" ><a 
+                        <!--l. 10--><p class="noindent" ><a 
 href="#x1-320006"><span 
 class="cmmi-10">dynamic</span>
                         <span 
@@ -3173,7 +3183,7 @@ class="cmmi-10">protocol</span></a><br />
 href="#x1-230003.1.13"><span 
 class="ecbx-1000">GNU        </span></a>  </dt><dd 
 class="list">
-                        <!--l. 10--><p class="noindent" ><a 
+                        <!--l. 11--><p class="noindent" ><a 
 href="#x1-230003.1.13"><span 
 class="cmmi-10">GNU</span>
                         <span 
@@ -3188,7 +3198,7 @@ class="cmmi-10">UNIX</span></a><br />
 href="#x1-190003.1.9"><span 
 class="ecbx-1000">GUI         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 11--><p class="noindent" ><a 
+                        <!--l. 12--><p class="noindent" ><a 
 href="#x1-190003.1.9"><span 
 class="cmmi-10">graphical</span>
                         <span 
@@ -3201,7 +3211,7 @@ class="cmmi-10">interface</span></a><br />
 href="#x1-60002.3"><span 
 class="ecbx-1000">HW         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 12--><p class="noindent" ><a 
+                        <!--l. 13--><p class="noindent" ><a 
 href="#x1-60002.3"><span 
 class="cmmi-10">hardware</span></a><br />
                         </dd><dt class="list">
@@ -3210,7 +3220,7 @@ class="cmmi-10">hardware</span></a><br />
 href="#x1-32096r6"><span 
 class="ecbx-1000">IP           </span></a>  </dt><dd 
 class="list">
-                        <!--l. 13--><p class="noindent" ><a 
+                        <!--l. 14--><p class="noindent" ><a 
 href="#x1-32096r6"><span 
 class="cmmi-10">internet</span>
                         <span 
@@ -3224,7 +3234,7 @@ class="list">
                                                                                                       
 
                                                                                                       
-                        <!--l. 14--><p class="noindent" ><a 
+                        <!--l. 15--><p class="noindent" ><a 
 href="#x1-310005"><span 
 class="cmmi-10">long </span><span 
 class="cmsy-10">- </span><span 
@@ -3237,7 +3247,7 @@ class="cmmi-10">support</span></a><br />
 href="#x1-20001"><span 
 class="ecbx-1000">OS           </span></a>  </dt><dd 
 class="list">
-                        <!--l. 15--><p class="noindent" ><a 
+                        <!--l. 16--><p class="noindent" ><a 
 href="#x1-20001"><span 
 class="cmmi-10">operating</span>
                         <span 
@@ -3248,7 +3258,7 @@ class="cmmi-10">system</span></a><br />
 href="#x1-29003r4.2"><span 
 class="ecbx-1000">POSIX     </span></a>  </dt><dd 
 class="list">
-                        <!--l. 17--><p class="noindent" ><a 
+                        <!--l. 18--><p class="noindent" ><a 
 href="#x1-29003r4.2"><span 
 class="cmmi-10">portable</span>
                         <span 
@@ -3260,11 +3270,11 @@ class="cmmi-10">interface</span></a><br />
                         </dd><dt class="list">
             <a 
  id="SSH"></a><a 
-href="#x1-32096r6"><span 
+href="#x1-8110r2.5"><span 
 class="ecbx-1000">SSH         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 18--><p class="noindent" ><a 
-href="#x1-32096r6"><span 
+                        <!--l. 19--><p class="noindent" ><a 
+href="#x1-8110r2.5"><span 
 class="cmmi-10">secure</span>
                         <span 
 class="cmmi-10">shell</span></a><br />
@@ -3274,21 +3284,21 @@ class="cmmi-10">shell</span></a><br />
 href="#x1-50002.2"><span 
 class="ecbx-1000">SW          </span></a>  </dt><dd 
 class="list">
-                        <!--l. 19--><p class="noindent" ><a 
+                        <!--l. 20--><p class="noindent" ><a 
 href="#x1-50002.2"><span 
 class="cmmi-10">software</span></a><br />
                         </dd></dl>
-            <!--l. 514--><p class="noindent" >
+            <!--l. 516--><p class="noindent" >
                                                                                                     
 
                                                                                                     
                <h3 class="sectionHead"><a 
  id="x1-35000"></a>bibliography</h3>
-            <!--l. 516--><p class="noindent" >
+            <!--l. 518--><p class="noindent" >
                   <dl class="thebibliography"><dt id="X0-busybox" class="thebibliography">
               [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@busybox"></a>Erik Andersen.
                   <span 
 class="ecti-1000">BusyBox</span>.
@@ -3308,7 +3318,7 @@ class="ectt-1000">https://busybox.net</span></a>
                   </dd><dt id="X0-oe" class="thebibliography">
               [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@oe"></a>community.
                   <span 
 class="ecti-1000">OpenEmbedded</span>.
@@ -3328,7 +3338,7 @@ class="ectt-1000">https://www.openembedded.org</span></a>
                   </dd><dt id="X0-yocto" class="thebibliography">
               [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project community.
                   <span 
 class="ecti-1000">Yocto</span>
@@ -3353,7 +3363,7 @@ id="bib-4" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@yoctoqb"></a>Yocto Project community.
                   <span 
 class="ecti-1000">Yocto</span>
@@ -3379,7 +3389,7 @@ class="ectt-1000">https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#
                   </dd><dt id="X0-imgui" class="thebibliography">
               [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@imgui"></a>Omar Cornut.
                   <span 
 class="ecti-1000">Dear</span>
@@ -3401,7 +3411,7 @@ class="ectt-1000">https://github.com/ocornut/imgui</span></a>
                   </dd><dt id="X0-dropbear" class="thebibliography">
               [6]   </dt><dd 
 id="bib-6" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
                   <span 
 class="ecti-1000">Dropbear</span>
@@ -3423,7 +3433,7 @@ class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
                   </dd><dt id="X0-kalohowto2023" class="thebibliography">
               [7]   </dt><dd 
 id="bib-7" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
                   <span 
 class="ecti-1000">Poky</span>
@@ -3460,7 +3470,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
                   </dd><dt id="X0-kalo2023" class="thebibliography">
               [8]   </dt><dd 
 id="bib-8" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@kalo2023"></a>Kaloyan Krastev.
                   <span 
 class="ecti-1000">Embedded</span>
@@ -3493,7 +3503,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thcport.html</span></a>
                   </dd><dt id="X0-raspberry" class="thebibliography">
               [9]   </dt><dd 
 id="bib-9" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@raspberry"></a>Raspberry <span 
 class="cmmi-10">&#x03C0; </span>Ltd.
                   <span 
@@ -3519,7 +3529,7 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                   </dd><dt id="X0-wpasup" class="thebibliography">
             [10]   </dt><dd 
 id="bib-10" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@wpasup"></a>Jouni Malinen.
                   <span 
 class="ecti-1000">WPA</span>
@@ -3541,7 +3551,7 @@ class="ectt-1000">https://w1.fi/wpa_supplicant</span></a>
                   </dd><dt id="X0-bitbake" class="thebibliography">
             [11]   </dt><dd 
 id="bib-11" class="thebibliography">
-                  <!--l. 516--><p class="noindent" ><a 
+                  <!--l. 518--><p class="noindent" ><a 
  id="cite.0@bitbake"></a>Richard Purdie,
                   Chris Larson,
                   and
@@ -3565,12 +3575,12 @@ class="ectt-1000">https://docs.yoctoproject.org/bitbake</span></a>
                   (visited
                   on
                   2023).</dd></dl>
-            <!--l. 519--><p class="indent" >                                                                                            <span 
+            <!--l. 521--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 519--><p class="indent" >      <a 
+            <!--l. 521--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in </span><span 
 class="cmmi-7">pdf </span><span 
