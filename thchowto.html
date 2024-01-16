@@ -19,7 +19,7 @@ class="ecrm-1200">Kaloyan Krastev</span><span class="thank-mark"><a
 href="#tk-1"><span 
 class="tcrm-1200">*</span></a></span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">Friday 12</span><sup class="textsuperscript"><span 
+class="ecrm-1200">Tuesday 16</span><sup class="textsuperscript"><span 
 class="ecrm-0900">th</span></sup><span 
 class="ecrm-1200">&#x00A0;January, 2024 </span><span class="thank-mark"><a 
 href="#tk-2"><span 
@@ -1487,27 +1487,39 @@ class="ectt-0800x-x-87">"</span></span>
    </pre>
 <!--l. 145--><p class="indent" >   You may download <span class="path"><span 
 class="ectt-1000">metafetch</span></span> <a 
-href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch" >here</a>. Note the associative array of
-repository remote and local system path. The script is designed in a way that
-after a successful run one may start a build with <span 
-class="cmmi-10">bitbake</span>. Do not forget to
-grant permissions to make script executable. It takes &#x003C;META-DIR&#x003E; and
-&#x003C;BUILD-DIR&#x003E; names from the command-line. You may use next examples to run <span class="path"><span 
-class="ectt-1000">metafetch</span></span>. Running the script without command-line options like the first
-example results in some default configuration. You may want to specify
-custom directories like the second example. Otherwise the script will use
-default values. The default <span 
+href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch" >here</a>. Note the associative array of repository
+remote and local system path. The script is designed in a way that after a successful
+run one may start a build with <span 
+class="cmmi-10">bitbake</span>. Do not forget to grant permissions to make
+script executable. It takes &#x003C;META-DIR&#x003E; and &#x003C;BUILD-DIR&#x003E; names from the
+command-line. You may use next examples to run <span class="path"><span 
+class="ectt-1000">metafetch</span></span>. Running the script
+without command-line options like the first example results in some default
+configuration. You may want to specify custom directories like the second example.
+Otherwise the script will use default values. The default <span 
 class="cmmi-10">github </span>protocol is <span 
-class="cmmi-10">https </span>but I recommend using <span 
-class="cmmi-10">git</span>
-because it is an order of magnitude faster. You may need to configure your <span class="path"><span 
-class="ectt-1000">github</span></span> account. Use the command-line option <span 
+class="cmmi-10">https </span>but
+I recommend using <span 
+class="cmmi-10">git </span>because it is an order of magnitude faster. You may need to
+export one <a 
+ id="section*.5"></a><span 
+class="cmmi-10">secure shell </span>(<a 
+href="#SSH">SSH</a>) public key to your <span class="path"><span 
+class="ectt-1000">github</span></span> account. Use
+                                                                                                                    
+
+                                                                                                                    
+            the command-line option <span 
 class="cmsy-10">-</span><span 
-class="cmmi-10">g </span>to switch protocol. The
-            default <span 
-class="cmmi-10">git </span>branch is <span 
+class="cmmi-10">g </span>to switch protocol. The default <span 
+class="cmmi-10">git </span>branch is
+            <span 
 class="cmmi-10">kirkstone</span>. Try <span class="path"><span 
-class="ectt-1000">metafetch-h</span></span> to see all command-line
+class="ectt-1000">metafetch-h</span></span> to see all <a 
+ id="section*.6"></a><span 
+class="cmmi-10">command</span>-<span 
+class="cmmi-10">line interface </span>(<a 
+href="#CLI">CLI</a>)
             options.
                <!--l. 162-->
             <a 
@@ -1745,7 +1757,7 @@ class="cmmi-10">MACHINE </span>to
 class="cmmi-10">qemuarm</span><span 
 class="cmr-10">64</span>. I confirm that this works although I did not find this approach very
             useful to test a <a 
- id="section*.5"></a><span 
+ id="section*.7"></a><span 
 class="cmmi-10">graphical user interface </span>(<a 
 href="#GUI">GUI</a>).
             <!--l. 258--><p class="noindent" >
@@ -1781,7 +1793,7 @@ class="cmmi-10">imgui</span>.
                <h5 class="subsubsectionHead"><span class="titlemark">3.1.13   </span> <a 
  id="x1-240003.1.13"></a>SANITY_TESTED_DISTROS</h5>
             <!--l. 276--><p class="noindent" >This is a list of tested <a 
- id="section*.6"></a><span 
+ id="section*.8"></a><span 
 class="cmmi-10">GNU is not UNIX </span>(<a 
 href="#GNU">GNU</a>)/Linux distributions. Using
             another distribution is not prohibited, but a warning messages is generated each time
@@ -2081,7 +2093,7 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">DIR</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
 <!--l. 386--><p class="indent" >   Alternatively verify and source the dedicated <a 
- id="section*.7"></a><span 
+ id="section*.9"></a><span 
 class="cmmi-10">portable operating system</span>
 <span 
 class="cmmi-10">interface </span>(<a 
@@ -2340,7 +2352,7 @@ class="cmr-10">MB</span>, a <span
 class="cmmi-10">Raspberry</span>
             <span 
 class="cmmi-10">&#x03C0; </span>configuration of Linux 5.15. This is a <a 
- id="section*.8"></a><span 
+ id="section*.10"></a><span 
 class="cmmi-10">long </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">term support </span>(<a 
@@ -2420,9 +2432,9 @@ class="cmmi-10">root </span>privileges
 href="#POSIX">POSIX</a> shell script - &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin/burn</span></span>. Use the command-line option <span class="path"><span 
 class="ectt-1000">-h</span></span> for details. The
-transfer does not take a lot of time. When it is over, replace the card to <span 
-class="cmmi-10">Raspberry &#x03C0;</span>
-and turn it on. That&#8217;s it.
+transfer does not take long. When it is over, replace the card to <span 
+class="cmmi-10">Raspberry &#x03C0; </span>and
+turn it on. That&#8217;s it.
 <!--l. 498--><p class="indent" >
                                                                                                                     
 
@@ -2434,7 +2446,7 @@ class="ectt-1000">ip</span></span>[<a
  id="x1-33001"></a><a 
 href="#cite.0@busybox">1</a>] and <span class="path"><span 
 class="ectt-1000">iw</span></span>. The <a 
- id="section*.9"></a><span 
+ id="section*.11"></a><span 
 class="cmmi-10">dynamic host configuration protocol </span>(<a 
 href="#DHCP">DHCP</a>) client is <span class="path"><span 
 class="ectt-1000">udhcpc</span></span>[<a 
@@ -3151,18 +3163,16 @@ class="ectt-0800x-x-87">SSID</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
 <!--l. 520--><p class="indent" >   The script asks for the network password to store it encrypted for future
 connections. Once an <a 
- id="section*.10"></a><span 
+ id="section*.12"></a><span 
 class="cmmi-10">internet protocol </span>(<a 
 href="#IP">IP</a>) address is assigned to <span 
 class="cmmi-10">Raspberry &#x03C0;</span>
 network device, the <a 
- id="section*.11"></a><span 
-class="cmmi-10">secure shell </span>(<a 
-href="#SSH">SSH</a>) server by <span 
+href="#SSH">SSH</a> server by <span 
 class="cmmi-10">Dropbear</span>[<a 
  id="x1-33097"></a><a 
-href="#cite.0@dropbear">6</a>] allows for secure
-remote login, control and file transfer.
+href="#cite.0@dropbear">6</a>] allows for secure remote login, control
+and file transfer.
 <!--l. 526--><p class="indent" >
                                                                                                                     
 
@@ -3187,9 +3197,9 @@ href="#SSH">SSH</a> server provides remote connection, data transfer and
 href="#OS">OS</a> is now functional, performance and real-time tests are
             ongoing.
             <!--l. 536--><p class="indent" >     For precision measurements the <a 
-href="#OS">OS</a> has to be tested not only on the target
-            platform but also on host machines. See for example <a 
- id="section*.12"></a><span 
+href="#OS">OS</a> has to be tested not only on the
+            target platform but also simulated. See for example <a 
+ id="section*.13"></a><span 
 class="cmmi-10">quick emulator </span>(<a 
 href="#QEMU">QEMU</a>)
             &#x003C;META-DIR&#x003E;<span class="path"><span 
@@ -3214,6 +3224,18 @@ class="cmmi-10">board</span>
 class="cmmi-10">support</span>
                         <span 
 class="cmmi-10">package</span></a><br />
+                        </dd><dt class="list">
+            <a 
+ id="CLI"></a><a 
+href="#x1-9110r2.3"><span 
+class="ecbx-1000">CLI         </span></a>  </dt><dd 
+class="list">
+                        <!--l. 8--><p class="noindent" ><a 
+href="#x1-9110r2.3"><span 
+class="cmmi-10">command</span>-<span 
+class="cmmi-10">line</span>
+                        <span 
+class="cmmi-10">interface</span></a><br />
                         </dd><dt class="list">
             <a 
  id="DHCP"></a><a 
@@ -3272,6 +3294,9 @@ class="cmmi-10">hardware</span></a><br />
 href="#x1-33096r6"><span 
 class="ecbx-1000">IP           </span></a>  </dt><dd 
 class="list">
+                                                                                                      
+
+                                                                                                      
                         <!--l. 14--><p class="noindent" ><a 
 href="#x1-33096r6"><span 
 class="cmmi-10">internet</span>
@@ -3283,9 +3308,6 @@ class="cmmi-10">protocol</span></a><br />
 href="#x1-320005"><span 
 class="ecbx-1000">LTS         </span></a>  </dt><dd 
 class="list">
-                                                                                                      
-
-                                                                                                      
                         <!--l. 15--><p class="noindent" ><a 
 href="#x1-320005"><span 
 class="cmmi-10">long </span><span 
@@ -3333,11 +3355,11 @@ class="cmmi-10">emulator</span></a><br />
                         </dd><dt class="list">
             <a 
  id="SSH"></a><a 
-href="#x1-33096r6"><span 
+href="#x1-9110r2.3"><span 
 class="ecbx-1000">SSH         </span></a>  </dt><dd 
 class="list">
                         <!--l. 20--><p class="noindent" ><a 
-href="#x1-33096r6"><span 
+href="#x1-9110r2.3"><span 
 class="cmmi-10">secure</span>
                         <span 
 class="cmmi-10">shell</span></a><br />
