@@ -2,7 +2,7 @@
 # name: yoctoinit
 # purpose: set yocto environment
 
-## uncomment following two lines and set variables to correspond your configuration
+## uncomment next two lines and set values corresponding your configuration
 # export METAPATH=/system/path/to/metadata/directory
 # export BBPATH=/system/path/to/your/build/directory
 
