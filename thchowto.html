@@ -1485,36 +1485,34 @@ class="ectt-0800x-x-87">"</span></span>
 <!--l. 149--><p class="indent" >   You may download <span class="path"><span 
 class="ectt-1000">metafetch</span></span> <a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch" >here</a>. Note the associative array <span class="path"><span 
-class="ectt-1000">REPO</span></span>.
-It defines the remote and local system path of repositories. The script is
-designed in a way that after a successful run one may start a build with
-<span 
-class="cmmi-10">bitbake</span>. Do not forget to grant permissions to make script executable. It takes
-&#x003C;META-DIR&#x003E; and &#x003C;BUILD-DIR&#x003E; names from the command-line. You may use
-next examples to run <span class="path"><span 
-class="ectt-1000">metafetch</span></span>. Running the script without command-line
-options like the first example results in some default configuration. You may
-want to specify custom directories like the second example. Otherwise the
-script will use default values. The default <span 
-class="cmmi-10">github </span>protocol is <span 
-class="cmmi-10">https </span>but I
+class="ectt-1000">REPO</span></span>. It
+defines the remote and local system path of repositories. The script is designed in a
+way that after a successful run one may start a build with <span 
+class="cmmi-10">bitbake</span>. Do not forget to
+grant permissions to make script executable. It takes &#x003C;META-DIR&#x003E; and
+&#x003C;BUILD-DIR&#x003E; names from the command-line. You may use next examples to run <span class="path"><span 
+class="ectt-1000">metafetch</span></span>. Running the script without command-line options like the first example
+results in some default configuration. You may want to specify custom directories like
+the second example. Otherwise the script will use default values. The default <span 
+class="cmmi-10">github</span>
+protocol is <span 
+class="cmmi-10">https </span>but I recommend using <span 
+class="cmmi-10">git </span>because it is an order of magnitude
                                                                                                                     
 
                                                                                                                     
-            recommend using <span 
-class="cmmi-10">git </span>because it is an order of magnitude faster. You may need to
-            export one <a 
+            faster. You may need to export one <a 
  id="section*.5"></a><span 
 class="cmmi-10">secure shell </span>(<a 
 href="#SSH">SSH</a>) public key to your <span class="path"><span 
-class="ectt-1000">github</span></span> account. Use
-            the command-line option <span 
+class="ectt-1000">github</span></span>
+            account. Use the command-line option <span 
 class="cmsy-10">-</span><span 
 class="cmmi-10">g </span>to switch protocol. The default <span 
-class="cmmi-10">git </span>branch is
-            <span 
-class="cmmi-10">kirkstone</span>. Try <span class="path"><span 
-class="ectt-1000">metafetch-h</span></span> to see all <a 
+class="cmmi-10">git</span>
+            branch is <span 
+class="cmmi-10">kirkstone</span>. Use <span class="path"><span 
+class="ectt-1000">-h</span></span> to see all <a 
  id="section*.6"></a><span 
 class="cmmi-10">command</span>-<span 
 class="cmmi-10">line interface </span>(<a 
