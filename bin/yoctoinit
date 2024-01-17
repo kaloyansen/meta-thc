@@ -1,39 +1,50 @@
 #!/usr/bin/env echo source $0
 # name: yoctoinit
-# purpose: set bitbake environment
+# purpose: set yocto environment
 
-## set yocto directory names
-# export METAPATH=
-# export BBPATH=
+## uncomment following two lines and set variables to correspond your configuration
+# export METAPATH=/system/path/to/metadata/directory
+# export BBPATH=/system/path/to/your/build/directory
 
-## entrer bitbake envirennement
+## envirennement initialization
 cd $METAPATH/poky
 source oe-init-build-env $BBPATH
 bitbake-layers show-layers
 
-## bitbake functions ##############################################
+## functions ##############################################
 
 bbrecipe() {
-    echo get recipes in $1
+
+    echo purpose: search recipes by name
+    echo usage: bbrecipe expression
     bitbake-layers show-recipes|grep -C 1 $1
 }
 
 bbvalue() {
-    echo get $2 value in $1
+
+    echo purpose: get a directive value for specific target
+    echo usage: bbvalue target directive
     bitbake-getvar -r $1 --value $2
 }
 
 bbpackage() {
-    echo get packages in $1
+
+    echo purpose: get packages for a target
+    echo usage: bbpackage target
     bitbake -g $1 && cat pn-buildlist | grep -ve "native" | sort | uniq
 }
 
 bbimage() {
-    echo get images
+
+    echo purpose: a list of available image targets
+    echo usage: bbimage
     bitbake-layers show-recipes "*-image-*"
 }
 
 bbkernel() {
+
+    echo purpose: configure kernel
+    echo usage: bbkernel
     bitbake virtual/kernel -c menuconfig
 }
 
