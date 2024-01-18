@@ -29,10 +29,10 @@ EXTRA_OECMAKE = "-DCMAKE_INSTALL_PREFIX=${prefix} \
 # CFLAGS += " -fPIC"
 
 DEPENDS = "libpng libglu zlib libxrandr libxinerama libxi libxcursor"
-DEPENDS ?= "libxkbcommon glib-2.0 virtual/libgles2 virtual/egl weston wayland wayland-native wayland-protocols"
+# DEPENDS ?= "libxkbcommon glib-2.0 virtual/libgles2 virtual/egl weston wayland wayland-native wayland-protocols"
 
 REQUIRED_DISTRO_FEATURES = "x11 opengl"
-REQUIRED_DISTRO_FEATURES ?= "x11 opengl wayland"
+# REQUIRED_DISTRO_FEATURES ?= "x11 opengl wayland"
 
 
 
