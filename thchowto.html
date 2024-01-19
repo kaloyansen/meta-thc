@@ -2074,13 +2074,11 @@ class="cmmi-10">portable operating system interface </span>(<a
 href="#POSIX">POSIX</a>)
 script &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin/yoctoinit</span></span>. First of all, uncomment
-the two lines that define the system path to &#x003C;META-DIR&#x003E; and &#x003C;BUILD-DIR&#x003E;.
-<!--l. 409--><p class="indent" >   The target <span 
-class="cmmi-10">core </span><span 
-class="cmsy-10">- </span><span 
-class="cmmi-10">image </span><span 
-class="cmsy-10">- </span><span 
-class="cmmi-10">thc </span>is a compact <a 
+the two lines in the script to define the system path to &#x003C;META-DIR&#x003E; and
+&#x003C;BUILD-DIR&#x003E;. In addition to the environment initialisation, the script defines some
+useful functions. Have a look at the code for details.
+<!--l. 410--><p class="indent" >   The target <span class="path"><span 
+class="ectt-1000">core-image-thc</span></span> is a compact <a 
 href="#OS">OS</a> image with a <span 
 class="cmmi-10">X </span>server and a
 running <a 
@@ -2088,7 +2086,7 @@ href="#GUI">GUI</a>[<a
  id="x1-15007"></a><a 
 href="#cite.0@imgui">2</a>] example. Run next command to build the <a 
 href="#OS">OS</a>.
-   <!--l. 413-->
+   <!--l. 414-->
 <a 
  id="x1-15008r9"></a>
 <a 
@@ -2101,7 +2099,7 @@ class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">image</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">-</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">thc</span></span></pre>
-<!--l. 417--><p class="indent" >   Unless your host machine is a supercomputer, this will take at least two hours.
+<!--l. 418--><p class="indent" >   Unless your host machine is a supercomputer, this will take at least two hours.
 Find a list of tasks performed by <span 
 class="cmmi-10">bitbake </span>for a typical <a 
 href="#SW">SW</a> package in Table <a 
@@ -2112,7 +2110,7 @@ class="cmmi-10">bitbake </span>may solve this issue. If not, you
 may try to clean the target with the command-line option <span class="path"><span 
 class="ectt-1000">c</span></span>. See next
 example.
-   <!--l. 424-->
+   <!--l. 425-->
 <a 
  id="x1-15011r10"></a>
 <a 
@@ -2131,29 +2129,29 @@ class="ectt-0800x-x-87">cleanall</span></span></pre>
                                                                                                          
 
                                                                                                          
-            <!--l. 428--><p class="noindent" >
-               <h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
+            <!--l. 429--><p class="noindent" >
+    <h4 class="subsectionHead"><span class="titlemark">4.3   </span> <a 
  id="x1-160004.3"></a>flow</h4>
-            <!--l. 431--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. Table <a 
+<!--l. 432--><p class="noindent" >The build happens in &#x003C;BUILD-DIR&#x003E;. Table <a 
 href="#x1-160025">5<!--tex4ht:ref: tab:flow --></a> presents a list of important
-            &#x003C;BUILD-DIR&#x003E; sub-directories.
-            <!--l. 435--><p class="indent" >     Source archives are saved in the <span 
+&#x003C;BUILD-DIR&#x003E; sub-directories.
+<!--l. 436--><p class="indent" >     Source archives are saved in the <span 
 class="cmmi-10">download </span>directory. They are extracted,
-            configured, compiled and installed in the <span 
+configured, compiled and installed in the <span 
 class="cmmi-10">work </span>directory. Built packages are stored in
-            the <span 
+the <span 
 class="cmmi-10">package </span>directory. Finally, following the build configuration packages are
-            unpacked to create the <a 
+unpacked to create the <a 
 href="#OS">OS</a> <span 
 class="cmmi-10">image </span>found in the <span 
 class="cmmi-10">image </span>directory. The build flow is
-            summarised in Table <a 
+summarised in Table <a 
 href="#x1-160025">5<!--tex4ht:ref: tab:flow --></a>.
-               <div class="table">
+     <div class="table">
                                                                                                                     
 
                                                                                                                     
-            <!--l. 442--><p class="indent" >     <a 
+            <!--l. 443--><p class="indent" >     <a 
  id="x1-160014"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -2232,7 +2230,7 @@ class="cmmi-10">bitbake </span>tasks</span></div><!--tex4ht:label?: x1-160014 --
                                                                                                                     
 
                                                                                                                     
-            <!--l. 464--><p class="indent" >     <a 
+            <!--l. 465--><p class="indent" >     <a 
  id="x1-160025"></a><hr class="float"><div class="float" 
 >
                                                                                                                     
@@ -2296,13 +2294,13 @@ class="cmmi-10">bitbake </span>workflow</span></div><!--tex4ht:label?: x1-160025
                                                                                                                     
                </div><hr class="endfloat" />
                </div>
-            <!--l. 480--><p class="indent" >
+            <!--l. 481--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-170005"></a>install</h3>
-            <!--l. 483--><p class="noindent" >The <a 
+            <!--l. 484--><p class="noindent" >The <a 
 href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, <span 
 class="cmr-10">64</span><span 
@@ -2321,7 +2319,7 @@ href="#LTS">LTS</a>) kernel release.
             The total size of kernel modules is <span 
 class="cmr-10">21</span><span 
 class="cmr-10">MB</span>.
-            <!--l. 487--><p class="indent" >     <span 
+            <!--l. 488--><p class="indent" >     <span 
 class="ecti-1000">Yocto </span>provides multiple package and <span 
 class="cmmi-10">image </span>formats. Different ways exist to
             install <span 
@@ -2333,7 +2331,7 @@ class="ectt-1000">/boot</span></span>.
             There are no <span 
 class="cmmi-10">swap </span>and <span 
 class="cmmi-10">home </span>partitions.
-            <!--l. 491--><p class="indent" >     I recommend the classic command-line tool <span 
+            <!--l. 492--><p class="indent" >     I recommend the classic command-line tool <span 
 class="cmmi-10">dd </span>to copy data. It works fine with
             different <span 
 class="cmmi-10">image </span>formats like <span 
@@ -2347,7 +2345,7 @@ class="cmmi-10">SD </span>card device name, for example <span class="path"><span
 class="ectt-1000">/dev/&#x003C;xxx&#x003E;</span></span>,
             unmount it with <span 
 class="cmmi-10">umount </span>if mounted, and do copy data with the next command.
-            <!--l. 496-->
+            <!--l. 497-->
             <a 
  id="x1-17001r11"></a>
             <a 
@@ -2377,32 +2375,32 @@ class="ectt-0800x-x-87">=</span></span><span style="color:#000000"><span
 class="ectt-0800x-x-87">progress</span></span></pre>
         <ul class="itemize1">
         <li class="itemize">
-        <!--l. 500--><p class="noindent" >note 1: run this command in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
+        <!--l. 501--><p class="noindent" >note 1: run this command in &#x003C;BUILD-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/tmp/deploy/images/</span>
         <span 
 class="ectt-1000">raspberrypi4-64</span></span>
         </li>
         <li class="itemize">
-        <!--l. 502--><p class="noindent" >note 2: run this command with <span 
+        <!--l. 503--><p class="noindent" >note 2: run this command with <span 
 class="cmmi-10">root </span>privileges
         </li>
         <li class="itemize">
-        <!--l. 503--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
+        <!--l. 504--><p class="noindent" >note 3: be careful to not specify the device name of your hard drive
         (see note 2)</li></ul>
-<!--l. 507--><p class="indent" >   Alternatively, there is a dedicated <a 
+<!--l. 508--><p class="indent" >   Alternatively, there is a dedicated <a 
 href="#POSIX">POSIX</a> shell script - &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin/burn</span></span>. Use the command-line option <span class="path"><span 
 class="ectt-1000">-h</span></span> for details. The
 transfer does not take long. When it is over, replace the card to <span 
 class="cmmi-10">Raspberry &#x03C0; </span>and
 turn it on. That&#8217;s it.
-<!--l. 512--><p class="indent" >
+<!--l. 513--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-180006"></a>run</h3>
-            <!--l. 516--><p class="noindent" >Wireless connection is established via classic command-line tools like <span class="path"><span 
+            <!--l. 517--><p class="noindent" >Wireless connection is established via classic command-line tools like <span class="path"><span 
 class="ectt-1000">ip</span></span>[<a 
  id="x1-18001"></a><a 
 href="#cite.0@busybox">1</a>] and <span class="path"><span 
@@ -2425,7 +2423,7 @@ class="cmmi-10">Dear ImGui</span>[<a
 href="#cite.0@imgui">2</a>] library. The last one is configured to
             start automatically on boot in <span class="path"><span 
 class="ectt-1000">/home/root/.profile</span></span>.
-               <!--l. 525--><pre class="lstinputlisting" id="listing-12"><span class="label"><a 
+               <!--l. 526--><pre class="lstinputlisting" id="listing-12"><span class="label"><a 
  id="x1-18006r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">!/</span></span><span style="color:#FF00FF"><span 
@@ -3101,13 +3099,13 @@ class="ectt-0800x-x-87">$IP</span></span><span style="color:#000000"> </span><sp
 class="ectt-0800x-x-87">route</span></span><span style="color:#000000"> </span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">show</span></span>
    </pre>
-<!--l. 526--><p class="noindent" >The scrip may be downloaded <a 
+<!--l. 527--><p class="noindent" >The scrip may be downloaded <a 
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/recipes-core/thcp/thcp/wifini.sh" >here</a> but it is already installed on the target <a 
 href="#OS">OS</a>. Specify
 network <span 
 class="cmmi-10">id </span>from the command line with a short command-line option <span 
 class="cmmi-10">s</span>. See next
-example usage. <!--l. 530-->
+example usage. <!--l. 531-->
 <a 
  id="x1-18094r13"></a>
 <a 
@@ -3122,7 +3120,7 @@ class="ectt-0800x-x-87">s</span></span><span style="color:#000000"> </span><span
 class="ectt-0800x-x-87">&#x003C;</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">SSID</span></span><span style="color:#000000"><span 
 class="ectt-0800x-x-87">&#x003E;</span></span></pre>
-<!--l. 534--><p class="indent" >   The script asks for the network password to store it encrypted for future
+<!--l. 535--><p class="indent" >   The script asks for the network password to store it encrypted for future
 connections. Once an <a 
  id="section*.12"></a><span 
 class="cmmi-10">internet protocol </span>(<a 
@@ -3134,13 +3132,13 @@ class="cmmi-10">Dropbear</span>[<a
  id="x1-18097"></a><a 
 href="#cite.0@dropbear">4</a>] allows for secure remote login, control
 and file transfer.
-<!--l. 540--><p class="indent" >
+<!--l. 541--><p class="indent" >
                                                                                                                     
 
                                                                                                                     
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-190007"></a>outlook</h3>
-            <!--l. 542--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+            <!--l. 543--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
 href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &#x03C0;</span>[<a 
@@ -3157,7 +3155,7 @@ href="#SSH">SSH</a> server provides remote connection, data transfer and
             device control. As the <a 
 href="#OS">OS</a> is now functional, performance and real-time tests are
             ongoing.
-            <!--l. 550--><p class="indent" >     For precision measurements the <a 
+            <!--l. 551--><p class="indent" >     For precision measurements the <a 
 href="#OS">OS</a> has to be tested not only on the
             target platform but also simulated. See for example <a 
  id="section*.13"></a><span 
@@ -3334,17 +3332,17 @@ class="list">
 href="#x1-60002.1.2"><span 
 class="cmmi-10">software</span></a><br />
                         </dd></dl>
-            <!--l. 556--><p class="noindent" >
+            <!--l. 557--><p class="noindent" >
                                                                                                     
 
                                                                                                     
                <h3 class="sectionHead"><a 
  id="x1-21000"></a>bibliography</h3>
-            <!--l. 558--><p class="noindent" >
+            <!--l. 559--><p class="noindent" >
                  <dl class="thebibliography"><dt id="X0-busybox" class="thebibliography">
             [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@busybox"></a>Erik Andersen.
                  <span 
 class="ecti-1000">BusyBox</span>.
@@ -3364,7 +3362,7 @@ class="ectt-1000">https://busybox.net</span></a>
                  </dd><dt id="X0-imgui" class="thebibliography">
             [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@imgui"></a>Omar Cornut.
                  <span 
 class="ecti-1000">Dear</span>
@@ -3386,7 +3384,7 @@ class="ectt-1000">https://github.com/ocornut/imgui</span></a>
                  </dd><dt id="X0-oe" class="thebibliography">
             [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@oe"></a>Open Enbedded.
                  <span 
 class="ecti-1000">OpenEmbedded</span>.
@@ -3409,7 +3407,7 @@ id="bib-4" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
                  <span 
 class="ecti-1000">Dropbear</span>
@@ -3431,7 +3429,7 @@ class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
             [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
                  <span 
 class="ecti-1000">Poky</span>
@@ -3465,7 +3463,7 @@ class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
                  </dd><dt id="X0-raspberry" class="thebibliography">
             [6]   </dt><dd 
 id="bib-6" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@raspberry"></a>Raspberry <span 
 class="cmmi-10">&#x03C0; </span>Ltd.
                  <span 
@@ -3491,7 +3489,7 @@ class="ectt-1000">https://www.raspberrypi.com</span></a>
                  </dd><dt id="X0-wpasup" class="thebibliography">
             [7]   </dt><dd 
 id="bib-7" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@wpasup"></a>Jouni Malinen.
                  <span 
 class="ecti-1000">WPA</span>
@@ -3513,7 +3511,7 @@ class="ectt-1000">https://w1.fi/wpa_supplicant</span></a>
                  </dd><dt id="X0-yocto" class="thebibliography">
             [8]   </dt><dd 
 id="bib-8" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -3535,7 +3533,7 @@ class="ectt-1000">https://www.yoctoproject.org</span></a>
                  </dd><dt id="X0-yoctoqb" class="thebibliography">
             [9]   </dt><dd 
 id="bib-9" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                 <!--l. 559--><p class="noindent" ><a 
  id="cite.0@yoctoqb"></a>Yocto Project.
                  <span 
 class="ecti-1000">Yocto</span>
@@ -3558,12 +3556,12 @@ class="ectt-1000">https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#
                  (visited
                  on
                  2023).</dd></dl>
-            <!--l. 561--><p class="indent" >                                                                                            <span 
+            <!--l. 562--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 561--><p class="indent" >      <a 
+            <!--l. 562--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in </span><span 
 class="cmmi-7">pdf </span><span 
