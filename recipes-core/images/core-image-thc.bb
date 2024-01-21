@@ -31,6 +31,7 @@ IMAGE_INSTALL:append = " procps"
 IMAGE_INSTALL:append = " file"
 IMAGE_INSTALL:append = " zile"
 IMAGE_INSTALL:append = " cpufrequtils"
+IMAGE_INSTALL:append = " msmtp"
 # IMAGE_INSTALL:append = " openssl-bin"
 
 inherit core-image features_check extrausers
