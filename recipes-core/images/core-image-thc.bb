@@ -13,8 +13,16 @@ IMAGE_FEATURES:append = " allow-empty-password"
 IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_FEATURES:append = " post-install-logging"
 
+IMAGE_FEATURES:append = " ssh-server-dropbear"
+# EXTRA_IMAGE_FEATURES ?= "ssh-server-dropbear"
+# EXTRA_IMAGE_FEATURES:append = " debug-tweaks"
 
-VOLATILE_LOG_DIR = "no"
+
+####################### image features from build configuration  ####################
+IMAGE_FSTYPES = "ext4 ext3 wic"
+IMAGE_FSTYPES:remove = "${@'ext4' if d.getVar('MACHINE') == 'raspberrypi4-64' else 'wic'}"
+IMAGE_OVERHEAD_FACTOR = "1.1"
+
 
 IMAGE_INSTALL:append = " thcp"
 IMAGE_INSTALL:append = " imgui"

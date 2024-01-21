@@ -20,33 +20,55 @@ bbrecipe() {
     bitbake-layers show-recipes|grep -C 1 $1
 }
 
+# purpose: get a directive value for specific target
+# usage: bbvalue target directive
 bbvalue() {
 
-    echo purpose: get a directive value for specific target
-    echo usage: bbvalue target directive
     bitbake-getvar -r $1 --value $2
 }
 
+# purpose: get packages for a target
+# usage: bbpackage target
 bbpackage() {
 
-    echo purpose: get packages for a target
-    echo usage: bbpackage target
     bitbake -g $1 && cat pn-buildlist | grep -ve "native" | sort | uniq
 }
 
+# purpose: a list of image recipes
+# usage: bbimage
 bbimage() {
 
-    echo purpose: a list of available image targets
-    echo usage: bbimage
     bitbake-layers show-recipes "*-image-*"
 }
 
+# purpose: a list of distribution configurations
+# usage: bbdistro
+bbdistro() {
+
+    ls -l $METAPATH/*/*/conf/distro|grep conf
+}
+
+# purpose: configure kernel
+# usage: bbkernel
 bbkernel() {
 
-    echo purpose: configure kernel
-    echo usage: bbkernel
     bitbake virtual/kernel -c menuconfig
 }
+
+# purpose: dump directive values
+# usage: bbreport <target>
+bbreport() {
+
+    DIRECTIVE=(MACHINE DISTRO DISTRO_NAME IMAGE_FSTYPES MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES IMAGE_INSTALL)
+    for directive in "${DIRECTIVE[@]}"
+    do
+
+        dirval=`bitbake-getvar -r $1 --value $directive`
+        echo $directive: $dirval
+    done
+}
+
+
 
 ## aliases ################################################################################################
 
