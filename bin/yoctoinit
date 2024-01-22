@@ -13,6 +13,9 @@ bitbake-layers show-layers
 
 ## functions ##############################################
 
+DIRECTIVE=(MACHINE DISTRO_NAME IMAGE_FSTYPES \
+                   MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES IMAGE_INSTALL)
+
 bbrecipe() {
 
     echo purpose: search recipes by name
@@ -59,7 +62,6 @@ bbkernel() {
 # usage: bbreport <target>
 bbreport() {
 
-    DIRECTIVE=(MACHINE DISTRO_NAME IMAGE_FSTYPES MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES IMAGE_INSTALL)
     for directive in "${DIRECTIVE[@]}"
     do
 
