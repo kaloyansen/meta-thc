@@ -36,5 +36,6 @@ PASSWD = "\$5\$2qQtEpyiwk33Lj5/\$KK0mV7X4Mzt15EAo56iymdLUtL9Bbv0HWe8hpUZdhm1"
 EXTRA_USERS_PARAMS = "\
     usermod -p '${PASSWD}' root; \
 "
+
 REQUIRED_DISTRO_FEATURES = "x11 cpufrequtils"
 
