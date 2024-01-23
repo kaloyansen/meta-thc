@@ -5,8 +5,7 @@ RECIPE_MAINTAINER = "Kaloyan Krastev <kaloyan@triplehelix-consulting.com>"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
 
-IMAGE_FSTYPES = "ext4 ext3 wic"
-IMAGE_FSTYPES:remove = "${@'ext4' if d.getVar('MACHINE') == 'raspberrypi4-64' else 'wic'}"
+IMAGE_FSTYPES = "ext3 ext4 wic"
 IMAGE_OVERHEAD_FACTOR = "1.1"
 
 IMAGE_FEATURES:remove = "splash"
@@ -20,6 +19,8 @@ IMAGE_FEATURES:append = " ssh-server-dropbear"
 
 IMAGE_INSTALL:append = " thcp"
 IMAGE_INSTALL:append = " imgui"
+
+# optional packages 
 IMAGE_INSTALL:append = " os-release"
 IMAGE_INSTALL:append = " procps"
 IMAGE_INSTALL:append = " file"
