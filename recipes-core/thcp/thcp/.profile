@@ -3,6 +3,8 @@
 # aliases
 alias ls=ls\ --color
 alias l=ls\ -la
+alias ..=cd\ ..
+alias ...='..&&..'
 
 # counter
 [ -z "${KALO}" ] && KALO=1 || KALO=`expr $KALO + 1`
