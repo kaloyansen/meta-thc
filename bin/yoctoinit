@@ -23,13 +23,6 @@ bbrecipe() {
     bitbake-layers show-recipes|grep -C 1 $1
 }
 
-# purpose: get a directive value for specific target
-# usage: bbvalue target directive
-bbvalue() {
-
-    bitbake-getvar -r $1 --value $2
-}
-
 # purpose: get packages for a target
 # usage: bbpackage target
 bbpackage() {
@@ -56,6 +49,20 @@ bbdistro() {
 bbkernel() {
 
     bitbake virtual/kernel -c menuconfig
+}
+
+# purpose: get a directive value for specific target
+# usage: bbvalue <target> <directive>
+bbvalue() {
+
+    bitbake-getvar -r $1 --value $2
+}
+
+# purpose: get machine
+# usage: bbmachine <target>
+bbmachine() {
+
+    bbvalue $1 MACHINE
 }
 
 # purpose: dump directive values
