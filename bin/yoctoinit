@@ -16,15 +16,15 @@ bitbake-layers show-layers
 DIRECTIVE=(MACHINE DISTRO_NAME IMAGE_FSTYPES \
                    MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES IMAGE_INSTALL)
 
+# purpose: search recipes by name
+# usage: bbrecipe <expression>
 bbrecipe() {
 
-    echo purpose: search recipes by name
-    echo usage: bbrecipe expression
     bitbake-layers show-recipes|grep -C 1 $1
 }
 
 # purpose: get packages for a target
-# usage: bbpackage target
+# usage: bbpackage <target>
 bbpackage() {
 
     bitbake -g $1 && cat pn-buildlist | grep -ve "native" | sort | uniq
