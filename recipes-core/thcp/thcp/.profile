@@ -7,9 +7,10 @@ alias ..=cd\ ..
 alias ...='..&&..'
 
 FUN=/etc/init.d/functions
-[ -f $FUN ] && . $FUN || echo \ dot profile no fun
+FGC=/usr/bin/fgconsole
 
-TTYN=`fgconsole`
+[ -f $FUN ] && . $FUN || echo \ dot profile no fun
+[ -x $FGC ] && TTYN=`$FGC` || TTYN=0
 
 say() {
 
