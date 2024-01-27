@@ -17,7 +17,7 @@ do_install() {
 	# directory
 	install -d ${D}/${bindir}
 	install -d ${D}/${ROOT_HOME}
-	install -d ${D}/${ROOT_HOME}/.config/procps
+#	install -d ${D}/${ROOT_HOME}/.config/procps
 
 	# executables
 	install -m 0755 ${WORKDIR}/${SRC_PATH}/wifini.sh ${D}/${bindir}
@@ -26,6 +26,6 @@ do_install() {
 	# configuration
 	install -m 0644 ${WORKDIR}/${SRC_PATH}/.profile ${D}/${ROOT_HOME}
 #	install -m 0644 ${WORKDIR}/${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
-	install -m 0644 ${WORKDIR}/${SRC_PATH}/toprc ${D}/${ROOT_HOME}/.config/procps
+#	install -m 0644 ${WORKDIR}/${SRC_PATH}/toprc ${D}/${ROOT_HOME}/.config/procps
 #        ln -s /home/root ${D}/root
 }

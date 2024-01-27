@@ -23,6 +23,8 @@ IMAGE_INSTALL:append = " imgui"
 IMAGE_INSTALL:append = " msmtp"
 IMAGE_INSTALL:append = " ca-certificates"
 IMAGE_INSTALL:append = " gnupg"
+IMAGE_INSTALL:append = " gnutls"
+IMAGE_INSTALL:append = " tzdata"
 
 # optional packages 
 IMAGE_INSTALL:append = " os-release"
@@ -37,10 +39,10 @@ inherit core-image features_check extrausers
 
 # mkpasswd -m sha256crypt <your-password>
 # password: ppp
-PASSWD = "\$5\$2qQtEpyiwk33Lj5/\$KK0mV7X4Mzt15EAo56iymdLUtL9Bbv0HWe8hpUZdhm1"
-EXTRA_USERS_PARAMS = "\
-    usermod -p '${PASSWD}' root; \
-"
+# PASSWD = "\$5\$2qQtEpyiwk33Lj5/\$KK0mV7X4Mzt15EAo56iymdLUtL9Bbv0HWe8hpUZdhm1"
+# EXTRA_USERS_PARAMS = "usermod -p '${PASSWD}' root;"
+
+DEFAULT_TIMEZONE ?= "EET"
 
 REQUIRED_DISTRO_FEATURES = "x11 cpufrequtils"
 
