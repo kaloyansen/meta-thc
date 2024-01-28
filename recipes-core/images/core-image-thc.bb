@@ -25,6 +25,8 @@ IMAGE_INSTALL:append = " ca-certificates"
 IMAGE_INSTALL:append = " gnupg"
 IMAGE_INSTALL:append = " gnutls"
 IMAGE_INSTALL:append = " tzdata"
+IMAGE_INSTALL:append = " ssh-pregen-hostkeys"
+# IMAGE_INSTALL:append = " run-postinsts"
 
 # optional packages 
 IMAGE_INSTALL:append = " os-release"
@@ -35,7 +37,7 @@ IMAGE_INSTALL:append = " cpufrequtils"
 
 # IMAGE_INSTALL:append = " openssl-bin"
 
-inherit core-image features_check extrausers
+inherit core-image features_check extrausers thclass
 
 # mkpasswd -m sha256crypt <your-password>
 # password: ppp

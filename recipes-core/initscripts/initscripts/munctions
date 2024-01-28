@@ -1,14 +1,10 @@
 
 # mail function
 
-header="how to send messages"
+header="connectivity functions: "
 footer="powered by triplehelix-consulting.com"
 
 user=morla
-server=freeshell.de
-host=kopano.$server
-port=25
-from=$user@$server
 defto=kaloyansen@gmail.com
 
 gpgfile=/home/root/.msmtp.gpg
@@ -16,15 +12,19 @@ ctlfile=/home/root/.control
 tmpfile=/tmp/.tmp.tmp
 datafile=/home/root/ipinfo.data
 
+scpip=kalo@192.168.1.5
+
 thc() {
 
     printf "
-    $header
 
-$from gpg --full-generate-key
-$from encrypt_password <password>
-$from configure_msmtp
-$from send_ip_address somebody@somewhere.com
+$header secure_copy_ip_address user@xxx.xx.x.xx
+
+$header gpg --full-generate-key
+$header encrypt_password <password>
+$header configure_msmtp
+
+$header send_ip_address somebody@somewh.ere
 
     $footer
 
@@ -33,6 +33,12 @@ $from send_ip_address somebody@somewhere.com
 
 configure_msmtp() {
 
+    server=gmail.com
+    server=freeshell.de
+    port=25
+    host=smtp.$server
+    host=kopano.$server
+    from=$user@$server
     rcfile=/home/root/.msmtprc
     rctmpl=$rcfile.tmpl
     [ -f $rctmpl ] || return 1
@@ -63,19 +69,35 @@ encrypt_password() {
 
 get_ip_address() {
 
-    which ip > /dev/null && ip a | grep global | awk '{print $2}'| sed 's|/\([0-9]*\)$||' || echo `failure` get_ip_address
+    which ip > /dev/null &&
+    ip a | grep global | awk '{print $2}'| sed 's|/\([0-9]*\)$||' ||
+    echo `failure` get_ip_address
+    # awk (aho, weinberger and kernighan)
 }
 
+
+secure_copy_ip_address() {
+
+    [ $1 ] && to=$1 || to=$scpip
+
+    scpfile=~/.rpip
+    echo root@`get_ip_address` > $scpfile
+    which scp > /dev/null &&
+    scp $scpfile $to:~ ||
+    echo `warning` scp error
+    echo `success` powered by `which scp`
+}
 
 send_ip_address() {
 
-    [ $1 ] && to=$1 || to=$defto
+    [ $1 ] && to=$1 ||
+    to=$defto
     get_ip_address > $tmpfile
-    which msmtp && msmtp $to < $tmpfile || echo `warning` msmtp not found
+    which msmtp && msmtp $to < $tmpfile ||
+    echo `warning` msmtp not found
     rm $tmpfile
     echo powered by `which msmtp`
 }
-
 
 send_ip_address_once() {
 
