@@ -4,17 +4,34 @@
 header="connectivity functions: "
 footer="powered by triplehelix-consulting.com"
 
+# email server  
 user=morla
+server=freeshell.de
+host=kopano.$server
+port=25
+
 defto=kaloyansen@gmail.com
 
-gpgfile=/home/root/.msmtp.gpg
-ctlfile=/home/root/.control
+gpgfile=~/.msmtp.gpg
+ctlfile=~/.control
 tmpfile=/tmp/.tmp.tmp
-datafile=/home/root/ipinfo.data
+datafile=~/ipinfo.data
 
 work=kalo@192.168.84.180
 parent=kalo@192.168.1.5
 parent=$work
+
+show_msmtp_configuration() {
+
+    printf "
+
+$header user     $user
+$header server   $server
+$header host     $host
+$header port     $port
+
+"
+}
 
 thc() {
 
@@ -28,20 +45,20 @@ $header configure_msmtp
 
 $header send_ip_address_by_mail somebody@somewh.ere
 
+$header show_msmtp_configuration
+
+
     $footer
 
 "
+
+    show_msmtp_configuration
 }
 
 configure_msmtp() {
 
-    server=gmail.com
-    server=freeshell.de
-    port=25
-    host=smtp.$server
-    host=kopano.$server
     from=$user@$server
-    rcfile=/home/root/.msmtprc
+    rcfile=~/.msmtprc
     rctmpl=$rcfile.tmpl
     [ -f $rctmpl ] || return 1
     which sed > /dev/null && sed \
@@ -51,7 +68,7 @@ configure_msmtp() {
 -e "s#{{HOST}}#$host#" \
 -e "s#{{FROM}}#$from#" \
 $rctmpl > $rcfile || failure
-    cat $rcfile
+    show_msmtp_configuration
     echo powered by `which sed`
 }
 
