@@ -1,5 +1,5 @@
 
-# mail function
+# connectivity functions follow
 
 header="connectivity functions: "
 footer="powered by triplehelix-consulting.com"
@@ -12,7 +12,9 @@ ctlfile=/home/root/.control
 tmpfile=/tmp/.tmp.tmp
 datafile=/home/root/ipinfo.data
 
-scpip=kalo@192.168.1.5
+work=kalo@192.168.84.180
+parent=kalo@192.168.1.5
+parent=$work
 
 thc() {
 
@@ -24,7 +26,7 @@ $header gpg --full-generate-key
 $header encrypt_password <password>
 $header configure_msmtp
 
-$header send_ip_address somebody@somewh.ere
+$header send_ip_address_by_mail somebody@somewh.ere
 
     $footer
 
@@ -72,13 +74,13 @@ get_ip_address() {
     which ip > /dev/null &&
     ip a | grep global | awk '{print $2}'| sed 's|/\([0-9]*\)$||' ||
     echo `failure` get_ip_address
-    # awk (aho, weinberger and kernighan)
+    # awk is named after developers aho, weinberger and kernighan
 }
 
 
 secure_copy_ip_address() {
 
-    [ $1 ] && to=$1 || to=$scpip
+    [ $1 ] && to=$1 || to=$parent
 
     scpfile=~/.rpip
     echo root@`get_ip_address` > $scpfile
@@ -88,13 +90,15 @@ secure_copy_ip_address() {
     echo `success` powered by `which scp`
 }
 
-send_ip_address() {
+send_ip_address_by_mail() {
 
-    [ $1 ] && to=$1 ||
-    to=$defto
-    get_ip_address > $tmpfile
-    which msmtp && msmtp $to < $tmpfile ||
-    echo `warning` msmtp not found
+    [ $1 ] && to=$1 || to=$defto
+    echo Subject: rpi4 > $tmpfile
+    date >> $tmpfile
+    get_ip_address >> $tmpfile
+    which msmtp > /dev/null &&
+    msmtp $to < $tmpfile ||
+    echo `warning` msmtp error
     rm $tmpfile
     echo powered by `which msmtp`
 }

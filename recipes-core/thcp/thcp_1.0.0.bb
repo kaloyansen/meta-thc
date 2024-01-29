@@ -11,6 +11,8 @@ SRC_URI = "file:///${SRC_PATH}"
 
 FILES:${PN}:append = " ${ROOT_HOME}"
 
+DEPENDS = "initscripts"
+
 inherit thclass allarch
 
 do_install() {

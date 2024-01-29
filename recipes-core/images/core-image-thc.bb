@@ -26,7 +26,6 @@ IMAGE_INSTALL:append = " gnupg"
 IMAGE_INSTALL:append = " gnutls"
 IMAGE_INSTALL:append = " tzdata"
 IMAGE_INSTALL:append = " ssh-pregen-hostkeys"
-# IMAGE_INSTALL:append = " run-postinsts"
 
 # optional packages 
 IMAGE_INSTALL:append = " os-release"
@@ -35,16 +34,15 @@ IMAGE_INSTALL:append = " file"
 IMAGE_INSTALL:append = " zile"
 IMAGE_INSTALL:append = " cpufrequtils"
 
+# IMAGE_INSTALL:append = " run-postinsts"
 # IMAGE_INSTALL:append = " openssl-bin"
 
 inherit core-image features_check extrausers thclass
 
 # mkpasswd -m sha256crypt <your-password>
-# password: ppp
+# uncomment next two lines to have a password, in this case password is ppp
 # PASSWD = "\$5\$2qQtEpyiwk33Lj5/\$KK0mV7X4Mzt15EAo56iymdLUtL9Bbv0HWe8hpUZdhm1"
 # EXTRA_USERS_PARAMS = "usermod -p '${PASSWD}' root;"
-
-DEFAULT_TIMEZONE ?= "EET"
 
 REQUIRED_DISTRO_FEATURES = "x11 cpufrequtils"
 
