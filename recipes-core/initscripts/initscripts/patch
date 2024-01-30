@@ -1,4 +1,7 @@
-# at the end of functions
+
+# end of functions
+# have fun
 
 AVEC=/etc/init.d/munctions
 [ -f $AVEC ] && . $AVEC || echo `failure` cannot stat $AVEC
+

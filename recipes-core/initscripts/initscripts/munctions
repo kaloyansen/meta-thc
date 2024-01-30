@@ -21,7 +21,7 @@ reload_function() {
     . /etc/init.d/functions
 }
 
-show_msmtp_configuration() {
+load_mail_account_configuration() {
 
     [ -f $confile ] && . $confile || echo `failure` cannot find $confile
     [ $server ] &&
@@ -30,8 +30,6 @@ show_msmtp_configuration() {
 
     # dump email configuration
     [ $server ] && printf "
-
-$header # defined in ~/.msmtp.conf
 $header user     $user
 $header server   $server
 $header host     $host
@@ -48,20 +46,20 @@ thc() {
 $header secure_copy_ip_address user@xxx.xx.x.xx
 
 $header gpg --full-generate-key
-$header encrypt_password <password>
+$header encrypt_password
 $header configure_msmtp
 
 $header send_ip_address_by_mail somebody@somewh.ere
 
-$header show_msmtp_configuration
+$header load_mail_account_configuration
 "
-    show_msmtp_configuration
+    load_mail_account_configuration
     echo $footer
 }
 
 configure_msmtp() {
 
-    show_msmtp_configuration
+    load_mail_account_configuration
     from=$user@$server
     rcfile=~/.msmtprc
     rctmpl=$rcfile.tmpl
@@ -78,6 +76,7 @@ $rctmpl > $rcfile || failure
 
 delete_key() {
 
+    load_mail_account_configuration
     gpg --delete-secret-keys $user
     gpg --delete-keys $user
 }
@@ -89,7 +88,8 @@ encrypt_password() {
     [ "$password" ] && echo `success` || echo `failure` empty password
     [ "$password" ] && echo $password > $tmpfile || return 
     
-    gpg --yes -o $gpgfile -e $tmpfile
+    load_mail_account_configuration
+    gpg --yes -o $gpgfile -r $user -e $tmpfile
     [ -f $tmpfile ] && rm $tmpfile || echo `failure` cannot stat temporary file
     echo powered by `which gpg`
 }
