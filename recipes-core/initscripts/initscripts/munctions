@@ -4,14 +4,9 @@
 header="connectivity functions: "
 footer="powered by triplehelix-consulting.com"
 
-# email server  
-user=morla
-server=freeshell.de
-host=kopano.$server
-port=25
-
 defto=kaloyansen@gmail.com
 
+confile=~/.msmtp.conf
 gpgfile=~/.msmtp.gpg
 ctlfile=~/.control
 tmpfile=/tmp/.tmp.tmp
@@ -21,10 +16,22 @@ work=kalo@192.168.84.180
 parent=kalo@192.168.1.5
 parent=$work
 
+reload_function() {
+
+    . /etc/init.d/functions
+}
+
 show_msmtp_configuration() {
 
-    printf "
+    [ -f $confile ] && . $confile || echo `failure` cannot find $confile
+    [ $server ] &&
+    echo `success` email configuration loaded from $confile ||
+    echo `failure` error loading $confile 
 
+    # dump email configuration
+    [ $server ] && printf "
+
+$header # defined in ~/.msmtp.conf
 $header user     $user
 $header server   $server
 $header host     $host
@@ -34,6 +41,7 @@ $header port     $port
 }
 
 thc() {
+
 
     printf "
 
@@ -46,17 +54,14 @@ $header configure_msmtp
 $header send_ip_address_by_mail somebody@somewh.ere
 
 $header show_msmtp_configuration
-
-
-    $footer
-
 "
-
     show_msmtp_configuration
+    echo $footer
 }
 
 configure_msmtp() {
 
+    show_msmtp_configuration
     from=$user@$server
     rcfile=~/.msmtprc
     rctmpl=$rcfile.tmpl
@@ -68,7 +73,6 @@ configure_msmtp() {
 -e "s#{{HOST}}#$host#" \
 -e "s#{{FROM}}#$from#" \
 $rctmpl > $rcfile || failure
-    show_msmtp_configuration
     echo powered by `which sed`
 }
 
@@ -78,11 +82,15 @@ delete_key() {
     gpg --delete-keys $user
 }
 
+
 encrypt_password() {
 
-    echo $1 > $tmpfile
+    read -p "enter password: " password
+    [ "$password" ] && echo `success` || echo `failure` empty password
+    [ "$password" ] && echo $password > $tmpfile || return 
+    
     gpg --yes -o $gpgfile -e $tmpfile
-    rm $tmpfile
+    [ -f $tmpfile ] && rm $tmpfile || echo `failure` cannot stat temporary file
     echo powered by `which gpg`
 }
 
@@ -93,7 +101,6 @@ get_ip_address() {
     echo `failure` get_ip_address
     # awk is named after developers aho, weinberger and kernighan
 }
-
 
 secure_copy_ip_address() {
 
