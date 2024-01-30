@@ -16,9 +16,10 @@ work=kalo@192.168.84.180
 parent=kalo@192.168.1.5
 parent=$work
 
-reload_function() {
+reload_fun() {
 
-    . /etc/init.d/functions
+    fun=/etc/init.d/functions 
+    . $fun && echo `success` $fun loaded
 }
 
 load_mail_account_configuration() {
@@ -44,13 +45,8 @@ thc() {
     printf "
 
 $header secure_copy_ip_address user@xxx.xx.x.xx
-
-$header gpg --full-generate-key
-$header encrypt_password
-$header configure_msmtp
-
+$header configure_mail_client
 $header send_ip_address_by_mail somebody@somewh.ere
-
 $header load_mail_account_configuration
 "
     load_mail_account_configuration
@@ -82,13 +78,13 @@ delete_key() {
 }
 
 
-encrypt_password() {
+encrypt_mail_account_password() {
 
-    read -p "enter password: " password
+    load_mail_account_configuration
+    read -p "enter password for $user@$server " password
     [ "$password" ] && echo `success` || echo `failure` empty password
     [ "$password" ] && echo $password > $tmpfile || return 
     
-    load_mail_account_configuration
     gpg --yes -o $gpgfile -r $user -e $tmpfile
     [ -f $tmpfile ] && rm $tmpfile || echo `failure` cannot stat temporary file
     echo powered by `which gpg`
@@ -134,24 +130,18 @@ send_ip_address_once() {
     touch $ctlfile
 }
 
-data_read_value() {
- 
-    touch $datafile
-    key=$1
-    grep "^$key=" $datafile | sed 's/^'"$key"'=//'
+configure_mail_client() {
+
+    delete_key
+
+    account=$user@$server
+    echo generating a pair of keys for $account
+    read -p "choose a passphrase: " passphrase
+    [ "$passphrase" ] && echo `passed` || echo `warning` empty passphrase
+
+    gpg --quick-gen-key --batch --passphrase $passphrase $account
+    encrypt_mail_account_password
+    configure_msmtp
+    success
+    msmtp -S
 }
-
-data_write_pair() {
-
-    key=$1
-    value=$2
-
-    touch $datafile
-
-    if grep -q "^$key=" $datafile; then
-        sed -i 's|^'"$key"'=.*|'"$key=$value"'|' $datafile
-    else
-        echo $key=$value >> $datafile
-    fi
-}
-
