@@ -138,9 +138,7 @@ href="#x1-100003">3<!--tex4ht:ref: sec:configuration --></a> shows how to config
 href="#OS">OS</a> build. In
             Section <a 
 href="#x1-130004">4<!--tex4ht:ref: sec:build --></a> learn how to build the <a 
-href="#OS">OS</a> <span 
-class="cmmi-10">image </span>and see how to copy <span 
-class="cmmi-10">image </span>to <span 
+href="#OS">OS</a> image and see how to copy image to <span 
 class="cmmi-10">SD </span>card in
             Section <a 
 href="#x1-170005">5<!--tex4ht:ref: sec:install --></a>. Section <a 
@@ -153,34 +151,25 @@ href="#x1-180006">6<!--tex4ht:ref: sec:run --></a> is dedicated to post-install 
                <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
  id="x1-30002"></a>metadata</h3>
             <!--l. 48--><p class="noindent" >In current context, <span 
-class="cmmi-10">metadata </span>is a set of <span 
-class="cmmi-10">instructions </span>to build <span 
-class="cmmi-10">targets</span>. The build
+class="cmmi-10">metadata </span>is a set of instructions to build targets. The build
             configuration is managed via files with extension <span class="path"><span 
 class="ectt-1000">conf</span></span>. They define configuration
             variables to control the build process.
             <!--l. 53--><p class="noindent" >
                <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
  id="x1-40002.1"></a>structure</h4>
-            <!--l. 54--><p class="noindent" >Basic concepts needed to understand <span 
-class="cmmi-10">metadata </span>structure follow.
+            <!--l. 54--><p class="noindent" >Basic concepts needed to understand metadata structure follow.
             <!--l. 56--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">2.1.1   </span> <a 
  id="x1-50002.1.1"></a>recipes</h5>
-            <!--l. 57--><p class="noindent" >The <span 
-class="cmmi-10">instructions </span>are organized as <span 
-class="cmmi-10">recipes </span>in files with the <span class="path"><span 
+            <!--l. 57--><p class="noindent" >The instructions are organized as recipes in files with the <span class="path"><span 
 class="ectt-1000">bb</span></span> extension. There are
             also files with the <span class="path"><span 
-class="ectt-1000">bbappend</span></span> extension designed to modify <span 
-class="cmmi-10">recipes </span>and <span 
-class="cmmi-10">bitbake</span>
-            <span 
-class="cmmi-10">classes </span>with the suffix <span class="path"><span 
-class="ectt-1000">bbclass</span></span> for instructions shared between <span 
-class="cmmi-10">recipes</span>. See a full
-            list of <span 
-class="cmmi-10">metadata </span>file types in Table <a 
+class="ectt-1000">bbappend</span></span> extension designed to modify recipes and <span class="path"><span 
+class="ectt-1000">bitbake</span></span>
+            classes with the suffix <span class="path"><span 
+class="ectt-1000">bbclass</span></span> for instructions shared between recipes. See a full
+            list of metadata file types in Table <a 
 href="#x1-70042">2<!--tex4ht:ref: tab:bbfiles --></a>.
             <!--l. 63--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">2.1.2   </span> <a 
@@ -190,24 +179,18 @@ href="#x1-70042">2<!--tex4ht:ref: tab:bbfiles --></a>.
 class="cmmi-10">software </span>(<a 
 href="#SW">SW</a>) package or group of packages. The target may
             also be a complete <a 
-href="#OS">OS</a> <span 
-class="cmmi-10">image</span>.
+href="#OS">OS</a> image.
             <!--l. 67--><p class="noindent" >
                <h5 class="subsubsectionHead"><span class="titlemark">2.1.3   </span> <a 
  id="x1-70002.1.3"></a>layers</h5>
-            <!--l. 68--><p class="noindent" ><span 
-class="cmmi-10">Metadata </span>is organized in <span 
-class="cmmi-10">layers</span>. Layers logically separate information of a project.
+            <!--l. 68--><p class="noindent" >Metadata is organized in layers. Layers logically separate information of a project.
             Table <a 
-href="#x1-70021">1<!--tex4ht:ref: tab:layer --></a> presents <span 
-class="cmmi-10">OpenEmbedded</span>[<a 
+href="#x1-70021">1<!--tex4ht:ref: tab:layer --></a> presents OpenEmbedded[<a 
  id="x1-7001"></a><a 
-href="#cite.0@oe">3</a>] <span 
-class="cmmi-10">metadata </span>layer types.
-            <!--l. 72--><p class="indent" >     The complete list of <span 
-class="cmmi-10">github</span> <a 
-href="#SW">SW</a> <span 
-class="cmmi-10">metadata </span>repositories used in this project
+href="#cite.0@oe">3</a>] metadata layer types.
+            <!--l. 72--><p class="indent" >     The complete list of <span class="path"><span 
+class="ectt-1000">github</span></span> <a 
+href="#SW">SW</a> metadata repositories used in this project
             includes <span 
 class="ecti-1000">Yocto </span>layers, the <span 
 class="cmmi-10">Raspberry &#x03C0; </span><a 
@@ -217,20 +200,15 @@ href="#BSP">BSP</a>) layer, a <a
 href="#SW">SW</a>
             layer with custom recipes including target and distribution definitions, and the build
             configuration itself.
-            <!--l. 79--><p class="indent" >     In short, users fetch <span 
-class="cmmi-10">metadata </span>in contrast to the <span 
-class="cmmi-10">real </span>data fetched later during
-            the <a 
+            <!--l. 79--><p class="indent" >     In short, users fetch metadata in contrast to the real data fetched later during the
+            <a 
 href="#OS">OS</a> build. See Section <a 
-href="#x1-130004">4<!--tex4ht:ref: sec:build --></a> for details. It means that users decide where to store
-            fetched <span 
-class="cmmi-10">metadata</span>. It is nice to have all layer sub-directories in one system location. In
-            these instructions it is referred as &#x003C;META-DIR&#x003E;. The second directory to create is
-            the &#x003C;BUILD-DIR&#x003E;. This is where the build and the build configuration live. I
-            suggest that &#x003C;BUILD-DIR&#x003E; is not inside &#x003C;META-DIR&#x003E; to not mix <span 
-class="cmmi-10">data </span>and
-            <span 
-class="cmmi-10">metadata</span>.
+href="#x1-130004">4<!--tex4ht:ref: sec:build --></a> for details. It means that users decide where to store fetched
+            metadata. It is nice to have all layer sub-directories in one system location. In these
+            instructions it is referred as &#x003C;META-DIR&#x003E;. The second directory to create is the
+            &#x003C;BUILD-DIR&#x003E;. This is where the build and the build configuration live. I
+            suggest that &#x003C;BUILD-DIR&#x003E; is not inside &#x003C;META-DIR&#x003E; to not mix data and
+            metadata.
                <div class="table">
                                                                                                                     
 
@@ -254,8 +232,7 @@ class="td11"> contents                              </td>
 class="hline"><td><hr></td><td><hr></td></tr><tr  
  style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
 class="td11"> base                   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
-class="td11"> base <span 
-class="cmmi-10">metadata </span>for the build     </td>
+class="td11"> base metadata for the build     </td>
 </tr><tr  
  style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
 class="td11"> machine aka <a 
@@ -283,9 +260,7 @@ class="hline"><td><hr></td><td><hr></td></tr><tr
 class="td11">                 </td></tr></table>                                               </div>
             <br /> <div class="caption" 
 ><span class="id">Table&#x00A0;1: </span><span  
-class="content"><span 
-class="cmmi-10">metadata </span>layer types as defined by <span 
-class="cmmi-10">OpenEmbedded</span>[<a 
+class="content">metadata layer types as defined by OpenEmbedded[<a 
  id="x1-7003"></a><a 
 href="#cite.0@oe">3</a>]</span></div><!--tex4ht:label?: x1-70021 -->
                                                                                                                     
@@ -352,8 +327,7 @@ class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr
 class="td11">          </td></tr></table>                                                      </div>
             <br /> <div class="caption" 
 ><span class="id">Table&#x00A0;2: </span><span  
-class="content"><span 
-class="cmmi-10">metadata </span>file types</span></div><!--tex4ht:label?: x1-70042 -->
+class="content">metadata file types</span></div><!--tex4ht:label?: x1-70042 -->
                                                                                                                     
 
                                                                                                                     
@@ -361,26 +335,21 @@ class="cmmi-10">metadata </span>file types</span></div><!--tex4ht:label?: x1-700
                </div>
                <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
  id="x1-80002.2"></a>meta-thc</h4>
-            <!--l. 129--><p class="noindent" >Following the <span 
-class="cmmi-10">OpenEmbedded metadata </span>classification, <span class="path"><span 
+            <!--l. 129--><p class="noindent" >Following the OpenEmbedded metadata classification, <span class="path"><span 
 class="ectt-1000">meta-thc</span></span> is a <a 
 href="#SW">SW</a>
             layer as there are <a 
 href="#SW">SW</a> recipes. On the other hand, it is a distribution layer
-            because it defines a new distribution based on <span 
-class="cmmi-10">poky</span>. See &#x003C;META-DIR&#x003E;<span class="path"><span 
-class="ectt-1000">/thc/meta-thc/conf/distro/thc.conf</span></span>. In addition, there is an <span 
-class="cmmi-10">image </span>recipe to build a
+            because it defines a new distribution based on <span class="path"><span 
+class="ectt-1000">poky</span></span>. See &#x003C;META-DIR&#x003E;<span class="path"><span 
+class="ectt-1000">/thc/meta-thc/conf/distro/thc.conf</span></span>. In addition, there is an image recipe to build a
             target in &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/recipes-core/images/core-image-thc.bb</span></span>.
             <!--l. 136--><p class="indent" >     This allows for an effective isolation of machine, distribution and image features
             of the <a 
-href="#OS">OS</a>. The layer includes also shell scripts to clone <span 
-class="cmmi-10">metadata </span>and to
+href="#OS">OS</a>. The layer includes also shell scripts to clone metadata and to
             export the <a 
-href="#OS">OS</a> <span 
-class="cmmi-10">image </span>on <span 
-class="cmmi-10">SD</span>-card. These may be found in &#x003C;META-DIR&#x003E;<span class="path"><span 
+href="#OS">OS</a> image on SD-card. These may be found in &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc/bin</span></span>. Learn more in following sections. See next the contents of <span class="path"><span 
 class="ectt-1000">meta-thc</span></span>. The system location of the layer is &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/thc/meta-thc</span></span> by
@@ -571,16 +540,12 @@ class="ectt-0800x-x-87">files</span></span>
 <!--l. 146--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
  id="x1-90002.3"></a>automation</h4>
-<!--l. 149--><p class="noindent" >There is a shell script to clone all <span 
-class="cmmi-10">metadata </span>from public <span 
-class="cmmi-10">github </span>repositories. It may
+<!--l. 149--><p class="noindent" >There is a shell script to clone all metadata from public github repositories. It may
 serve people to build their own <a 
 href="#OS">OS</a> for <span 
-class="cmmi-10">Raspberry &#x03C0;</span>. The script performs <span 
-class="cmmi-10">metadata</span>
-fetch, the <span 
-class="cmmi-10">bitbake </span>initialisation and a simple <span 
-class="cmmi-10">metadata </span>verification.
+class="cmmi-10">Raspberry &#x03C0;</span>. The script performs metadata
+fetch, the <span class="path"><span 
+class="ectt-1000">bitbake</span></span> initialisation and a simple metadata verification.
    <!--l. 154--><pre class="lstinputlisting" id="listing-2"><span class="label"><a 
  id="x1-9003r1000"></a></span><span style="color:#FF00FF"><span 
 class="ectt-0800x-x-87">#</span></span><span style="color:#FF00FF"><span 
@@ -1491,31 +1456,29 @@ class="ectt-1000">metafetch</span></span> <a
 href="https://github.com/kaloyanski/meta-thc/blob/kirkstone/bin/metafetch" >here</a>. Note the associative array <span class="path"><span 
 class="ectt-1000">REPO</span></span>. It
 defines the remote and local system path of repositories. The script is designed in a
-way that after a successful run one may start a build with <span 
-class="cmmi-10">bitbake</span>. Do not forget to
-grant permissions to make script executable. It takes &#x003C;META-DIR&#x003E; and
+way that after a successful run one may start a build with <span class="path"><span 
+class="ectt-1000">bitbake</span></span>. Do not forget
+to grant permissions to make script executable. It takes &#x003C;META-DIR&#x003E; and
 &#x003C;BUILD-DIR&#x003E; names from the command-line. You may use next examples to run <span class="path"><span 
 class="ectt-1000">metafetch</span></span>. Running the script without command-line options like the first example
-results in some default configuration. You may want to specify custom directories
-like the second example. Otherwise the script will use default values. The
-default <span 
-class="cmmi-10">github </span>protocol is <span 
-class="cmmi-10">https </span>but I recommend using <span 
-class="cmmi-10">git </span>because it is an
+results in some default configuration. You may want to specify custom directories like
+the second example. Otherwise the script will use default values. The default github
+protocol is <span class="path"><span 
+class="ectt-1000">https</span></span> but I recommend using <a 
+ id="section*.7"></a><span 
+class="cmmi-10">secure shell </span>(<a 
+href="#SSH">SSH</a>) because it is
                                                                                                                     
 
                                                                                                                     
-            order of magnitude faster. You may need to export one <a 
- id="section*.7"></a><span 
-class="cmmi-10">secure shell </span>(<a 
-href="#SSH">SSH</a>)
-            public key to your <span class="path"><span 
-class="ectt-1000">github</span></span> account. Use the command-line option <span 
-class="cmsy-10">-</span><span 
-class="cmmi-10">g </span>to
-            switch protocol. The default <span 
-class="cmmi-10">git </span>branch is <span 
-class="cmmi-10">kirkstone</span>. Use <span class="path"><span 
+            an order of magnitude faster. You may need to export one <a 
+href="#SSH">SSH</a> public key
+            to your <span class="path"><span 
+class="ectt-1000">github</span></span> account. Use the command-line option <span class="path"><span 
+class="ectt-1000">-g</span></span> to switch
+            protocol. The default <span class="path"><span 
+class="ectt-1000">git</span></span> branch is <span class="path"><span 
+class="ectt-1000">kirkstone</span></span>. Use <span class="path"><span 
 class="ectt-1000">-h</span></span> to see all <a 
 href="#CLI">CLI</a>
             options.
@@ -1652,10 +1615,8 @@ href="#x1-120043">3<!--tex4ht:ref: tab:distro --></a>.
                    <li class="itemize">
                    <!--l. 232--><p class="noindent" >IMAGE_FEATURES This directive controls the contents of the <a 
 href="#OS">OS</a>
-                   <span 
-class="cmmi-10">image</span>. Different predefined packages could be added, removed or
-                   modified via this variable. Useful examples for <span 
-class="cmmi-10">image </span>features are <span class="path"><span 
+                   image. Different predefined packages could be added, removed or
+                   modified via this variable. Useful examples for image features are <span class="path"><span 
 class="ectt-1000">allow-empty-password</span></span>, <span class="path"><span 
 class="ectt-1000">allow-root-login</span></span>, <span class="path"><span 
 class="ectt-1000">empty-root-password</span></span>, <span class="path"><span 
@@ -1667,14 +1628,13 @@ class="ectt-1000">ssh-server-dropbear</span></span>.
                    <li class="itemize">
                    <!--l. 241--><p class="noindent" >IMAGE_FSTYPES This is another important directive. Here I have
                    removed archived <span 
-class="cmmi-10">images </span>to decrease the built time and added the <span 
-class="cmmi-10">wic</span>
-                   format. One may want to use the <span 
-class="cmmi-10">wic </span>command-line tool to list the
-                   partitions on a <span 
-class="cmmi-10">wic image</span>. See how to copy <span 
-class="cmmi-10">wic </span>to an <span 
-class="cmmi-10">SD </span>card in Section
+class="cmmi-10">images </span>to decrease the built time and added the <span class="path"><span 
+class="ectt-1000">wic</span></span>
+                   format. One may want to use the <span class="path"><span 
+class="ectt-1000">wic</span></span> command-line tool to list the
+                   partitions on a <span class="path"><span 
+class="ectt-1000">wic</span></span> image. See how to copy it to an <span class="path"><span 
+class="ectt-1000">SD</span></span> card in Section
                    <a 
 href="#x1-170005">5<!--tex4ht:ref: sec:install --></a>.
                    </li>
@@ -1688,8 +1648,7 @@ href="#OS">OS</a>. This will double the size
                    of the image. The default value of <span 
 class="cmr-10">1</span><span 
 class="cmmi-10">.</span><span 
-class="cmr-10">3 </span>increases <span 
-class="cmmi-10">image </span>size with
+class="cmr-10">3 </span>increases image size with
                    <span 
 class="cmr-10">30%</span>.
                    </li>
@@ -1709,22 +1668,19 @@ class="ectt-1000">systemd</span></span>
 class="ectt-1000">mdev-busybox</span></span>.
                    </li>
                    <li class="itemize">
-                   <!--l. 263--><p class="noindent" >MACHINE No doubt, this is the most important directive, set here to
-                   <span 
-class="cmmi-10">raspberrypi</span><span 
-class="cmr-10">4</span>-64. You may want to change this value if you build an <a 
-href="#OS">OS</a> for
-                   a different <a 
+                   <!--l. 263--><p class="noindent" >MACHINE No doubt, this is the most important directive, set here to <span class="path"><span 
+class="ectt-1000">raspberrypi4-64</span></span>. You may want to change this value if you build an <a 
+href="#OS">OS</a>
+                   for a different <a 
 href="#HW">HW</a>. If you want to emulate <span 
-class="cmmi-10">Raspberry &#x03C0; </span>on your host machine
+class="cmmi-10">Raspberry &#x03C0; </span>on your host
                                                                                                                     
 
                                                                                                                     
-                   with <span 
-class="cmmi-10">qemu</span>, set <span 
-class="cmmi-10">MACHINE </span>to <span 
-class="cmmi-10">qemuarm</span><span 
-class="cmr-10">64</span>. I confirm that this
+                   machine with <span class="path"><span 
+class="ectt-1000">qemu</span></span>, set <span class="path"><span 
+class="ectt-1000">MACHINE</span></span> to <span class="path"><span 
+class="ectt-1000">qemuarm64</span></span>. I confirm that this
                    works although I did not find this approach very useful to test a
                    <a 
 href="#GUI">GUI</a>.
@@ -1737,20 +1693,19 @@ href="#GUI">GUI</a>.
                    <li class="itemize">
                    <!--l. 276--><p class="noindent" >PACKAGE_CLASSES There are different package formats used in various
                    Linux-based <a 
-href="#OS">OS</a>&#8217;s to distribute and manage programs. Both <span 
-class="cmmi-10">Debian </span>package
-                   format - <span 
-class="cmmi-10">deb </span>and <span 
-class="cmmi-10">rpm </span>from <span 
-class="cmmi-10">RedHat </span>do well, but recently I had issues with
-                   <span 
-class="cmmi-10">ipk </span>so I disabled it.
+href="#OS">OS</a>&#8217;s to distribute and manage programs. Both <span class="path"><span 
+class="ectt-1000">debian</span></span>
+                   package format - <span class="path"><span 
+class="ectt-1000">deb</span></span> and <span class="path"><span 
+class="ectt-1000">rpm</span></span> from <span class="path"><span 
+class="ectt-1000">RedHat</span></span> do well, but recently I
+                   had issues with <span class="path"><span 
+class="ectt-1000">ipk</span></span> so I disabled it.
                    </li>
                    <li class="itemize">
                    <!--l. 282--><p class="noindent" >PACKAGE_INSTALL This is where to specify additional <a 
 href="#SW">SW</a> packages.
-                   This is useful for packages not included in the <span 
-class="cmmi-10">image </span>by default.
+                   This is useful for packages not included in the image by default.
                    In my experience, the default <a 
 href="#OS">OS</a> has all necessary programs or
                    compact alternatives. However this is the directive used to append
@@ -1767,10 +1722,10 @@ href="#GNU">GNU</a>)/Linux distributions. Using another distribution is not
                    prohibited, but a warning messages is generated each time <span 
 class="cmmi-10">bitbake </span>is run.
                    One may want to append the host machine Linux distribution to get rid of
-                   this warning. See next examples for users of rolling releases from <span 
-class="cmmi-10">Manjaro</span>
-                   and <span 
-class="cmmi-10">OpenSuse</span>.
+                   this warning. See next examples for users of <span class="path"><span 
+class="ectt-1000">Manjaro</span></span> and <span class="path"><span 
+class="ectt-1000">OpenSuse</span></span>
+                   rolling releases.
                    <!--l. 295-->
             <a 
  id="x1-11004r5"></a>
@@ -2149,9 +2104,7 @@ class="cmmi-10">work </span>directory. Built packages are stored in
 the <span 
 class="cmmi-10">package </span>directory. Finally, following the build configuration packages are
 unpacked to create the <a 
-href="#OS">OS</a> <span 
-class="cmmi-10">image </span>found in the <span 
-class="cmmi-10">image </span>directory. The build flow is
+href="#OS">OS</a> image found in the image directory. The build flow is
 summarised in Table <a 
 href="#x1-160025">5<!--tex4ht:ref: tab:flow --></a>.
      <div class="table">
@@ -2311,8 +2264,7 @@ class="cmmi-10">bitbake </span>workflow</span></div><!--tex4ht:label?: x1-160025
 href="#OS">OS</a> includes a kernel <span 
 class="cmmi-10">ARM</span>, <span 
 class="cmr-10">64</span><span 
-class="cmr-10">bit</span> boot executable <span 
-class="cmmi-10">image </span>of <span 
+class="cmr-10">bit</span> boot executable image of <span 
 class="cmr-10">23</span><span 
 class="cmr-10">MB</span>, a <span 
 class="cmmi-10">Raspberry</span>
@@ -2327,21 +2279,19 @@ href="#LTS">LTS</a>) kernel release.
 class="cmr-10">21</span><span 
 class="cmr-10">MB</span>.
             <!--l. 492--><p class="indent" >     <span 
-class="ecti-1000">Yocto </span>provides multiple package and <span 
-class="cmmi-10">image </span>formats. Different ways exist to
-            install <span 
+class="ecti-1000">Yocto </span>provides multiple package and image formats. Different ways exist to install
+            <span 
 class="cmmi-10">images </span>on <span 
 class="cmmi-10">SD </span>card. The <a 
 href="#OS">OS</a> has two partitions - <span class="path"><span 
 class="ectt-1000">/root</span></span> and <span class="path"><span 
-class="ectt-1000">/boot</span></span>.
-            There are no <span 
+class="ectt-1000">/boot</span></span>. There are
+            no <span 
 class="cmmi-10">swap </span>and <span 
 class="cmmi-10">home </span>partitions.
             <!--l. 496--><p class="indent" >     I recommend the classic command-line tool <span 
 class="cmmi-10">dd </span>to copy data. It works fine with
-            different <span 
-class="cmmi-10">image </span>formats like <span 
+            different image formats like <span 
 class="cmmi-10">rpi </span><span 
 class="cmsy-10">- </span><span 
 class="cmmi-10">sdimg</span>, <span 
@@ -3185,8 +3135,7 @@ href="#OS">OS</a> is Linux release 5.15. An
 href="#GUI">GUI</a> application using the <span 
 class="cmmi-10">Dear ImGui </span>library is built as a part of the <a 
 href="#OS">OS</a>
-            <span 
-class="cmmi-10">image</span>. In addition, an <a 
+            image. In addition, an <a 
 href="#SSH">SSH</a> server provides remote connection, data transfer and
             device control.
             <!--l. 569--><p class="indent" >     As the <a 
