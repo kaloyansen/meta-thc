@@ -16,10 +16,16 @@ work=kalo@192.168.84.180
 parent=kalo@192.168.1.5
 parent=$work
 
-reload_fun() {
+load_fun() {
 
     fun=/etc/init.d/functions 
     . $fun && echo `success` $fun loaded
+}
+
+list_functions() {
+
+    iam=/etc/init.d/fun
+    grep -o '^[[:space:]]*[^()]*()' /etc/init.d/fun | grep -v grep | grep -v sed | sort
 }
 
 load_mail_account_configuration() {
@@ -110,6 +116,25 @@ secure_copy_ip_address() {
     echo `success` powered by `which scp`
 }
 
+file2mail() {
+
+    [ $1 ] && voy=$1 ||
+    echo usage: file2mail filename who@wh.ere
+    [ $1 ] || return
+    [ $2 ] && to=$2 || to=$defto
+    
+    voyage=`realpath $voy`
+    echo Subject: $voyage > $tmpfile
+    # date >> $tmpfile
+    cat $voyage >> $tmpfile
+    which msmtp > /dev/null &&
+    msmtp $to < $tmpfile ||
+    echo `warning` msmtp error
+    rm $tmpfile
+    echo powered by `which msmtp`
+}
+
+
 send_ip_address_by_mail() {
 
     [ $1 ] && to=$1 || to=$defto
@@ -145,3 +170,8 @@ configure_mail_client() {
     success
     msmtp -S
 }
+
+
+export file2mail
+export configure_mail_client
+
