@@ -1,0 +1,7 @@
+
+# end of functions
+# have fun
+
+AVEC=/etc/init.d/fun
+[ -f $AVEC ] && . $AVEC || echo `failure` cannot stat $AVEC
+

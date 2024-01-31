@@ -1,0 +1,177 @@
+
+# connectivity functions follow
+
+header="connectivity functions: "
+footer="powered by triplehelix-consulting.com"
+
+defto=kaloyansen@gmail.com
+
+confile=~/.msmtp.conf
+gpgfile=~/.msmtp.gpg
+ctlfile=~/.control
+tmpfile=/tmp/.tmp.tmp
+datafile=~/ipinfo.data
+
+work=kalo@192.168.84.180
+parent=kalo@192.168.1.5
+parent=$work
+
+load_fun() {
+
+    fun=/etc/init.d/functions 
+    . $fun && echo `success` $fun loaded
+}
+
+list_functions() {
+
+    iam=/etc/init.d/fun
+    grep -o '^[[:space:]]*[^()]*()' /etc/init.d/fun | grep -v grep | grep -v sed | sort
+}
+
+load_mail_account_configuration() {
+
+    [ -f $confile ] && . $confile || echo `failure` cannot find $confile
+    [ $server ] &&
+    echo `success` email configuration loaded from $confile ||
+    echo `failure` error loading $confile 
+
+    # dump email configuration
+    [ $server ] && printf "
+$header user     $user
+$header server   $server
+$header host     $host
+$header port     $port
+
+"
+}
+
+thc() {
+
+
+    printf "
+
+$header secure_copy_ip_address user@xxx.xx.x.xx
+$header configure_mail_client
+$header send_ip_address_by_mail somebody@somewh.ere
+$header load_mail_account_configuration
+"
+    load_mail_account_configuration
+    echo $footer
+}
+
+configure_msmtp() {
+
+    load_mail_account_configuration
+    from=$user@$server
+    rcfile=~/.msmtprc
+    rctmpl=$rcfile.tmpl
+    [ -f $rctmpl ] || return 1
+    which sed > /dev/null && sed \
+-e "s#{{GPGFILE}}#$gpgfile#" \
+-e "s#{{PORT}}#$port#" \
+-e "s#{{USER}}#$user#" \
+-e "s#{{HOST}}#$host#" \
+-e "s#{{FROM}}#$from#" \
+$rctmpl > $rcfile || failure
+    echo powered by `which sed`
+}
+
+delete_key() {
+
+    load_mail_account_configuration
+    gpg --delete-secret-keys $user
+    gpg --delete-keys $user
+}
+
+
+encrypt_mail_account_password() {
+
+    load_mail_account_configuration
+    read -p "enter password for $user@$server " password
+    [ "$password" ] && echo `success` || echo `failure` empty password
+    [ "$password" ] && echo $password > $tmpfile || return 
+    
+    gpg --yes -o $gpgfile -r $user -e $tmpfile
+    [ -f $tmpfile ] && rm $tmpfile || echo `failure` cannot stat temporary file
+    echo powered by `which gpg`
+}
+
+get_ip_address() {
+
+    which ip > /dev/null &&
+    ip a | grep global | awk '{print $2}'| sed 's|/\([0-9]*\)$||' ||
+    echo `failure` get_ip_address
+    # awk is named after developers aho, weinberger and kernighan
+}
+
+secure_copy_ip_address() {
+
+    [ $1 ] && to=$1 || to=$parent
+
+    scpfile=~/.rpip
+    echo root@`get_ip_address` > $scpfile
+    which scp > /dev/null &&
+    scp $scpfile $to:~ ||
+    echo `warning` scp error
+    echo `success` powered by `which scp`
+}
+
+file2mail() {
+
+    [ $1 ] && voy=$1 ||
+    echo usage: file2mail filename who@wh.ere
+    [ $1 ] || return
+    [ $2 ] && to=$2 || to=$defto
+    
+    voyage=`realpath $voy`
+    echo Subject: $voyage > $tmpfile
+    # date >> $tmpfile
+    cat $voyage >> $tmpfile
+    which msmtp > /dev/null &&
+    msmtp $to < $tmpfile ||
+    echo `warning` msmtp error
+    rm $tmpfile
+    echo powered by `which msmtp`
+}
+
+
+send_ip_address_by_mail() {
+
+    [ $1 ] && to=$1 || to=$defto
+    echo Subject: rpi4 > $tmpfile
+    date >> $tmpfile
+    get_ip_address >> $tmpfile
+    which msmtp > /dev/null &&
+    msmtp $to < $tmpfile ||
+    echo `warning` msmtp error
+    rm $tmpfile
+    echo powered by `which msmtp`
+}
+
+send_ip_address_once() {
+
+    [ -f $ctlfile ] && return 0
+    send_ip_address
+    touch $ctlfile
+}
+
+configure_mail_client() {
+
+    delete_key
+
+    account=$user@$server
+    echo generating a pair of keys for $account
+    read -p "choose a passphrase: " passphrase
+    [ "$passphrase" ] && echo `passed` || echo `warning` empty passphrase
+
+    gpg --quick-gen-key --batch --passphrase $passphrase $account
+    encrypt_mail_account_password
+    configure_msmtp
+    success
+    msmtp -S
+}
+
+
+export file2mail
+export configure_mail_client
+
