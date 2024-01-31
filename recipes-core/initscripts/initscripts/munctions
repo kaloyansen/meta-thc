@@ -1,0 +1,107 @@
+
+# mail function
+
+header="how to send messages"
+footer="powered by triplehelix-consulting.com"
+
+user=morla
+server=freeshell.de
+host=kopano.$server
+port=25
+from=$user@$server
+defto=kaloyansen@gmail.com
+
+gpgfile=/home/root/.msmtp.gpg
+ctlfile=/home/root/.control
+tmpfile=/tmp/.tmp.tmp
+datafile=/home/root/ipinfo.data
+
+thc() {
+
+    printf "
+    $header
+
+$from gpg --full-generate-key
+$from encrypt_password <password>
+$from configure_msmtp
+$from send_ip_address somebody@somewhere.com
+
+    $footer
+
+"
+}
+
+configure_msmtp() {
+
+    rcfile=/home/root/.msmtprc
+    rctmpl=$rcfile.tmpl
+    [ -f $rctmpl ] || return 1
+    which sed > /dev/null && sed \
+-e "s#{{GPGFILE}}#$gpgfile#" \
+-e "s#{{PORT}}#$port#" \
+-e "s#{{USER}}#$user#" \
+-e "s#{{HOST}}#$host#" \
+-e "s#{{FROM}}#$from#" \
+$rctmpl > $rcfile || failure
+    cat $rcfile
+    echo powered by `which sed`
+}
+
+delete_key() {
+
+    gpg --delete-secret-keys $user
+    gpg --delete-keys $user
+}
+
+encrypt_password() {
+
+    echo $1 > $tmpfile
+    gpg --yes -o $gpgfile -e $tmpfile
+    rm $tmpfile
+    echo powered by `which gpg`
+}
+
+get_ip_address() {
+
+    which ip > /dev/null && ip a | grep global | awk '{print $2}'| sed 's|/\([0-9]*\)$||' || echo `failure` get_ip_address
+}
+
+
+send_ip_address() {
+
+    [ $1 ] && to=$1 || to=$defto
+    get_ip_address > $tmpfile
+    which msmtp && msmtp $to < $tmpfile || echo `warning` msmtp not found
+    rm $tmpfile
+    echo powered by `which msmtp`
+}
+
+
+send_ip_address_once() {
+
+    [ -f $ctlfile ] && return 0
+    send_ip_address
+    touch $ctlfile
+}
+
+data_read_value() {
+ 
+    touch $datafile
+    key=$1
+    grep "^$key=" $datafile | sed 's/^'"$key"'=//'
+}
+
+data_write_pair() {
+
+    key=$1
+    value=$2
+
+    touch $datafile
+
+    if grep -q "^$key=" $datafile; then
+        sed -i 's|^'"$key"'=.*|'"$key=$value"'|' $datafile
+    else
+        echo $key=$value >> $datafile
+    fi
+}
+
