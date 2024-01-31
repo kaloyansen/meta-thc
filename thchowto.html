@@ -19,8 +19,8 @@ class="ecrm-1200">Kaloyan Krastev</span><span class="thank-mark"><a
 href="#tk-1"><span 
 class="tcrm-1200">*</span></a></span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">Tuesday 30</span><sup class="textsuperscript"><span 
-class="ecrm-0900">th</span></sup><span 
+class="ecrm-1200">Wednesday 31</span><sup class="textsuperscript"><span 
+class="ecrm-0900">st</span></sup><span 
 class="ecrm-1200">&#x00A0;January, 2024 </span><span class="thank-mark"><a 
 href="#tk-2"><span 
 class="tcrm-1200">&#8224;</span></a></span></div>
@@ -96,9 +96,9 @@ href="#x1-170005" id="QQ2-1-33">install</a></span>
             <br />     &#x00A0;<span class="sectionToc" >6 <a 
 href="#x1-180006" id="QQ2-1-35">run</a></span>
             <br />     &#x00A0;<span class="sectionToc" >7 <a 
-href="#x1-190007" id="QQ2-1-38">outlook</a></span>
+href="#x1-190007" id="QQ2-1-39">outlook</a></span>
             <br />     &#x00A0;<span class="sectionToc" ><a 
-href="#x1-21000" id="QQ2-1-40">bibliography</a></span>
+href="#x1-21000" id="QQ2-1-41">bibliography</a></span>
                </div>
             <!--l. 25--><p class="indent" >
                                                                                                                     
@@ -115,7 +115,7 @@ class="cmmi-10">operating system </span>(<a
 href="#OS">OS</a>) for <span 
 class="cmmi-10">Raspberry &#x03C0;</span>[<a 
  id="x1-2002"></a><a 
-href="#cite.0@raspberry">6</a>]. The goal of the project is a compact and
+href="#cite.0@raspberry">8</a>]. The goal of the project is a compact and
             deterministic <a 
 href="#OS">OS</a> with a simple <a 
  id="section*.2"></a><span 
@@ -129,7 +129,7 @@ href="#CLI">CLI</a>) tools ensure device remote access and control. The
             build is done with <span 
 class="ecti-1000">Yocto</span>[<a 
  id="x1-2003"></a><a 
-href="#cite.0@yocto">8</a>].
+href="#cite.0@yocto">10</a>].
             <!--l. 35--><p class="indent" >     There are several steps organized in corresponding sections as follows. Read in
             Section <a 
 href="#x1-30002">2<!--tex4ht:ref: sec:metadata --></a> how to fetch <span 
@@ -1914,7 +1914,7 @@ class="content">reference distribution configurations</span></div><!--tex4ht:lab
             <!--l. 341--><p class="noindent" >It is very likely that you will need to install <span 
 class="ecti-1000">Yocto </span>requirements[<a 
  id="x1-13001"></a><a 
-href="#cite.0@yoctoqb">9</a>] to be able to run
+href="#cite.0@yoctoqb">11</a>] to be able to run
             <span 
 class="cmmi-10">bitbake</span>. The list of <span 
 class="ecti-1000">Yocto </span>sanity checked distributions currently includes
@@ -1962,7 +1962,7 @@ href="#GNU">GNU</a> <span
 class="cmmi-10">make</span></li></ul>
             <!--l. 362--><p class="indent" >    Find more details in <span 
 class="ecti-1000">Yocto </span>documentation at [<a 
-href="#cite.0@yoctoqb">9</a>]. You may need to install in
+href="#cite.0@yoctoqb">11</a>]. You may need to install in
             addition <span class="path"><span 
 class="ectt-1000">diffstat</span></span>, <span class="path"><span 
 class="ectt-1000">unzip</span></span>, <span class="path"><span 
@@ -2414,7 +2414,7 @@ class="ectt-1000">udhcpc</span></span>[<a
 href="#cite.0@busybox">1</a>], and <span class="path"><span 
 class="ectt-1000">wpa_passphrase</span></span>[<a 
  id="x1-18002"></a><a 
-href="#cite.0@wpasup">7</a>] stores WiFi connections. A dedicated <a 
+href="#cite.0@wpasup">9</a>] stores WiFi connections. A dedicated <a 
 href="#POSIX">POSIX</a> shell script named <span class="path"><span 
 class="ectt-1000">wifini.sh</span></span> is installed in <span class="path"><span 
 class="ectt-1000">/usr/bin</span></span>, as well as a running <a 
@@ -3134,18 +3134,44 @@ class="cmmi-10">Dropbear</span>[<a
  id="x1-18097"></a><a 
 href="#cite.0@dropbear">4</a>] allows for secure remote login, control
 and file transfer.
-<!--l. 541--><p class="indent" >
-                                                                                                                    
+<!--l. 540--><p class="indent" >   A client is needed to transmit mails to some <a 
+ id="section*.13"></a><span 
+class="cmmi-10">simple mail transfer</span>
+<span 
+class="cmmi-10">protocol </span>(<a 
+href="#SMTP">SMTP</a>) server. Here this functionality is powered by a compact
+<a 
+href="#SMTP">SMTP</a> client called [<a 
+ id="x1-18098"></a><a 
+href="#cite.0@msmtp">7</a>]. To configure user email account edit &#x003C;META-DIR&#x003E;<span class="path"><span 
+class="ectt-1000">/thc/meta-thc/recipes-extemded/msmtp/msmtp/.msmtp.conf</span></span> on the host
+machine or <span class="path"><span 
+class="ectt-1000">~/.msmtp.conf</span></span> on the target machine. In both cases you will need to
+perform [<a 
+href="#cite.0@msmtp">7</a>] configuration on the target with the following command. The privacy is
+assured by [<a 
+ id="x1-18099"></a><a 
+href="#cite.0@gnupg">6</a>].
+   <!--l. 548-->
+<a 
+ id="x1-18100r14"></a>
+<a 
+ id="x1-18101"></a>
+<pre class="lstlisting" id="listing-14"><span class="label"><a 
+ id="x1-18102r1000"></a></span><span style="color:#000000"> </span><span style="color:#000000"> </span><span style="color:#000000"><span 
+class="ectt-0800x-x-87">configure_mail_client</span></span></pre>
+<!--l. 552--><p class="indent" >
+                                                                                                         
 
-                                                                                                                    
+                                                                                                         
                <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-190007"></a>outlook</h3>
-            <!--l. 543--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
+            <!--l. 554--><p class="noindent" >This reports the progress in the development of a custom Linux-based <a 
 href="#OS">OS</a> for
             <span 
 class="cmmi-10">Raspberry &#x03C0;</span>[<a 
  id="x1-19001"></a><a 
-href="#cite.0@raspberry">6</a>]. The kernel version of this embedded <a 
+href="#cite.0@raspberry">8</a>]. The kernel version of this embedded <a 
 href="#OS">OS</a> is Linux release 5.15. An
             example <a 
 href="#GUI">GUI</a> application using the <span 
@@ -3155,13 +3181,13 @@ href="#OS">OS</a>
 class="cmmi-10">image</span>. In addition, an <a 
 href="#SSH">SSH</a> server provides remote connection, data transfer and
             device control.
-            <!--l. 551--><p class="indent" >     As the <a 
+            <!--l. 562--><p class="indent" >     As the <a 
 href="#OS">OS</a> is now functional, performance and real-time tests are ongoing. For
             precision measurements the <a 
 href="#OS">OS</a> has to be tested both on the target platform and on
             virtual <a 
 href="#HW">HW</a> via emulators, e.g. <a 
- id="section*.13"></a><span 
+ id="section*.14"></a><span 
 class="cmmi-10">quick emulator </span>(<a 
 href="#QEMU">QEMU</a>) &#x003C;META-DIR&#x003E;<span class="path"><span 
 class="ectt-1000">/poky/scripts/runqemu</span></span>.
@@ -3315,11 +3341,26 @@ class="cmmi-10">quick</span>
 class="cmmi-10">emulator</span></a><br />
                         </dd><dt class="list">
             <a 
+ id="SMTP"></a><a 
+href="#x1-18096r6"><span 
+class="ecbx-1000">SMTP      </span></a>  </dt><dd 
+class="list">
+                        <!--l. 20--><p class="noindent" ><a 
+href="#x1-18096r6"><span 
+class="cmmi-10">simple</span>
+                        <span 
+class="cmmi-10">mail</span>
+                        <span 
+class="cmmi-10">transfer</span>
+                        <span 
+class="cmmi-10">protocol</span></a><br />
+                        </dd><dt class="list">
+            <a 
  id="SSH"></a><a 
 href="#x1-9110r2.3"><span 
 class="ecbx-1000">SSH         </span></a>  </dt><dd 
 class="list">
-                        <!--l. 20--><p class="noindent" ><a 
+                        <!--l. 21--><p class="noindent" ><a 
 href="#x1-9110r2.3"><span 
 class="cmmi-10">secure</span>
                         <span 
@@ -3330,240 +3371,283 @@ class="cmmi-10">shell</span></a><br />
 href="#x1-60002.1.2"><span 
 class="ecbx-1000">SW          </span></a>  </dt><dd 
 class="list">
-                        <!--l. 21--><p class="noindent" ><a 
+                        <!--l. 22--><p class="noindent" ><a 
 href="#x1-60002.1.2"><span 
 class="cmmi-10">software</span></a><br />
                         </dd></dl>
-            <!--l. 556--><p class="noindent" >
+            <!--l. 567--><p class="noindent" >
                                                                                                     
 
                                                                                                     
                <h3 class="sectionHead"><a 
  id="x1-21000"></a>bibliography</h3>
-            <!--l. 558--><p class="noindent" >
-                 <dl class="thebibliography"><dt id="X0-busybox" class="thebibliography">
-            [1]   </dt><dd 
+            <!--l. 569--><p class="noindent" >
+                  <dl class="thebibliography"><dt id="X0-busybox" class="thebibliography">
+              [1]   </dt><dd 
 id="bib-1" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@busybox"></a>Erik Andersen.
-                 <span 
+                  <span 
 class="ecti-1000">BusyBox</span>.
-                 2023.
-                 <span 
+                  2023.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
 href="https://busybox.net" class="url" ><span 
 class="ectt-1000">https://busybox.net</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-imgui" class="thebibliography">
-            [2]   </dt><dd 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-imgui" class="thebibliography">
+              [2]   </dt><dd 
 id="bib-2" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@imgui"></a>Omar Cornut.
-                 <span 
+                  <span 
 class="ecti-1000">Dear</span>
-                 <span 
+                  <span 
 class="ecti-1000">ImGui</span>.
-                 2023.
-                 <span 
+                  2023.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
 href="https://github.com/ocornut/imgui" class="url" ><span 
 class="ectt-1000">https://github.com/ocornut/imgui</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-oe" class="thebibliography">
-            [3]   </dt><dd 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-oe" class="thebibliography">
+              [3]   </dt><dd 
 id="bib-3" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@oe"></a>Open Enbedded.
-                 <span 
+                  <span 
 class="ecti-1000">OpenEmbedded</span>.
-                 2017.
-                 <span 
+                  2017.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
 href="https://www.openembedded.org" class="url" ><span 
 class="ectt-1000">https://www.openembedded.org</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-dropbear" class="thebibliography">
-            [4]   </dt><dd 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-dropbear" class="thebibliography">
+              [4]   </dt><dd 
 id="bib-4" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 <!--l. 558--><p class="noindent" ><a 
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@dropbear"></a>Matt Johnston.
-                 <span 
+                  <span 
 class="ecti-1000">Dropbear</span>
-                 <span 
+                  <span 
 class="ecti-1000">SSH</span>.
-                 2023.
-                 <span 
+                  2023.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
 href="https://matt.ucc.asn.au/dropbear/dropbear.html" class="url" ><span 
 class="ectt-1000">https://matt.ucc.asn.au/dropbear/dropbear.html</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-kalohowto2023" class="thebibliography">
-            [5]   </dt><dd 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-kalohowto2023" class="thebibliography">
+              [5]   </dt><dd 
 id="bib-5" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@kalohowto2023"></a>Kaloyan Krastev.
-                 <span 
+                  <span 
 class="ecti-1000">Poky</span>
-                 <span 
+                  <span 
 class="ecti-1000">Linux</span>
-                 <span 
+                  <span 
 class="ecti-1000">with</span>
-                 <span 
+                  <span 
 class="ecti-1000">IMGUI</span>
-                 <span 
+                  <span 
 class="ecti-1000">Demo</span>
-                 <span 
+                  <span 
 class="ecti-1000">on</span>
-                 <span 
+                  <span 
 class="cmmi-10">Raspberry</span>
-                 <span 
+                  <span 
 class="cmmi-10">&#x03C0;</span>.
-                 2023.
-                 <span 
+                  2023.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
 href="https://kaloyanski.github.io/meta-thc/thchowto.html" class="url" ><span 
 class="ectt-1000">https://kaloyanski.github.io/meta-thc/thchowto.html</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-raspberry" class="thebibliography">
-            [6]   </dt><dd 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-gnupg" class="thebibliography">
+              [6]   </dt><dd 
 id="bib-6" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
- id="cite.0@raspberry"></a>Raspberry <span 
-class="cmmi-10">&#x03C0; </span>Ltd.
-                 <span 
-class="ecti-1000">Raspberi</span>
-                 <span 
-class="cmmi-10">&#x03C0;</span>.
-                 2023.
-                 <span 
+                  <!--l. 569--><p class="noindent" ><a 
+ id="cite.0@gnupg"></a>Martin Lambers.
+                  <span 
+class="ecti-1000">GnuPG</span>.
+                  2024.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
-href="https://www.raspberrypi.com" class="url" ><span 
-class="ectt-1000">https://www.raspberrypi.com</span></a>
-                 (visited
-                 on
-                 2023).
+href="https://www.gnupg.org" class="url" ><span 
+class="ectt-1000">https://www.gnupg.org</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-msmtp" class="thebibliography">
+              [7]   </dt><dd 
+id="bib-7" class="thebibliography">
                                                                                                                     
 
                                                                                                                     
-                 </dd><dt id="X0-wpasup" class="thebibliography">
-            [7]   </dt><dd 
-id="bib-7" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
- id="cite.0@wpasup"></a>Jouni Malinen.
-                 <span 
-class="ecti-1000">WPA</span>
-                 <span 
-class="ecti-1000">Supplicant</span>.
-                 2013.
-                 <span 
+                  <!--l. 569--><p class="noindent" ><a 
+ id="cite.0@msmtp"></a>Martin Lambers.
+                  <span 
+class="ecti-1000">msmtp</span>.
+                  2024.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
+<a 
+href="https://marlam.de/msmtp" class="url" ><span 
+class="ectt-1000">https://marlam.de/msmtp</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-raspberry" class="thebibliography">
+              [8]   </dt><dd 
+id="bib-8" class="thebibliography">
+                  <!--l. 569--><p class="noindent" ><a 
+ id="cite.0@raspberry"></a>Raspberry <span 
+class="cmmi-10">&#x03C0; </span>Ltd.
+                  <span 
+class="ecti-1000">Raspberi</span>
+                  <span 
+class="cmmi-10">&#x03C0;</span>.
+                  2023.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
+<a 
+href="https://www.raspberrypi.com" class="url" ><span 
+class="ectt-1000">https://www.raspberrypi.com</span></a>
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-wpasup" class="thebibliography">
+              [9]   </dt><dd 
+id="bib-9" class="thebibliography">
+                  <!--l. 569--><p class="noindent" ><a 
+ id="cite.0@wpasup"></a>Jouni Malinen.
+                  <span 
+class="ecti-1000">WPA</span>
+                  <span 
+class="ecti-1000">Supplicant</span>.
+                  2013.
+                  <span 
+class="eccc1000-"><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span></span>:
+                  
 <a 
 href="https://w1.fi/wpa_supplicant" class="url" ><span 
 class="ectt-1000">https://w1.fi/wpa_supplicant</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-yocto" class="thebibliography">
-            [8]   </dt><dd 
-id="bib-8" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-yocto" class="thebibliography">
+            [10]   </dt><dd 
+id="bib-10" class="thebibliography">
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@yocto"></a>Yocto Project.
-                 <span 
+                  <span 
 class="ecti-1000">Yocto</span>
-                 <span 
+                  <span 
 class="ecti-1000">Project</span>.
-                 2023.
-                 <span 
+                  2023.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
+
+
+
 <a 
 href="https://www.yoctoproject.org" class="url" ><span 
 class="ectt-1000">https://www.yoctoproject.org</span></a>
-                 (visited
-                 on
-                 2023).
-                 </dd><dt id="X0-yoctoqb" class="thebibliography">
-            [9]   </dt><dd 
-id="bib-9" class="thebibliography">
-                 <!--l. 558--><p class="noindent" ><a 
+                  (visited
+                  on
+                  2023).
+                  </dd><dt id="X0-yoctoqb" class="thebibliography">
+            [11]   </dt><dd 
+id="bib-11" class="thebibliography">
+                  <!--l. 569--><p class="noindent" ><a 
  id="cite.0@yoctoqb"></a>Yocto Project.
-                 <span 
+                  <span 
 class="ecti-1000">Yocto</span>
-                 <span 
+                  <span 
 class="ecti-1000">Project</span>
-                 <span 
+                  <span 
 class="ecti-1000">Quick</span>
-                 <span 
+                  <span 
 class="ecti-1000">Build</span>.
-                 2023.
-                 <span 
+                  2023.
+                  <span 
 class="eccc1000-"><span 
 class="small-caps">u</span><span 
 class="small-caps">r</span><span 
 class="small-caps">l</span></span>:
-                 
+                  
 <a 
 href="https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#compatible-linux-distribution" class="url" ><span 
 class="ectt-1000">https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#compatible-linux-distribution</span></a>
-                 (visited
-                 on
-                 2023).</dd></dl>
-            <!--l. 561--><p class="indent" >                                                                                            <span 
+                  (visited
+                  on
+                  2023).</dd></dl>
+            <!--l. 572--><p class="indent" >                                                                                            <span 
 class="ecrm-0700">powered by</span>
             <a 
 href="https://www.latex-project.org" ><span 
 class="ecrm-0700">LaTeX</span></a>
-            <!--l. 561--><p class="indent" >      <a 
+            <!--l. 572--><p class="indent" >      <a 
 href="thchowto.pdf" ><span 
 class="ecrm-0700">this document in </span><span 
 class="cmmi-7">pdf </span><span 
