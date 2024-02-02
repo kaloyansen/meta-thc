@@ -1,5 +1,14 @@
-This README file contains information on the contents of the meta-thc layer.
-Please see https://kaloyanski.github.io/meta-thc for details.
+Introduction
+============
+
+This README file contains information on the contents of the meta-thc
+layer. See https://kaloyanski.github.io/meta-thc for details.
+
+This is a project under development. Please refer
+https://github.com/TripleHelixConsulting/meta-thc-v1 for a static fork with
+extensive documentation. To duscuss or report errors, please contact
+<office@triplehelix-consulting.com>.
+
 
 Dependencies
 ============
@@ -36,8 +45,6 @@ Run 'bitbake core-image-thc'.
 
 III. Message
 =================================================
-
-If you are interested in this project, we will be glad to know and potentially collaborate. In this case, please contact <office@triplehelix-consulting.com>.
 
 See https://kaloyanski.github.io/meta-thc for details.
 
