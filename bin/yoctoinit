@@ -13,8 +13,9 @@ bitbake-layers show-layers
 
 ## functions ##############################################
 
-DIRECTIVE=(MACHINE DISTRO_NAME IMAGE_FSTYPES \
-                   MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES IMAGE_INSTALL)
+DIRECTIVE=(MACHINE DISTRO_NAME TCLIBC XSERVER IMAGE_FSTYPES \
+MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES INHERIT \
+IMAGE_INSTALL PACKAGE_INSTALL)
 
 # purpose: search recipes by name
 # usage: bbrecipe <expression>
@@ -77,7 +78,12 @@ bbreport() {
     done
 }
 
+# purpose list files in a package
+# usage: bbfile <package>
+bbfile() {
 
+    oe-pkgdata-util list-pkg-files $1
+}
 
 ## aliases ################################################################################################
 
