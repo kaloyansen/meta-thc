@@ -8,6 +8,9 @@ alias ...='..&&..'
 
 FUN=/etc/init.d/functions
 FGC=/usr/bin/fgconsole
+DEMO=/usr/bin/example_glfw_opengl2_cmake
+DEMO=/usr/bin/example_glfw_opengl3
+DEMO=/usr/bin/example_glfw_opengl2
 
 [ -f $FUN ] && . $FUN || echo \ dot profile no fun
 [ -x $FGC ] && TTYN=`$FGC` || TTYN=0
@@ -28,5 +31,5 @@ DATE=`date`
 rdate -s time.nist.gov >& /dev/null && say clock set: $DATE || say clock not set: $?
 
 # run imgui demo
-[ -n "$DISPLAY" ] && /usr/bin/example_glfw_opengl2_cmake || say no display for imgui
+[ -n "$DISPLAY" ] && $DEMO || say no display for imgui
 

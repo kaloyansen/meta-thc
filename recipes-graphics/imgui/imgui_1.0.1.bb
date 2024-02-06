@@ -1,5 +1,5 @@
-SUMMARY = "imgui recipe with cmake"
-DESCRIPTION = "recipe for building imgui with cmake"
+SUMMARY = "dear imgui recipe"
+DESCRIPTION = "recipe for building an imgui example"
 RECIPE_MAINTAINER = "Kaloyan Krastev <kaloyan@triplehelix-consulting.com>"
 HOMEPAGE = "https://triplehelix-consulting.com"
 
@@ -9,23 +9,19 @@ LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 INHIBIT_PACKAGE_STRIP = "1"
 
-IMGIT = "imgui_aarch64_glfw_openGL2_experiment"
-IMDIR = "example_glfw_opengl2"
-IMBIN = "${IMDIR}_cmake"
+IMBIN = "example_glfw_opengl2"
 
 PV .= "+git${SRCPV}"
-SRCREV = "29ae8998cff3a898c7d6736af19f16379a9909ef"
+SRCREV = "d8c68473ce414fe7342d084e461556fc90d01814"
 SRC_PATH = "${FILE_DIRNAME}/${BPN}"
-SRC_URI = "git://github.com/kaloyanski/${IMGIT}.git;branch=master;protocol=https"
+SRC_URI = "git://github.com/kaloyanski/imgui.git;branch=master;protocol=https"
 
 DEPENDS = "glfw"
-# DEPENDS:append = "mesa"
 
-S = "${WORKDIR}/git/imgui/examples/${IMDIR}"
-
+S = "${WORKDIR}/git/examples/${IMBIN}"
 FILES:${PN}:append = " ${ROOT_HOME}"
 
-inherit cmake thclass
+inherit pkgconfig thclass
 
 do_install() {
 
@@ -35,3 +31,5 @@ do_install() {
 	install -m 0644 ${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
 }
 
+#INSANE_SKIP:${PN} += "ldflags"
+TARGET_CC_ARCH += "${LDFLAGS}"
