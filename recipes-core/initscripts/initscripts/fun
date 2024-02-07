@@ -51,8 +51,9 @@ thc() {
     printf "
 
 $header secure_copy_ip_address user@xxx.xx.x.xx
+
 $header configure_mail_client
-$header send_ip_address_by_mail somebody@somewh.ere
+$header send_ip_address_by_mail fuck@you.man
 $header load_mail_account_configuration
 "
     load_mail_account_configuration

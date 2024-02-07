@@ -9,12 +9,15 @@ LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171
 #INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 #INHIBIT_PACKAGE_STRIP = "1"
 
-IMBIN = "example_glfw_opengl2"
+IMREPO ?= "kaloyanski"
+IMREPO ?= "ocornut"
+IMBIN  ?= "example_glfw_opengl2"
+IMBIN  ?= "example_glfw_opengl3"
 
 PV .= "+git${SRCPV}"
 SRCREV = "d8c68473ce414fe7342d084e461556fc90d01814"
 SRC_PATH = "${FILE_DIRNAME}/${BPN}"
-SRC_URI = "git://github.com/kaloyanski/imgui.git;branch=master;protocol=https"
+SRC_URI = "git://github.com/${IMREPO}/imgui.git;branch=master;protocol=https"
 
 DEPENDS = "glfw"
 

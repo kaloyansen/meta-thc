@@ -68,7 +68,7 @@ bbmachine() {
 
 # purpose: dump directive values
 # usage: bbreport <target>
-bbreport() {
+bball() {
 
     for directive in "${DIRECTIVE[@]}"
     do
@@ -88,4 +88,5 @@ bbfile() {
 ## aliases ################################################################################################
 
 alias emu=runqemu\ slirp\ nographic\ serial
+alias bb=bitbake
 

@@ -35,10 +35,8 @@ IMAGE_INSTALL:append = " zile"
 IMAGE_INSTALL:append = " cpufrequtils"
 
 
-# IMAGE_INSTALL:append = " picamera-libs"
-# IMAGE_INSTALL:append = " libcamera"
 IMAGE_INSTALL:append = " v4l-utils"
-# IMAGE_INSTALL:append = " libgphoto"
+IMAGE_INSTALL:append = " yavta"
 
 # IMAGE_INSTALL:append = " run-postinsts"
 # IMAGE_INSTALL:append = " openssl-bin"
