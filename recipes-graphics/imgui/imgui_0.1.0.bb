@@ -18,8 +18,8 @@ SRCREV = "29ae8998cff3a898c7d6736af19f16379a9909ef"
 SRC_PATH = "${FILE_DIRNAME}/${BPN}"
 SRC_URI = "git://github.com/kaloyanski/${IMGIT}.git;branch=master;protocol=https"
 
-DEPENDS = "mesa glfw"
-DEPENDS:remove = "mesa"
+DEPENDS = "glfw"
+# DEPENDS:append = "mesa"
 
 S = "${WORKDIR}/git/imgui/examples/${IMDIR}"
 
@@ -28,9 +28,10 @@ FILES:${PN}:append = " ${ROOT_HOME}"
 inherit cmake thclass
 
 do_install() {
+
 	install -d ${D}/${bindir}
 	install -d ${D}/${ROOT_HOME}
 	install -m 0755 ${B}/${IMBIN} ${D}/${bindir}
-        install -m 0644 ${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
+	install -m 0644 ${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
 }
 
