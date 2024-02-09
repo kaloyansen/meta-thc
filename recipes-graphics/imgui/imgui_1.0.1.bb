@@ -6,7 +6,7 @@ HOMEPAGE = "https://triplehelix-consulting.com"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
 
-IMREPO ?= "kaloyanski"
+# IMREPO ?= "kaloyanski"
 IMREPO  ?= "ocornut"
 EXAMPLE  ?= "example_glfw_opengl2"
 EXAMPLE   ?= "example_glfw_opengl3"
@@ -14,6 +14,7 @@ EXAMPLE   ?= "example_glfw_opengl3"
 SRC_URI = "git://github.com/${IMREPO}/imgui.git;branch=master;protocol=https"
 PV .= "+git${SRCPV}"
 SRCREV = "d8c68473ce414fe7342d084e461556fc90d01814"
+SRCREV = "d6cb3c923d28dcebb2d8d9605ccc7229ccef19eb"
 
 SRC_PATH = "${FILE_DIRNAME}/${BPN}"
 

@@ -19,6 +19,7 @@ IMAGE_FEATURES:append = " ssh-server-dropbear"
 
 IMAGE_INSTALL:append = " thcp"
 IMAGE_INSTALL:append = " imgui"
+IMAGE_INSTALL:append = " sinfo"
 
 IMAGE_INSTALL:append = " msmtp"
 IMAGE_INSTALL:append = " ca-certificates"

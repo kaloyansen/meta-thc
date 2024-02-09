@@ -11,23 +11,18 @@ IMBIN   ?= "sinfo"
 
 SRC_URI = "git://github.com/${IMREPO}/imgui.git;branch=master;protocol=https"
 PV .= "+git${SRCPV}"
-SRCREV = "d8c68473ce414fe7342d084e461556fc90d01814"
-
-SRC_PATH = "${FILE_DIRNAME}/${BPN}"
+SRCREV = "cd21563bb49a1baadba45984d4c944e320d38fcd"
 
 DEPENDS = "glfw"
 
 S = "${WORKDIR}/git/src/${IMBIN}"
-FILES:${PN}:append = " ${ROOT_HOME}"
 
 inherit pkgconfig thclass
 
 do_install() {
 
 	install -d ${D}/${bindir}
-	install -d ${D}/${ROOT_HOME}
 	install -m 0755 ${B}/${IMBIN} ${D}/${bindir}
-	install -m 0644 ${SRC_PATH}/imgui.ini ${D}/${ROOT_HOME}
 }
 
 TARGET_CC_ARCH:append = " ${LDFLAGS}"
