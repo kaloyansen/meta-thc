@@ -1,5 +1,5 @@
 SUMMARY = "this is not a dear imgui example recipe"
-DESCRIPTION = "recipe for building a compact graphical user interface for system information"
+DESCRIPTION = "recipe for building a compact graphical user interface with system information"
 RECIPE_MAINTAINER = "Kaloyan Krastev <kaloyan@triplehelix-consulting.com>"
 HOMEPAGE = "https://triplehelix-consulting.com"
 
@@ -11,11 +11,11 @@ IMBIN   ?= "sinfo"
 
 SRC_URI = "git://github.com/${IMREPO}/imgui.git;branch=master;protocol=https"
 PV .= "+git${SRCPV}"
-SRCREV = "cd21563bb49a1baadba45984d4c944e320d38fcd"
+SRCREV = "1250446897abad28dc1985707c8655146bc7deca"
 
 DEPENDS = "glfw"
 
-S = "${WORKDIR}/git/src/${IMBIN}"
+S = "${WORKDIR}/git/src"
 
 inherit pkgconfig thclass
 
