@@ -8,7 +8,8 @@ alias ...='..&&..'
 
 FUN=/etc/init.d/functions
 FGC=/usr/bin/fgconsole
-DEMO=/usr/bin/example_glfw_opengl2 # _cmake
+DEMO=/usr/bin/example_glfw_opengl2
+DEMO=/usr/bin/sinfo
 
 [ -f $FUN ] && . $FUN || echo \ dot profile no fun
 [ -x $FGC ] && TTYN=`$FGC` || TTYN=0
