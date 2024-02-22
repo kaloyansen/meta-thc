@@ -15,7 +15,7 @@ SRCREV = "91279daca0001823f7bb5e3ccae992286ece5a8a"
 
 DEPENDS = "glfw"
 
-S = "${WORKDIR}/git/src"
+S = "${WORKDIR}/git/${IMBIN}"
 
 inherit pkgconfig thclass
 
