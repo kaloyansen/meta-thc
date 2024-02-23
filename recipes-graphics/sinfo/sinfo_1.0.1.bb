@@ -1,5 +1,5 @@
 SUMMARY = "this is not a dear imgui example recipe"
-DESCRIPTION = "recipe for building a compact graphical user interface with system information"
+DESCRIPTION = "recipe for building a compact graphical system monitor"
 RECIPE_MAINTAINER = "Kaloyan Krastev <kaloyan@triplehelix-consulting.com>"
 HOMEPAGE = "https://triplehelix-consulting.com"
 
