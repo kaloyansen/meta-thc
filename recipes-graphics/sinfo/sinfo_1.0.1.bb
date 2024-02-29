@@ -11,7 +11,7 @@ IMBIN   ?= "sinfo"
 
 SRC_URI = "git://github.com/${IMREPO}/imgui.git;branch=master;protocol=https"
 PV .= "+git${SRCPV}"
-SRCREV = "4ed542348d394e2adbe3f83f9b6e34516dabe4e1"
+SRCREV = "a6bcb7afa76dab2aea42cf598b1dd3a99d099df6"
 
 DEPENDS = "glfw"
 
