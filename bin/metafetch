@@ -75,7 +75,7 @@ REPO=(    # associative git repository array
     [openembedded/meta-openembedded.git]=$METADIR/oe
     [agherzan/meta-raspberrypi]=$METADIR/rpi/meta-raspberrypi
     [kaloyansen/meta-thc.git]=$METADIR/thc/meta-thc
-    [TripleHelixConsulting/rpiconf.git]=$BUILDIR/conf
+    [kaloyansen/rpiconf.git]=$BUILDIR/conf
 )
 
 [ "$DRYRUN" ] || confirm
