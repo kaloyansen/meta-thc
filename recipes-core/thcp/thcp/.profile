@@ -5,6 +5,8 @@ alias ls=ls\ --color
 alias l=ls\ -la
 alias ..=cd\ ..
 alias ...='..&&..'
+alias zile mg
+alias nano mg
 
 FUN=/etc/init.d/functions
 FGC=/usr/bin/fgconsole

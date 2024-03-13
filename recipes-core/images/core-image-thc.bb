@@ -32,7 +32,7 @@ IMAGE_INSTALL:append = " ssh-pregen-hostkeys"
 IMAGE_INSTALL:append = " os-release"
 IMAGE_INSTALL:append = " procps"
 IMAGE_INSTALL:append = " file"
-IMAGE_INSTALL:append = " zile"
+IMAGE_INSTALL:append = " mg"
 IMAGE_INSTALL:append = " cpufrequtils"
 
 
